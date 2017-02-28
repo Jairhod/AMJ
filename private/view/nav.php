@@ -22,7 +22,7 @@
                         <a href="catalogue.php">Le Catalogue</a>
                     </li>
                     <li>
-                        <a href="#bio">Actus</a>
+                        <a href="actus.php">Actus</a>
                     </li>
                     <li>
                         <a href="#loisirs">Devis</a>

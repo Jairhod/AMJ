@@ -7,9 +7,9 @@
             <div class="bla">
                
                 <select name="genres" id="genres" class="form-control form-accueil form-genres-accueil ">
-                    <option name="genre" value="genre"><span class="list-accueil">genre</span></option>
-                    <option name="jazz" value="jazz" id="jazz">jazz</option>
-                    <option name="pop" value="pop" id="pop">pop</option>
+                    <option name="genre" value="genre">Genres</option>
+                    <option name="jazz" value="jazz" id="jazz">Jazz</option>
+                    <option name="pop" value="pop" id="pop">Pop</option>
                     <option name="rock" value="rock" id="rock">Rock</option>
                 </select>
                
@@ -21,7 +21,7 @@
                 </select> 
              
                 
-                <button type="submit" name="envoyerAccueil" class="form-submit-accueil"><img src="assets/css/img/search.png" alt=""></button>
+                <button type="submit" name="envoyerAccueil" class="search-submit-accueil"><img src="assets/css/img/search.png" alt=""></button>
                
             </div>
         </form>
