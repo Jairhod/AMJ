@@ -1,32 +1,9 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
 
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <title>Catalogue</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-
-  <!-- My LESS file -->
-  <link rel="stylesheet" type="text/css" href="./style/main.less">
-
-</head>
-<body>
-  <header>
-    <nav>
-      <div><img src="http://amjprod.com/content/uploads/2014/11/Logo_Couleur_vecto.png" width="100" alt="logo"></div>
-      <ul>
-        <li><a href="">Le Label</a></li>
-        <li><a href="">Notre Catalogue</a></li>
-        <li><a href="">Actus</a></li>
-        <li><a href="">Devis</a></li>
-        <li><a href="">Contact</a></li>
-      </ul>
-    </nav>
+  <?php
+    require_once('private/view/head.php');
+    require_once('private/view/nav.php');
+  ?>
+<link rel="stylesheet" type="text/css" href="assets/css/style-do.css">
 
   </header>
 
@@ -52,25 +29,28 @@
             
               <section>
 
-                <h2>Nom Artiste</h2>
-                  
-                  <img src="" alt=""/>
+                <h2>BLACKOUT BAND</h2>
+                <div class="container">
+                <div class="jumbotron">
                   <div class="row">
-                  <div class="col-md-8">
-                  <article>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam error repudiandae eius temporibus accusamus aut saepe reiciendis molestiae consequuntur, magni dicta ratione ea eveniet dolor, nisi dolorem aspernatur quis. Adipisci.</p>
-                  </article>
-                  </div>
-                  <div class="col-md-4">lecteur audio</div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-4">video</div>
-                    <div class="col-md-4">video</div>
-                    <div class="col-md-4">video</div>
-                  </div>
-                  <div class="devis-btn">
-                    <a href="#!">Simuler un devis</a>
-                  </div>
+                    <div class="col-md-4">
+                      <img src="./assets/img/rio-7.jpg" alt="blackout band" width=400>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam error repudiandae eius temporibus accusamus aut saepe reiciendis molestiae consequuntur, magni dicta ratione ea eveniet dolor, nisi dolorem aspernatur quis. Adipisci.</p>
+                      <div class="col-md-8">
+                      <article>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam error repudiandae eius temporibus accusamus aut saepe reiciendis molestiae consequuntur, magni dicta ratione ea eveniet dolor, nisi dolorem aspernatur quis. Adipisci.</p>
+                      </article>
+                      </div>
+                      <div class="col-md-4">lecteur audio</div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-4">video</div>
+                        <div class="col-md-4">video</div>
+                        <div class="col-md-4">video</div>
+                      </div>
+                      <div class="devis-btn">
+                        <a href="#!">Simuler un devis</a>
+                      </div>
 
                 
               </section>
