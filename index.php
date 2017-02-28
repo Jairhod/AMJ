@@ -8,6 +8,7 @@
     require_once('private/view/section-accueil-contact.php');
     require_once('private/view/footer.php');
 ?>
+<<<<<<< HEAD
 
     
     
@@ -15,3 +16,5 @@
     
 
   
+=======
+>>>>>>> origin/jo
