@@ -90,6 +90,7 @@ div.borderXwidth a:hover:before, div.borderXwidth a:hover:after
 
 /* SECTION RECHERCHE ACCUEIL =================== */
 
+
 #recherche-accueil {
     background-image: url(img/concert-AMJ.jpg);
     width: 100%;
@@ -132,10 +133,6 @@ button.form-control.form-submit-accueil {
 }
 
 select.form-accueil {
-    appearance: none;
-}
-
-.form-accueil {
     background-color: transparent;
     border-radius: 0px;
     border: white solid 2px;
@@ -147,17 +144,17 @@ width: 15%;
 }
 
 
-.form-submit-accueil {
+.search-submit-accueil {
     background-color: transparent;
     border: 0;
     padding-left: 2em;
 }
 
-option {
-    background-color: rgba(0, 0, 0, 0.1);
-    color: white;
-}
 
+option[value]{
+    background-color: disabled;
+    color: #3F4F5E;
+}
 
 /* SECTION ACCUEIL DESCRIPTIF =============== */
 
