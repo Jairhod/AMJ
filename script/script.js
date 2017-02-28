@@ -3,3 +3,6 @@ if (typeof jQuery == "undefined"){
 }else{
 	console.log('Javascript is linked & jQuery is installed :)')
 }
+
+// SCRIPT LISTE DEROULANTE ACCUEIL 
+
