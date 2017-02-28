@@ -4,7 +4,7 @@
 
   <!-- Required meta tags -->
   <meta charset="utf-8">
-  <title>AMJ</title>
+  <title>AMJ Productions</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
 
