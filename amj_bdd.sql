@@ -152,7 +152,7 @@ CREATE TABLE `videos` (
   `cheminVideo` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-
+--
 -- Dumping data for table `videos`
 --
 
@@ -161,7 +161,6 @@ INSERT INTO `videos` (`id`, `idArtiste`, `cheminVideo`) VALUES
 (2, 3, 'https://youtu.be/Ffo4ZxWfEGs');
 
 --
-
 -- Indexes for dumped tables
 --
 
