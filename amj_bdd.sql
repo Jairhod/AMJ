@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 28, 2017 at 03:58 PM
+-- Generation Time: Feb 28, 2017 at 05:24 PM
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 5.5.38
 
@@ -42,8 +42,7 @@ CREATE TABLE `artistes` (
 --
 
 INSERT INTO `artistes` (`id`, `nomArtiste`, `cheminImagePrincipale`, `descriptionArtiste`, `artistesLies`) VALUES
-(1, 'Quel classe MySQL !', 'assets/img/melons.jpg', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod dicta distinctio voluptates eaque libero ullam inventore totam vero maxime accusantium doloribus voluptatibus, amet ipsum in aperiam rem iusto debitis quasi.', '6'),
-(2, 'Ho non c''est trop dur !', 'assets/img/melons.jpg', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod dicta distinctio voluptates eaque libero ullam inventore totam vero maxime accusantium doloribus voluptatibus, amet ipsum in aperiam rem iusto debitis quasi.', '9');
+(3, 'Blackout Band', 'assets/media/img/BLACKOUT-BAND-01.jpg', 'C’est sur les scènes et clubs du sud de la France que les quatre membres du groupe BACKOUT se sont rencontrés afin de rendre hommage au plus grandes voix féminines de la SOUL et du R&B.\r\n\r\nEmile MÉLENCHON (guitare et arrangements), Arnaud PACINI (basse) et Marc BELLION (batterie), Andréa CAPARROS (Piano et choeurs) venant tout juste d’intégrer la formation, accompagnent Nicole LISE (chant), incarnant à elle seule toutes les qualités nécessaires à l’interprétation de ce répertoire pour nous faire voyager dans le temps.\r\n\r\nD’ARETHA FRANKLIN à BEYONCE en passant par SHAKA KHAN, ERYKA BADU et bien d’autres, le BLACKOUT Band vous fera partager leur énergie communicative.', 'soul');
 
 -- --------------------------------------------------------
 
@@ -85,6 +84,13 @@ CREATE TABLE `genres` (
   `idArtiste` int(11) NOT NULL,
   `nomGenre` enum('Festivals','Soul-Funk-Blues','Tribute','Duo-Trio-Quartet','Dancefloor','Strolling','Orchestres','Jazz','World Music','Magie') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `genres`
+--
+
+INSERT INTO `genres` (`id`, `idArtiste`, `nomGenre`) VALUES
+(1, 3, 'Soul-Funk-Blues');
 
 -- --------------------------------------------------------
 
@@ -146,6 +152,14 @@ CREATE TABLE `videos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
+-- Dumping data for table `videos`
+--
+
+INSERT INTO `videos` (`id`, `idArtiste`, `cheminVideo`) VALUES
+(1, 3, 'https://youtu.be/Fz3DDoNq5Wk'),
+(2, 3, 'https://youtu.be/Ffo4ZxWfEGs');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -199,7 +213,7 @@ ALTER TABLE `videos`
 -- AUTO_INCREMENT for table `artistes`
 --
 ALTER TABLE `artistes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `audio`
 --
@@ -214,7 +228,7 @@ ALTER TABLE `contact`
 -- AUTO_INCREMENT for table `genres`
 --
 ALTER TABLE `genres`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `images`
 --
@@ -229,7 +243,7 @@ ALTER TABLE `utilisateur`
 -- AUTO_INCREMENT for table `videos`
 --
 ALTER TABLE `videos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
