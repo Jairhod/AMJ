@@ -2,10 +2,10 @@
 -- version 4.5.1
 -- http://www.phpmyadmin.net
 --
--- Client :  127.0.0.1
--- Généré le :  Mar 28 Février 2017 à 15:12
--- Version du serveur :  10.1.13-MariaDB
--- Version de PHP :  7.0.6
+-- Host: 127.0.0.1
+-- Generation Time: Feb 28, 2017 at 03:58 PM
+-- Server version: 10.1.19-MariaDB
+-- PHP Version: 5.5.38
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,15 +17,18 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `amj_bdd`
+-- Database: `amj_bdd`
 --
+CREATE DATABASE IF NOT EXISTS `amj_bdd` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `amj_bdd`;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `artistes`
+-- Table structure for table `artistes`
 --
 
+DROP TABLE IF EXISTS `artistes`;
 CREATE TABLE `artistes` (
   `id` int(11) NOT NULL,
   `nomArtiste` varchar(255) NOT NULL,
@@ -35,7 +38,7 @@ CREATE TABLE `artistes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Contenu de la table `artistes`
+-- Dumping data for table `artistes`
 --
 
 INSERT INTO `artistes` (`id`, `nomArtiste`, `cheminImagePrincipale`, `descriptionArtiste`, `artistesLies`) VALUES
@@ -45,9 +48,10 @@ INSERT INTO `artistes` (`id`, `nomArtiste`, `cheminImagePrincipale`, `descriptio
 -- --------------------------------------------------------
 
 --
--- Structure de la table `audio`
+-- Table structure for table `audio`
 --
 
+DROP TABLE IF EXISTS `audio`;
 CREATE TABLE `audio` (
   `id` int(11) NOT NULL,
   `idArtiste` int(11) NOT NULL,
@@ -57,9 +61,10 @@ CREATE TABLE `audio` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `contact`
+-- Table structure for table `contact`
 --
 
+DROP TABLE IF EXISTS `contact`;
 CREATE TABLE `contact` (
   `id` int(11) NOT NULL,
   `nom` varchar(255) NOT NULL,
@@ -71,21 +76,23 @@ CREATE TABLE `contact` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `genres`
+-- Table structure for table `genres`
 --
 
+DROP TABLE IF EXISTS `genres`;
 CREATE TABLE `genres` (
   `id` int(11) NOT NULL,
   `idArtiste` int(11) NOT NULL,
-  `nomGenre` varchar(255) NOT NULL
+  `nomGenre` enum('Festivals','Soul-Funk-Blues','Tribute','Duo-Trio-Quartet','Dancefloor','Strolling','Orchestres','Jazz','World Music','Magie') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `images`
+-- Table structure for table `images`
 --
 
+DROP TABLE IF EXISTS `images`;
 CREATE TABLE `images` (
   `id` int(11) NOT NULL,
   `idArtiste` int(11) NOT NULL,
@@ -95,9 +102,10 @@ CREATE TABLE `images` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `utilisateur`
+-- Table structure for table `utilisateur`
 --
 
+DROP TABLE IF EXISTS `utilisateur`;
 CREATE TABLE `utilisateur` (
   `id` int(11) NOT NULL,
   `email` varchar(255) NOT NULL,
@@ -108,7 +116,7 @@ CREATE TABLE `utilisateur` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Contenu de la table `utilisateur`
+-- Dumping data for table `utilisateur`
 --
 
 INSERT INTO `utilisateur` (`id`, `email`, `password`, `niveau`, `cleValidation`, `dateCreation`) VALUES
@@ -127,9 +135,10 @@ INSERT INTO `utilisateur` (`id`, `email`, `password`, `niveau`, `cleValidation`,
 -- --------------------------------------------------------
 
 --
--- Structure de la table `videos`
+-- Table structure for table `videos`
 --
 
+DROP TABLE IF EXISTS `videos`;
 CREATE TABLE `videos` (
   `id` int(11) NOT NULL,
   `idArtiste` int(11) NOT NULL,
@@ -137,87 +146,87 @@ CREATE TABLE `videos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Index pour les tables exportées
+-- Indexes for dumped tables
 --
 
 --
--- Index pour la table `artistes`
+-- Indexes for table `artistes`
 --
 ALTER TABLE `artistes`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `audio`
+-- Indexes for table `audio`
 --
 ALTER TABLE `audio`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `contact`
+-- Indexes for table `contact`
 --
 ALTER TABLE `contact`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `genres`
+-- Indexes for table `genres`
 --
 ALTER TABLE `genres`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `images`
+-- Indexes for table `images`
 --
 ALTER TABLE `images`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `utilisateur`
+-- Indexes for table `utilisateur`
 --
 ALTER TABLE `utilisateur`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `videos`
+-- Indexes for table `videos`
 --
 ALTER TABLE `videos`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT pour les tables exportées
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT pour la table `artistes`
+-- AUTO_INCREMENT for table `artistes`
 --
 ALTER TABLE `artistes`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
--- AUTO_INCREMENT pour la table `audio`
+-- AUTO_INCREMENT for table `audio`
 --
 ALTER TABLE `audio`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT pour la table `contact`
+-- AUTO_INCREMENT for table `contact`
 --
 ALTER TABLE `contact`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT pour la table `genres`
+-- AUTO_INCREMENT for table `genres`
 --
 ALTER TABLE `genres`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT pour la table `images`
+-- AUTO_INCREMENT for table `images`
 --
 ALTER TABLE `images`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT pour la table `utilisateur`
+-- AUTO_INCREMENT for table `utilisateur`
 --
 ALTER TABLE `utilisateur`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
--- AUTO_INCREMENT pour la table `videos`
+-- AUTO_INCREMENT for table `videos`
 --
 ALTER TABLE `videos`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
