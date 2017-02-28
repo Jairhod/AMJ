@@ -1,36 +1,4 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
 
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <title>Catalogue</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-
-  <!-- My LESS file -->
-  <link rel="stylesheet" type="text/css" href="./style/main.less">
-
-</head>
-<body>
-  <header>
-    <nav>
-      <div><img src="http://amjprod.com/content/uploads/2014/11/Logo_Couleur_vecto.png" width="100" alt="logo"></div>
-      <ul>
-        <li><a href="">Le Label</a></li>
-        <li><a href="">Notre Catalogue</a></li>
-        <li><a href="">Actus</a></li>
-        <li><a href="">Devis</a></li>
-        <li><a href="">Contact</a></li>
-      </ul>
-    </nav>
-
-  </header>
-
-  <main>
 
     <h1>Le catalogue d'AMJ</h1>
       <div id="secondary_nav">
@@ -85,25 +53,3 @@
       </div>
 
 
-
-  </main> 
-
-  <footer>
-
-  <div>&copy;Amj Productions</div>
-
-  </footer>
-
-  <!-- jQuery first, then Tether, then Bootstrap JS. -->
-  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.min.js" integrity="sha256-nzh8GLE0fQjJPBBicaZCrsbQS9YUgZCThGOct+WrQgY=" crossorigin="anonymous"></script>
-
-  <!-- My javascript file -->
-  <script type="text/javascript" src="./script/script.js"></script>
-</body>
-</html>
