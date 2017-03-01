@@ -9,6 +9,7 @@
                 </div>
                <form action="" id="form-bo" method="GET">
                    <select>
+                        <option value=""  id="" name=""></option>
                        <option value="profil"  id="profil" name="profil">Profil</option>
                        <option value="parametres" id="parametres" name="parametres">Paramètres</option>
                        <option value="deconnexion" id="deconnexion" name="deconnexion">Déconnnexion</option>

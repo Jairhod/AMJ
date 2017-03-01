@@ -1,8 +1,8 @@
-if (typeof jQuery == "undefined"){
-	console.log('No jQuery');
-}else{
-	console.log('Javascript is linked & jQuery is installed :)')
-}
+console.log('Javascript is linked & jQuery is installed :)')
 
-// SCRIPT LISTE DEROULANTE ACCUEIL 
+/* Script Prallax Accueil ========== */
 
+
+$(document).ready(function(){
+      $('#recherche-accueil').parallax();
+    });
