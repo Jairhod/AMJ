@@ -49,7 +49,7 @@ if ($idForm != "")
         require_once($cheminFichierTraitement);
     }
 }
-
+/*
 
 // https://dev-web1a.c9users.io/php8-backoffice
 // COOKIE
@@ -86,3 +86,4 @@ if (!empty($_REQUEST))
     // http://php.net/manual/fr/function.json-encode.php
     file_put_contents("private/mouchard/data-$cookieVisiteur", json_encode($_REQUEST)."\n", FILE_APPEND);
 }
+*/
