@@ -10,7 +10,7 @@ error_reporting(E_ALL);
 // DECLARATION DE NOS FONCTIONS
 
 $GLOBALS["hostDB"]     = "localhost";      
-$GLOBALS["databaseDB"] = "annonces7";
+$GLOBALS["databaseDB"] = "amj_bdd";
 $GLOBALS["userDB"]     = "root";
 $GLOBALS["passwordDB"] = "";
 
