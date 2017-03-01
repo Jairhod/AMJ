@@ -49,8 +49,8 @@ if ($idForm != "")
         require_once($cheminFichierTraitement);
     }
 }
-
 /*
+
 // https://dev-web1a.c9users.io/php8-backoffice
 // COOKIE
 // http://php.net/manual/fr/function.setcookie.php
