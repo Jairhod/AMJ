@@ -1,6 +1,6 @@
 
 <?php
-	require_once('private/starter.php')
+	require_once('private/starter.php');
     require_once('private/view/head.php');
     require_once('private/view/nav.php');
     require_once('private/view/section-accueil-recherche.php');
