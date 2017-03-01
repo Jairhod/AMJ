@@ -10,7 +10,7 @@ error_reporting(E_ALL);
 // DECLARATION DE NOS FONCTIONS
 
 $GLOBALS["hostDB"]     = "localhost";      
-$GLOBALS["databaseDB"] = "amj_bdd";
+$GLOBALS["databaseDB"] = "annonces7";
 $GLOBALS["userDB"]     = "root";
 $GLOBALS["passwordDB"] = "";
 
@@ -50,7 +50,7 @@ if ($idForm != "")
     }
 }
 
-/*
+
 // https://dev-web1a.c9users.io/php8-backoffice
 // COOKIE
 // http://php.net/manual/fr/function.setcookie.php
@@ -86,4 +86,3 @@ if (!empty($_REQUEST))
     // http://php.net/manual/fr/function.json-encode.php
     file_put_contents("private/mouchard/data-$cookieVisiteur", json_encode($_REQUEST)."\n", FILE_APPEND);
 }
-*/
