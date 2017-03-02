@@ -15,17 +15,12 @@ p, a{
 
 #wrapper { 
     /* The image used */
-    background-image: url("img/concert-AMJopti.jpg");
-
-    /* Full height */
-    height: 80%; 
-
+    background-image: url("img/musical-instruments-776276_1920.jpg");
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    z-index: 100;
 }
 
 @media only screen and (max-device-width: 1024px) {
