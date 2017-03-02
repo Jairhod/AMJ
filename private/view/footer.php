@@ -11,11 +11,5 @@
             </div>
         </div>
   </footer>
-  <!-- jQuery first, then Tether, then Bootstrap JS. -->
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>    
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-  <!-- My javascript file -->
-  <script type="text/javascript" src="./script/script.js"></script>
 </body>
 </html>

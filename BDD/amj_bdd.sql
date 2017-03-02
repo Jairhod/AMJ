@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 02, 2017 at 05:01 PM
+-- Generation Time: Mar 02, 2017 at 10:03 PM
 -- Server version: 10.1.19-MariaDB
--- PHP Version: 5.5.38
+-- PHP Version: 5.6.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -32,6 +32,7 @@ DROP TABLE IF EXISTS `artistes`;
 CREATE TABLE `artistes` (
   `idArtiste` int(11) NOT NULL,
   `nomArtiste` varchar(255) NOT NULL,
+  `nomGenre` varchar(255) NOT NULL,
   `cheminImagePrincipale` varchar(1000) NOT NULL,
   `descriptionArtiste` text NOT NULL,
   `artistesLies` varchar(100) NOT NULL
@@ -41,8 +42,12 @@ CREATE TABLE `artistes` (
 -- Dumping data for table `artistes`
 --
 
-INSERT INTO `artistes` (`idArtiste`, `nomArtiste`, `cheminImagePrincipale`, `descriptionArtiste`, `artistesLies`) VALUES
-(3, 'Blackout Band', 'assets/media/img/BLACKOUT-BAND-01.jpg', 'C’est sur les scènes et clubs du sud de la France que les quatre membres du groupe BACKOUT se sont rencontrés afin de rendre hommage au plus grandes voix féminines de la SOUL et du R&B.\r\n\r\nEmile MÉLENCHON (guitare et arrangements), Arnaud PACINI (basse) et Marc BELLION (batterie), Andréa CAPARROS (Piano et choeurs) venant tout juste d’intégrer la formation, accompagnent Nicole LISE (chant), incarnant à elle seule toutes les qualités nécessaires à l’interprétation de ce répertoire pour nous faire voyager dans le temps.\r\n\r\nD’ARETHA FRANKLIN à BEYONCE en passant par SHAKA KHAN, ERYKA BADU et bien d’autres, le BLACKOUT Band vous fera partager leur énergie communicative.', 'soul');
+INSERT INTO `artistes` (`idArtiste`, `nomArtiste`, `nomGenre`, `cheminImagePrincipale`, `descriptionArtiste`, `artistesLies`) VALUES
+(3, 'BLACKOUT BAND', 'SOUL-FUNK-BLUES', 'assets/media/img/BLACKOUT-BAND-01.jpg', 'C’est sur les scènes et clubs du sud de la France que les quatre membres du groupe BACKOUT se sont rencontrés afin de rendre hommage au plus grandes voix féminines de la SOUL et du R&B.\r\n\r\nEmile MÉLENCHON (guitare et arrangements), Arnaud PACINI (basse) et Marc BELLION (batterie), Andréa CAPARROS (Piano et choeurs) venant tout juste d’intégrer la formation, accompagnent Nicole LISE (chant), incarnant à elle seule toutes les qualités nécessaires à l’interprétation de ce répertoire pour nous faire voyager dans le temps.\r\n\r\nD’ARETHA FRANKLIN à BEYONCE en passant par SHAKA KHAN, ERYKA BADU et bien d’autres, le BLACKOUT Band vous fera partager leur énergie communicative.', 'soul'),
+(4, 'IGUANA VAN', 'POP-ROCK-ACTU', '', 'Iguana Van est un groupe marseillais fondé en 2009 par John, Max et Mathieu, amis d’enfance. Apres deux EP auto-produits, le groupe remporte l’edition 2012 du tremplin Massilia Rock qui lui permet d’être programmé sur la scène du Immecke Rock Festival en Allemagne.\r\n \r\nIguana Van distille une musique pop mélodieuse enveloppée de groove, qui prend toute sa dimension en live grâce à un jeu de scène énergique. En 2013, la formation remporte le tremplin Sounds of Marseille et joue en première partie d’Electric Guest.\r\n \r\n2014 voit l’arrivée de Dorian au poste de batteur. Iguana Van reprend le chemin des studios et enregistre un nouvel E.P, Heroes, Shadows, sous le label Two Records, accompagné de Christophe Moura à la trompette et John Massa au saxophone.', 'pop'),
+(5, 'QUARTIERS NORD', 'POP-ROCK-ACTU', '', 'Fort de ses 16 albums bigarrés, de sa fabuleuse tétralogie d’opérettes-rock-­marseillaises, de ses revues loufoques et autres comédies musicales et sociales, QUARTIERS NORD, groupe ô combien atypique qui fêtera bientôt ses 40 ans d’existence, fait désormais ­partie du patrimoine massaliote.\r\nFaisant plus que jamais le lien entre ego-histoire et le contexte qui l’a vu naître,\r\nil ­poursuit son œuvre musicale inclassable en nous conviant au BALÈTI SOCIAL CLUB, un concept novateur à la fois festif et déjanté, à la fibre sociale ­revendiquée et aux influences « ­world  protéiformes ». Ce joyeux maelström ­musical se ­conjuguera à l’envi dans un esprit convivial et interactif, avec des invités-­surprise issus de tous horizons qui apporteront à chaque prestation une touche unique.', 'pop'),
+(6, 'JOHN MASSA \nTRIPBAND', 'SOUL-FUNK-BLUES', '', 'Le groupe du saxophoniste John MASSA est basé à Marseille, ville native de ses membres, qui représente un véritable laboratoire de rencontre musicales.\n\nLes compositions du saxophoniste, explorantes courants du jazz, du groove et de la World Music sont servies par des musiciens de très fortes personnalités qui viennent d’univers musicaux riches et variés.', 'soul'),
+(7, 'THE GODFATHERS', 'SOUL-FUNK-BLUES', '', 'Emmené par  Jean GOMEZ, leader charismatique et chanteur dont la voix évoque celle des grands artistes de la SOUL MUSIC et du RHTHM''N''BLUES,\r\nLes Godfathers, restituent avec brio, fidélité et  authenticité un grand nombre de standards puisé dans le répertoire des monstres sacrés de la musique afro-américaine des années 60 et 70.', 'soul');
 
 -- --------------------------------------------------------
 
@@ -71,26 +76,6 @@ CREATE TABLE `contacts` (
   `message` text NOT NULL,
   `date` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `genres`
---
-
-DROP TABLE IF EXISTS `genres`;
-CREATE TABLE `genres` (
-  `idGenre` int(11) NOT NULL,
-  `idArtiste` int(11) NOT NULL,
-  `nomGenre` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `genres`
---
-
-INSERT INTO `genres` (`idGenre`, `idArtiste`, `nomGenre`) VALUES
-(1, 3, 'Soul-Funk-Blues');
 
 -- --------------------------------------------------------
 
@@ -174,12 +159,6 @@ ALTER TABLE `contacts`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `genres`
---
-ALTER TABLE `genres`
-  ADD PRIMARY KEY (`idGenre`);
-
---
 -- Indexes for table `images`
 --
 ALTER TABLE `images`
@@ -205,7 +184,7 @@ ALTER TABLE `videos`
 -- AUTO_INCREMENT for table `artistes`
 --
 ALTER TABLE `artistes`
-  MODIFY `idArtiste` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idArtiste` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `audios`
 --
@@ -216,11 +195,6 @@ ALTER TABLE `audios`
 --
 ALTER TABLE `contacts`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `genres`
---
-ALTER TABLE `genres`
-  MODIFY `idGenre` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `images`
 --
