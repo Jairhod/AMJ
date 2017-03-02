@@ -18,6 +18,8 @@
         
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         
+        <script src="script/jquery.parallax-scroll.js" type="text/javascript"></script>
+        
 
 
   <!-- My LESS file -->
@@ -25,4 +27,5 @@
   <link rel="stylesheet" type="text/css" href="assets/css/style-jo.css">
 </head>
 <body>
+ <div id="wrapper">
   <header>

@@ -13,7 +13,7 @@ p, a{
     padding: 0 0 0 0;
 }
 
-body { 
+#wrapper { 
     /* The image used */
     background-image: url("img/concert-AMJopti.jpg");
 
