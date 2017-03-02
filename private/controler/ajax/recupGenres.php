@@ -1,6 +1,8 @@
 <?php
 
 $artiste = strip_tags($_GET['artiste']);
+
+
 //file_put_contents('recupGenres.txt', $artiste);
 $bdd = new PDO('mysql:host=localhost;dbname=amj_bdd;charset=utf8', 'root', '');
 
@@ -15,18 +17,12 @@ $stmtGenres->execute();
 
 $listeGenres = $stmtGenres->fetchAll(PDO::FETCH_ASSOC);
 
-//print_r($listeGenres);
 
 foreach($listeGenres as $sousCat)
 
 {
 	echo '<option value="'.$sousCat['idGenre']. '">' .$sousCat['nomGenre'].'</option>';
 }
-
-
-
-
-
 
 
 
