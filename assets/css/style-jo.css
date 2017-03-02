@@ -1,7 +1,7 @@
 /* STYLE GENERAL ============================ */
 @import url('https://fonts.googleapis.com/css?family=Raleway|Montserrat|Ubuntu');
 
-h1, h2, h3{
+h1, h2, h3, h4, h5{
     font-family: 'Montserrat', sans-serif !important;
 }
 
@@ -12,13 +12,34 @@ p, a{
 .full-width {
     padding: 0 0 0 0;
 }
+
+#wrapper { 
+    /* The image used */
+    background-image: url("img/concert-AMJopti.jpg");
+
+    /* Full height */
+    height: 80%; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 100;
+}
+
+@media only screen and (max-device-width: 1024px) {
+    #recherche-accueil {
+        background-attachment: scroll;
+    }
+}
 /* BOUTONS ================================== */
 
 
 
 /* NAV BAR ================================== */
 .navbar-default {
-    background-color: #090707;
+    background-color: transparent;
     border: none;
     
 }
@@ -90,28 +111,10 @@ div.borderXwidth a:hover:before, div.borderXwidth a:hover:after
 
 /* SECTION RECHERCHE ACCUEIL =================== */
 
-#recherche-accueil { 
-    /* The image used */
-    background-image: url("img/concert-AMJ.jpg");
-
-    /* Full height */
-    height: 80%; 
-
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-@media only screen and (max-device-width: 1024px) {
-    #recherche-accueil {
-        background-attachment: scroll;
-    }
-}
 
 
-/*# versions sans parallax :
+
+/*# version sans parallax :
 
 recherche-accueil {
     background-image: url(img/concert-AMJ.jpg);
