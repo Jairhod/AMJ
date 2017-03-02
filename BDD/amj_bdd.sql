@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 02, 2017 at 02:05 PM
+-- Generation Time: Mar 02, 2017 at 05:01 PM
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 5.5.38
 
@@ -80,7 +80,7 @@ CREATE TABLE `contacts` (
 
 DROP TABLE IF EXISTS `genres`;
 CREATE TABLE `genres` (
-  `id` int(11) NOT NULL,
+  `idGenre` int(11) NOT NULL,
   `idArtiste` int(11) NOT NULL,
   `nomGenre` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -89,7 +89,7 @@ CREATE TABLE `genres` (
 -- Dumping data for table `genres`
 --
 
-INSERT INTO `genres` (`id`, `idArtiste`, `nomGenre`) VALUES
+INSERT INTO `genres` (`idGenre`, `idArtiste`, `nomGenre`) VALUES
 (1, 3, 'Soul-Funk-Blues');
 
 -- --------------------------------------------------------
@@ -177,7 +177,7 @@ ALTER TABLE `contacts`
 -- Indexes for table `genres`
 --
 ALTER TABLE `genres`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`idGenre`);
 
 --
 -- Indexes for table `images`
@@ -220,7 +220,7 @@ ALTER TABLE `contacts`
 -- AUTO_INCREMENT for table `genres`
 --
 ALTER TABLE `genres`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idGenre` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `images`
 --
