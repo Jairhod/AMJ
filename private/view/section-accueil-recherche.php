@@ -8,7 +8,7 @@
                
                 <select name="genres" id="genres" class="form-control form-accueil  ">
                     <div class="form-accueil-liste">
-                        <option name="genre" value="genre" >Genres</option>
+                        <option name="genre" value="genre" selected>Genres</option>
                     </div>
                     <div class="form-accueil-liste">
                         <option name="jazz" value="jazz" id="jazz">Jazz</option>
