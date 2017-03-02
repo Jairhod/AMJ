@@ -6,11 +6,19 @@
             <input type="hidden" name="idForm" value="choixAccueil">
             <div class="bla">
                
-                <select name="genres" id="genres" class="form-control form-accueil form-genres-accueil ">
-                    <option name="genre" value="genre"><span class="list-accueil">genre</span></option>
-                    <option name="jazz" value="jazz" id="jazz">jazz</option>
-                    <option name="pop" value="pop" id="pop">pop</option>
-                    <option name="rock" value="rock" id="rock">Rock</option>
+                <select name="genres" id="genres" class="form-control form-accueil  ">
+                    <div class="form-accueil-liste">
+                        <option name="genre" value="genre" selected>Genres</option>
+                    </div>
+                    <div class="form-accueil-liste">
+                        <option name="jazz" value="jazz" id="jazz">Jazz</option>
+                    </div>
+                    <div class="form-accueil-liste">
+                        <option name="pop" value="pop" id="pop">Pop</option>
+                    </div>
+                    <div class="form-accueil-liste">
+                        <option name="rock" value="rock" id="rock">Rock</option>
+                    </div>
                 </select>
                
                 <select name="artistes" class="form-control form-accueil form-artistes-accueil">
@@ -21,7 +29,7 @@
                 </select> 
              
                 
-                <button type="submit" name="envoyerAccueil" class="form-submit-accueil"><img src="assets/css/img/search.png" alt=""></button>
+                <button type="submit" name="envoyerAccueil" class="search-submit-accueil"><img src="assets/css/img/search.png" alt=""></button>
                
             </div>
         </form>
