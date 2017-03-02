@@ -6,34 +6,31 @@
             <input type="hidden" name="idForm" value="choixAccueil">
             <div class="bla">
                
-                <select name="genres" id="genres" class="form-control form-accueil  ">
-                    <div class="form-accueil-liste">
-                        <option name="genre" value="genre" selected>Genres</option>
-                    </div>
-                    <div class="form-accueil-liste">
-                        <option name="jazz" value="jazz" id="jazz">Jazz</option>
-                    </div>
-                    <div class="form-accueil-liste">
-                        <option name="pop" value="pop" id="pop">Pop</option>
-                    </div>
-                    <div class="form-accueil-liste">
-                        <option name="rock" value="rock" id="rock">Rock</option>
-                    </div>
+                <select name="genres" id="genres" class="form-control form-accueil">                    
+                    <option value="2">Pop</option>
+                    <option value="3">Soul-Funk-Blues</option>
+
                 </select>
-               
-                <select name="artistes" class="form-control form-accueil form-artistes-accueil">
-                    <option name="artistes" value="artistes">artistes</option>
-                    <option name="bobdylan" value="bobdylan" id="bobdylan">bobdylan</option>
-                    <option name="ledzeppelin" value="ledzeppelin" id="ledzeppelin">ledzeppelin</option>
-                    <option name="madonna" value="madonna" id="madonna">madonna</option>
+              
+                <select name="artistes" id="artistes" class="form-control form-accueil form-artistes-accueil">
+                    
                 </select> 
-             
-                
+                             
                 <button type="submit" name="envoyerAccueil" class="search-submit-accueil"><img src="assets/css/img/search.png" alt=""></button>
-               
+             
             </div>
         </form>
       </section>
     </div>
 
-
+    <script>
+        $(document).ready(function(){
+            $('#genres').on('change', function(){
+               // alert($(this).val());
+                $.get('http://localhost/myphp/github/amj/private/controler/ajax/recupGenres.php', {artiste: $(this).val()}, function(data){
+                  //  alert(data);
+                   $('#artistes').html(data);
+                });
+            });
+        });
+    </script>
