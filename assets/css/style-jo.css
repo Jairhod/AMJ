@@ -99,7 +99,7 @@ div.borderXwidth a:hover:before, div.borderXwidth a:hover:after
     background-image: url("img/audience-opti.jpg");
 
     /* Full height */
-    height: 80%; 
+    height: 100%; 
 
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
@@ -128,7 +128,6 @@ recherche-accueil {
 
 #recherche-accueil h1 {
     margin: 0 0 0 0;
-    max-height: 900px;
     text-align: center;
     padding-top: 10%;
     color: #FFFFF3;
