@@ -107,6 +107,7 @@ div.borderXwidth a:hover:before, div.borderXwidth a:hover:after
     background-repeat: no-repeat;
     background-size: cover;
     height: 700px;
+    overflow: hidden;
 }
 
 @media only screen and (max-device-width: 1024px) {
