@@ -13,33 +13,14 @@ p, a{
     padding: 0 0 0 0;
 }
 
-#wrapper { 
-    /* The image used */
-    background-image: url("img/concert-AMJopti.jpg");
 
-    /* Full height */
-    height: 80%; 
-
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    z-index: 100;
-}
-
-@media only screen and (max-device-width: 1024px) {
-    #recherche-accueil {
-        background-attachment: scroll;
-    }
-}
 /* BOUTONS ================================== */
 
 
 
 /* NAV BAR ================================== */
 .navbar-default {
-    background-color: transparent;
+    background-color: black;
     border: none;
     
 }
@@ -110,8 +91,21 @@ div.borderXwidth a:hover:before, div.borderXwidth a:hover:after
 }
 
 /* SECTION RECHERCHE ACCUEIL =================== */
+#recherche-accueil { 
+    /* The image used */
+    background-image: url("img/musical-instruments-776276_1920.jpg");
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
-
+@media only screen and (max-device-width: 1024px) {
+    #recherche-accueil {
+        background-attachment: scroll;
+    }
+}
 
 
 /*# version sans parallax :
@@ -126,9 +120,8 @@ recherche-accueil {
 
 #recherche-accueil h1 {
     margin-top: -20px;
-    max-height: 900px;
     text-align: center;
-    padding-top: 10%;
+    padding-top: 15%;
     color: #FFFFF3;
     font-weight: 600;
     font-size: 40px;
@@ -142,7 +135,7 @@ recherche-accueil {
 
 div .bla {
     text-align: center;
-    padding-bottom: 6em;
+    padding-bottom: 14em;
     padding-top: 3em;
 }
 
@@ -206,6 +199,8 @@ section#descriptif p {
 .descriptif-row {
     display:flex;
     flex-direction: row;
+    width: 90%;
+    margin: auto;
 }
 
 .descriptif-img {
