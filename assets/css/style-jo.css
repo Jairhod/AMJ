@@ -9,39 +9,17 @@ p, a{
     font-family: 'Ubuntu', sans-serif;', sans-serif !important;
 }
 
-.full-width {
-    padding: 0 0 0 0;
-}
 
-#wrapper { 
-    /* The image used */
-    background-image: url("img/concert-AMJopti.jpg");
 
-    /* Full height */
-    height: 80%; 
-
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    z-index: 100;
-}
-
-@media only screen and (max-device-width: 1024px) {
-    #recherche-accueil {
-        background-attachment: scroll;
-    }
-}
 /* BOUTONS ================================== */
 
 
 
 /* NAV BAR ================================== */
 .navbar-default {
-    background-color: transparent;
+    background-color: black;
     border: none;
-    
+    margin: 0;
 }
 
 .navbar {
@@ -112,6 +90,30 @@ div.borderXwidth a:hover:before, div.borderXwidth a:hover:after
 /* SECTION RECHERCHE ACCUEIL =================== */
 
 
+.full-width {
+    padding: 0 0 0 0;
+}
+
+#recherche-accueil { 
+    /* The image used */
+    background-image: url("img/audience-opti.jpg");
+
+    /* Full height */
+    height: 80%; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 700px;
+}
+
+@media only screen and (max-device-width: 1024px) {
+    #recherche-accueil {
+        background-attachment: scroll;
+    }
+}
 
 
 /*# version sans parallax :
@@ -125,7 +127,7 @@ recherche-accueil {
 }*/
 
 #recherche-accueil h1 {
-    margin-top: -20px;
+    margin: 0 0 0 0;
     max-height: 900px;
     text-align: center;
     padding-top: 10%;
@@ -182,6 +184,7 @@ select.form-control.form-accueil {
 
 
 /* SECTION ACCUEIL DESCRIPTIF =============== */
+
 
 section#descriptif {
     background-color: #3F4F5E;
