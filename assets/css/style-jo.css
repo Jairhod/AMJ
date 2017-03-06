@@ -106,7 +106,7 @@ div.borderXwidth a:hover:before, div.borderXwidth a:hover:after
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 700px;
+
 }
 
 @media only screen and (max-device-width: 1024px) {
@@ -168,48 +168,6 @@ select.form-control.form-accueil {
     background-color: transparent;
     border: 0;
     padding-left: 2em;
-}
-
-
-
-/* SECTION ACCUEIL DESCRIPTIF =============== */
-
-
-section#descriptif {
-    background-color: #3F4F5E;
-    padding: 3em 0;
-}
-
-section#descriptif h3 {
-    margin: auto;
-    font-size: 40px;
-    text-align: center;
-    margin-bottom: 1em;
-    color: white;
-}
-
-
-section#descriptif p {
-    margin-top: 1.5em;
-    color: white;
-    text-align: justify;
-}
-
-.descriptif-row {
-    display:flex;
-    flex-direction: row;
-}
-
-.descriptif-img {
-    text-align: center;   
-}
-
-.descriptif-img img {
-    width: 15%;
-}
-
-select-color{
-    background-color: red;
 }
 
 .accueil-styles {
@@ -317,6 +275,48 @@ a.btn:active {
 .accueil-styles.space {
     height: 4vh;
 }
+
+
+/* SECTION ACCUEIL DESCRIPTIF =============== */
+
+
+section#descriptif {
+    background-color: #3F4F5E;
+    padding: 3em 0;
+}
+
+section#descriptif h3 {
+    margin: auto;
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 1em;
+    color: white;
+}
+
+
+section#descriptif p {
+    margin-top: 1.5em;
+    color: white;
+    text-align: justify;
+}
+
+.descriptif-row {
+    display:flex;
+    flex-direction: row;
+}
+
+.descriptif-img {
+    text-align: center;   
+}
+
+.descriptif-img img {
+    width: 15%;
+}
+
+select-color{
+    background-color: red;
+}
+
 
 /* SECTION ACCUEIL LABEL ==================== */
 
