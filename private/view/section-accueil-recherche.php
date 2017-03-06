@@ -21,7 +21,7 @@
              
             </div>
         </form>
-        <div class="row acceuil-styles">
+        <div class="row accueil-styles">
             <div class="col">
                 <div class="paper">
                     <img class="poster" src="assets/css/img/jazz-199547_640.jpg"/>

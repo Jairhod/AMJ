@@ -212,20 +212,20 @@ select-color{
     background-color: red;
 }
 
-.acceuil-styles {
+.accueil-styles {
     display: flex;
     text-align: center;
     width: 80%;
     margin: auto;
 }
 
-.acceuil-styles .col {
+.accueil-styles .col {
     width: calc(100%/3);
     margin: 0 0.5em 0 0.5em;
 }
 
 
-.acceuil-styles .paper {
+.accueil-styles .paper {
     margin: 10vh auto;
     min-width: 20vw;
     max-width: 60vh;
@@ -236,36 +236,36 @@ select-color{
     text-align: center;
 }
 
-.acceuil-styles .paper:hover {
+.accueil-styles .paper:hover {
     box-shadow: 0 18px 35px rgba(50, 50, 90, 0.1), 0 8px 15px rgba(0, 0, 0, 0.07);
     transform: translateY(-1px);
 }
 
-.acceuil-styles img {
+.accueil-styles img {
     max-width: 100%;
     max-height: 100%;
     filter: grayscale(100%);
 }
 
-.acceuil-styles img:hover {
+.accueil-styles img:hover {
     max-width: 100%;
     max-height: 100%;
     filter: grayscale(0%);
     transition: all 0.7s;
 }
 
-.acceuil-styles .poster {
+.accueil-styles .poster {
     margin-bottom: 2vh;
 }
 
-.acceuil-styles h6 {
+.accueil-styles h6 {
     font-size: 2.6rem;
     color: #303336;
     letter-spacing: 1px;
     margin: 2vh 4vw;
 }
 
-.acceuil-styles h5 {
+.accueil-styles h5 {
     font-size: .8rem;
     color: #A0A6AB;
     letter-spacing: 2px;
@@ -275,7 +275,7 @@ select-color{
 }
 
 
-.acceuil-styles p {
+.accueil-styles p {
     margin: 2vh 8vw;
     text-align: center;
     padding-bottom: 1vh;
@@ -285,7 +285,7 @@ select-color{
     line-height: 1.25rem;
 }
 
-.acceuil-styles.btn,
+.accueil-styles.btn,
 a.btn {
     display: inline-block;
     text-transform: uppercase;
@@ -301,20 +301,20 @@ a.btn {
     color: white;
 }
 
-.acceuil-styles.btn,
+.accueil-styles.btn,
 a.btn:hover {
     background: #7C66FF;
     box-shadow: 0 7px 14px rgba(48, 51, 54, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
     transform: translateY(-1px);
 }
 
-.acceuil-styles.btn,
+.accueil-styles.btn,
 a.btn:active {
     box-shadow: 0 4px 6px rgba(48, 51, 54, 0.1), 0 1px 3px rgba(0, 0, 0, 0.12);
     transform: translateY(1px);
 }
 
-.acceuil-styles.space {
+.accueil-styles.space {
     height: 4vh;
 }
 
