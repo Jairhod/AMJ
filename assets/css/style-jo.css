@@ -359,7 +359,17 @@ section#descriptif p {
 select-color{
     background-color: red;
 }
-
+@media screen and (max-width: 640px)
+{
+    
+    .descriptif-row {
+        display: flex;
+        flex-direction: column;
+    }
+    .col-md-4.descript-style {
+    margin-bottom: 2.5em;
+    }
+}
 
 /* SECTION ACCUEIL LABEL ==================== */
 
@@ -498,6 +508,12 @@ fieldset {
     color: #888;
 }
 
+@media screen and (max-width: 740px)
+{
+    #contact{
+    width: 95%;
+    }
+}
 /* BACK OFFICE CSS ========================== */
 
 /* accueil back-office => */
@@ -585,7 +601,10 @@ footer#footer {
     padding-top: 1.5em;
     padding-bottom: 1.5em;
 }
-
+footer p {
+    padding-top: 1em;
+}
+s
 .col-md-6.btn-share {
     text-align: right;
     padding-right: 10%;
@@ -597,4 +616,17 @@ footer#footer {
 }
 .fa {
     color: #3F4F5E;
+}
+
+@media screen and (max-width: 640px)
+{
+    .col-md-6.btn-share {
+    text-align: center;
+    font-size: 35px;
+    padding: 0;
+    }
+    
+    footer p{
+        text-align: center;
+    }
 }
