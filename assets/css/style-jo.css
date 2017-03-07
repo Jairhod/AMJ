@@ -9,39 +9,17 @@ p, a{
     font-family: 'Ubuntu', sans-serif;', sans-serif !important;
 }
 
-.full-width {
-    padding: 0 0 0 0;
-}
 
-#wrapper { 
-    /* The image used */
-    background-image: url("img/concert-AMJopti.jpg");
 
-    /* Full height */
-    height: 80%; 
-
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    z-index: 100;
-}
-
-@media only screen and (max-device-width: 1024px) {
-    #recherche-accueil {
-        background-attachment: scroll;
-    }
-}
 /* BOUTONS ================================== */
 
 
 
 /* NAV BAR ================================== */
 .navbar-default {
-    background-color: transparent;
+    background-color: black;
     border: none;
-    
+    margin: 0;
 }
 
 .navbar {
@@ -112,21 +90,34 @@ div.borderXwidth a:hover:before, div.borderXwidth a:hover:after
 /* SECTION RECHERCHE ACCUEIL =================== */
 
 
+.full-width {
+    padding: 0 0 0 0;
+}
 
+#recherche-accueil { 
+    /* The image used */
+    background-image: url("img/audience-opti.jpg");
 
-/*# version sans parallax :
+    /* Full height */
+    height: 100%; 
 
-recherche-accueil {
-    background-image: url(img/concert-AMJ.jpg);
-    width: 100%;
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center center;
     background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center center;
-}*/
+    background-size: cover;
+
+}
+
+@media only screen and (max-device-width: 1024px) {
+    #recherche-accueil {
+        background-attachment: scroll;
+    }
+}
+
 
 #recherche-accueil h1 {
-    margin-top: -20px;
-    max-height: 900px;
+    margin: 0 0 0 0;
     text-align: center;
     padding-top: 10%;
     color: #FFFFF3;
@@ -179,9 +170,115 @@ select.form-control.form-accueil {
     padding-left: 2em;
 }
 
+.accueil-styles {
+    display: flex;
+    text-align: center;
+    width: 80%;
+    margin: auto;
+}
+
+.accueil-styles .col {
+    width: calc(100%/3);
+    margin: 0 0.5em 0 0.5em;
+}
+
+
+.accueil-styles .paper {
+    margin: 10vh auto;
+    min-width: 20vw;
+    max-width: 60vh;
+    min-height: 20vh;
+    box-shadow: 0 15px 35px rgba(50, 50, 90, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
+    transition: .6s ease;
+    background: white;
+    text-align: center;
+}
+
+.accueil-styles .paper:hover {
+    box-shadow: 0 18px 35px rgba(50, 50, 90, 0.1), 0 8px 15px rgba(0, 0, 0, 0.07);
+    transform: translateY(-1px);
+}
+
+.accueil-styles img {
+    max-width: 100%;
+    max-height: 100%;
+    filter: grayscale(100%);
+}
+
+.accueil-styles img:hover {
+    max-width: 100%;
+    max-height: 100%;
+    filter: grayscale(0%);
+    transition: all 0.7s;
+}
+
+.accueil-styles .poster {
+    margin-bottom: 2vh;
+}
+
+.accueil-styles h6 {
+    font-size: 2.6rem;
+    color: #303336;
+    letter-spacing: 1px;
+    margin: 2vh 4vw;
+}
+
+.accueil-styles h5 {
+    font-size: .8rem;
+    color: #A0A6AB;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+
+.accueil-styles p {
+    margin: 2vh 8vw;
+    text-align: center;
+    padding-bottom: 1vh;
+    color: #A0A6AB;
+    font-weight: 400;
+    font-size: .9rem;
+    line-height: 1.25rem;
+}
+
+.accueil-styles.btn,
+a.btn {
+    display: inline-block;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+    line-height: 20px;
+    padding: 1vh 2vh;
+    letter-spacing: .02rem;
+    background: #664EF7;
+    font-size: .8rem;
+    box-shadow: 0 0px 0px rgba(48, 51, 54, 0.1), 0 0px 0px transparent;
+    margin-bottom: 0.8em;
+    color: white;
+}
+
+.accueil-styles.btn,
+a.btn:hover {
+    background: #7C66FF;
+    box-shadow: 0 7px 14px rgba(48, 51, 54, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+    transform: translateY(-1px);
+}
+
+.accueil-styles.btn,
+a.btn:active {
+    box-shadow: 0 4px 6px rgba(48, 51, 54, 0.1), 0 1px 3px rgba(0, 0, 0, 0.12);
+    transform: translateY(1px);
+}
+
+.accueil-styles.space {
+    height: 4vh;
+}
 
 
 /* SECTION ACCUEIL DESCRIPTIF =============== */
+
 
 section#descriptif {
     background-color: #3F4F5E;
@@ -219,6 +316,8 @@ section#descriptif p {
 select-color{
     background-color: red;
 }
+
+
 /* SECTION ACCUEIL LABEL ==================== */
 
 
