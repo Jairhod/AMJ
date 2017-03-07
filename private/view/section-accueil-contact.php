@@ -24,7 +24,10 @@
     </section>
 </div>
         <div class="devis-btn">
-          <a href="">Simuler un devis</a>
+            <div class="buttons-coll">
+                <button class="custom-btn btn-2">Simuler un devis</button>
+                 <!--<a href="">Simuler un devis</a>-->
+            </div>
         </div>
         
       

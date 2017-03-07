@@ -13,6 +13,49 @@ p, a{
 
 /* BOUTONS ================================== */
 
+.buttons-coll {
+  width: 90%;
+  margin: 50px auto;
+  text-align: center;
+}
+button {
+  margin: 20px;
+}
+.custom-btn {
+  padding: 10px 25px;
+  font-weight: bold;
+  background: transparent;
+  outline: none !important;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  color: #3F4F5E;
+}
+
+.btn-2 {
+  border: none;
+  border-bottom: 2px solid #3F4F5E;
+  border-left: 2px solid #3F4F5E;
+}
+.btn-2:before, .btn-2:after {
+  position: absolute;
+  content: "";
+  right: 0;
+  top: 0;
+  background: #3F4F5E;
+  transition: all 0.3s ease;
+}
+.btn-2:before {
+  height: 0%;
+  width: 2px;
+}
+.btn-2:after {
+  width: 0%;
+  height: 2px;
+}
+.btn-2:hover:before {height: 100%;}
+.btn-2:hover:after {width: 100%;}
 
 
 /* NAV BAR ================================== */
@@ -541,4 +584,17 @@ footer#footer {
     background-color: #D6D6D9;
     padding-top: 1.5em;
     padding-bottom: 1.5em;
+}
+
+.col-md-6.btn-share {
+    text-align: right;
+    padding-right: 10%;
+    font-size: 35px;
+}
+
+.col-md-6.btn-share a {
+    margin: 0 0.2em;
+}
+.fa {
+    color: #3F4F5E;
 }
