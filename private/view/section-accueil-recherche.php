@@ -21,6 +21,35 @@
              
             </div>
         </form>
+        <div class="row accueil-styles">
+            <div class="col">
+                <div class="paper">
+                    <img class="poster" src="assets/css/img/jazz-199547_640.jpg"/>
+                    <h5>Style</h5>
+                    <h6>Jazz</h6>
+                    <a class="btn ">go </a>
+                    <div class="space"></div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="paper">
+                    <img class="poster" src="assets/css/img/jazz-199547_640.jpg"/>
+                    <h5>Style</h5>
+                    <h6>Jazz</h6>
+                    <a class="btn ">go </a>
+                    <div class="space"></div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="paper">
+                    <img class="poster" src="assets/css/img/jazz-199547_640.jpg"/>
+                    <h5>Style</h5>
+                    <h6>Jazz</h6>
+                    <a class="btn ">go </a>
+                    <div class="space"></div>
+                </div>
+            </div>           
+        </div>
       </section>
     </div>
 
