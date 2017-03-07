@@ -95,10 +95,21 @@ div.container a
     cursor: pointer;
 }
 
-{
-    right: 0px;
-    bottom: 0px;
+
+.glyphicon-menu-hamburger:before {
+    color: white;
 }
+
+.navbar-default .navbar-toggle {
+    border: none
+}
+
+.navbar-default .navbar-toggle:hover {
+    border: none;
+    background: black
+}
+
+
 
 /* Border X get width  */
 div.borderXwidth a:before, div.borderXwidth a:after
