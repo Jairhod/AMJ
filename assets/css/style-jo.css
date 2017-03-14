@@ -13,6 +13,49 @@ p, a{
 
 /* BOUTONS ================================== */
 
+.buttons-coll {
+  width: 90%;
+  margin: 50px auto;
+  text-align: center;
+}
+button {
+  margin: 20px;
+}
+.custom-btn {
+  padding: 10px 25px;
+  font-weight: bold;
+  background: transparent;
+  outline: none !important;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  color: #3F4F5E;
+}
+
+.btn-2 {
+  border: none;
+  border-bottom: 2px solid #3F4F5E;
+  border-left: 2px solid #3F4F5E;
+}
+.btn-2:before, .btn-2:after {
+  position: absolute;
+  content: "";
+  right: 0;
+  top: 0;
+  background: #3F4F5E;
+  transition: all 0.3s ease;
+}
+.btn-2:before {
+  height: 0%;
+  width: 2px;
+}
+.btn-2:after {
+  width: 0%;
+  height: 2px;
+}
+.btn-2:hover:before {height: 100%;}
+.btn-2:hover:after {width: 100%;}
 
 
 /* NAV BAR ================================== */
@@ -34,14 +77,42 @@ p, a{
     color: #90A7D0; 
 }
 
-div.container
+
+.header-nav
 {
     font-family: Raleway;
     margin: 0 auto;
 	text-align: center;
 }
 
-div.container a
+
+.glyphicon-menu-hamburger:before {
+    color: white;
+}
+
+.navbar-default .navbar-toggle {
+    border: none
+}
+
+.navbar-default .navbar-toggle:hover {
+    border: none;
+    background: black
+}
+
+
+@media screen and (min-width: 768px)
+{
+    div.container a
+    {
+        color: #FFF;
+        text-decoration: none;
+        margin: 20px 20px;
+        padding: 10px 10px;
+        position: relative;
+        z-index: 0;
+        cursor: pointer;
+    }
+    div.container a
 {
     color: #FFF;
     text-decoration: none;
@@ -51,42 +122,47 @@ div.container a
     z-index: 0;
     cursor: pointer;
 }
-
-{
-    right: 0px;
-    bottom: 0px;
-}
-
 /* Border X get width  */
-div.borderXwidth a:before, div.borderXwidth a:after
-{
-    position: absolute;
-    opacity: 0;
-    width: 0%;
-    height: 2px;
-    content: '';
-    background: #90A7D0;
-    transition: all 0.3s;
+    div.borderXwidth a:before, div.borderXwidth a:after{
+        position: absolute;
+        opacity: 0;
+        width: 0%;
+        height: 2px;
+        content: '';
+        background: #90A7D0;
+        transition: all 0.3s;
+    }
+
+    div.borderXwidth a:before{
+        left: 0px;
+        top: 0px;
+    }
+
+    div.borderXwidth a:after {
+        right: 0px;
+        bottom: 0px;
+    }
+
+    div.borderXwidth a:hover:before, div.borderXwidth a:hover:after {
+        opacity: 1;
+        width: 100%;
+    }
 }
 
-div.borderXwidth a:before
+@media screen and (max-width: 768px)
 {
-    left: 0px;
-    top: 0px;
+    .navbar-default .navbar-nav>li>a:hover
+    {
+        color: white; 
+        background-color: #90A7D0;
+        margin-right: 0;
+        margin-left: 0;
+    }
+    .navbar-nav {
+    margin: 0 -15px;
 }
-
-div.borderXwidth a:after
-{
-    right: 0px;
-    bottom: 0px;
+    
 }
-
-div.borderXwidth a:hover:before, div.borderXwidth a:hover:after
-{
-    opacity: 1;
-    width: 100%;
-}
-
 /* SECTION RECHERCHE ACCUEIL =================== */
 
 
@@ -95,13 +171,13 @@ div.borderXwidth a:hover:before, div.borderXwidth a:hover:after
 }
 
 #recherche-accueil { 
-    /* The image used */
+    /* TL'image utilisée */
     background-image: url("img/audience-opti.jpg");
 
     /* Full height */
     height: 100%; 
 
-    /* Create the parallax scrolling effect */
+    /* Parallax scrolling */
     background-attachment: fixed;
     background-position: center center;
     background-repeat: no-repeat;
@@ -316,7 +392,17 @@ section#descriptif p {
 select-color{
     background-color: red;
 }
-
+@media screen and (max-width: 640px)
+{
+    
+    .descriptif-row {
+        display: flex;
+        flex-direction: column;
+    }
+    .col-md-4.descript-style {
+    margin-bottom: 2.5em;
+    }
+}
 
 /* SECTION ACCUEIL LABEL ==================== */
 
@@ -455,6 +541,12 @@ fieldset {
     color: #888;
 }
 
+@media screen and (max-width: 740px)
+{
+    #contact{
+    width: 95%;
+    }
+}
 /* BACK OFFICE CSS ========================== */
 
 /* accueil back-office => */
@@ -541,4 +633,34 @@ footer#footer {
     background-color: #D6D6D9;
     padding-top: 1.5em;
     padding-bottom: 1.5em;
+}
+footer p {
+    padding-top: 1em;
+}
+
+
+.col-md-6.btn-share {
+    text-align: right;
+    padding-right: 10%;
+    font-size: 35px;
+}
+
+.col-md-6.btn-share a {
+    margin: 0 0.2em;
+}
+.fa {
+    color: #3F4F5E;
+}
+
+@media screen and (max-width: 640px)
+{
+    .col-md-6.btn-share {
+    text-align: center;
+    font-size: 35px;
+    padding: 0;
+    }
+    
+    footer p{
+        text-align: center;
+    }
 }

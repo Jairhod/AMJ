@@ -1,9 +1,9 @@
  <nav class="navbar navbar-default navbar-made">
-        <div class="container-fluid">
+        <div class="container-fluid header-nav">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
+             <span class="glyphicon glyphicon-menu-hamburger"></span>
               </button>
               <a class="navbar-brand" href="index.php"><a href="index.php"></a></a>
             </div>
