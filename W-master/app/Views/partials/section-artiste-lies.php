@@ -1,4 +1,4 @@
-<aside>
+            <aside>
               <h3>Artistes liés</h3>
               
                 <div id="listeArtistesLies" class="container">
@@ -20,5 +20,5 @@
                     </div>
                   </div>
                 </div>
-              
-            </aside>
+                
+              </aside>

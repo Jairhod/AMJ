@@ -1,8 +1,6 @@
 <?php
-    require_once('private/view/head.php');
-    require_once('private/view/nav.php');
-    require_once('private/view/section-catalogue.php');
-    require_once('private/view/footer.php');
-?>
-
-
+$this->insert('partials/header', [ "titre" => "catalogue" ]);
+$this->insert('partials/nav');
+$this->insert('partials/section-catalogue-nav');
+$this->insert('partials/section-catalogue-artistes');
+$this->insert('partials/footer');

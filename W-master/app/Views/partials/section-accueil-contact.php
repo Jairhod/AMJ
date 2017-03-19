@@ -1,3 +1,4 @@
+
 <div class="container-fluid contact-wrapper">
     <section id="contact">
         <h3>Des questions? Contactez nous !</h3>
@@ -23,6 +24,7 @@
         </div>
     </section>
 </div>
+
 <div class="devis-btn">
     <div class="buttons-coll">
         <button class="custom-btn btn-2">Simuler un devis</button>
