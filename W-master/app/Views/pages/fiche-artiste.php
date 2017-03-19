@@ -1,6 +1,9 @@
 <?php
-    require_once('private/view/head.php');
-    require_once('private/view/nav.php');
-    require_once('private/view/section-artiste.php');
-    require_once('private/view/footer.php');
-?>
+$this->insert('partials/header', [ "titre" => "Fiche artiste" ]);
+$this->insert('partials/nav');
+$this->insert('partials/section-catalogue-nav');
+
+$this->insert('partials/section-artiste');
+$this->insert('partials/section-artiste-lies');
+
+$this->insert('partials/footer');

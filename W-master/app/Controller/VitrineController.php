@@ -31,4 +31,10 @@ class VitrineController
 		$this->show('pages/catalogue');
 	}
 
+	public function ficheArtiste()
+	{
+
+		$this->show('pages/fiche-artiste');
+	}
+
 }
