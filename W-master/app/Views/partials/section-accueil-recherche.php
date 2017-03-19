@@ -17,14 +17,14 @@
                     <option value="0" selected disabled>Choisir son artiste...</option>             
                 </select> 
                              
-                <button type="submit" name="envoyerAccueil" class="search-submit-accueil"><img src="assets/css/img/search.png" alt=""></button>
+                <button type="submit" name="envoyerAccueil" class="search-submit-accueil"><img src="assets/media/img/search.png" alt=""></button>
              
             </div>
         </form>
         <div class="row accueil-styles">
             <div class="col">
                 <div class="paper">
-                    <img class="poster" src="assets/css/img/jazz-199547_640.jpg"/>
+                    <img class="poster" src="assets/media/img/jazz-199547_640.jpg"/>
                     <h5>Style</h5>
                     <h6>Jazz</h6>
                     <a class="btn ">go </a>
@@ -33,7 +33,7 @@
             </div>
             <div class="col">
                 <div class="paper">
-                    <img class="poster" src="assets/css/img/jazz-199547_640.jpg"/>
+                    <img class="poster" src="assets/media/img/jazz-199547_640.jpg"/>
                     <h5>Style</h5>
                     <h6>Jazz</h6>
                     <a class="btn ">go </a>
@@ -42,7 +42,7 @@
             </div>
             <div class="col">
                 <div class="paper">
-                    <img class="poster" src="assets/css/img/jazz-199547_640.jpg"/>
+                    <img class="poster" src="assets/media/img/jazz-199547_640.jpg"/>
                     <h5>Style</h5>
                     <h6>Jazz</h6>
                     <a class="btn ">go </a>

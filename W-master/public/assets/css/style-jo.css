@@ -172,7 +172,8 @@ button {
 
 #recherche-accueil { 
     /* TL'image utilisée */
-    background-image: url("img/audience-opti.jpg");
+    /* background-image: url("./assets/media/img/audience-opti.jpg"); */
+    background-image: url("../media/img/audience-opti.jpg");
 
     /* Full height */
     height: 100%; 

@@ -5,7 +5,7 @@
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <title>AMJ Prod</title>
+    <title><?php echo $titre; ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
 
@@ -15,7 +15,7 @@
 
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="./script/script.js"></script>
+    <script type="text/javascript" src="assets/js/script.js"></script>
 
 </head>
 
