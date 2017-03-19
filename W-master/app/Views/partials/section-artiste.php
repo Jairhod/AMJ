@@ -7,13 +7,14 @@
       </div>
 
       <section>
-        <h2>BLACKOUT BAND</h2>
+
         <div class="container">
-          <div class="jumbotron">
+          <div class="jumbotron">        
+          <h2>BLACKOUT BAND</h2>
             <div class="row">
 
               <div class="col-md-4">
-                <img src="./assets/media/img/rio-7.jpg" alt="blackout band" width=400>
+                <img src="./assets/media/img/BLACKOUT-BAND-01.jpg" alt="blackout band" width=400>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam error repudiandae eius temporibus accusamus aut saepe reiciendis molestiae consequuntur, magni dicta ratione ea eveniet dolor, nisi dolorem aspernatur quis. Adipisci.</p>
                 <div class="col-md-8">
                   <article>
