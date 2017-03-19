@@ -5,27 +5,27 @@
               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
              <span class="glyphicon glyphicon-menu-hamburger"></span>
               </button>
-              <a class="navbar-brand" href="index.php"><a href="index.php"></a></a>
+              <a class="navbar-brand" href="accueil"><a href="accueil"></a></a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse container green borderXwidth" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-left">
                     <li class="">
-                        <a href="index.php">AMJ</a>
+                        <a href="accueil">AMJ</a>
                     </li>
                 </ul>             
                 <ul class="nav navbar-nav navbar-right">
                     <li class="">
-                        <a href="index.php">Le Label</a>
+                        <a href="accueil">Le Label</a>
                     </li>
                     <li class="">
-                        <a href="catalogue.php">Le Catalogue</a>
+                        <a href="catalogue">Le Catalogue</a>
                     </li>
                     <li>
-                        <a href="actus.php">Actus</a>
+                        <a href="actus">Actus</a>
                     </li>
                     <li>
-                        <a href="#loisirs">Devis</a>
+                        <a href="#devis">Devis</a>
                     </li>
                     <li>
                         <a href="#contact">Contact</a>

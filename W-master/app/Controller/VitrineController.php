@@ -19,10 +19,16 @@ class VitrineController
 		$this->show('pages/actus');
 	}
 
-	public function backOfficeAccueil()
+	public function backAccueil()
 	{
 
-		$this->show('pages/back-office-accueil');
+		$this->show('pages/back-accueil');
+	}
+
+	public function backLogin()
+	{
+
+		$this->show('pages/back-login');
 	}
 
 	public function catalogue()
