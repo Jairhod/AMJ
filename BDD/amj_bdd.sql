@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.6.5.2
+-- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 20, 2017 at 11:10 PM
--- Server version: 10.1.19-MariaDB
--- PHP Version: 5.6.28
+-- Generation Time: Mar 21, 2017 at 04:33 PM
+-- Server version: 10.1.21-MariaDB
+-- PHP Version: 7.1.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -30,7 +30,7 @@ USE `amj_bdd`;
 
 DROP TABLE IF EXISTS `artistes`;
 CREATE TABLE `artistes` (
-  `idArtiste` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
   `nomArtiste` varchar(255) NOT NULL,
   `nomGenre` varchar(255) NOT NULL,
   `cheminImagePrincipale` varchar(1000) NOT NULL,
@@ -42,12 +42,12 @@ CREATE TABLE `artistes` (
 -- Dumping data for table `artistes`
 --
 
-INSERT INTO `artistes` (`idArtiste`, `nomArtiste`, `nomGenre`, `cheminImagePrincipale`, `descriptionArtiste`, `artistesLies`) VALUES
-(3, 'BLACKOUT BAND', 'SOUL-FUNK-BLUES', 'assets/media/img/BLACKOUT-BAND-01.jpg', 'C’est sur les scènes et clubs du sud de la France que les quatre membres du groupe BACKOUT se sont rencontrés afin de rendre hommage au plus grandes voix féminines de la SOUL et du R&B.\r\n\r\nEmile MÉLENCHON (guitare et arrangements), Arnaud PACINI (basse) et Marc BELLION (batterie), Andréa CAPARROS (Piano et choeurs) venant tout juste d’intégrer la formation, accompagnent Nicole LISE (chant), incarnant à elle seule toutes les qualités nécessaires à l’interprétation de ce répertoire pour nous faire voyager dans le temps.\r\n\r\nD’ARETHA FRANKLIN à BEYONCE en passant par SHAKA KHAN, ERYKA BADU et bien d’autres, le BLACKOUT Band vous fera partager leur énergie communicative.', 'soul'),
-(4, 'IGUANA VAN', 'POP-ROCK-ACTU', '', 'Iguana Van est un groupe marseillais fondé en 2009 par John, Max et Mathieu, amis d’enfance. Apres deux EP auto-produits, le groupe remporte l’edition 2012 du tremplin Massilia Rock qui lui permet d’être programmé sur la scène du Immecke Rock Festival en Allemagne.\r\n \r\nIguana Van distille une musique pop mélodieuse enveloppée de groove, qui prend toute sa dimension en live grâce à un jeu de scène énergique. En 2013, la formation remporte le tremplin Sounds of Marseille et joue en première partie d’Electric Guest.\r\n \r\n2014 voit l’arrivée de Dorian au poste de batteur. Iguana Van reprend le chemin des studios et enregistre un nouvel E.P, Heroes, Shadows, sous le label Two Records, accompagné de Christophe Moura à la trompette et John Massa au saxophone.', 'pop'),
-(5, 'QUARTIERS NORD', 'POP-ROCK-ACTU', '', 'Fort de ses 16 albums bigarrés, de sa fabuleuse tétralogie d’opérettes-rock-­marseillaises, de ses revues loufoques et autres comédies musicales et sociales, QUARTIERS NORD, groupe ô combien atypique qui fêtera bientôt ses 40 ans d’existence, fait désormais ­partie du patrimoine massaliote.\r\nFaisant plus que jamais le lien entre ego-histoire et le contexte qui l’a vu naître,\r\nil ­poursuit son œuvre musicale inclassable en nous conviant au BALÈTI SOCIAL CLUB, un concept novateur à la fois festif et déjanté, à la fibre sociale ­revendiquée et aux influences « ­world  protéiformes ». Ce joyeux maelström ­musical se ­conjuguera à l’envi dans un esprit convivial et interactif, avec des invités-­surprise issus de tous horizons qui apporteront à chaque prestation une touche unique.', 'pop'),
-(6, 'JOHN MASSA \nTRIPBAND', 'SOUL-FUNK-BLUES', '', 'Le groupe du saxophoniste John MASSA est basé à Marseille, ville native de ses membres, qui représente un véritable laboratoire de rencontre musicales.\n\nLes compositions du saxophoniste, explorantes courants du jazz, du groove et de la World Music sont servies par des musiciens de très fortes personnalités qui viennent d’univers musicaux riches et variés.', 'soul'),
-(7, 'THE GODFATHERS', 'SOUL-FUNK-BLUES', '', 'Emmené par  Jean GOMEZ, leader charismatique et chanteur dont la voix évoque celle des grands artistes de la SOUL MUSIC et du RHTHM''N''BLUES,\r\nLes Godfathers, restituent avec brio, fidélité et  authenticité un grand nombre de standards puisé dans le répertoire des monstres sacrés de la musique afro-américaine des années 60 et 70.', 'soul');
+INSERT INTO `artistes` (`id`, `nomArtiste`, `nomGenre`, `cheminImagePrincipale`, `descriptionArtiste`, `artistesLies`) VALUES
+(3, 'BLACKOUT BAND', 'SOUL-FUNK-BLUES', 'assets/media/img/BLACKOUT-BAND/BLACKOUT-BAND-01.jpg', 'C’est sur les scènes et clubs du sud de la France que les quatre membres du groupe BACKOUT se sont rencontrés afin de rendre hommage au plus grandes voix féminines de la SOUL et du R&B.\r\n\r\nEmile MÉLENCHON (guitare et arrangements), Arnaud PACINI (basse) et Marc BELLION (batterie), Andréa CAPARROS (Piano et choeurs) venant tout juste d’intégrer la formation, accompagnent Nicole LISE (chant), incarnant à elle seule toutes les qualités nécessaires à l’interprétation de ce répertoire pour nous faire voyager dans le temps.\r\n\r\nD’ARETHA FRANKLIN à BEYONCE en passant par SHAKA KHAN, ERYKA BADU et bien d’autres, le BLACKOUT Band vous fera partager leur énergie communicative.', 'soul'),
+(4, 'IGUANA VAN', 'POP-ROCK-ACTU', 'assets/media/img/IGUANA-VAN/Iguana_Van.jpg', 'Iguana Van est un groupe marseillais fondé en 2009 par John, Max et Mathieu, amis d’enfance. Apres deux EP auto-produits, le groupe remporte l’edition 2012 du tremplin Massilia Rock qui lui permet d’être programmé sur la scène du Immecke Rock Festival en Allemagne.\r\n \r\nIguana Van distille une musique pop mélodieuse enveloppée de groove, qui prend toute sa dimension en live grâce à un jeu de scène énergique. En 2013, la formation remporte le tremplin Sounds of Marseille et joue en première partie d’Electric Guest.\r\n \r\n2014 voit l’arrivée de Dorian au poste de batteur. Iguana Van reprend le chemin des studios et enregistre un nouvel E.P, Heroes, Shadows, sous le label Two Records, accompagné de Christophe Moura à la trompette et John Massa au saxophone.', 'pop'),
+(5, 'QUARTIERS NORD', 'POP-ROCK-ACTU', 'assets/media/img/Q-N/Baléti_social_Club.png', 'Fort de ses 16 albums bigarrés, de sa fabuleuse tétralogie d’opérettes-rock-­marseillaises, de ses revues loufoques et autres comédies musicales et sociales, QUARTIERS NORD, groupe ô combien atypique qui fêtera bientôt ses 40 ans d’existence, fait désormais ­partie du patrimoine massaliote.\r\nFaisant plus que jamais le lien entre ego-histoire et le contexte qui l’a vu naître,\r\nil ­poursuit son œuvre musicale inclassable en nous conviant au BALÈTI SOCIAL CLUB, un concept novateur à la fois festif et déjanté, à la fibre sociale ­revendiquée et aux influences « ­world  protéiformes ». Ce joyeux maelström ­musical se ­conjuguera à l’envi dans un esprit convivial et interactif, avec des invités-­surprise issus de tous horizons qui apporteront à chaque prestation une touche unique.', 'pop'),
+(6, 'JOHN MASSA \nTRIPBAND', 'SOUL-FUNK-BLUES', 'assets/media/img/JOHN-MASSA-TRIPBAND/John_Massa TRIPBAND.jpg', 'Le groupe du saxophoniste John MASSA est basé à Marseille, ville native de ses membres, qui représente un véritable laboratoire de rencontre musicales.\n\nLes compositions du saxophoniste, explorantes courants du jazz, du groove et de la World Music sont servies par des musiciens de très fortes personnalités qui viennent d’univers musicaux riches et variés.', 'soul'),
+(7, 'THE GODFATHERS', 'SOUL-FUNK-BLUES', 'assets/media/img/THE-GODFATHERS/The_Godfathers.jpg', 'Emmené par  Jean GOMEZ, leader charismatique et chanteur dont la voix évoque celle des grands artistes de la SOUL MUSIC et du RHTHM\'N\'BLUES,\r\nLes Godfathers, restituent avec brio, fidélité et  authenticité un grand nombre de standards puisé dans le répertoire des monstres sacrés de la musique afro-américaine des années 60 et 70.', 'soul');
 
 -- --------------------------------------------------------
 
@@ -89,6 +89,14 @@ CREATE TABLE `images` (
   `idArtiste` int(11) NOT NULL,
   `cheminImage` varchar(1000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `images`
+--
+
+INSERT INTO `images` (`id`, `idArtiste`, `cheminImage`) VALUES
+(1, 3, 'assets/media/img/BLACKOUT-BAND/Quartet-Soul-1.jpg'),
+(3, 3, 'assets/media/img/BLACKOUT-BAND/Quartet-Soul-2.jpg');
 
 -- --------------------------------------------------------
 
@@ -148,16 +156,18 @@ DROP TABLE IF EXISTS `videos`;
 CREATE TABLE `videos` (
   `id` int(11) NOT NULL,
   `idArtiste` int(11) NOT NULL,
+  `nomVideo` varchar(255) NOT NULL,
   `cheminVideo` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 --
 -- Dumping data for table `videos`
 --
 
-INSERT INTO `videos` (`id`, `idArtiste`, `cheminVideo`) VALUES
-(1, 3, 'https://youtu.be/Fz3DDoNq5Wk'),
-(2, 3, 'https://youtu.be/Ffo4ZxWfEGs');
+INSERT INTO `videos` (`id`, `idArtiste`, `nomVideo`, `cheminVideo`) VALUES
+(1, 3, 'Soul Quartet - Ain\'t nobody', 'https://youtu.be/Fz3DDoNq5Wk'),
+(2, 3, 'Soul Quartet - Empire State of mind', 'https://youtu.be/Ffo4ZxWfEGs'),
+(3, 5, 'Quartiers Nord - Le Tango Corse', 'https://www.youtube.com/watch?v=Q0XyVK24wQc');
 
 --
 -- Indexes for dumped tables
@@ -167,13 +177,14 @@ INSERT INTO `videos` (`id`, `idArtiste`, `cheminVideo`) VALUES
 -- Indexes for table `artistes`
 --
 ALTER TABLE `artistes`
-  ADD PRIMARY KEY (`idArtiste`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `audios`
 --
 ALTER TABLE `audios`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `idArtiste` (`idArtiste`);
 
 --
 -- Indexes for table `contacts`
@@ -185,7 +196,8 @@ ALTER TABLE `contacts`
 -- Indexes for table `images`
 --
 ALTER TABLE `images`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `idArtiste` (`idArtiste`);
 
 --
 -- Indexes for table `users`
@@ -203,7 +215,8 @@ ALTER TABLE `utilisateurs`
 -- Indexes for table `videos`
 --
 ALTER TABLE `videos`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `idArtiste` (`idArtiste`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -213,7 +226,7 @@ ALTER TABLE `videos`
 -- AUTO_INCREMENT for table `artistes`
 --
 ALTER TABLE `artistes`
-  MODIFY `idArtiste` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `audios`
 --
@@ -228,7 +241,7 @@ ALTER TABLE `contacts`
 -- AUTO_INCREMENT for table `images`
 --
 ALTER TABLE `images`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `users`
 --
@@ -243,7 +256,29 @@ ALTER TABLE `utilisateurs`
 -- AUTO_INCREMENT for table `videos`
 --
 ALTER TABLE `videos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `audios`
+--
+ALTER TABLE `audios`
+  ADD CONSTRAINT `audios_ibfk_1` FOREIGN KEY (`idArtiste`) REFERENCES `artistes` (`id`);
+
+--
+-- Constraints for table `images`
+--
+ALTER TABLE `images`
+  ADD CONSTRAINT `images_ibfk_1` FOREIGN KEY (`idArtiste`) REFERENCES `artistes` (`id`);
+
+--
+-- Constraints for table `videos`
+--
+ALTER TABLE `videos`
+  ADD CONSTRAINT `videos_ibfk_1` FOREIGN KEY (`idArtiste`) REFERENCES `artistes` (`id`);
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
