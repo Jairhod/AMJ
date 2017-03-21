@@ -240,6 +240,7 @@ select.form-control.form-accueil {
     background: white;
 }
 
+/*
 .search-submit-accueil {
     background-color: transparent;
     border: 0;
@@ -257,6 +258,8 @@ select.form-control.form-accueil {
     width: calc(100%/3);
     margin: 0 0.5em 0 0.5em;
 }
+
+*/
 
 
 .accueil-styles .paper {
@@ -353,6 +356,7 @@ a.btn:active {
 }
 
 
+
 /* SECTION ACCUEIL DESCRIPTIF =============== */
 
 
@@ -421,14 +425,6 @@ select-color{
     background-color: #86AF49;
 }
 
-#contact input[type="text"],
-#contact input[type="email"],
-#contact input[type="tel"],
-#contact input[type="url"],
-#contact textarea,
-#contact button[type="submit"] {
-
-}
 
 #contact {
     width: 60%;
@@ -547,6 +543,7 @@ fieldset {
     width: 95%;
     }
 }
+
 /* BACK OFFICE CSS ========================== */
 
 /* accueil back-office => */
