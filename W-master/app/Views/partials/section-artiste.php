@@ -42,7 +42,7 @@
         <div class="container jumbotron">
               <div class="row">
                 <div class="col-md-5">
-                  <img src="./assets/media/img/BLACKOUT-BAND-01.jpg" class="img-responsive" alt="blackout band" width=400/>
+                  <img src="./assets/media/img/BLACKOUT-BAND/BLACKOUT-BAND-01.jpg" class="img-responsive" alt="blackout band" width=400/>
                 </div>
                 <div class="col-md-7">
                   <h2>BLACKOUT BAND</h2><br />
@@ -51,12 +51,12 @@
               </div>
               <div class="row">
                 <div class="col-md-12">
-                  <img src="./assets/media/img/band-opti.jpg" class="img-thumbnail" width="150"/>
-                  <img src="./assets/media/img/band-opti.jpg" class="img-thumbnail" width="150"/>
-                  <img src="./assets/media/img/band-opti.jpg" class="img-thumbnail" width="150"/>
-                  <img src="./assets/media/img/band-opti.jpg" class="img-thumbnail" width="150"/>
-                  <img src="./assets/media/img/band-opti.jpg" class="img-thumbnail" width="150"/>
-                  <img src="./assets/media/img/band-opti.jpg" class="img-thumbnail" width="150"/>
+                  <img src="./assets/media/img/BLACKOUT-BAND/Soul-Quartet-1.jpg" class="img-thumbnail" width="150" />
+                  <img src="./assets/media/img/BLACKOUT-BAND/Soul-Quartet-6.jpeg" class="img-thumbnail" width="150"/>
+                  <img src="./assets/media/img/BLACKOUT-BAND/Soul-Quartet-Nicole-8.jpeg" class="img-thumbnail" width="150"/>
+                  <img src="./assets/media/img/BLACKOUT-BAND/Quartet-Soul-3.jpg" class="img-thumbnail" width="150"/>
+                  <img src="./assets/media/img/BLACKOUT-BAND/Soul-Quartet-Andrea-2.jpeg" class="img-thumbnail" width="150"/>
+                  
                 </div>
               </div>
           
