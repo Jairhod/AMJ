@@ -346,19 +346,15 @@ select.form-control.form-accueil {
     text-align: center;
     width: 80%;
     margin: auto;
-}
-
-.accueil-styles .col {
-    width: calc(100%/4);
-    margin: 0 0.5em 0 0.5em;
+    justify-content: space-around;
 }
 
 
 .accueil-styles .paper {
-    margin: 10vh auto;
-    min-width: 20vw;
-    max-width: 60vh;
-    min-height: 20vh;
+    margin: 0 0.4em 6em 0.4em;
+    min-width: 4em;
+    max-width: 15em;
+    min-height: 4em;
     box-shadow: 0 15px 35px rgba(50, 50, 90, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
     transition: .6s ease;
     background: white;
@@ -457,7 +453,21 @@ section#descriptif {
     padding: 3em 0;
 }
 
-section#descriptif .col-md-3.descript-style {
+.descriptif-row {
+    display:flex;
+    flex-direction: ;
+    justify-content: space-around;
+    margin: 0 1.6em;
+}
+.descriptif-row .col {
+    width: calc(100%/4);
+}
+
+.descriptif-img {
+    text-align: center;   
+}
+
+section#descriptif .col.descript-style {
     margin: 1em 1em;
 
 }
@@ -481,26 +491,26 @@ section#descriptif p {
     font-size: 18px;
 }
 
-.descriptif-row {
-    display:flex;
-    flex-direction: row;
-}
-
-.descriptif-img {
-    text-align: center;   
-}
 
 
 
 
 @media screen and (max-width: 640px)
 {
-    
     .descriptif-row {
-        display: flex;
         flex-direction: column;
+        margin: auto;
     }
-    section#descriptif .col-md-3.descript-style {
+    
+    .descriptif-row .col {
+    width: 80%;
+    margin: auto;
+}
+    section#descriptif .col.descript-style {
+        margin: auto;
+    }
+    
+    section#descriptif .col.descript-style {
     margin-bottom: 5em;
     }
 }
