@@ -1,4 +1,5 @@
 /* STYLE GENERAL ============================ */
+
 @import url('https://fonts.googleapis.com/css?family=Raleway|Montserrat|Ubuntu');
 
 h1, h2, h3, h4, h5{
@@ -8,7 +9,6 @@ h1, h2, h3, h4, h5{
 p, a{
     font-family: 'Ubuntu', sans-serif !important;
 }
-
 
 
 /* EFFET SUR TEXTE */
@@ -278,13 +278,9 @@ button {
 }
 
 #recherche-accueil { 
-    /* TL'image utilisée */
-    /* background-image: url("./assets/media/img/audience-opti.jpg"); */
     background-image: url("../media/img/audience-opti.jpg");
-
     /* Full height */
     height: 100%; 
-
     /* Parallax scrolling */
     background-attachment: fixed;
     background-position: center center;
@@ -338,7 +334,7 @@ select.form-accueil {
 
 select.form-control.form-accueil {
     width: 15%;
-    background-color: rgba(0,0,0,0.1);
+    background-color: rgba(0,0,0,0.4);
 }
 
 .bla option {
@@ -348,6 +344,22 @@ select.form-control.form-accueil {
     background: white;
 }
 
+@media screen and (max-width: 770px)
+{
+    select.form-control.form-accueil {
+    width: 50%;
+    margin: auto;
+    height: 60px;
+    text-align: center;
+    margin-bottom: 1em;
+    }
+    
+    select.form-control.form-accueil {
+    background-color: rgba(0,0,0,0.8);
+}
+    
+}
+    
 .search-submit-accueil {
     background-color: transparent;
     border: 0;
@@ -466,7 +478,7 @@ a.btn:active {
     height: 4vh;
 }
 
-@media screen and (max-width: 640px)
+@media screen and (max-width: 770px)
 {
     .accueil-styles  {
         display: none;
