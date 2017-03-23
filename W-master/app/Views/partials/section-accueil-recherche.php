@@ -7,7 +7,7 @@
             <div class="bla">
                
                 <select name="genres" id="genres" class="form-control form-accueil">
-                    <option value="0" selected disabled>Choisir son style...</option>                 
+                    <option value="0" selected disabled>Choisir son style...</option>      
                     <option value="SOUL-FUNK-BLUES">SOUL - FUNK - R &amp; BLUES</option>
                     <option value="POP-ROCK-ACTU">POP - ROCK - ACTU</option>
                     <option value="tous">Tous styles</option>
@@ -24,31 +24,40 @@
         <div class="row accueil-styles">
             <div class="col">
                 <div class="paper">
-                    <img class="poster" src="assets/media/img/jazz-199547_640.jpg"/>
+                    <a href="<?php ?>" class="hover-btn-styles"><img class="poster" src="assets/media/img/jazz-199547_640.jpg"/></a>
                     <h5>Style</h5>
                     <h6>Jazz</h6>
-                    <a class="btn ">go </a>
+                    <a class="btn ">Voir</a>
                     <div class="space"></div>
                 </div>
             </div>
             <div class="col">
                 <div class="paper">
-                    <img class="poster" src="assets/media/img/jazz-199547_640.jpg"/>
+                    <a href="<?php ?>" class="hover-btn-styles"><img class="poster" src="assets/media/img/jazz-199547_640.jpg"/></a>
                     <h5>Style</h5>
                     <h6>Jazz</h6>
-                    <a class="btn ">go </a>
+                    <a class="btn ">Voir</a>
                     <div class="space"></div>
                 </div>
             </div>
             <div class="col">
                 <div class="paper">
-                    <img class="poster" src="assets/media/img/jazz-199547_640.jpg"/>
+                    <a href="<?php ?>" class="hover-btn-styles"><img class="poster" src="assets/media/img/jazz-199547_640.jpg"/></a>
                     <h5>Style</h5>
                     <h6>Jazz</h6>
-                    <a class="btn ">go </a>
+                    <a class="btn ">Voir</a>
                     <div class="space"></div>
                 </div>
-            </div>           
+            </div>   
+             <div class="col">
+                <div class="paper">
+                    <a href="<?php ?>" class="hover-btn-styles"><img class="poster" src="assets/media/img/jazz-199547_640.jpg"/></a>
+                    <h5>Style</h5>
+                    <h6>Jazz</h6>
+                    <a class="btn ">Voir</a>
+                    <div class="space"></div>
+                </div>
+            </div>         
         </div>
       </section>
     </div>
