@@ -26,6 +26,13 @@ $(document).ready(function(){
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
     
+/* BACK OFFICE : menu ==================== */
+    
+		$('.navbar-fostrap').click(function(){
+			$('.nav-fostrap').toggleClass('visible');
+			$('body').toggleClass('cover-bg');
+		});
+  
 });
     
 
