@@ -172,6 +172,12 @@ button {
     margin: 0;
 }
 
+.navbar .navbar-collapse {
+
+    margin-top: 0!important; 
+    margin-bottom: 0!important; 
+}
+
 .navbar {
      border-radius: 0px
 }
@@ -213,8 +219,6 @@ button {
     {
         color: #FFF;
         text-decoration: none;
-        margin: 20px 20px;
-        padding: 10px 10px;
         position: relative;
         z-index: 0;
         cursor: pointer;
@@ -295,11 +299,15 @@ button {
     }
 }
 
+#recherche-accueil .title-hp {
+    width: 70%;
+    margin: auto;
+    padding-top: 19em;
+}
 
 #recherche-accueil h1 {
     margin: 0 0 0 0;
     text-align: center;
-    padding-top: 10%;
     color: #FFFFF3;
     font-weight: 600;
     font-size: 40px;
@@ -332,20 +340,28 @@ select.form-accueil {
     color: white;
 }
 
+
 select.form-control.form-accueil {
     width: 15%;
     background-color: rgba(0,0,0,0.4);
 }
 
-.bla option {
+#genres option:hover {
     color: #3F4F5E;
     text-align: center;
-    font-size: 15px;
     background: white;
 }
 
 @media screen and (max-width: 770px)
 {
+    #recherche-accueil .title-hp {
+        padding-top: 10em;
+    }
+    
+    #recherche-accueil h1 {
+        font-size: 35px
+    }
+    
     select.form-control.form-accueil {
     width: 50%;
     margin: auto;
@@ -356,8 +372,11 @@ select.form-control.form-accueil {
     
     select.form-control.form-accueil {
     background-color: rgba(0,0,0,0.8);
-}
+    }
     
+    div .bla {
+        padding-bottom: 10em;
+    }
 }
     
 .search-submit-accueil {
