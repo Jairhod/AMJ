@@ -135,11 +135,11 @@
               <!-- SLIDE SHOW-->
               <div class="slideshow">
                 <ul>
-                  <li><a href=""><img src="./assets/media/img/CHANSON-MARSEILLAISE/Chansons-Marseillaises-2.jpg" alt="" width="250" height="150" /></a></li>
-                  <li><a href=""><img src="./assets/media/img/GOSPEL/GOSPEL-3.jpg" alt="" width="250" height="150" /></a></li>
-                  <li><a href=""><img src="./assets/media/img/IGUANA-VAN/Iguana-2.jpg" alt="" width="250" height="150" /></a></li>
-                  <li><a href=""><img src="./assets/media/img/LATINAME/LATINAME-6.jpg" alt="" width="250" height="150" /></a></li>
-                  <li><a href=""><img src="./assets/media/img/LATIN-JAZZ-QUARTET/Quartet-O2GAM.jpg" alt="" width="250" height="150" /></a></li>
+                  <li><a class="aslideshow" href=""><img src="./assets/media/img/CHANSON-MARSEILLAISE/Chansons-Marseillaises-2.jpg" alt="" width="350" height="200"/></a></li>
+                  <li><a class="aslideshow" href=""><img src="./assets/media/img/GOSPEL/GOSPEL-3.jpg" alt="" width="350" height="200"/></a></li>
+                  <li><a class="aslideshow" href=""><img src="./assets/media/img/IGUANA-VAN/Iguana-2.jpg" alt="" width="350" height="200"/></a></li>
+                  <li><a class="aslideshow" href=""><img src="./assets/media/img/LATINAME/LATINAME-6.jpg" alt="" width="350" height="200"/></a></li>
+                  <li><a class="aslideshow" href=""><img src="./assets/media/img/LATIN-JAZZ-QUARTET/Quartet-O2GAM.jpg" alt="" width="350" height="200"/></a></li>
                 </ul>
               </div>
         </div>
@@ -154,7 +154,17 @@
     });
 });              
 </script>
-
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+ 
+<script type="text/javascript">
+   $(function(){
+      setInterval(function(){
+         $(".slideshow ul").animate({marginLeft:-350},800,function(){
+            $(this).css({marginLeft:0}).find("li:last").after($(this).find("li:first"));
+         })
+      }, 3500);
+   });
+</script>
 
 
 
