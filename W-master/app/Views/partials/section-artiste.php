@@ -47,7 +47,7 @@
                       <li class="limenugenre"><a href="#">&nbsp;</a></li>
                       <li class="limenugenre"><a href="#">Jazz</a></li>
                       <li class="limenugenre"><a href="#">Rock</a></li>
-                      <li class="limenugenre"><a href="#">r' & Blues</a></li>
+                      <li class="limenugenre"><a href="#">R' & Blues</a></li>
                       <li class="limenugenre"><a href="#">Soul/Funk</a></li>
                       <li class="limenugenre"><a href="#">World Music</a></li>
                       <li class="limenugenre"><a href="#">Tribute</a></li>
@@ -127,10 +127,16 @@
         </div>
         <div class="container jumbotron">
               <h2>ECOUTER</h2><br />
+              <audio src="" controls></audio>
+<!--/////////////////////////////////////////////////////////////////////////////////// -->                
+              
+
+<!--//////////////////////////////////////////////////////////////////////////////////////-->              
+
         </div>   
         <div class="container jumbotron">
-              <h2>DECOUVRIR D'AUTRES ARTISTES DU MÊME GENRE</h2><br />
-              <h4>Slider artistes du même genre</h4><br />
+              <h2>DECOUVREZ LES ARTISTES SOUL et R&B !</h2><br />
+              
 
               <!-- SLIDE SHOW-->
               <div class="slideshow">
