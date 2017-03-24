@@ -1,6 +1,4 @@
-<?php
-$this->insert('partials/header', [ "titre" => "Accueil" ]);
-?>              
+
     <div class="contenu-bo container-fluid">
         <div class="bo-global">
             <div class="bo-col-1">
@@ -30,11 +28,11 @@ $this->insert('partials/header', [ "titre" => "Accueil" ]);
         <div id="btn-bo">
             <div class="btn-col">
                 <a href="#" class="btn">Créer une page Artiste</a>
-                <div class="btn-svg"><img src="assets/media/img/create.svg" alt=""></div>
+                <div class="btn-svg"><img src="../assets/media/img/create.svg" alt=""></div>
             </div>
             <div class="btn-col">
                <a href="#" class="btn">Modifier une page Artiste</a>
-               <div class="btn-svg"><img src="assets/media/img/modify.svg" alt=""></div>
+               <div class="btn-svg"><img src="../assets/media/img/modify.svg" alt=""></div>
             </div>
         </div><!-- fin div bo global -->
     </div><!-- fin div container bo -->
