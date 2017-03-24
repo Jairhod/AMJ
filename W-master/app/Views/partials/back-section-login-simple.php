@@ -1,10 +1,5 @@
 
     <section>
-        <h3>Ma section login</h3>
-    </section>
-
-    <section>
-        <h3>Formulaire de login</h3>
         <form action="#!" method="GET">
             <input type="text" name="identifiant" required placeholder="Email ou username">
             <input type="password" name="pamplemousse" required placeholder="Mot de passe">

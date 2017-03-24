@@ -27,8 +27,6 @@ class VitrineController
 	{
 		$GLOBALS["loginRetour"] = "";
 
-		$this->show('pages/back-login');
-
 		$idForm = $this->verifierSaisie("idForm");
 	    if ($idForm == "login")
 	    {
@@ -36,6 +34,18 @@ class VitrineController
 	    }
 
 	    $this->show('pages/back-login', [ "loginRetour" => $GLOBALS["loginRetour"] ]);
+	}
+
+
+	public function backLogout()
+	{
+		$objetAuthentificationModel = new \W\Security\AuthentificationModel;
+
+		$objetAuthentificationModel->logUserOut();
+
+		$this->redirectToRoute("back_login");
+
+
 	}
 
 	public function catalogue()
@@ -49,5 +59,29 @@ class VitrineController
 
 		$this->show('pages/fiche-artiste');
 	}
+
+		public function backModifArtiste($id)
+	{
+		$this->allowTo('admin');
+		
+		$GLOBALS["artisteUpdateRetour"] = "";
+		// Controller
+		$idForm = $this->verifierSaisie("idForm");
+	    if ($idForm == "artisteUpdate")
+	    {
+	        // ACTIVER LE CODE POUR TRAITER LE FORMULAIRE newsletter
+	        $this->artisteUpdateTraitement();
+	    }
+
+
+		// View
+		$this->show("pages/back-modif-artiste", 
+			[
+			"id" => $id,
+			"artisteUpdateRetour" => $GLOBALS["artisteUpdateRetour"],
+			]);
+	}
+
+
 
 }
