@@ -36,13 +36,6 @@ class AdminController
 	        $this->artisteDeleteTraitement();
 	    }
 	    
-	    // VIEW
-		// LA METHODE show EST DEFINIE 
-		// DANS LA CLASSE PARENTE Controller
-		// ON ACTIVE LA PARTIE VIEW
-		
-		// ON TRANSMET A LA VUE DES VARIABLES DEPUIS LE CONTROLEUR AVEC UN TABLEAU ASSOCIATIF
-		// LA CLE newsletterRetour VA ETRE TRANSFORME EN VARIABLE LOCALE $newsletterRetour
 		$this->show('pages/admin-artistes', 
 					[ 
 						"artisteCreateRetour" => $GLOBALS["artisteCreateRetour"], 

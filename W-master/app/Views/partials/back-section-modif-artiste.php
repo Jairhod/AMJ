@@ -3,30 +3,19 @@
     <h3>Modification D'UN ARTISTE</h3>
     <article>
 <?php
-// ON VA CHERCHER LES INFOS DEPUIS LA TABLE artistes
-// AVEC LE FRAMEWORK W
-// ON VA PASSER PAR LA CLASSE ArtistesModel
+
 $objetArtistesModel = new \Model\ArtistesModel;
 
-// https://dev-web1a.c9users.io/W-master/docs/tuto/?p=modeles
-// findAll RETOURNE UN TABLEAU DE TABLEAU (LIGNES + COLONNES)
-// AVEC LES PARAMETRES, ON TRIE SUR LA COLONNE id EN ORDRE DECROISSANT
 $tabLigne = $objetArtistesModel->find($id);
 
-// DEBUG
-//echo "<pre>";
-//print_r($tabLigne);
-//echo "</pre>";
-
-// EST-CE QU'ON A UN TABLEAU AVEC DES INFOS DEDANS
 if (!empty($tabLigne))
 {
     // RECUPERER LES COLONNES
     $id             = $tabLigne["id"];
-    $nom            = $tabLigne["nom"];
-    $genreArt       = $tabLigne["genreArt"];
-    $cheminImage    = $tabLigne["cheminImage"];
-    $bio            = $tabLigne["bio"];
+    $nom            = $tabLigne["nomArtiste"];
+    $genreArt       = $tabLigne["nomGenre"];
+    $cheminImage    = $tabLigne["cheminImagePrincipale"];
+    $bio            = $tabLigne["descriptionArtiste"];
     
     // AFFICHER LE CODE HTML
 
