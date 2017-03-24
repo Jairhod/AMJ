@@ -262,16 +262,27 @@ button {
 
 @media screen and (max-width: 768px)
 {
-    .navbar-default .navbar-nav>li>a:hover
-    {
+    .navbar-default .navbar-nav>li>a:hover {
         color: white; 
         background-color: #90A7D0;
         margin-right: 0;
         margin-left: 0;
+        
     }
+    
+    
     .navbar-nav {
-    margin: 0 -15px;
-}
+        margin: 0 -15px;
+    }
+    
+    .navbar .navbar-nav {
+        display: block!important;
+    }
+    
+    .container-fluid>.navbar-collapse, .container-fluid>.navbar-header, .container>.navbar-collapse, .container>.navbar-header {
+        margin-right: 0; 
+        margin-left: 0px; 
+    }
     
 }
 /* SECTION RECHERCHE ACCUEIL =================== */
