@@ -18,14 +18,7 @@ class Contact
         		&& ($nom != "")
         			&& ($message != "") )
         {
-            // ON PEUT ENREGISTRER LA LIGNE DANS LA TABLE contact
-            // id               INT             PRIMARY_KEY A_I
-            // email            VARCHAR(255)
-            // nom              VARCHAR(255)
-            // message          TEXT
-            // dateCreation     DATETIME
-            
-            // COMPLETER LES INFOS MANQUANTES
+
             $date = date("Y-m-d H:i:s");
             
             // CREER UN OBJET DE LA CLASSE ContactModel
