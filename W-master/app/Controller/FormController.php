@@ -7,7 +7,65 @@ use \Model\NewsletterModel;
 use \Model\ArtistesModel;
 
 class FormController extends Controller
-{
+{  
+    // Propriétés
+    protected $tabVariableView = [];
+
+    // Getter
+    
+    // Setter
+    function setVar($nomVariable, $valeurVariable)
+    {
+        $this->tabVariableView[$nomVariable] = $valeurVariable;
+    }
+
+    // METHODE
+    // JE SURCHARGE LA METHODE show DE LA CLASSE PARENTE Controller 
+    public function show($file, array $data = array())
+    {
+        //incluant le chemin vers nos vues
+        $engine = new \League\Plates\Engine(self::PATH_VIEWS);
+
+        //charge nos extensions (nos fonctions personnalisées)
+        $engine->loadExtension(new \W\View\Plates\PlatesExtensions());
+
+        $app = getApp();
+
+        // Rend certaines données disponibles à tous les vues
+        // accessible avec $w_user & $w_current_route dans les fichiers de vue
+        $engine->addData(
+            [
+                'w_user'          => $this->getUser(),
+                'w_current_route' => $app->getCurrentRoute(),
+                'w_site_name'     => $app->getConfig('site_name'),
+            ]
+        );
+
+        // JE PEUX AJOUTER DES VARIABLES 
+        // QUI SERONT DISPONIBLES DANS TOUTES LES FICHIERS VIEW
+        $this->setVar("var1", "Some info");
+        $engine->addData($this->tabVariableView);
+
+        // on peut rajouter des fonctions supplementaires
+        $engine->registerFunction('afficherDate', function(){
+            echo date("d/m/Y");
+        });
+
+        $engine->registerFunction('afficherVarGlob', function($nomVar){
+            if (isset($GLOBALS["$nomVar"]))
+            {
+                echo $GLOBALS["$nomVar"];
+            }
+        });
+        
+        // Retire l'éventuelle extension .php
+        $file = str_replace('.php', '', $file);
+
+        // Affiche le template
+        echo $engine->render($file, $data);
+        die();
+    }
+
     public function __construct()
     {
         // traitement du formulaire
@@ -27,26 +85,26 @@ class FormController extends Controller
         }
     }
     
-	public function verifierSaisie($name)
-	{
+    public function verifierSaisie($name)
+    {
 
-	$valeurSaisie = ""; 
+    $valeurSaisie = ""; 
 
     if (isset($_REQUEST[$name]))
-	    {
-	        $valeurSaisie = $_REQUEST[$name];
-	        
-	        $valeurSaisie = strip_tags($valeurSaisie);
+        {
+            $valeurSaisie = $_REQUEST[$name];
+            
+            $valeurSaisie = strip_tags($valeurSaisie);
 
-	        $valeurSaisie = trim($valeurSaisie);
+            $valeurSaisie = trim($valeurSaisie);
        
-	    }
-	    
+        }
+        
     return $valeurSaisie;
 
-	}
+    }
 
-	public function verifierEmail ($email)
+    public function verifierEmail ($email)
     {
         $resultat = false;
 
@@ -58,7 +116,7 @@ class FormController extends Controller
         return $resultat;
     }
 
-	public function newsletterTraitement ()
+    public function newsletterTraitement ()
     {
         $email = $this->verifierSaisie("email");
         if ($this->verifierEmail($email))

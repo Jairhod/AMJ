@@ -2,10 +2,8 @@
 
 namespace Controller;
 
-use \W\Controller\Controller;
-
 class VitrineController
-	extends Controller
+	extends FormController
 {
 	public function accueil()
 	{
@@ -27,8 +25,17 @@ class VitrineController
 
 	public function backLogin()
 	{
+		$GLOBALS["loginRetour"] = "";
 
 		$this->show('pages/back-login');
+
+		$idForm = $this->verifierSaisie("idForm");
+	    if ($idForm == "login")
+	    {
+	        $this->loginTraitement();
+	    }
+
+	    $this->show('pages/back-login', [ "loginRetour" => $GLOBALS["loginRetour"] ]);
 	}
 
 	public function catalogue()
