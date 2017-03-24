@@ -8,19 +8,22 @@
     <h1 class="title">Connexion</h1>
     <form method="GET">
         <div class="input-container">
-            <input type="#{text}" id="#{pseudo}" name="pseudo" required="required"/>
-            <label for="#{label}">Pseudo</label>
+            <input type="text" id="identifiant" name="identifiant" required="required"/>
+            <label for="identifiant">Identifiant</label>
         <div class="bar"></div>
         </div>
         <div class="input-container">
-            <input type="#{type}" id="#{label}" name="passConnexion" required="required"/>
-            <label for="#{label}">Mot de Passe</label>
+            <input type="password" id="pamplemousse" name="pamplemousse" required="required"/>
+            <label for="pamplemousse">Mot de Passe</label>
         <div class="bar"></div>
         </div>
             <div class="button-container">
-                <button type="submit" name="submitConnexion"><span>Se connecter</span></button>
+                <button type="submit" name="submit"><span>Se connecter</span></button>
             </div>
-        <input type="hidden" name="idForm" value="connexion"/>
+            <div class="retour">
+                <?php echo $loginRetour; ?>
+            </div>
+        <input type="hidden" name="idForm" value="login"/>
 
         <div class="footer"><a href="#">Mot de Passe oublié ?</a></div>
     </form>
@@ -32,27 +35,27 @@
         </h1>
     <form method="GET">
         <div class="input-container">
-        <input type="#{text}" id="#{pseudo}" name="pseudo" required="required"/>
-        <label for="#{label}">Pseudo</label>
+        <input type="text" id="pseudo" name="pseudo" required="required"/>
+        <label for="pseudo">Pseudo</label>
         <div class="bar"></div>
       </div>
         <div class="input-container">
-            <input type="#{email}" id="#{email}" name="emailInscription" required="required"/>
-            <label for="#{label}">Email</label>
+            <input type="email" id="email" name="email" required="required"/>
+            <label for="email">Email</label>
         <div class="bar"></div>
         </div>
         <div class="input-container">
-            <input type="#{type}" id="#{label}" name="pass1Connexion" required="required"/>
-            <label for="#{label}">mot de Passe</label>
+            <input type="password" id="pamplemousse1" name="pamplemousse1" required="required"/>
+            <label for="pamplemousse1">mot de Passe</label>
         <div class="bar"></div>
         </div>
         <div class="input-container">
-            <input type="#{type}" id="#{label}" name="pass2Connexion" required="required"/>
-            <label for="#{label}">Répétez votre mot de Passe</label>
+            <input type="password" id="pamplemousse2" name="pamplemousse2" required="required"/>
+            <label for="pamplemousse2">Répétez votre mot de Passe</label>
         <div class="bar"></div>
         </div>
         <div class="button-container">
-            <button type="submit" name="submitInscription" <span>Je m'inscris !</span></button>
+            <button type="submit"><span>Je m'inscris !</span></button>
         </div>
             <input type="hidden" name="idForm" value="inscription"/>
     </form>
