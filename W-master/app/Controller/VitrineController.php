@@ -22,7 +22,13 @@ class VitrineController
 
 		$this->show('pages/mentions-legales');
 	}
+    
+    public function label()
+	{
 
+		$this->show('pages/label');
+	}
+    
 	public function backAccueil()
 	{
 
