@@ -3,6 +3,18 @@ console.log('Javascript is linked & jQuery is installed :)')
 
 $(document).ready(function(){
     
+    
+/* EFFET NAV PRINCIPALE: Transparence au scroll */
+   
+    $(window).scroll(function() {
+        if ($(document).scrollTop() > 50) {
+        $('navbar').addClass('transparent');
+        } else {
+        $('navbar').removeClass('transparent');
+        }
+    });
+
+    
 /* Effet au scroll scrollreveal ========== */
    
     window.sr = ScrollReveal({reset: true});
@@ -25,6 +37,8 @@ $(document).ready(function(){
       js.src = "//connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v2.8&appId=1417053915025497";
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
+    
+
     
 /* BACK OFFICE : menu ==================== */
     

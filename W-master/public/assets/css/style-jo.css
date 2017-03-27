@@ -116,6 +116,7 @@ p, a{
 @-webkit-keyframes tracking-in-contract{0%{letter-spacing:1em;opacity:0}40%{opacity:.6}100%{letter-spacing:normal;opacity:1}}@keyframes tracking-in-contract{0%{letter-spacing:1em;opacity:0}40%{opacity:.6}100%{letter-spacing:normal;opacity:1}}
 @-webkit-keyframes bounce-in-bottom{0%{-webkit-transform:translateY(500px);transform:translateY(500px);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in;opacity:0}38%{-webkit-transform:translateY(0);transform:translateY(0);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out;opacity:1}55%{-webkit-transform:translateY(65px);transform:translateY(65px);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}72%{-webkit-transform:translateY(0);transform:translateY(0);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}81%{-webkit-transform:translateY(28px);transform:translateY(28px);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}90%{-webkit-transform:translateY(0);transform:translateY(0);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}95%{-webkit-transform:translateY(8px);transform:translateY(8px);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}100%{-webkit-transform:translateY(0);transform:translateY(0);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}}@keyframes bounce-in-bottom{0%{-webkit-transform:translateY(500px);transform:translateY(500px);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in;opacity:0}38%{-webkit-transform:translateY(0);transform:translateY(0);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out;opacity:1}55%{-webkit-transform:translateY(65px);transform:translateY(65px);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}72%{-webkit-transform:translateY(0);transform:translateY(0);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}81%{-webkit-transform:translateY(28px);transform:translateY(28px);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}90%{-webkit-transform:translateY(0);transform:translateY(0);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}95%{-webkit-transform:translateY(8px);transform:translateY(8px);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}100%{-webkit-transform:translateY(0);transform:translateY(0);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}}
 @-webkit-keyframes heartbeat{from{-webkit-transform:scale(1);transform:scale(1);-webkit-transform-origin:center center;transform-origin:center center;-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}10%{-webkit-transform:scale(.91);transform:scale(.91);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}17%{-webkit-transform:scale(.98);transform:scale(.98);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}33%{-webkit-transform:scale(.87);transform:scale(.87);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}45%{-webkit-transform:scale(1);transform:scale(1);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}}@keyframes heartbeat{from{-webkit-transform:scale(1);transform:scale(1);-webkit-transform-origin:center center;transform-origin:center center;-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}10%{-webkit-transform:scale(.91);transform:scale(.91);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}17%{-webkit-transform:scale(.98);transform:scale(.98);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}33%{-webkit-transform:scale(.87);transform:scale(.87);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}45%{-webkit-transform:scale(1);transform:scale(1);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}}
+@-webkit-keyframes focus-in-contract{0%{letter-spacing:1em;-webkit-filter:blur(12px);filter:blur(12px);opacity:0}100%{-webkit-filter:blur(0);filter:blur(0);opacity:1}}@keyframes focus-in-contract{0%{letter-spacing:1em;-webkit-filter:blur(12px);filter:blur(12px);opacity:0}100%{-webkit-filter:blur(0);filter:blur(0);opacity:1}}
 
 /* BOUTONS ================================== */
 
@@ -262,6 +263,10 @@ button {
 
 @media screen and (max-width: 768px)
 {
+    .container-fluid.header-nav {
+    padding: 0;
+    }
+    
     .navbar-default .navbar-nav>li>a:hover {
         color: white; 
         background-color: #90A7D0;
@@ -270,6 +275,9 @@ button {
         
     }
     
+    .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+        background-color: black;
+    }
     
     .navbar-nav {
         margin: 0 -15px;
@@ -277,6 +285,10 @@ button {
     
     .navbar .navbar-nav {
         display: block!important;
+    }
+    
+    ul.nav.navbar-nav.navbar-left {
+    margin-bottom: 1em;
     }
     
     .container-fluid>.navbar-collapse, .container-fluid>.navbar-header, .container>.navbar-collapse, .container>.navbar-header {
@@ -316,18 +328,31 @@ button {
     padding-top: 19em;
 }
 
-#recherche-accueil h1 {
+.etiquette-titre {
+    background-color: rgba(0,0,0,0.4);
+    padding: 1em;
+    width: 70%;
+    margin: auto;
+}
+
+#recherche-accueil .title-hp h1 {
     margin: 0 0 0 0;
     text-align: center;
     color: #FFFFF3;
     font-weight: 600;
     font-size: 40px;
+    -webkit-animation: focus-in-contract 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	-moz-animation: focus-in-contract 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	animation: focus-in-contract 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
-#recherche-accueil h2 {
+#recherche-accueil .title-hp h2 {
     text-align: center;
     color: #FFFFF3;
     font-size: 20px;
+    -webkit-animation: focus-in-contract 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.8s both;
+	-moz-animation: focus-in-contract 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.8s both;
+	animation: focus-in-contract 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.8s both;
 }
 
 div .bla {
@@ -414,9 +439,9 @@ select.form-control.form-accueil {
     transition: .6s ease;
     background: white;
     text-align: center;
-    -webkit-animation: heartbeat 1.5s ease-in-out both;
-	-moz-animation: heartbeat 1.5s ease-in-out both;
-	animation: heartbeat 1.5s ease-in-out both;
+    -webkit-animation: heartbeat 1.5s ease-in-out 2s both;
+	-moz-animation: heartbeat 1.5s ease-in-out 2s both;
+	animation: heartbeat 1.5s ease-in-out 2s both;
 }
 
 .accueil-styles .paper:hover {
