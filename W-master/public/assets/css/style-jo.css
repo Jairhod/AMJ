@@ -768,8 +768,21 @@ fieldset {
 }
 /* SECTION LABEL =========================== */
 
+section#label {
+    width: 90%;
+    margin: auto;
+    padding-top: 10em;
+    padding-bottom: 10em;
+}
 
+section#label .label-wrapper {
+    
+}
 
+section#label h1 {
+    text-align: center;
+    margin-bottom: 2em;
+}
 
 /* SECTION MENTIONS LEGALES ================ */
 
