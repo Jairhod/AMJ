@@ -6,8 +6,9 @@
 				<th>id</th>
 				<th>nom</th>
 				<th>genre</th>
-				<th>cheminImage</th>
-				<th>bio</th>
+				<th>chemin image</th>
+                <th>bio</th>
+				<th>artistes liés</th>
                 <!-- colonnes techniques -->
                 <th>afficher</th>
                 <th>modifier</th>
