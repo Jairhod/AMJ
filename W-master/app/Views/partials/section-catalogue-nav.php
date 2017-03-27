@@ -1,5 +1,5 @@
 <h1>Le catalogue d'AMJ</h1>
-
+<!--
 <div id="secondary_nav">
 	<h2>Les genres</h2>
 	<form action="" method="GET">
@@ -10,3 +10,4 @@
 		<button type="submit" name="pop" value="pop">pop</button>
 	</form>  
 </div>
+-->
