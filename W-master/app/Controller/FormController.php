@@ -93,10 +93,10 @@ class FormController extends Controller
     {
                 // A COMPLETER
         // RECUPERER LES INFOS DU FORMULAIRE
-        $nom            = $this->verifierSaisie("nom");
-        $genreArt       = $this->verifierSaisie("genreArt");
-        $cheminImage    = $this->verifierSaisie("cheminImage");
-        $bio            = $this->verifierSaisie("bio");
+        $nomArtiste                 = $this->verifierSaisie("nomArtiste");
+        $nomGenre                   = $this->verifierSaisie("nomGenre");
+        $cheminImagePrincipale      = $this->verifierSaisie("cheminImagePrincipale");
+        $descriptionArtiste         = $this->verifierSaisie("descriptionArtiste");
 
         // update
         $id             = $this->verifierSaisie("id");
@@ -104,7 +104,7 @@ class FormController extends Controller
         
         // VERIFIER SI LES INFOS SONT CORRECTES
         if ( ($id > 0)
-            && ($nom != "") && ($genreArt != "") && ($cheminImage != "") && ($bio != "") )
+            && ($nomArtiste != "") && ($nomGenre != "") && ($cheminImagePrincipale != "") && ($descriptionArtiste != "") )
         {
             // SI OK
             // ALORS ON AJOUTE UNE LIGNE DANS LA TABLE artistes
@@ -113,15 +113,15 @@ class FormController extends Controller
             // (...car la table mysql s'appelle artistes)
             $objetArtistesModel = new ArtistesModel;
             // ON PEUT UTILISER LA METHODE insert
-            $objetArtistesModel->update([   "nom"           => $nom, 
-                                            "genreArt"      => $genreArt, 
-                                            "cheminImage"   => $cheminImage,
-                                            "bio"           => $bio,
+            $objetArtistesModel->update([   "nomArtiste"             => $nomArtiste, 
+                                            "nomGenre"               => $nomGenre, 
+                                            "cheminImagePrincipale"  => $cheminImagePrincipale,
+                                            "descriptionArtiste"     => $descriptionArtiste,
                                         ],
                                         $id); // update
                                         
             // MESSAGE DE RETOUR
-            $GLOBALS["artisteUpdateRetour"] = "$nom modifié. Id: ($id)";
+            $GLOBALS["artisteUpdateRetour"] = "$nomArtiste modifié. Id: ($id)";
 
         }
         else

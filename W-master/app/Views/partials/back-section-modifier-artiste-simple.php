@@ -1,6 +1,6 @@
 
 <section>
-    <h3>Modification D'UN ARTISTE</h3>
+    <h3>Modification d'une fiche</h3>
     <article>
 <?php
 
@@ -11,12 +11,12 @@ $tabLigne = $objetArtistesModel->find($id);
 if (!empty($tabLigne))
 {
     // RECUPERER LES COLONNES
-    $id             = $tabLigne["id"];
-    $nomArtiste     = $tabLigne["nomArtiste"];
-    $genreArt       = $tabLigne["nomGenre"];
-    $cheminImage    = $tabLigne["cheminImagePrincipale"];
-    $bio            = $tabLigne["descriptionArtiste"];
-    $artistesLies   = $tabLigne["artistesLies"];
+    $id                     = $tabLigne["id"];
+    $nomArtiste             = $tabLigne["nomArtiste"];
+    $nomGenre               = $tabLigne["nomGenre"];
+    $cheminImagePrincipale  = $tabLigne["cheminImagePrincipale"];
+    $descriptionArtiste     = $tabLigne["descriptionArtiste"];
+    $artistesLies           = $tabLigne["artistesLies"];
     
     // AFFICHER LE CODE HTML
 
@@ -24,12 +24,11 @@ if (!empty($tabLigne))
 <<<CODEHTML
 
     <form method="GET" action="">
-        <input type="text" name="nomArtiste" required placeholder="NOM" value="$nomArtiste"><br>
-        <input type="text" name="genreArt" required placeholder="GENRE" value="$genreArt"><br>
-        <!-- A REMPLACER PAR UN UPLOAD -->
-        <input type="text" name="cheminImage" required placeholder="chemin Image" value="$cheminImage"><br>
-        <textarea name="bio" required placeholder="BIO" cols="60" rows="5">$bio</textarea><br>
-        <button type="submit">MODIFIER ARTISTE</button>
+        <input type="text" name="nomArtiste" required placeholder="Nom" value="$nomArtiste"><br>
+        <input type="text" name="nomGenre" required placeholder="Genre" value="$nomGenre"><br>
+        <input type="text" name="cheminImagePrincipale" required placeholder="chemin Image" value="$cheminImagePrincipale"><br>
+        <textarea name="descriptionArtiste" required placeholder="descriptionArtiste" cols="60" rows="10">$descriptionArtiste</textarea><br>
+        <button type="submit">Modifier</button>
         <input type="hidden" name="idForm" value="artisteUpdate">
         <input type="hidden" name="id" value="$id">
 
