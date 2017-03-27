@@ -8,7 +8,7 @@
             </div>
             <div class="col-md-6 col-xs-6 btn-share">
                 <a href=""><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
-                <a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                <a href=""><i class="fa fa-linkedin" aria-hidden="true" ></i></a>
             </div>
         </div>
   </footer>
