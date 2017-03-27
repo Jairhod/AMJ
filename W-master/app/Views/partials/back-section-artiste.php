@@ -12,13 +12,17 @@ if (!empty($tabLigne))
     $nomGenre       	   = $tabLigne["nomGenre"];
     $cheminImagePrincipale = $tabLigne["cheminImagePrincipale"];
     $descriptionArtiste    = $tabLigne["descriptionArtiste"];
+    $artistesLies          = $tabLigne["artistesLies"];
+    $dateModification      = $tabLigne["dateModification"];
     
     // AFFICHER LE CODE HTML
     echo
 <<<CODEHTML
+    <h4>$dateModification</h4>
     <h4>$nomArtiste</h4>
     <strong>$nomGenre</strong>
     <div>$cheminImagePrincipale</div>
+    <div>$artistesLies</div>
     <p>$descriptionArtiste</p>
 CODEHTML;
 

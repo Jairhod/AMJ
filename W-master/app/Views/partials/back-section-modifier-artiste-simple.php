@@ -17,6 +17,7 @@ if (!empty($tabLigne))
     $cheminImagePrincipale  = $tabLigne["cheminImagePrincipale"];
     $descriptionArtiste     = $tabLigne["descriptionArtiste"];
     $artistesLies           = $tabLigne["artistesLies"];
+    $dateModification       = date("Y-m-d H:i:s");
     
     // AFFICHER LE CODE HTML
 
@@ -24,13 +25,15 @@ if (!empty($tabLigne))
 <<<CODEHTML
 
     <form method="GET" action="">
-        <input type="text" name="nomArtiste" required placeholder="Nom" value="$nomArtiste"><br>
-        <input type="text" name="nomGenre" required placeholder="Genre" value="$nomGenre"><br>
-        <input type="text" name="cheminImagePrincipale" required placeholder="chemin Image" value="$cheminImagePrincipale"><br>
+        <input style="width: 400px" type="text" name="nomArtiste" required placeholder="Nom" value="$nomArtiste"><br>
+        <input style="width: 400px" type="text" name="nomGenre" required placeholder="Genre" value="$nomGenre"><br>
+        <input style="width: 400px" type="text" name="cheminImagePrincipale" required placeholder="Chemin image" value="$cheminImagePrincipale"><br>
+        <input style="width: 400px" type="text" name="artistesLies" required placeholder="Artistes liés" value="$artistesLies"><br>
         <textarea name="descriptionArtiste" required placeholder="descriptionArtiste" cols="60" rows="10">$descriptionArtiste</textarea><br>
         <button type="submit">Modifier</button>
         <input type="hidden" name="idForm" value="artisteUpdate">
         <input type="hidden" name="id" value="$id">
+        <input type="hidden" name="dateModification" value="$dateModification">
 
         <div class="retour">
             $artisteUpdateRetour

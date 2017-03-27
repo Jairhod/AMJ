@@ -97,6 +97,8 @@ class FormController extends Controller
         $nomGenre                   = $this->verifierSaisie("nomGenre");
         $cheminImagePrincipale      = $this->verifierSaisie("cheminImagePrincipale");
         $descriptionArtiste         = $this->verifierSaisie("descriptionArtiste");
+        $artistesLies               = $this->verifierSaisie("artistesLies");
+        $dateModification           = $this->verifierSaisie("dateModification");
 
         // update
         $id             = $this->verifierSaisie("id");
@@ -104,7 +106,8 @@ class FormController extends Controller
         
         // VERIFIER SI LES INFOS SONT CORRECTES
         if ( ($id > 0)
-            && ($nomArtiste != "") && ($nomGenre != "") && ($cheminImagePrincipale != "") && ($descriptionArtiste != "") )
+            && ($nomArtiste != "") && ($nomGenre != "") && ($cheminImagePrincipale != "") && ($descriptionArtiste != "")
+            && ($artistesLies != "") && ($dateModification != "") )
         {
             // SI OK
             // ALORS ON AJOUTE UNE LIGNE DANS LA TABLE artistes
@@ -117,6 +120,8 @@ class FormController extends Controller
                                             "nomGenre"               => $nomGenre, 
                                             "cheminImagePrincipale"  => $cheminImagePrincipale,
                                             "descriptionArtiste"     => $descriptionArtiste,
+                                            "artistesLies"           => $artistesLies,
+                                            "dateModification"       => $dateModification,
                                         ],
                                         $id); // update
                                         
