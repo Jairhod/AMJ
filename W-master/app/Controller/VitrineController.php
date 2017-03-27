@@ -60,7 +60,7 @@ class VitrineController
 		$this->show('pages/fiche-artiste');
 	}
 
-		public function backModifArtiste($id)
+		public function backModifierArtiste($id)
 	{
 		$this->allowTo('admin');
 		
@@ -75,7 +75,7 @@ class VitrineController
 
 
 		// View
-		$this->show("pages/back-modif-artiste", 
+		$this->show("pages/back-modifier-artiste", 
 			[
 			"id" => $id,
 			"artisteUpdateRetour" => $GLOBALS["artisteUpdateRetour"],

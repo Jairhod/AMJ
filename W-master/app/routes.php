@@ -9,6 +9,6 @@
 		['GET',  	'/back/accueil', 		      'Vitrine#backAccueil', 		'back_accueil'],
 		['GET',  	'/back/login', 			      'Vitrine#backLogin', 			'back_login'],
 		['GET',  	'/back/logout', 		      'Vitrine#backLogout', 		'back_logout'],
-		['GET',  	'/back/modif/artiste/[i:id]', 'Vitrine#backModifArtiste', 	'back_modif_artiste'],
+		['GET',  	'/back/modifier/artiste/[i:id]', 'Vitrine#backModifierArtiste', 	'back_modifier_artiste'],
 
 	);
