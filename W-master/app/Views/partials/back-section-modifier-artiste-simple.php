@@ -12,10 +12,11 @@ if (!empty($tabLigne))
 {
     // RECUPERER LES COLONNES
     $id             = $tabLigne["id"];
-    $nom            = $tabLigne["nomArtiste"];
+    $nomArtiste     = $tabLigne["nomArtiste"];
     $genreArt       = $tabLigne["nomGenre"];
     $cheminImage    = $tabLigne["cheminImagePrincipale"];
     $bio            = $tabLigne["descriptionArtiste"];
+    $artistesLies   = $tabLigne["artistesLies"];
     
     // AFFICHER LE CODE HTML
 
@@ -23,7 +24,7 @@ if (!empty($tabLigne))
 <<<CODEHTML
 
     <form method="GET" action="">
-        <input type="text" name="nom" required placeholder="NOM" value="$nom"><br>
+        <input type="text" name="nomArtiste" required placeholder="NOM" value="$nomArtiste"><br>
         <input type="text" name="genreArt" required placeholder="GENRE" value="$genreArt"><br>
         <!-- A REMPLACER PAR UN UPLOAD -->
         <input type="text" name="cheminImage" required placeholder="chemin Image" value="$cheminImage"><br>

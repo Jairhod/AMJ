@@ -30,7 +30,7 @@ foreach($tabLigne as $index => $tabColonne)
     echo '<td><a href="';
 
     $id = $tabColonne["id"];
-    echo $this->url("back_afficher_artiste", ["id" => $id]);
+    echo $this->url("back_artiste_afficher", ["id" => $id]);
 
     echo '" >afficher</a></td>';
     echo "<td><a>modifier</a></td>";

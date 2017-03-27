@@ -19,7 +19,7 @@ class VitrineController
 
 	public function backAccueil()
 	{
-
+		$this->allowTo('admin');
 		$this->show('pages/back-accueil');
 	}
 
@@ -59,35 +59,6 @@ class VitrineController
 
 		$this->show('pages/fiche-artiste');
 	}
-
-		public function backModifierArtiste($id)
-	{
-		$this->allowTo('admin');
-		
-		$GLOBALS["artisteUpdateRetour"] = "";
-		// Controller
-		$idForm = $this->verifierSaisie("idForm");
-	    if ($idForm == "artisteUpdate")
-	    {
-	        // ACTIVER LE CODE POUR TRAITER LE FORMULAIRE newsletter
-	        $this->artisteUpdateTraitement();
-	    }
-
-
-		// View
-		$this->show("pages/back-modifier-artiste", 
-			[
-			"id" => $id,
-			"artisteUpdateRetour" => $GLOBALS["artisteUpdateRetour"],
-			]);
-	}
-
-
-	public function backAfficherArtiste($id)
-	{
-		$this->show('pages/back-artiste', ["id" => $id ]);
-	}
-
 
 
 

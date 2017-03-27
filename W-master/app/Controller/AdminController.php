@@ -43,26 +43,33 @@ class AdminController
 					]);
 	}
 
-	public function modifierArtiste($id)
+	public function backArtisteModifier($id)
 	{
 		$this->allowTo('admin');
 		
 		$GLOBALS["artisteUpdateRetour"] = "";
+
 		// Controller
 		$idForm = $this->verifierSaisie("idForm");
 	    if ($idForm == "artisteUpdate")
 	    {
-	        // ACTIVER LE CODE POUR TRAITER LE FORMULAIRE newsletter
 	        $this->artisteUpdateTraitement();
 	    }
 
 
 		// View
-		$this->show("pages/admin-modifier-artiste", 
+		$this->show("pages/back-artiste-modifier", 
 			[
 			"id" => $id,
 			"artisteUpdateRetour" => $GLOBALS["artisteUpdateRetour"],
 			]);
+	}
+
+
+	public function backArtisteAfficher($id)
+	{
+		$this->allowTo('admin');
+		$this->show('pages/back-artiste-afficher', ["id" => $id ]);
 	}
 
 }
