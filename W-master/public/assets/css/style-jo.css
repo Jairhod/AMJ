@@ -716,7 +716,7 @@ fieldset {
     cursor: pointer;
     width: 100%;
     border: none;
-    background: #F9320C;
+    background: #1ABC9C;
     color: #FFF;
     margin: 0 0 5px;
     padding: 10px;
@@ -724,7 +724,7 @@ fieldset {
 }
 
 #contact button[type="submit"]:hover {
-    background: #3F4F5E;
+    background: #16A085;
     color: white;
     -webkit-transition: background 0.3s ease-in-out;
     -moz-transition: background 0.3s ease-in-out;
@@ -765,7 +765,20 @@ fieldset {
     }
 }
 
+/* SECTION MENTIONS LEGALES ================ */
 
+section#mentions-legales {
+    width: 80%;
+    margin: auto;
+    padding-top: 10em;
+    padding-bottom: 10em;
+}
+
+.mentions-wrapper {
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    padding: 1em;
+    background-color: #ECF0F1;
+}
 
 /* FOOTER ================================== */
 
@@ -774,8 +787,12 @@ footer#footer {
     padding-top: 1.5em;
     padding-bottom: 1.5em;
 }
-footer p {
+footer .col-footer {
     padding-top: 1em;
+    display: flex;
+}
+footer .col-footer a {
+    margin-left: 1em;
 }
 
 
@@ -794,7 +811,8 @@ footer p {
 }
 
 .fa:hover{
-    color: #F9320C;
+    color: #D35400;
+    transition: ease-in-out 0.2s;
 }
 
 @media screen and (max-width: 640px)
