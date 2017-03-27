@@ -42,39 +42,38 @@ class FormController extends Controller
 
     public function artisteCreateTraitement ()
     {
-        // A COMPLETER
-        // RECUPERER LES INFOS DU FORMULAIRE
-        $nom            = $this->verifierSaisie("nom");
-        $genreArt       = $this->verifierSaisie("genreArt");
-        $cheminImage    = $this->verifierSaisie("cheminImage");
-        $bio            = $this->verifierSaisie("bio");
+        $nomArtiste             = $this->verifierSaisie("nomArtiste");
+        $nomGenre               = $this->verifierSaisie("nomGenre");
+        $artistesLies           = $this->verifierSaisie("artistesLies");
+        $cheminImagePrincipale  = $this->verifierSaisie("cheminImagePrincipale");
+        $descriptionArtiste     = $this->verifierSaisie("descriptionArtiste");
+        $dateModification       = date("Y-m-d H:i:s");
         
-        // VERIFIER SI LES INFOS SONT CORRECTES
-        if ( ($nom != "") && ($genreArt != "") && ($cheminImage != "") && ($bio != "") )
+        if ( ($nomArtiste != "") && ($nomGenre != "") && ($artistesLies != "") && ($cheminImagePrincipale != "") && ($descriptionArtiste != "") )
         {
 
             $objetArtistesModel = new ArtistesModel;
-            // ON PEUT UTILISER LA METHODE insert
-            $objetArtistesModel->insert([   "nom"           => $nom, 
-                                            "genreArt"      => $genreArt, 
-                                            "cheminImage"   => $cheminImage,
-                                            "bio"           => $bio,
+
+            $objetArtistesModel->insert([   "nomArtiste"            => $nomArtiste, 
+                                            "nomGenre"              => $nomGenre, 
+                                            "artistesLies"          => $artistesLies, 
+                                            "cheminImagePrincipale" => $cheminImagePrincipale,
+                                            "descriptionArtiste"    => $descriptionArtiste,
+                                            "dateModification"      => $dateModification,
                                         ]);
                                         
-            // MESSAGE DE RETOUR
-            $GLOBALS["artisteCreateRetour"] = "ARTISTE AJOUTE ($nom)";
+            $GLOBALS["artisteCreateRetour"] = "($nomArtiste) ajouté";
 
         }
         else
         {
-            // MESSAGE DE RETOUR
-            $GLOBALS["artisteCreateRetour"] = "INFORMATION(S) MANQUANTES";
-            
+            $GLOBALS["artisteCreateRetour"] = "Erreurs artisteTraitement";          
         }
     }
 
     public function artisteDeleteTraitement ()
     {
+       
        $id = $this->verifierSaisie("id");
        $id = intval($id);
        if ($id>0)

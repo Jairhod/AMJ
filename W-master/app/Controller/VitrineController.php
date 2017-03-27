@@ -20,6 +20,7 @@ class VitrineController
 	public function backAccueil()
 	{
 		$this->allowTo('admin');
+
 		$this->show('pages/back-accueil');
 	}
 

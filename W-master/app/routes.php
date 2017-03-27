@@ -9,7 +9,8 @@
 		['GET',  	'/back/accueil', 		         'Vitrine#backAccueil', 		'back_accueil'],
 		['GET',  	'/back/login', 			         'Vitrine#backLogin', 			'back_login'],
 		['GET',  	'/back/logout', 		         'Vitrine#backLogout', 			'back_logout'],
-		['GET',  	'/back/artiste/modifier/[i:id]', 'Admin#backArtisteModifier', 'back_artiste_modifier'],
+		['GET',  	'/back/artiste/gerer',           'Admin#backArtisteGerer',    'back_artiste_gerer'],
 		['GET',  	'/back/artiste/afficher/[i:id]', 'Admin#backArtisteAfficher', 'back_artiste_afficher'],
+		['GET',  	'/back/artiste/modifier/[i:id]', 'Admin#backArtisteModifier', 'back_artiste_modifier'],
 
 	);

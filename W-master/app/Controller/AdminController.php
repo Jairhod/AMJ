@@ -1,42 +1,32 @@
 <?php
 
+
+
 namespace Controller;
 
 class AdminController 
     extends FormController  // ON HERITE DE LA CLASSE FormController 
                             // QUI HERITE DE LA CLASSE W\Controller\Controller
 {
-    // METHODE
-    
-	/**
-	 * Page de /admin/artistes
-	 */
-	public function gererArtiste()
-	{
-		// Sécurité
-		// Seulement les role admin peuvent y accéder
-		//$this->allowTo(['admin', 'super-admin']);
-		$this->allowTo('admin');
 
-	    // CONTROLLER
-	    // TRAITEMENT DU FORMULAIRE
-	    $GLOBALS["artisteCreateRetour"] = "";
-	    $GLOBALS["artisteDeleteRetour"] = "";
-	    
-	    // RECUPERER L'INFO idForm
+	public function backArtisteGerer()
+	{
+		$this->allowTo('admin');
+		$GLOBALS["artisteCreateRetour"] = "";
+		$GLOBALS["artisteDeleteRetour"] = "";
+    
 	    $idForm = $this->verifierSaisie("idForm");
 	    if ($idForm == "artisteCreate")
 	    {
-	        // ACTIVER LE CODE POUR TRAITER LE FORMULAIRE newsletter
 	        $this->artisteCreateTraitement();
 	    }
+
 	    if ($idForm == "artisteDelete")
 	    {
-	        // ACTIVER LE CODE POUR TRAITER LE FORMULAIRE newsletter
 	        $this->artisteDeleteTraitement();
 	    }
 	    
-		$this->show('pages/admin-artistes', 
+		$this->show('pages/back-artiste-gerer', 
 					[ 
 						"artisteCreateRetour" => $GLOBALS["artisteCreateRetour"], 
 						"artisteDeleteRetour" => $GLOBALS["artisteDeleteRetour"], 
