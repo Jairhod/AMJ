@@ -83,5 +83,12 @@ class VitrineController
 	}
 
 
+	public function backAfficherArtiste($id)
+	{
+		$this->show('pages/back-artiste', ["id" => $id ]);
+	}
+
+
+
 
 }

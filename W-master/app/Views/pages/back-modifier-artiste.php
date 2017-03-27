@@ -1,5 +1,6 @@
 <?php
 
-$this->insert('partials/back-header', [ "titre" => "Modifier artiste" ]);
-$this->insert('partials/back-section-modif-artiste', [ "id" => $id, "artisteUpdateRetour" => $artisteUpdateRetour ]);
-$this->insert('partials/back-footer');
+$this->insert('partials/back-header-simple', 					[ "titre" 				=> "Modifier artiste" ]);
+$this->insert('partials/back-section-modifier-artiste-simple', 	[ "id" 					=> $id, 
+														  		  "artisteUpdateRetour" => $artisteUpdateRetour ]);
+$this->insert('partials/back-footer-simple');
