@@ -780,6 +780,14 @@ section#mentions-legales {
     background-color: #ECF0F1;
 }
 
+ection#mentions-legales h1 {
+    color:  #3F4F5E;
+}
+
+ection#mentions-legales p {
+    color:  #3F4F5E;
+}
+
 /* FOOTER ================================== */
 
 footer#footer {
