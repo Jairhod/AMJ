@@ -1,11 +1,11 @@
- <nav class="navbar navbar-default navbar-made">
+ <nav class="navbar navbar-default navbar-made navbar-fixed-top">
         <div class="container-fluid header-nav">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
              <span class="glyphicon glyphicon-menu-hamburger"></span>
               </button>
-              <a class="navbar-brand" href="accueil">MENU<a href="accueil"></a></a>
+              <a class="navbar-brand" href="accueil"><a href="accueil"></a></a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse container green borderXwidth" id="bs-example-navbar-collapse-1">

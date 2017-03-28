@@ -7,46 +7,24 @@ class VitrineController
 {
 	public function accueil()
 	{
-
 		$this->show('pages/accueil');
 	}
 
 	public function actus()
 	{
-
 		$this->show('pages/actus');
 	}
-
-	public function backAccueil()
+    
+    public function mentionsLegales()
 	{
-
-		$this->show('pages/back-accueil');
+		$this->show('pages/mentions-legales');
 	}
-
-	public function backLogin()
+    
+    public function label()
 	{
-		$GLOBALS["loginRetour"] = "";
-
-		$idForm = $this->verifierSaisie("idForm");
-	    if ($idForm == "login")
-	    {
-	        $this->loginTraitement();
-	    }
-
-	    $this->show('pages/back-login', [ "loginRetour" => $GLOBALS["loginRetour"] ]);
+		$this->show('pages/label');
 	}
-
-
-	public function backLogout()
-	{
-		$objetAuthentificationModel = new \W\Security\AuthentificationModel;
-
-		$objetAuthentificationModel->logUserOut();
-
-		$this->redirectToRoute("back_login");
-
-
-	}
+    
 
 	public function catalogue()
 	{
@@ -59,29 +37,5 @@ class VitrineController
 
 		$this->show('pages/fiche-artiste');
 	}
-
-		public function backModifArtiste($id)
-	{
-		$this->allowTo('admin');
-		
-		$GLOBALS["artisteUpdateRetour"] = "";
-		// Controller
-		$idForm = $this->verifierSaisie("idForm");
-	    if ($idForm == "artisteUpdate")
-	    {
-	        // ACTIVER LE CODE POUR TRAITER LE FORMULAIRE newsletter
-	        $this->artisteUpdateTraitement();
-	    }
-
-
-		// View
-		$this->show("pages/back-modif-artiste", 
-			[
-			"id" => $id,
-			"artisteUpdateRetour" => $GLOBALS["artisteUpdateRetour"],
-			]);
-	}
-
-
 
 }
