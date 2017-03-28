@@ -19,14 +19,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="assets/js/script.js"></script>
     <script type="text/javascript" src="assets/js/scrollreveal.min.js"></script>
-<!-- script menu genres pour fiche artiste-->
-    <link rel="stylesheet" type="text/css" href="assets/css/default.css" />
-    <link rel="stylesheet" type="text/css" href="assets/css/component.css" />
-    <script src="assets/js/modernizr.custom.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="assets/js/jquery.dlmenu.js"></script>
-<!-- fin script menu genres pour fiche artiste-->
-
+    
     
 
 
