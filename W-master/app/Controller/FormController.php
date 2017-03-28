@@ -94,7 +94,7 @@ class FormController extends Controller
         // RECUPERER LES INFOS DU FORMULAIRE
         $nomArtiste                 = $this->verifierSaisie("nomArtiste");
         $nomGenre                   = $this->verifierSaisie("nomGenre");
-        $cheminImagePrincipale      = $this->verifierSaisie("cheminImagePrincipale");
+        $cheminImagePrincipale      = $this->verifierUpload ("cheminImagePrincipale");
         $descriptionArtiste         = $this->verifierSaisie("descriptionArtiste");
         $artistesLies               = $this->verifierSaisie("artistesLies");
         $dateModification           = $this->verifierSaisie("dateModification");
@@ -166,5 +166,65 @@ class FormController extends Controller
             }
         }
     }
+
+    function verifierUpload ($nameInput)
+{
+    $cheminOK = "";
+    
+    $idForm = verifierSaisie("idForm");
+    
+    if (!empty([$_FILES]))
+    {
+        $tabInfoFichierUploade = $_FILES[$nameInput];
+        if (!empty($tabInfoFichierUploade))
+        {
+            $error = $tabInfoFichierUploade["error"];
+            if ($error == 0)
+            {
+                $name       = $tabInfoFichierUploade["name"];
+                $type       = $tabInfoFichierUploade["type"];
+                $tmpName    = $tabInfoFichierUploade["tmp_name"];
+                $size       = $tabInfoFichierUploade["size"];
+                
+                if ($size < 10 * 1024 * 1024) // 10 MEGAOCTETS
+                {
+                    // ON VERIFIE L'EXTENSION
+                    $extension = pathinfo($name, PATHINFO_EXTENSION);
+                    // METTRE L'EXTENSION EN MINUSCULES
+                    $extension = strtolower($extension);
+
+                    $tabExtensionOK = 
+                    [ 
+                        "jpeg", "jpg", "gif", "png", "svg", 
+                        "pdf", "txt", "doc", "docx", "xls", "ppt", "pptx", "odt", 
+                        "html", "css", "js", 
+                        "ttf", "otf"
+                    ];
+                    
+                    if (in_array($extension, $tabExtensionOK))
+                    {
+                        $nameOK     =  preg_replace("/[^a-zA-Z0-9-_\.]/", "", $name);
+                        $cheminOK   = "assets/uploads/$nameOK";
+                        
+                        $cheminOK = strtolower($cheminOK);
+                        echo move_uploaded_file();
+                        move_uploaded_file($tmpName, $cheminOK);
+                        
+                    }
+                    else
+                    {
+                        $GLOBALS[$idForm . "Retour"] = "EXTENSION NON CONFORME";
+                    }
+                }
+                else 
+                {
+                    $GLOBALS[$idForm . "Retour"] = "FICHIER TROP VOLUMINEUX";
+                }
+            }
+        }
+    }
+        
+    return $cheminOK;
+}
 
 }
