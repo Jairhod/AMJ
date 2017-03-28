@@ -1,5 +1,5 @@
 <?php
-namespace Eventviva;
+namespace Controller;
 use \Exception;
 /**
  * PHP class to resize and scale images

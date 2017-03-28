@@ -167,8 +167,7 @@ button {
 .btn-2:hover:before {height: 100%;}
 .btn-2:hover:after {width: 100%;}
 
-
-/* NAV BAR ================================== */
+/* NAV BAR PRINCIPALE ================================== */
 .navbar-default {
     background-color: black;
     border: none;
@@ -299,6 +298,7 @@ button {
     }
     
 }
+
 /* SECTION RECHERCHE ACCUEIL =================== */
 
 
@@ -363,67 +363,96 @@ div .bla {
     padding-top: 3em;
 }
 
-select.form-control.form-artistes-accueil {
+
+/* SELECT STYLE */
+
+#recherche-accueil .bla .select {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  font-size: 13px;
+  color: #fff;
+  width: 220px;
+}
+
+#recherche-accueil .bla .select:last-child {
     margin-left: 0.5em;
 }
 
-button.form-control.form-submit-accueil {
-    margin-left: 3em;
-
+#recherche-accueil .bla .select-styled {
+  position: absolute;
+  top: 0;
+  right: -2px;
+  bottom: 0;
+  left: 0;
+  background-color: #1ABC9C;
+  padding: 8px 15px;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+#recherche-accueil .bla .select-styled:after {
+  content: "";
+  width: 0;
+  height: 0;
+  border: 7px solid transparent;
+  border-color: #fff transparent transparent transparent;
+  position: absolute;
+  top: 16px;
+  right: 10px;
+}
+#recherche-accueil .bla .select-styled:hover {
+  background-color: #1ABC9C;
+}
+#recherche-accueil .bla .select-styled:active, .select-styled.active {
+  background-color: #16A085;
 }
 
-select.form-accueil {
-    border-radius: 0px;
-    border: white solid 2px;
-    color: white;
+#recherche-accueil .bla .select-styled:active:after, .select-styled.active:after {
+  top: 9px;
+  border-color: transparent transparent #fff transparent;
+}
+
+#recherche-accueil .bla .select-options {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: -2px;
+  left: 0;
+  z-index: 999;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background-color: #1ABC9C;
+}
+
+#recherche-accueil .bla .select-options li {
+  margin: 0;
+  padding: 9px 0;
+  text-indent: 15px;
+  border-top: 1px solid #16A085;
+  -moz-transition: all 0.15s ease-in;
+  -o-transition: all 0.15s ease-in;
+  -webkit-transition: all 0.15s ease-in;
+  transition: all 0.15s ease-in;
+}
+#recherche-accueil .bla .select-options li:hover {
+  color: #1ABC9C;
+  background: #fff;
+}
+#recherche-accueil .bla .select-options li[rel="hide"] {
+  display: none;
 }
 
 
-select.form-control.form-accueil {
-    width: 15%;
-    background-color: rgba(0,0,0,0.4);
-}
-
-#genres option:hover {
-    color: #3F4F5E;
-    text-align: center;
-    background: white;
-}
-
-@media screen and (max-width: 770px)
-{
-    #recherche-accueil .title-hp {
-        padding-top: 10em;
-    }
-    
-    #recherche-accueil h1 {
-        font-size: 35px
-    }
-    
-    select.form-control.form-accueil {
-    width: 50%;
-    margin: auto;
-    height: 60px;
-    text-align: center;
-    margin-bottom: 1em;
-    }
-    
-    select.form-control.form-accueil {
-    background-color: rgba(0,0,0,0.8);
-    }
-    
-    div .bla {
-        padding-bottom: 10em;
-    }
-}
-    
-.search-submit-accueil {
+/*.search-submit-accueil {
     background-color: transparent;
     border: 0;
     padding-left: 2em;
-}
+}*/ /* POUR LE BOUTON DERECHERCHE */
 
-.accueil-styles {
+#recherche-accueil .accueil-styles {
     display: flex;
     text-align: center;
     width: 80%;
@@ -432,7 +461,7 @@ select.form-control.form-accueil {
 }
 
 
-.accueil-styles .paper {
+#recherche-accueil .accueil-styles .paper {
     margin: 0 0.4em 6em 0.4em;
     min-width: 4em;
     max-width: 15em;
@@ -446,36 +475,36 @@ select.form-control.form-accueil {
 	animation: heartbeat 1.5s ease-in-out 2s both;
 }
 
-.accueil-styles .paper:hover {
+#recherche-accueil .accueil-styles .paper:hover {
     box-shadow: 0 18px 35px rgba(50, 50, 90, 0.1), 0 8px 15px rgba(0, 0, 0, 0.07);
     transform: translateY(-1px);
 }
 
-.accueil-styles img {
+#recherche-accueil .accueil-styles img {
     max-width: 100%;
     max-height: 100%;
     filter: grayscale(100%);
 }
 
-.accueil-styles img:hover {
+#recherche-accueil .accueil-styles img:hover {
     max-width: 100%;
     max-height: 100%;
     filter: grayscale(0%);
     transition: all 0.7s;
 }
 
-.accueil-styles .poster {
+#recherche-accueil .accueil-styles .poster {
     margin-bottom: 2vh;
 }
 
-.accueil-styles h6 {
+#recherche-accueil .accueil-styles h6 {
     font-size: 2.6rem;
     color: #303336;
     letter-spacing: 1px;
     margin: 2vh 4vw;
 }
 
-.accueil-styles h5 {
+#recherche-accueil .accueil-styles h5 {
     font-size: .8rem;
     color: #A0A6AB;
     letter-spacing: 2px;
@@ -485,7 +514,7 @@ select.form-control.form-accueil {
 }
 
 
-.accueil-styles p {
+#recherche-accueil .accueil-styles p {
     margin: 2vh 8vw;
     text-align: center;
     padding-bottom: 1vh;
@@ -495,7 +524,7 @@ select.form-control.form-accueil {
     line-height: 1.25rem;
 }
 
-.accueil-styles.btn,
+#recherche-accueil .accueil-styles.btn,
 a.btn {
     display: inline-block;
     text-transform: uppercase;
@@ -514,7 +543,7 @@ a.btn {
     border-radius: 0;
 }
 
-.accueil-styles.btn,
+#recherche-accueil .accueil-styles.btn,
 a.btn:hover {
     box-shadow: 0 7px 14px rgba(48, 51, 54, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
     transition: ease-in-out 0.3s;
@@ -525,15 +554,16 @@ a.btn:hover {
     background: white;
 }
 
-.accueil-styles.btn,
+#recherche-accueil .accueil-styles.btn,
 a.btn:active {
     box-shadow: 0 4px 6px rgba(48, 51, 54, 0.1), 0 1px 3px rgba(0, 0, 0, 0.12);
     transform: translateY(1px);
 }
 
-.accueil-styles.space {
+#recherche-accueil .accueil-styles.space {
     height: 4vh;
 }
+
 
 @media screen and (max-width: 770px)
 {
@@ -544,6 +574,11 @@ a.btn:active {
     #descriptif h3 {
         font-size: 35px !important;
     }
+    
+    .form-inline .form-control {
+    width: 90% !important;
+    }
+    
 }
 
 /* SECTION ACCUEIL DESCRIPTIF =============== */

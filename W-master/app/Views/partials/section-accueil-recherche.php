@@ -13,7 +13,7 @@
             <input type="hidden" name="idForm" value="choixAccueil">
             <div class="bla">   
                 <select name="genres" id="genres" class="form-control form-accueil">
-                    <option value="0" selected disabled>Choisir son style...</option>         <option value="tous">Tous styles</option>      
+                    <option value="hide" selected disabled>Choisir son style...</option>         <option value="tous">Tous styles</option>      
                     <option value="SOUL-FUNK-BLUES">SOUL - FUNK - R &amp; BLUES</option>
                     <option value="POP-ROCK-ACTU">POP - ROCK - ACTU</option>
                 </select>
