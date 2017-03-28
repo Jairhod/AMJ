@@ -10,3 +10,6 @@
 .menustyles a {
   text-decoration: none;
 }
+.inline {
+	display: inline;
+}
