@@ -1,7 +1,7 @@
     <section>
         <h4>Bienvenue : <?php echo($w_user["username"]); ?></h3>
         <h3>Formulaire de creation d'une fiche</h3>
-        <form action="" method="GET">
+        <form action="" method="POST" enctype="multipart/form-data">
             <input type="text" name="nomArtiste" required placeholder="nomArtiste"><br>
             <input type="text" name="nomGenre" required placeholder="nomGenre"><br>
             <input type="text" name="artistesLies" required placeholder="artistesLies"><br>

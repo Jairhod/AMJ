@@ -207,9 +207,8 @@ class FormController extends Controller
                         $cheminOK   = "assets/uploads/$nameOK";
                         
                         $cheminOK = strtolower($cheminOK);
-                        echo move_uploaded_file();
+                      
                         move_uploaded_file($tmpName, $cheminOK);
-                        
                     }
                     else
                     {
