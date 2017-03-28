@@ -1,27 +1,38 @@
-       <div class="contenu-bo container-fluid">
-           <div>
-                <div>
-                    <a href="accueil"><img src="assets/media/img/forbidden-mark.png" alt=""></a>
-                </div>
-               <form action="" id="form-bo" method="GET">
-                   <select>
-                       <option value=""  id="" name="">Nom utilisateur</option>
-                       <option value="profil"  id="profil" name="profil">Profil</option>
-                       <option value="parametres" id="parametres" name="parametres">Paramètres</option>
-                       <option value="deconnexion" id="deconnexion" name="deconnexion">Déconnnexion</option>
-                   </select>
-                   <input type="hidden" name="idForm" value="menu-bo"/>
-               </form>
-               <div class="titre-bo">
-                   <h1 id="titre-bo">AMJ Back office</h1>
-               </div>
+
+    <div class="contenu-bo container-fluid">
+        <div class="bo-global">
+            <div class="bo-col-1">
+                <a href="accueil">retour au site AMJ<i class="fa fa-sign-out" aria-hidden="true"></i></a>  
             </div>
-            <div id="btn-bo">
-                <div class="btn-bo-1">
-                   <a href="#" class="btn"><div>Créer une page Artiste</div><img src="assets/media/img/edit.png" alt=""></a>
-                </div>
-                <div class="btn-bo-2">
-                   <a href="#" class="btn"><div>Modifier une page Artiste</div><img src="assets/media/img/edit.png" alt=""></a>
-                </div>
+            <div class="titre">
+               <h1 id="titre-bo">AMJ Back office</h1>
             </div>
-       </div>
+            <nav>
+                <div class="nav-fostrap">
+                    <ul>
+                        <li><a href="javascript:void(0)"><?php ?>Admin 176<span class="arrow-down"></span></a>
+                            <ul class="dropdown">
+                                <li><a href="">Profil</a></li>
+                                <li><a href="">Paramètres</a></li>
+                                <li><a href="">Déconnexion</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="nav-bg-fostrap">
+                    <div class="navbar-fostrap"> <span></span> <span></span> <span></span> </div>
+                    <a href="" class="title-mobile">Menu</a>
+                </div>
+            </nav>
+        </div>
+        <div id="btn-bo">
+            <div class="btn-col">
+                <a href="#" class="btn">Créer une page Artiste</a>
+                <div class="btn-svg"><img src="../assets/media/img/create.svg" alt=""></div>
+            </div>
+            <div class="btn-col">
+               <a href="#" class="btn">Modifier une page Artiste</a>
+               <div class="btn-svg"><img src="../assets/media/img/modify.svg" alt=""></div>
+            </div>
+        </div><!-- fin div bo global -->
+    </div><!-- fin div container bo -->
