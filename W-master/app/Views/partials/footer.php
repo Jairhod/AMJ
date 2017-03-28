@@ -11,6 +11,12 @@
                 <a href=""><i class="fa fa-linkedin" aria-hidden="true" ></i></a>
             </div>
         </div>
+<!-- SCRIPT POUR MENU STYLE MUSICAL FICHE ARTISTE-->        
+        <script>
+            $(function() {
+                $( '#dl-menu' ).dlmenu();
+            });
+        </script>
   </footer>
 </body>
 </html>

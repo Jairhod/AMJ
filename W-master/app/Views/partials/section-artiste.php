@@ -1,4 +1,4 @@
-      <link rel="stylesheet" type="text/css" href="assets/css/style-do.css">
+<!--      
       <div id="breadcrumbs"><a href="#!">artiste machin</a></div>
       
       <div id="recherche-artiste">
@@ -6,63 +6,52 @@
         <input type="hidden" name="idForm" value="rechercheArtiste">
         <button type="submit" name="rechercher" value="rechercher">Rechercher un artiste</button>
       </div>
-
-      <section>
-<!--      
-
-        <div class="container">
-          <div class="jumbotron">        
-            <h2>BLACKOUT BAND</h2>
-              <div class="row">
-
-                <div class="col-md-4">
-                  <img src="./assets/media/img/BLACKOUT-BAND-01.jpg" alt="blackout band" width=400>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam error repudiandae eius temporibus accusamus aut saepe reiciendis molestiae consequuntur, magni dicta ratione ea eveniet dolor, nisi dolorem aspernatur quis. Adipisci.</p>
-                    <div class="col-md-8">
-                      <article>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam error repudiandae eius temporibus accusamus aut saepe reiciendis molestiae consequuntur, magni dicta ratione ea eveniet dolor, nisi dolorem aspernatur quis. Adipisci.</p>
-                      </article>
-                    </div>
-                  <div class="col-md-4">lecteur audio</div>
-                </div>
-
-              <div class="row">
-                <div class="col-md-4">video</div>
-                <div class="col-md-4">video</div>
-                <div class="col-md-4">video</div>
-              </div>
-
-              <div class="devis-btn">
-                <a href="#!">Simuler un devis</a>
-              </div> 
-
-              </div> 
-          </div> 
-        </div>  
 -->
-            <nav class="navbar navbar-default">
-              <div class="container-fluid">
-                <div class="navbar-collapse">
-                    <ul class="nav navbar-nav navbar-center">
-                      <li class="limenugenre"><a href="#">&nbsp;</a></li>
-                      <li class="limenugenre"><a href="#">Jazz</a></li>
-                      <li class="limenugenre"><a href="#">Rock</a></li>
-                      <li class="limenugenre"><a href="#">r' & Blues</a></li>
-                      <li class="limenugenre"><a href="#">Soul/Funk</a></li>
-                      <li class="limenugenre"><a href="#">World Music</a></li>
-                      <li class="limenugenre"><a href="#">Tribute</a></li>
-                      <li class="limenugenre"><a href="#">Duo, Trio...</a></li>
-                      <li class="limenugenre"><a href="#">Festivals</a></li>
-                      <li class="limenugenre"><a href="#">Dance Floor</a></li>
-                      <li class="limenugenre"><a href="#">Orchestre</a></li>
-                      <li class="limenugenre"><a href="#">Strolling</a></li>
-                      <li class="limenugenre"><a href="#">Magie</a></li>
-                    </ul>
-               </div>
-              </div>  
-            </nav>
-        
-        <div class="container jumbotron">
+      <section>
+<!-- MENU STYLE MUSICAL-->
+    <div class="container demo-1"> 
+      <div class="main clearfix">
+        <div class="column">
+          <div id="dl-menu" class="dl-menuwrapper">
+            <button class="dl-trigger">Open Menu</button>
+            <div class="spangenres">
+              <span>Style musical</span>
+            </div>
+            <ul class="dl-menu">
+              <li>
+                <a href="#">Jazz</a>
+              </li>
+              <li>
+                <a href="#">Soul Funk</a>
+              </li>
+              <li>
+                <a href="#">Orchestre</a>
+              </li>
+              <li>
+                <a href="#">R' &amp Blues</a>
+              </li>
+              <li>
+                <a href="#">Dance Floor</a>
+              </li>
+              <li>
+                <a href="#">Duo, Trio, Quartet</a>
+              </li>
+              <li>
+                <a href="#">Strolling</a>
+              </li>
+              <li>
+                <a href="#">Festivals</a>
+              </li>
+              <li>
+                <a href="#">Tribute</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+<!-- IMAGE PRICIPALE-->      
+<!--        <div class="container jumbotron">
           <h2>BLACKOUT BAND</h2><br />
               <div class="row">
              
@@ -131,9 +120,10 @@
         <div class="container jumbotron">
               <h2>DECOUVRIR D'AUTRES ARTISTES DU MÊME GENRE</h2><br />
               <h4>Slider artistes du même genre</h4><br />
+-->              
 
               <!-- SLIDE SHOW-->
-              <div class="slideshow">
+<!--              <div class="slideshow">
                 <ul>
                   <li><a href=""><img src="./assets/media/img/CHANSON-MARSEILLAISE/Chansons-Marseillaises-2.jpg" alt="" width="250" height="150" /></a></li>
                   <li><a href=""><img src="./assets/media/img/GOSPEL/GOSPEL-3.jpg" alt="" width="250" height="150" /></a></li>
@@ -156,7 +146,7 @@
 </script>
 
 
-
+-->
 
 
       </section> 
