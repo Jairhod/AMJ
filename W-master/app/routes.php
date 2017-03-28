@@ -6,11 +6,12 @@
 		['GET',  	'/catalogue', 		             'Vitrine#catalogue', 			'vitrine_catalogue'],
 		['GET',  	'/fiche-artiste', 		         'Vitrine#ficheArtiste', 		'vitrine_fiche_artiste'],
 		
-		['GET',  	'/back/accueil', 		         'Vitrine#backAccueil', 		'back_accueil'],
-		['GET',  	'/back/login', 			         'Vitrine#backLogin', 			'back_login'],
-		['GET',  	'/back/logout', 		         'Vitrine#backLogout', 			'back_logout'],
-		['GET',  	'/back/artiste/gerer',           'Admin#backArtisteGerer',    'back_artiste_gerer'],
-		['GET',  	'/back/artiste/afficher/[i:id]', 'Admin#backArtisteAfficher', 'back_artiste_afficher'],
-		['GET',  	'/back/artiste/modifier/[i:id]', 'Admin#backArtisteModifier', 'back_artiste_modifier'],
+		['GET',  	'/back/accueil', 		         'Admin#backAccueil', 		  	'back_accueil'],
+		['GET',  	'/back/login', 			         'Admin#backLogin', 			'back_login'],
+		['GET',  	'/back/logout', 		         'Admin#backLogout', 			'back_logout'],
+		['GET',  	'/back/artiste/creer',           'Admin#backArtisteCreer',    	'back_artiste_creer'],
+		['GET',  	'/back/artiste/liste',           'Admin#backArtisteListe',    	'back_artiste_liste'],
+		['GET',  	'/back/artiste/afficher/[i:id]', 'Admin#backArtisteAfficher', 	'back_artiste_afficher'],
+		['GET',  	'/back/artiste/modifier/[i:id]', 'Admin#backArtisteModifier', 	'back_artiste_modifier'],
 
 	);

@@ -10,11 +10,10 @@
             <nav>
                 <div class="nav-fostrap">
                     <ul>
-                        <li><a href="javascript:void(0)"><?php ?>Admin 176<span class="arrow-down"></span></a>
+                        <li><a href="javascript:void(0)"><?php echo($w_user["username"]); ?><span class="arrow-down"></span></a>
                             <ul class="dropdown">
-                                <li><a href="">Profil</a></li>
-                                <li><a href="">Paramètres</a></li>
-                                <li><a href="">Déconnexion</a></li>
+                                <li><a href=""><?php echo($w_user["role"]); ?></a></li>
+                                <li><a href="<?php echo $this->url('back_logout'); ?>">Logout</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -27,11 +26,11 @@
         </div>
         <div id="btn-bo">
             <div class="btn-col">
-                <a href="#" class="btn">Créer une page Artiste</a>
+                <a href="<?php echo $this->url('back_artiste_creer'); ?>" class="btn">Créer une page Artiste</a>
                 <div class="btn-svg"><img src="../assets/media/img/create.svg" alt=""></div>
             </div>
             <div class="btn-col">
-               <a href="modifier/artiste/3" class="btn">Modifier une page Artiste</a>
+               <a href="<?php echo $this->url('back_artiste_liste'); ?>" class="btn">Modifier une page Artiste</a>
                <div class="btn-svg"><img src="../assets/media/img/modify.svg" alt=""></div>
             </div>
         </div><!-- fin div bo global -->

@@ -1,8 +1,5 @@
     <section>
-        <h3>Gerer artiste</h3>
-    </section>
-
-    <section>
+        <h4>Bienvenue : <?php echo($w_user["username"]); ?></h3>
         <h3>Formulaire de creation d'une fiche</h3>
         <form action="" method="GET">
             <input type="text" name="nomArtiste" required placeholder="nomArtiste"><br>

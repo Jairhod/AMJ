@@ -7,13 +7,10 @@
 				<th>nom</th>
 				<th>genre</th>
 				<th>chemin_image</th>
-                <th>bio</th>
+                <th>description</th>
                 <th>artistes_liés</th>
 				<th>date_modifiée</th>
-                <!-- colonnes techniques -->
-                <th>afficher</th>
-                <th>modifier</th>
-                <th>supprimer</th>				
+			
 			</tr>
 		</thead>
 		<tbody>

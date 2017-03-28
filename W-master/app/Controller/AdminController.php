@@ -1,7 +1,5 @@
 <?php
 
-
-
 namespace Controller;
 
 class AdminController 
@@ -9,27 +7,49 @@ class AdminController
                             // QUI HERITE DE LA CLASSE W\Controller\Controller
 {
 
-	public function backArtisteGerer()
+	public function backAccueil()
+	{
+		$this->allowTo('admin');
+
+		$this->show('pages/back-accueil');
+	}
+
+	public function backLogin()
+	{
+		$GLOBALS["loginRetour"] = "";
+
+		$idForm = $this->verifierSaisie("idForm");
+	    if ($idForm == "login")
+	    {
+	        $this->loginTraitement();
+	    }
+
+	    $this->show('pages/back-login', [ "loginRetour" => $GLOBALS["loginRetour"] ]);
+	}
+
+	public function backLogout()
+	{
+		$objetAuthentificationModel = new \W\Security\AuthentificationModel;
+
+		$objetAuthentificationModel->logUserOut();
+
+		$this->redirectToRoute("back_login");
+	}
+
+	public function backArtisteCreer()
 	{
 		$this->allowTo('admin');
 		$GLOBALS["artisteCreateRetour"] = "";
-		$GLOBALS["artisteDeleteRetour"] = "";
-    
+		    
 	    $idForm = $this->verifierSaisie("idForm");
 	    if ($idForm == "artisteCreate")
 	    {
 	        $this->artisteCreateTraitement();
 	    }
-
-	    if ($idForm == "artisteDelete")
-	    {
-	        $this->artisteDeleteTraitement();
-	    }
-	    
-		$this->show('pages/back-artiste-gerer', 
+    
+		$this->show('pages/back-artiste-creer', 
 					[ 
 						"artisteCreateRetour" => $GLOBALS["artisteCreateRetour"], 
-						"artisteDeleteRetour" => $GLOBALS["artisteDeleteRetour"], 
 					]);
 	}
 
@@ -46,7 +66,6 @@ class AdminController
 	        $this->artisteUpdateTraitement();
 	    }
 
-
 		// View
 		$this->show("pages/back-artiste-modifier", 
 			[
@@ -62,4 +81,21 @@ class AdminController
 		$this->show('pages/back-artiste-afficher', ["id" => $id ]);
 	}
 
+	public function backArtisteListe()
+	{
+		$this->allowTo('admin');
+		$GLOBALS["artisteDeleteRetour"] = "";
+
+		$idForm = $this->verifierSaisie("idForm");
+		if ($idForm == "artisteDelete")
+	    {
+	        $this->artisteDeleteTraitement();
+	    }
+
+		$this->show('pages/back-artiste-liste',
+					[ 
+						"artisteDeleteRetour" => $GLOBALS["artisteDeleteRetour"], 
+					]);
+
+	}
 }

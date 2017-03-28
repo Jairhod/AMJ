@@ -17,37 +17,6 @@ class VitrineController
 		$this->show('pages/actus');
 	}
 
-	public function backAccueil()
-	{
-		$this->allowTo('admin');
-
-		$this->show('pages/back-accueil');
-	}
-
-	public function backLogin()
-	{
-		$GLOBALS["loginRetour"] = "";
-
-		$idForm = $this->verifierSaisie("idForm");
-	    if ($idForm == "login")
-	    {
-	        $this->loginTraitement();
-	    }
-
-	    $this->show('pages/back-login', [ "loginRetour" => $GLOBALS["loginRetour"] ]);
-	}
-
-
-	public function backLogout()
-	{
-		$objetAuthentificationModel = new \W\Security\AuthentificationModel;
-
-		$objetAuthentificationModel->logUserOut();
-
-		$this->redirectToRoute("back_login");
-
-
-	}
 
 	public function catalogue()
 	{
