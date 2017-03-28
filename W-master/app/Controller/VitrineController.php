@@ -7,16 +7,24 @@ class VitrineController
 {
 	public function accueil()
 	{
-
 		$this->show('pages/accueil');
 	}
 
 	public function actus()
 	{
-
 		$this->show('pages/actus');
 	}
-
+    
+    public function mentionsLegales()
+	{
+		$this->show('pages/mentions-legales');
+	}
+    
+    public function label()
+	{
+		$this->show('pages/label');
+	}
+    
 
 	public function catalogue()
 	{
@@ -29,7 +37,5 @@ class VitrineController
 
 		$this->show('pages/fiche-artiste');
 	}
-
-
 
 }
