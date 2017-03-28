@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 21, 2017 at 04:33 PM
+-- Generation Time: Mar 27, 2017 at 05:26 PM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -35,19 +35,22 @@ CREATE TABLE `artistes` (
   `nomGenre` varchar(255) NOT NULL,
   `cheminImagePrincipale` varchar(1000) NOT NULL,
   `descriptionArtiste` text NOT NULL,
-  `artistesLies` varchar(100) NOT NULL
+  `artistesLies` varchar(100) NOT NULL,
+  `dateModification` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `artistes`
 --
 
-INSERT INTO `artistes` (`id`, `nomArtiste`, `nomGenre`, `cheminImagePrincipale`, `descriptionArtiste`, `artistesLies`) VALUES
-(3, 'BLACKOUT BAND', 'SOUL-FUNK-BLUES', 'assets/media/img/BLACKOUT-BAND/BLACKOUT-BAND-01.jpg', 'C’est sur les scènes et clubs du sud de la France que les quatre membres du groupe BACKOUT se sont rencontrés afin de rendre hommage au plus grandes voix féminines de la SOUL et du R&B.\r\n\r\nEmile MÉLENCHON (guitare et arrangements), Arnaud PACINI (basse) et Marc BELLION (batterie), Andréa CAPARROS (Piano et choeurs) venant tout juste d’intégrer la formation, accompagnent Nicole LISE (chant), incarnant à elle seule toutes les qualités nécessaires à l’interprétation de ce répertoire pour nous faire voyager dans le temps.\r\n\r\nD’ARETHA FRANKLIN à BEYONCE en passant par SHAKA KHAN, ERYKA BADU et bien d’autres, le BLACKOUT Band vous fera partager leur énergie communicative.', 'soul'),
-(4, 'IGUANA VAN', 'POP-ROCK-ACTU', 'assets/media/img/IGUANA-VAN/Iguana_Van.jpg', 'Iguana Van est un groupe marseillais fondé en 2009 par John, Max et Mathieu, amis d’enfance. Apres deux EP auto-produits, le groupe remporte l’edition 2012 du tremplin Massilia Rock qui lui permet d’être programmé sur la scène du Immecke Rock Festival en Allemagne.\r\n \r\nIguana Van distille une musique pop mélodieuse enveloppée de groove, qui prend toute sa dimension en live grâce à un jeu de scène énergique. En 2013, la formation remporte le tremplin Sounds of Marseille et joue en première partie d’Electric Guest.\r\n \r\n2014 voit l’arrivée de Dorian au poste de batteur. Iguana Van reprend le chemin des studios et enregistre un nouvel E.P, Heroes, Shadows, sous le label Two Records, accompagné de Christophe Moura à la trompette et John Massa au saxophone.', 'pop'),
-(5, 'QUARTIERS NORD', 'POP-ROCK-ACTU', 'assets/media/img/Q-N/Baléti_social_Club.png', 'Fort de ses 16 albums bigarrés, de sa fabuleuse tétralogie d’opérettes-rock-­marseillaises, de ses revues loufoques et autres comédies musicales et sociales, QUARTIERS NORD, groupe ô combien atypique qui fêtera bientôt ses 40 ans d’existence, fait désormais ­partie du patrimoine massaliote.\r\nFaisant plus que jamais le lien entre ego-histoire et le contexte qui l’a vu naître,\r\nil ­poursuit son œuvre musicale inclassable en nous conviant au BALÈTI SOCIAL CLUB, un concept novateur à la fois festif et déjanté, à la fibre sociale ­revendiquée et aux influences « ­world  protéiformes ». Ce joyeux maelström ­musical se ­conjuguera à l’envi dans un esprit convivial et interactif, avec des invités-­surprise issus de tous horizons qui apporteront à chaque prestation une touche unique.', 'pop'),
-(6, 'JOHN MASSA \nTRIPBAND', 'SOUL-FUNK-BLUES', 'assets/media/img/JOHN-MASSA-TRIPBAND/John_Massa TRIPBAND.jpg', 'Le groupe du saxophoniste John MASSA est basé à Marseille, ville native de ses membres, qui représente un véritable laboratoire de rencontre musicales.\n\nLes compositions du saxophoniste, explorantes courants du jazz, du groove et de la World Music sont servies par des musiciens de très fortes personnalités qui viennent d’univers musicaux riches et variés.', 'soul'),
-(7, 'THE GODFATHERS', 'SOUL-FUNK-BLUES', 'assets/media/img/THE-GODFATHERS/The_Godfathers.jpg', 'Emmené par  Jean GOMEZ, leader charismatique et chanteur dont la voix évoque celle des grands artistes de la SOUL MUSIC et du RHTHM\'N\'BLUES,\r\nLes Godfathers, restituent avec brio, fidélité et  authenticité un grand nombre de standards puisé dans le répertoire des monstres sacrés de la musique afro-américaine des années 60 et 70.', 'soul');
+INSERT INTO `artistes` (`id`, `nomArtiste`, `nomGenre`, `cheminImagePrincipale`, `descriptionArtiste`, `artistesLies`, `dateModification`) VALUES
+(3, 'BLACKOUT BAND', 'SOUL-FUNK-BLUES', 'assets/media/img/BLACKOUT-BAND/BLACKOUT-BAND-01.jpg', 'C’est sur les scènes et clubs du sud de la France que les quatre membres du groupe BACKOUT se sont rencontrés afin de rendre hommage au plus grandes voix féminines de la SOUL et du R&B.\r\n\r\nEmile MÉLENCHON (guitare et arrangements), Arnaud PACINI (basse) et Marc BELLION (batterie), Andréa CAPARROS (Piano et choeurs) venant tout juste d’intégrer la formation, accompagnent Nicole LISE (chant), incarnant à elle seule toutes les qualités nécessaires à l’interprétation de ce répertoire pour nous faire voyager dans le temps.\r\n\r\nD’ARETHA FRANKLIN à BEYONCE en passant par SHAKA KHAN, ERYKA BADU et bien d’autres, le BLACKOUT Band vous fera partager leur énergie communicative.', 'soul and blues', '2017-03-27 14:26:08'),
+(4, 'IGUANA VAN', 'POP-ROCK-ACTU', 'assets/media/img/IGUANA-VAN/Iguana_Van.jpg', 'Iguana Van est un groupe marseillais fondé en 2009 par John, Max et Mathieu, amis d’enfance. Apres deux EP auto-produits, le groupe remporte l’edition 2012 du tremplin Massilia Rock qui lui permet d’être programmé sur la scène du Immecke Rock Festival en Allemagne.\r\n \r\nIguana Van distille une musique pop mélodieuse enveloppée de groove, qui prend toute sa dimension en live grâce à un jeu de scène énergique. En 2013, la formation remporte le tremplin Sounds of Marseille et joue en première partie d’Electric Guest.\r\n \r\n2014 voit l’arrivée de Dorian au poste de batteur. Iguana Van reprend le chemin des studios et enregistre un nouvel E.P, Heroes, Shadows, sous le label Two Records, accompagné de Christophe Moura à la trompette et John Massa au saxophone.', 'pop', '0000-00-00 00:00:00'),
+(5, 'QUARTIERS NORD', 'POP-ROCK-ACTU', 'assets/media/img/Q-N/Baléti_social_Club.png', 'Fort de ses 16 albums bigarrés, de sa fabuleuse tétralogie d’opérettes-rock-­marseillaises, de ses revues loufoques et autres comédies musicales et sociales, QUARTIERS NORD, groupe ô combien atypique qui fêtera bientôt ses 40 ans d’existence, fait désormais ­partie du patrimoine massaliote.\r\nFaisant plus que jamais le lien entre ego-histoire et le contexte qui l’a vu naître,\r\nil ­poursuit son œuvre musicale inclassable en nous conviant au BALÈTI SOCIAL CLUB, un concept novateur à la fois festif et déjanté, à la fibre sociale ­revendiquée et aux influences « ­world  protéiformes ». Ce joyeux maelström ­musical se ­conjuguera à l’envi dans un esprit convivial et interactif, avec des invités-­surprise issus de tous horizons qui apporteront à chaque prestation une touche unique.', 'pop', '0000-00-00 00:00:00'),
+(6, 'JOHN MASSA \nTRIPBAND', 'SOUL-FUNK-BLUES', 'assets/media/img/JOHN-MASSA-TRIPBAND/John_Massa TRIPBAND.jpg', 'Le groupe du saxophoniste John MASSA est basé à Marseille, ville native de ses membres, qui représente un véritable laboratoire de rencontre musicales.\n\nLes compositions du saxophoniste, explorantes courants du jazz, du groove et de la World Music sont servies par des musiciens de très fortes personnalités qui viennent d’univers musicaux riches et variés.', 'soul', '0000-00-00 00:00:00'),
+(7, 'THE GODFATHERS', 'SOUL-FUNK-BLUES', 'assets/media/img/THE-GODFATHERS/The_Godfathers.jpg', 'Emmené par  Jean GOMEZ, leader charismatique et chanteur dont la voix évoque celle des grands artistes de la SOUL MUSIC et du RHTHM\'N\'BLUES,\r\nLes Godfathers, restituent avec brio, fidélité et  authenticité un grand nombre de standards puisé dans le répertoire des monstres sacrés de la musique afro-américaine des années 60 et 70.', 'soul', '0000-00-00 00:00:00'),
+(10, 'aaa', 'aaa', 'zeezzer', 'zezeerera', 'zzz', '2017-03-27 17:01:50'),
+(11, 'zaer', 'azerera', 'azerer', 'azereazrfgsdgdsfgfsdsgfsdgfds\r\n\r\nsdfgsfdg\r\ndsf\r\n\r\nsdf\r\n\r\ndg', 'azerr', '2017-03-27 17:22:50');
 
 -- --------------------------------------------------------
 
@@ -118,8 +121,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `email`, `password`, `role`) VALUES
-(1, 'admin', 'admin.mail.me', '$2y$10$eLxVr0xe1W6T8xAEitRvJ.8JkTDgjTU.iyn0UD.R40GT2jeXwjVFy', 'admin'),
-(2, 'ben', 'ben@cool.dude', '$2y$10$2cUjw/W5xJDNnrhLEWgJyeaoOVTElK2FNrg3B/IAMXpJyqVU5h1B.', 'admin');
+(3, 'cat', 'cat@milk.love', '$2y$10$lO7gfgjAvYq2jwxz2f0LQOJFPuph1p1zQh1r2ERZuszgK3Z7nIb5S', 'admin');
 
 -- --------------------------------------------------------
 
@@ -226,7 +228,7 @@ ALTER TABLE `videos`
 -- AUTO_INCREMENT for table `artistes`
 --
 ALTER TABLE `artistes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT for table `audios`
 --
@@ -246,7 +248,7 @@ ALTER TABLE `images`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `utilisateurs`
 --

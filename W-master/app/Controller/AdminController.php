@@ -6,63 +6,96 @@ class AdminController
     extends FormController  // ON HERITE DE LA CLASSE FormController 
                             // QUI HERITE DE LA CLASSE W\Controller\Controller
 {
-    // METHODE
-    
-	/**
-	 * Page de /admin/artistes
-	 */
-	public function gererArtiste()
+
+	public function backAccueil()
 	{
-		// Sécurité
-		// Seulement les role admin peuvent y accéder
-		//$this->allowTo(['admin', 'super-admin']);
 		$this->allowTo('admin');
 
-	    // CONTROLLER
-	    // TRAITEMENT DU FORMULAIRE
-	    $GLOBALS["artisteCreateRetour"] = "";
-	    $GLOBALS["artisteDeleteRetour"] = "";
-	    
-	    // RECUPERER L'INFO idForm
+		$this->show('pages/back-accueil');
+	}
+
+	public function backLogin()
+	{
+		$GLOBALS["loginRetour"] = "";
+
+		$idForm = $this->verifierSaisie("idForm");
+	    if ($idForm == "login")
+	    {
+	        $this->loginTraitement();
+	    }
+
+	    $this->show('pages/back-login', [ "loginRetour" => $GLOBALS["loginRetour"] ]);
+	}
+
+	public function backLogout()
+	{
+		$objetAuthentificationModel = new \W\Security\AuthentificationModel;
+
+		$objetAuthentificationModel->logUserOut();
+
+		$this->redirectToRoute("back_login");
+	}
+
+	public function backArtisteCreer()
+	{
+		$this->allowTo('admin');
+		$GLOBALS["artisteCreateRetour"] = "";
+		    
 	    $idForm = $this->verifierSaisie("idForm");
 	    if ($idForm == "artisteCreate")
 	    {
-	        // ACTIVER LE CODE POUR TRAITER LE FORMULAIRE newsletter
 	        $this->artisteCreateTraitement();
 	    }
-	    if ($idForm == "artisteDelete")
-	    {
-	        // ACTIVER LE CODE POUR TRAITER LE FORMULAIRE newsletter
-	        $this->artisteDeleteTraitement();
-	    }
-	    
-		$this->show('pages/admin-artistes', 
+    
+		$this->show('pages/back-artiste-creer', 
 					[ 
 						"artisteCreateRetour" => $GLOBALS["artisteCreateRetour"], 
-						"artisteDeleteRetour" => $GLOBALS["artisteDeleteRetour"], 
 					]);
 	}
 
-	public function modifierArtiste($id)
+	public function backArtisteModifier($id)
 	{
 		$this->allowTo('admin');
 		
 		$GLOBALS["artisteUpdateRetour"] = "";
+
 		// Controller
 		$idForm = $this->verifierSaisie("idForm");
 	    if ($idForm == "artisteUpdate")
 	    {
-	        // ACTIVER LE CODE POUR TRAITER LE FORMULAIRE newsletter
 	        $this->artisteUpdateTraitement();
 	    }
 
-
 		// View
-		$this->show("pages/admin-modifier-artiste", 
+		$this->show("pages/back-artiste-modifier", 
 			[
 			"id" => $id,
 			"artisteUpdateRetour" => $GLOBALS["artisteUpdateRetour"],
 			]);
 	}
 
+
+	public function backArtisteAfficher($id)
+	{
+		$this->allowTo('admin');
+		$this->show('pages/back-artiste-afficher', ["id" => $id ]);
+	}
+
+	public function backArtisteListe()
+	{
+		$this->allowTo('admin');
+		$GLOBALS["artisteDeleteRetour"] = "";
+
+		$idForm = $this->verifierSaisie("idForm");
+		if ($idForm == "artisteDelete")
+	    {
+	        $this->artisteDeleteTraitement();
+	    }
+
+		$this->show('pages/back-artiste-liste',
+					[ 
+						"artisteDeleteRetour" => $GLOBALS["artisteDeleteRetour"], 
+					]);
+
+	}
 }
