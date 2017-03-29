@@ -20,19 +20,18 @@
     <script type="text/javascript" src="assets/js/scrollreveal.min.js"></script>
 
 <!--script pour menu style musical fiche artiste-->
-<!--    <link rel="stylesheet" type="text/css" href="assets/css/default.css" />-->
+
     <link rel="stylesheet" type="text/css" href="assets/css/component.css" />
+    <link rel="stylesheet" href="assets/css/style-carousel.css">
     <script src="assets/js/modernizr.custom.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="assets/js/jquery.dlmenu.js"></script>
 <!--fin script pour menu style musical fiche artiste-->
-    
+
+
     
 
-<!--
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css">
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
--->    
+ 
 </head>
 
 <body>

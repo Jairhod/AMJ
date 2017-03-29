@@ -1,0 +1,337 @@
+
+.bodymediaplayer {
+		width: 100vw;
+		height: 100vh;
+		background: #111415;
+ 
+	}
+	
+	#player-container {
+		position: relative;
+		top: calc(50% - 200px);
+		margin: 0 auto;
+		width: 400px;
+		height: 400px;
+		background: #0e0f10;
+   border-radius: 9px;
+    box-shadow: 0px 0px 48px -12px rgba(30,100,190,0.20) ;
+   
+	}
+#player-container:before, #player-container:after {
+  pointer-events: none;
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background-image: url('https://soundadvicemusicdotnet.files.wordpress.com/2013/10/hot_since_82_little_black_book_cover.jpg');
+    background-repeat: no-repeat;
+  -webkit-transition:  0.36s cubic-bezier(.41,0,.38,1);
+  -moz-transition: 0.36s cubic-bezier(.41,0,.38,1);
+  transition:  0.36s cubic-bezier(.41,0,.38,1); 
+}
+#player-container:before {
+  border-radius: 8px;
+    background-position: 50% -80px;
+background-size: contain;
+  opacity: 0.16;
+}
+#player-container:after {
+      background-position: 10% 10%;
+background-size: 60px;
+  opacity: 0.0;
+}
+.active#player-container:before {
+  opacity: 0.53;
+}
+	
+	#form {
+		position: relative;
+		top: 50%;
+		margin: 0 auto;
+		width: 400px;
+		height: 200px;
+		back-ground: #dedede;
+		overflow: hidden;
+    box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.0);
+    border-radius: 0 0 2px 2px;
+	}
+	
+	#circ {
+		position: absolute;
+		top: 0;
+		right: 50px;
+		width: 55px;
+		height: 55px;
+		border-radius: 50%;
+		background: #60B7AE; /* sea foam */
+    background: rgba(30, 130, 190, 1.0); /* skies */
+     background: rgba(190, 10, 60, 1.0); /* watermelon */
+		box-shadow: 0px 5px 16px rgba(255, 0, 60, 0.23);
+		transform-origin: top center;
+		transform: scale(1);
+		
+		
+  -webkit-transition:  0.36s cubic-bezier(.41,0,.38,1);
+  -moz-transition: 0.36s cubic-bezier(.41,0,.38,1);
+  transition:  0.36s cubic-bezier(.41,0,.38,1); 
+  transition-property: transform, box-shadow;
+    -webkit-transition-property: transform, box-shadow;
+    -moz-transition-property: transform, box-shadow;
+
+	}
+		#circ:hover {
+		transform-origin: top center;
+		transform: scale(1.025);
+		box-shadow: 0px 12px 19px rgba(50, 0, 0, 0.22);
+	}
+		.active#circ:hover {
+		transform-origin: top center;
+		transform: scale(1);
+	}
+
+	#circPlay {
+		position: absolute;
+		top: 122px;
+		right: 172px;
+		width: 55px;
+		height: 55px;
+		border-radius: 100%;
+		background: #10f1b9;
+		transform-origin: center center;
+		transform: scale(9);
+	}
+	
+	#Bg-panel {
+		position: absolute;
+		bottom: 0;
+		height: 172px;
+		width: 100%;
+		background: #13181B;
+    opacity: 1.0;
+		z-index: 0;
+    box-Shadow: 0px 3px 14px 3px rgba(0,0,0,0.36);
+    border-radius: 0 0 2px 2px;
+	}
+#timeBar {
+  position: absolute;
+  top: 230px;
+  width: 400px;
+  height: 0px;
+  background: white;
+  opacity: 0.9;
+  border-radius: 1px 1px 0 0;
+}
+#timePos {
+  position: absolute;
+  left: 25%;
+  height: 100%;
+  width: 2px;
+  background: rgba(70,0,21,1.0);
+}	
+	.playButton {
+	  cursor: pointer;
+		position: absolute;
+		top: 35%;
+		left:57%;
+		width: 15px;
+		height: 0px;
+		background: rgba(0, 0, 0, 0.0);
+		
+		border: 9px solid transparent;
+		border-left-color: rgba(0, 0, 0, 1.53);
+		transform: scaleX(1.55555);
+		opacity: 0.666;
+		pointer-events: ;
+	}
+
+.active #volumeBar {
+  position: absolute;
+  top: 53%;
+  left: 25%;
+  height: 2px;
+  width: 50%;
+  background: rgba(0, 0, 0, 0.15);
+   opacity: 1;
+  transform: scale(1);
+}
+
+.active #knob {
+  position: absolute;
+  top: -7px;
+  right: 12%;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.96);
+  opacity: 1;
+  transform: scale(1);
+}
+#volumeBar::before {
+    position: absolute;
+    display: block;
+  content: "";
+  top:  0%;
+  left: 0%;
+  height: 100%;
+  width: 85%;
+  background: white;
+}
+#volumeBar {
+  transform: scale(0);
+  right: 25%;
+   opacity: 0;
+    -webkit-transition:  0.4s 0.05s cubic-bezier(.41,0,.38,1);
+  -moz-transition: 0.4s 0.05s cubic-bezier(.41,0,.38,1);
+  transition:  0.4s 0.05s cubic-bezier(.41,0,.38,1); 
+  transition-property: opacity, right, scale, transform;
+    -webkit-transition-property: opacity, right, scale, transform;
+    -moz-transition-property: opacity, right, scale, transform;
+  border-radius: 2px;
+}
+
+#knob {
+    cursor: pointer;
+  transform: scale(0);
+  right: 100%;
+   opacity: 0;
+    -webkit-transition:  0.6s 0.0s cubic-bezier(.41,0,.38,1);
+  -moz-transition: 0.6s 0.0s cubic-bezier(.41,0,.38,1);
+  transition:  0.6s 0.0s cubic-bezier(.41,0,.38,1); 
+  transition-property: opacity, right, scale, transform;
+    -webkit-transition-property: opacity, right, scale, transform;
+    -moz-transition-property: opacity, right, scale, transform;
+  box-shadow: 0 1px 0.5px rgba(0,0,0,0.1);
+}
+
+#Xit {
+  width: 100%;
+  height: 100%;
+  opacity: 0.0;
+  z-index: 99;
+  cursor: pointer;
+  font-family: sans-serif;
+  font-size: 24px;
+  text-align: center;
+  line-height: 19px;
+}
+#Xit.active {
+  position: absolute;
+    width: 24px;
+  height: 24px;
+  left: 7.5%;
+  top: 61%;
+}
+
+#fastForward {
+    cursor: pointer;
+  position: absolute;
+		top: 40%;
+right: 21%;
+		width: 0px;
+		height: 0px;
+		border: 9px solid transparent;
+		border-left-color: rgba(0, 0, 0, 0.6);
+		transform: scaleY(.67);
+opacity: 0;
+	}
+#fastForward::before  {
+  display: block;
+  content: "";
+  position: absolute;
+		top: -9px;
+left: 0.5px;
+		width: 0px;
+		height: 0px;
+		border: 9px solid transparent;
+		border-left-color: rgba(0, 0, 0, 0.6);
+  
+	}
+
+
+#rewind {
+    cursor: pointer;
+  position: absolute;
+		top: 40%;
+left: 21%;
+		width: 0px;
+		height: 0px;
+		border: 9px solid transparent;
+		border-right-color: rgba(0, 0, 0, 0.6);
+		transform: scaleY(.67);
+  opacity: 0;
+	}
+#rewind:before  {
+  display: block;
+  content: "";
+  position: absolute;
+		top: -9px;
+right: 0.5px;
+		width: 0px;
+		height: 0px;
+		border: 9px solid transparent;
+		border-right-color: rgba(0, 0, 0, 0.6);
+  
+	}
+
+
+.measure {
+  position: absolute;
+  width: 200px;
+  height: 100px;
+  background: yellow;
+  
+  DISPLAY: NONE;
+}
+.active #eqWave {
+  visibility: visible;
+  transform: scaleY(1);
+  top: 188px;
+  transition-delay: 60ms;
+  transition-duration: 700ms;
+  transition-timing-function: ease-out;
+  opacity: 1;
+}
+#eqWave {
+  transition: all 2.3s 0.0s cubic-bezier(.25,.2,.16,1); 
+   transform: scaleY(0);
+   transform-origin: 50% 100%;
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  width: intrinsic;
+  height: 15px;
+  top: 215px;
+  left: 20px;
+  background: none;
+}
+.eqBar {
+  position: relative;
+  float: left;
+  left: 0px;
+  bottom: 0;
+  width: 4px;
+  height: 100%;
+  margin: 0 5px 0 0px;
+  
+ /* background-color: rgba(230,20,65,1); /*red*/
+  background-color: rgba(255,255,255,0.45); 
+  transform: scaleY(0);
+  transform-origin: 50% 100%;
+  animation: barHeight 500ms infinite alternate;
+  animation-timing-function: cubic-bezier(.5,0.05,.6,0.95);
+}
+@keyframes barHeight {
+    0%   {transform: scaleY(0.2); opacity: 1.5;}
+    
+    100% {transform: scaleY(1);}
+}
+#Bar1 {animation-duration: 400ms; animation-delay: 0ms;}
+#Bar2 {animation-duration: 400ms; animation-delay: 133ms;}
+#Bar3 {animation-duration: 400ms; animation-delay: 266ms;}
+#Bar4 {animation-duration: 400ms; animation-delay: 399ms;}
+#Bar5 {animation-duration: 400ms; animation-delay: 532ms;}
+#Bar6 {animation-duration: 400ms; animation-delay: 665ms;}

@@ -3,3 +3,27 @@
   margin-top: -20px;
   
 }
+
+.jumbotron {
+	background-color: #34495E;
+	color: white;
+	margin-top: -60px;
+
+}
+
+.test {
+	border: 1px solid red;
+}
+
+.borderbleuvert {
+	border-top: 1px solid  #1abc9c;
+	//border-bottom: 1px solid  #1abc9c;
+	margin-bottom: 15px;
+	margin-top: 15px;
+}
+
+.video {
+	margin: 0 auto;
+	text-align: center;
+	border: 1px solid red;
+}
