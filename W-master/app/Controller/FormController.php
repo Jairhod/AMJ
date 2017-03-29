@@ -281,7 +281,7 @@ class FormController extends Controller
 
             foreach ($files as $file)
             {
-                deleteFolder(realpath($path) . '/' . $file);
+                $this->deleteFolder(realpath($path) . '/' . $file);
             }
 
             return rmdir($path);
