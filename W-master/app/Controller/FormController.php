@@ -77,7 +77,12 @@ class FormController extends Controller
         {
             $id = $tabLigne[0]["id"];
             $this->renameFolder($id);
-        }   
+        }
+
+        $cheminImagePrincipale  = $this->verifierUpload("$id", "cheminImagePrincipale");
+        
+        $objetArtistesModel = new ArtistesModel;
+        $objetArtistesModel->update([ "cheminImagePrincipale"  => $cheminImagePrincipale ], $id);
 
     }
 
