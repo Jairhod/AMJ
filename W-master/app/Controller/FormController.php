@@ -77,7 +77,12 @@ class FormController extends Controller
         {
             $id = $tabLigne[0]["id"];
             $this->renameFolder($id);
-        }   
+        }
+
+        $cheminImagePrincipale  = $this->verifierUpload("$id", "cheminImagePrincipale");
+
+        $objetArtistesModel = new ArtistesModel;
+        $objetArtistesModel->update([ "cheminImagePrincipale"  => $cheminImagePrincipale ], $id);
 
     }
 
@@ -90,6 +95,10 @@ class FormController extends Controller
        {
         $objetArtistesModel = new ArtistesModel;
         $objetArtistesModel->delete($id);
+        if (is_dir("assets/media/img/$id")) 
+            {
+            $this->deleteFolder("assets/media/img/$id");       
+            }
         $GLOBALS["artisteDeleteRetour"] = "Artiste ($id) supprimé";
        }
        else
@@ -196,7 +205,7 @@ class FormController extends Controller
                 $tmpName    = $tabInfoFichierUploade["tmp_name"];
                 $size       = $tabInfoFichierUploade["size"];
                 
-                if ($size < 10 * 1024 * 1024) // 10 MEGAOCTETS
+                if ($size < 15 * 1024 * 1024) // 15 MEGAOCTETS
                 {
                     // ON VERIFIE L'EXTENSION
                     $extension = pathinfo($name, PATHINFO_EXTENSION);
