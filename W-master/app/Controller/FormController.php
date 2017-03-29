@@ -80,7 +80,7 @@ class FormController extends Controller
         }
 
         $cheminImagePrincipale  = $this->verifierUpload("$id", "cheminImagePrincipale");
-        
+
         $objetArtistesModel = new ArtistesModel;
         $objetArtistesModel->update([ "cheminImagePrincipale"  => $cheminImagePrincipale ], $id);
 
@@ -201,7 +201,7 @@ class FormController extends Controller
                 $tmpName    = $tabInfoFichierUploade["tmp_name"];
                 $size       = $tabInfoFichierUploade["size"];
                 
-                if ($size < 10 * 1024 * 1024) // 10 MEGAOCTETS
+                if ($size < 15 * 1024 * 1024) // 15 MEGAOCTETS
                 {
                     // ON VERIFIE L'EXTENSION
                     $extension = pathinfo($name, PATHINFO_EXTENSION);
