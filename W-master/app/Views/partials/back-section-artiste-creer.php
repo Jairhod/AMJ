@@ -1,5 +1,5 @@
     <section>
-        <h4>Bienvenue : <?php echo($w_user["username"]); ?></h3>
+        <h4>Bienvenue : <?php echo($w_user["username"]); ?></h4>
         <h3>Formulaire de creation d'une fiche</h3>
         <form action="" method="POST" enctype="multipart/form-data">
             <input type="text" name="nomArtiste" required placeholder="nomArtiste"><br>

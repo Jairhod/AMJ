@@ -39,7 +39,6 @@ class FormController extends Controller
         return $resultat;
     }
 
-
     public function artisteCreateTraitement ()
     {
         $nomArtiste             = $this->verifierSaisie("nomArtiste");
@@ -61,15 +60,8 @@ class FormController extends Controller
                                             "descriptionArtiste"    => $descriptionArtiste,
                                             "dateModification"      => $dateModification,
                                         ]);
-
-            $tabLigne = $objetArtistesModel->find($nomArtiste);
-
-            if (!empty($tabLigne))
-            {
-                $id = $tabLigne["id"];
-                $this->createFolders($id);
-            }
-                                    
+       
+                                
             $GLOBALS["artisteCreateRetour"] = "($nomArtiste) ajouté";
 
         }
@@ -77,6 +69,17 @@ class FormController extends Controller
         {
             $GLOBALS["artisteCreateRetour"] = "Erreurs artisteTraitement";          
         }
+
+        $objetArtistesModel = new ArtistesModel;
+        $tabLigne           = $objetArtistesModel->findAll("dateModification", "DESC");
+        
+        if (!empty($tabLigne))
+        {
+            $id = $tabLigne[0]["id"];
+            $this->createFolders($id);
+            //$this->moveUpload($id, $cheminImagePrincipale);
+        }
+
     }
 
     public function artisteDeleteTraitement ()
@@ -178,34 +181,11 @@ class FormController extends Controller
 
     function verifierUpload ($nameInput)
 {
-    echo ('$nameInput: '.$nameInput);
 
     $cheminOK = "";
     
     $idForm         = $this->verifierSaisie("idForm");
-    $nomArtiste     = $this->verifierSaisie("nomArtiste");
 
-    echo ('$nomArtiste: '.$nomArtiste);
-
-    $objetArtistesModel = new ArtistesModel;
-    $tabLigne = $objetArtistesModel->find($nomArtiste);
-
-    echo ('$nomArtiste: '.$nomArtiste);
-    echo ('id: ('.$tabLigne["id"]. ')');
-
-
-    if (!empty($tabLigne))
-    {
-        $id = $tabLigne["id"];
-        $this->createFolders($id);
-    }
-    else
-    {
-        $id = 0;
-        $this->createFolders($id);
-    }
-
-    
     if (!empty([$_FILES]))
     {
         $tabInfoFichierUploade = $_FILES[$nameInput];
@@ -237,11 +217,9 @@ class FormController extends Controller
                     if (in_array($extension, $tabExtensionOK))
                     {
                         $nameOK       =  preg_replace("/[^a-zA-Z0-9-_\.]/", "", $name);
-
-                        $cheminOK     = "assets/media/img/$id/imagePrincipale/$nameOK";
+                        $cheminOK     = "assets/media/img/0/imagePrincipale/$nameOK";
                         $cheminOK     = strtolower($cheminOK);
-                     
-                        move_uploaded_file($tmpName, $cheminOK);
+                        move_uploaded_file($tmpName, $cheminOK);    
                     }
                     else
                     {
@@ -258,6 +236,67 @@ class FormController extends Controller
         
     return $cheminOK;
 }
+
+    function moveUpload ($id, $nameInput)
+    {
+
+    $cheminOK = "";
+    
+    $idForm         = $this->verifierSaisie("idForm");
+
+    if (!empty([$_FILES]))
+    {
+        $tabInfoFichierUploade = $_FILES[$nameInput];
+        if (!empty($tabInfoFichierUploade))
+        {
+            $error = $tabInfoFichierUploade["error"];
+            if ($error == 0)
+            {
+                $name       = $tabInfoFichierUploade["name"];
+                $type       = $tabInfoFichierUploade["type"];
+                $tmpName    = $tabInfoFichierUploade["tmp_name"];
+                $size       = $tabInfoFichierUploade["size"];
+                
+                if ($size < 10 * 1024 * 1024) // 10 MEGAOCTETS
+                {
+                    // ON VERIFIE L'EXTENSION
+                    $extension = pathinfo($name, PATHINFO_EXTENSION);
+                    // METTRE L'EXTENSION EN MINUSCULES
+                    $extension = strtolower($extension);
+
+                    $tabExtensionOK = 
+                    [ 
+                        "jpeg", "jpg", "gif", "png", "svg", 
+                        "pdf", "txt", "doc", "docx", "xls", "ppt", "pptx", "odt", 
+                        "html", "css", "js", 
+                        "ttf", "otf"
+                    ];
+                    
+                    if (in_array($extension, $tabExtensionOK))
+                    {
+                        $nameOK       =  preg_replace("/[^a-zA-Z0-9-_\.]/", "", $name);
+                        $cheminOK     = "assets/media/img/$id/imagePrincipale/$nameOK";
+                        $cheminOK     = strtolower($cheminOK);
+                        move_uploaded_file($tmpName, $cheminOK);
+                        
+                    }
+                    else
+                    {
+                        $GLOBALS[$idForm . "Retour"] = "EXTENSION NON CONFORME";
+                    }
+                }
+                else 
+                {
+                    $GLOBALS[$idForm . "Retour"] = "FICHIER TROP VOLUMINEUX";
+                }
+            }
+        }
+    }
+    echo $cheminOK;    
+    return $cheminOK;
+}
+
+
     public function createFolders($id)
     {
         $chemin = "assets/media/img/$id";
