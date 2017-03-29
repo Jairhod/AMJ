@@ -7,6 +7,38 @@
 		<input type="hidden" name="idForm" value="rechercheArtiste">
 		<button type="submit" name="rechercher" value="rechercher">Rechercher un artiste</button>
 	</div>
+        <div class="grid artistes-row">
+            <div class="artiste-col">
+                <figure class="effect-marley">
+                    <img src="assets/media/img/11.jpg" alt="img11"/>
+                    <figcaption>
+                        <h4>Artiste</h4>
+                        <p>Marley tried to convince her but she was not intereste,Marley tried to convince her but she was not interested.</p>
+                        <a href="#">View more</a>
+                    </figcaption>			
+                </figure>
+            </div>
+            <div class="artiste-col">
+                <figure class="effect-marley">
+                    <img src="assets/media/img/12.jpg" alt="img12"/>
+                    <figcaption>
+                        <h4>Artiste <!--<span>Artiste 2</span>--></h4>
+                        <p>Marley tried to convince her but she was not interested.</p>
+                        <a href="#">View more</a>
+                    </figcaption>			
+                </figure>
+            </div>
+            <div class="artiste-col">
+                <figure class="effect-marley">
+                    <img src="assets/media/img/11.jpg" alt="img12"/>
+                    <figcaption>
+                        <h4>Artiste</h4>
+                        <p>Marley tried to convince her but she was not interested.</p>
+                        <a href="#">View more</a>
+                    </figcaption>			
+                </figure>
+            </div>
+        </div><!-- FIN DIV grid artistes-row-->
 	<div id="listeArtistes" class="container">
 		<div class="row">
 			<div class="col-md-4">
@@ -25,34 +57,7 @@
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, accusantium!</p>
 			</div>
 		</div>
-	</div>
-	<div class="test-resize">
-	    <form action="" method="get" enctype="multipart/form-data">
-    <p>Formulaire d'envoi de fichier</p>
-	        <input type="file" name="upload" placeholder="upload">
-	        <input type="hidden" name="idForm">
-	        <button type="submit">envoyer</button>
-	    </form>
-	</div>
-	<?php
-    if (count($_GET) > 0)
-        {
-            $upload  = $_GET["upload"];
-            $destination = ("assets/media/artistes/artiste-1/image-a-la-une");
-            move_uploaded_file ( $upload , $destination );
-        } 
-            $renommerThumbnail = "thumbnail";         
-
-            $image = new \Controller\ImageResize('../assets/media/artistes/artiste-1/image-a-la-une/GOSPEL-2.jpg');
-            $image->resizeToHeight(500);
-            $image->save('../assets/media/artistes/artiste-1/image-a-la-une/GOSPEL-2.jpg');
-            $image = new ImageResize('../assets/media/artistes/artiste-1/thumbnail/GOSPEL-2/'+ $renommerThumbnail +'.jpg');
-            $image->resizeToWidth(300);
-            $image->save('../assets/media/artistes/artiste-1/thumbnail/GOSPEL-2/'+ $renommerThumbnail +'.jpg');
-          
-        
-    ?>
-    
+	</div> 
 	<div id="pagination">
 		<span><a href="#!"><img src="" alt=""><<</a></span>
 		<span><a href="#!"><img src="" alt=""><</a></span>
