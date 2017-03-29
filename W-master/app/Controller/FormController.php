@@ -95,6 +95,10 @@ class FormController extends Controller
        {
         $objetArtistesModel = new ArtistesModel;
         $objetArtistesModel->delete($id);
+        if (is_dir("assets/media/img/$id")) 
+            {
+            $this->deleteFolder("assets/media/img/$id");       
+            }
         $GLOBALS["artisteDeleteRetour"] = "Artiste ($id) supprimé";
        }
        else
