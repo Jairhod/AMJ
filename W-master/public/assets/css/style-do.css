@@ -1,84 +1,15 @@
-h1 {
-	text-align: center;
+.menustyles {
+  width: 15em;
+  margin-left: 2em;
 }
 
-
-
-
-
-.gallery
-{
-    display: inline-block;
-    margin-top: 20px;
-}
-
-.menu-genre{
-
-	
-	//height: 50px;
-	border: 1px solid red;
-}
-
-figure {
-	margin-left: -30px;
-	//margin-right: -10px;
-}
-
-/*
-a.fancybox {
-	margin-left: -20px;
-	padding-left: -20px;
-}
-*/
-
-.dateGroupe{
-	border: 1px dotted black;
-	height: 20em;
-	background-color: grey;
-	//padding-right: 5px;
-
-}
-
-.limenugenre {
-	border-right: 2px solid #777;
-	
-
-	
-
-	
-	
-}
-
-.navbar .navbar-nav {
-  display: inline-block;
-  float: none;
-  vertical-align: top;
-
-}
-
-.navbar .navbar-collapse {
-  text-align: center;
+.menustyles li {
   margin-top: 1em;
-  margin-bottom: 1em;
-
 }
 
-
-.slideshow {
-   width: 350px;
-   height: 200px;
-   overflow: hidden;
-   border: 3px solid #F2F2F2;
+.menustyles a {
+  text-decoration: none;
 }
-
-.slideshow ul {
-    /* 4 images donc 4 x 100% */
-   width: 400%;
-   height: 200px;
-   padding:0; margin:0;
-   list-style: none;
+.inline {
+	display: inline;
 }
-.slideshow li {
-   float: left;
-}
-

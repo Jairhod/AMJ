@@ -39,13 +39,12 @@ class FormController extends Controller
         return $resultat;
     }
 
-
     public function artisteCreateTraitement ()
     {
         $nomArtiste             = $this->verifierSaisie("nomArtiste");
         $nomGenre               = $this->verifierSaisie("nomGenre");
         $artistesLies           = $this->verifierSaisie("artistesLies");
-        $cheminImagePrincipale  = $this->verifierSaisie("cheminImagePrincipale");
+        $cheminImagePrincipale  = $this->verifierUpload("cheminImagePrincipale");
         $descriptionArtiste     = $this->verifierSaisie("descriptionArtiste");
         $dateModification       = date("Y-m-d H:i:s");
         
@@ -61,7 +60,8 @@ class FormController extends Controller
                                             "descriptionArtiste"    => $descriptionArtiste,
                                             "dateModification"      => $dateModification,
                                         ]);
-                                        
+       
+                                
             $GLOBALS["artisteCreateRetour"] = "($nomArtiste) ajouté";
 
         }
@@ -69,6 +69,16 @@ class FormController extends Controller
         {
             $GLOBALS["artisteCreateRetour"] = "Erreurs artisteTraitement";          
         }
+
+        $objetArtistesModel = new ArtistesModel;
+        $tabLigne           = $objetArtistesModel->findAll("dateModification", "DESC");
+        
+        if (!empty($tabLigne))
+        {
+            $id = $tabLigne[0]["id"];
+            $this->renameFolder($id);
+        }   
+
     }
 
     public function artisteDeleteTraitement ()
@@ -90,14 +100,14 @@ class FormController extends Controller
 
     public function artisteUpdateTraitement()
     {
-                // A COMPLETER
+        // A COMPLETER
         // RECUPERER LES INFOS DU FORMULAIRE
         $nomArtiste                 = $this->verifierSaisie("nomArtiste");
         $nomGenre                   = $this->verifierSaisie("nomGenre");
-        $cheminImagePrincipale      = $this->verifierSaisie("cheminImagePrincipale");
+        $cheminImagePrincipale      = $this->verifierUpload("cheminImagePrincipale");
         $descriptionArtiste         = $this->verifierSaisie("descriptionArtiste");
         $artistesLies               = $this->verifierSaisie("artistesLies");
-        $dateModification           = $this->verifierSaisie("dateModification");
+        $dateModification           = date("Y-m-d H:i:s");
 
         // update
         $id             = $this->verifierSaisie("id");
@@ -106,8 +116,9 @@ class FormController extends Controller
         // VERIFIER SI LES INFOS SONT CORRECTES
         if ( ($id > 0)
             && ($nomArtiste != "") && ($nomGenre != "") && ($cheminImagePrincipale != "") && ($descriptionArtiste != "")
-            && ($artistesLies != "") && ($dateModification != "") )
+            && ($artistesLies != "") )
         {
+            $this->createFolders($id);
             // SI OK
             // ALORS ON AJOUTE UNE LIGNE DANS LA TABLE artistes
             // AVEC LE FRAMEWORK W
@@ -126,7 +137,6 @@ class FormController extends Controller
                                         
             // MESSAGE DE RETOUR
             $GLOBALS["artisteUpdateRetour"] = "$nomArtiste modifié. Id: ($id)";
-
         }
         else
         {
@@ -165,6 +175,99 @@ class FormController extends Controller
                 $GLOBALS["loginRetour"] = "IDENTIFIANTS INCORRECTS";
             }
         }
+    }
+
+    function verifierUpload ($nameInput)
+{
+
+    $cheminOK = "";
+    
+    $idForm         = $this->verifierSaisie("idForm");
+
+    if (!empty([$_FILES]))
+    {
+        $tabInfoFichierUploade = $_FILES[$nameInput];
+        if (!empty($tabInfoFichierUploade))
+        {
+            $error = $tabInfoFichierUploade["error"];
+            if ($error == 0)
+            {
+                $name       = $tabInfoFichierUploade["name"];
+                $type       = $tabInfoFichierUploade["type"];
+                $tmpName    = $tabInfoFichierUploade["tmp_name"];
+                $size       = $tabInfoFichierUploade["size"];
+                
+                if ($size < 10 * 1024 * 1024) // 10 MEGAOCTETS
+                {
+                    // ON VERIFIE L'EXTENSION
+                    $extension = pathinfo($name, PATHINFO_EXTENSION);
+                    // METTRE L'EXTENSION EN MINUSCULES
+                    $extension = strtolower($extension);
+
+                    $tabExtensionOK = 
+                    [ 
+                        "jpeg", "jpg", "gif", "png", "svg", 
+                        "pdf", "txt", "doc", "docx", "xls", "ppt", "pptx", "odt", 
+                        "html", "css", "js", 
+                        "ttf", "otf"
+                    ];
+                    
+                    if (in_array($extension, $tabExtensionOK))
+                    {
+                        $nameOK       =  preg_replace("/[^a-zA-Z0-9-_\.]/", "", $name);
+                        $cheminOK     = "assets/media/img/temp/imagePrincipale/$nameOK";
+                        $cheminOK     = strtolower($cheminOK);
+                        $this->createFolders("temp");
+                        move_uploaded_file($tmpName, $cheminOK);    
+                    }
+                    else
+                    {
+                        $GLOBALS[$idForm . "Retour"] = "EXTENSION NON CONFORME";
+                    }
+                }
+                else 
+                {
+                    $GLOBALS[$idForm . "Retour"] = "FICHIER TROP VOLUMINEUX";
+                }
+            }
+        }
+    }
+        
+    return $cheminOK;
+}
+
+    public function createFolders($id)
+    {
+        $chemin = "assets/media/img/$id";
+        if(!is_dir($chemin)){
+           mkdir($chemin, 0777);
+        }        
+
+        $chemin = "assets/media/img/$id/imagePrincipale";
+        if(!is_dir($chemin)){
+           mkdir($chemin, 0777);
+        }        
+
+        $chemin = "assets/media/img/$id/images";
+        if(!is_dir($chemin)){
+           mkdir($chemin, 0777);
+        }        
+
+        $chemin = "assets/media/img/$id/thumbs";
+        if(!is_dir($chemin)){
+           mkdir($chemin, 0777);
+        }
+    }
+
+    public function renameFolder($id)
+    {
+            $old = "assets/media/img/temp";
+            $new = "assets/media/img/$id";
+
+            if (is_dir($old)) 
+            {
+            rename($old, $new);         
+            }
     }
 
 }
