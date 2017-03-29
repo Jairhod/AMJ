@@ -44,7 +44,7 @@ class FormController extends Controller
         $nomArtiste             = $this->verifierSaisie("nomArtiste");
         $nomGenre               = $this->verifierSaisie("nomGenre");
         $artistesLies           = $this->verifierSaisie("artistesLies");
-        $cheminImagePrincipale  = $this->verifierUpload("cheminImagePrincipale");
+        $cheminImagePrincipale  = $this->verifierUpload("temp", "cheminImagePrincipale");
         $descriptionArtiste     = $this->verifierSaisie("descriptionArtiste");
         $dateModification       = date("Y-m-d H:i:s");
         
@@ -100,25 +100,24 @@ class FormController extends Controller
 
     public function artisteUpdateTraitement()
     {
+        // update
+        $id             = $this->verifierSaisie("id");
+        $id             = intval($id);
+
         // A COMPLETER
         // RECUPERER LES INFOS DU FORMULAIRE
         $nomArtiste                 = $this->verifierSaisie("nomArtiste");
         $nomGenre                   = $this->verifierSaisie("nomGenre");
-        $cheminImagePrincipale      = $this->verifierUpload("cheminImagePrincipale");
+        $cheminImagePrincipale      = $this->verifierUpload( $id, "cheminImagePrincipale");
         $descriptionArtiste         = $this->verifierSaisie("descriptionArtiste");
         $artistesLies               = $this->verifierSaisie("artistesLies");
         $dateModification           = date("Y-m-d H:i:s");
-
-        // update
-        $id             = $this->verifierSaisie("id");
-        $id             = intval($id);
         
         // VERIFIER SI LES INFOS SONT CORRECTES
         if ( ($id > 0)
             && ($nomArtiste != "") && ($nomGenre != "") && ($cheminImagePrincipale != "") && ($descriptionArtiste != "")
             && ($artistesLies != "") )
         {
-            $this->createFolders($id);
             // SI OK
             // ALORS ON AJOUTE UNE LIGNE DANS LA TABLE artistes
             // AVEC LE FRAMEWORK W
@@ -177,7 +176,7 @@ class FormController extends Controller
         }
     }
 
-    function verifierUpload ($nameInput)
+    function verifierUpload ($folder, $nameInput)
 {
 
     $cheminOK = "";
@@ -215,9 +214,13 @@ class FormController extends Controller
                     if (in_array($extension, $tabExtensionOK))
                     {
                         $nameOK       =  preg_replace("/[^a-zA-Z0-9-_\.]/", "", $name);
-                        $cheminOK     = "assets/media/img/temp/imagePrincipale/$nameOK";
+                        if (is_dir("assets/media/img/$folder/imagePrincipale")) 
+                        {
+                        $this->deleteFolder("assets/media/img/$folder/imagePrincipale");         
+                        }
+                        $cheminOK     = "assets/media/img/$folder/imagePrincipale/$nameOK";
                         $cheminOK     = strtolower($cheminOK);
-                        $this->createFolders("temp");
+                        $this->createFolders($folder);
                         move_uploaded_file($tmpName, $cheminOK);    
                     }
                     else
@@ -261,13 +264,35 @@ class FormController extends Controller
 
     public function renameFolder($id)
     {
-            $old = "assets/media/img/temp";
-            $new = "assets/media/img/$id";
+        $old = "assets/media/img/temp";
+        $new = "assets/media/img/$id";
 
-            if (is_dir($old)) 
+        if (is_dir($old)) 
+        {
+        rename($old, $new);         
+        }
+    }
+
+    public function deleteFolder($path)
+    {
+        if (is_dir($path) === true)
+        {
+            $files = array_diff(scandir($path), array('.', '..'));
+
+            foreach ($files as $file)
             {
-            rename($old, $new);         
+                $this->deleteFolder(realpath($path) . '/' . $file);
             }
+
+            return rmdir($path);
+        }
+
+        else if (is_file($path) === true)
+        {
+            return unlink($path);
+        }
+
+        return false;
     }
 
 }
