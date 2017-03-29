@@ -18,7 +18,7 @@
         $( '#dl-menu' ).dlmenu();
       });
     </script>
-    <!--fin script menu style musical fiche artiste-->
+<!--fin script menu style musical fiche artiste-->
 
   </footer>
 </body>

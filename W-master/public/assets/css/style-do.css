@@ -1,15 +1,5 @@
-.menustyles {
-  width: 15em;
-  margin-left: 2em;
-}
 
-.menustyles li {
-  margin-top: 1em;
-}
-
-.menustyles a {
-  text-decoration: none;
-}
-.inline {
-	display: inline;
+.ficheartiste {
+  margin-top: -20px;
+  
 }

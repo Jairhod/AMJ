@@ -19,7 +19,7 @@
     <script type="text/javascript" src="assets/js/scrollreveal.min.js"></script>
 
 <!--script pour menu style musical fiche artiste-->
-    <link rel="stylesheet" type="text/css" href="assets/css/default.css" />
+<!--    <link rel="stylesheet" type="text/css" href="assets/css/default.css" />-->
     <link rel="stylesheet" type="text/css" href="assets/css/component.css" />
     <script src="assets/js/modernizr.custom.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
