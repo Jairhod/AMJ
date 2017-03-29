@@ -842,7 +842,8 @@ fieldset {
 {
     #contact{
     width: 95%;
-    }
+    }   
+    
 }
 
 /* FIN PAGE ACCUEIL ================================================================ */
@@ -1033,7 +1034,7 @@ figure.effect-marley:hover p {
 
 
 
-/* DEBUT PAGE CATALOGUE ============================================================ */
+/* FIN PAGE CATALOGUE ============================================================ */
 
 /* PAGE LABEL : SECTION LABEL =========================== */
 
@@ -1113,15 +1114,58 @@ footer .col-footer a {
 	animation: rotate-in-ver 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
+
+@media screen and (max-width: 990px)
+{
+    .footer-row {
+        display: flex;
+        justify-content: center;
+    }
+}
+
 @media screen and (max-width: 640px)
 {
     .col-md-6.btn-share {
-    text-align: center;
-    font-size: 35px;
-    padding: 0;
+        text-align: center;
+        font-size: 35px;
+        padding: 0;
     }
     
     footer p{
         text-align: center;
+        text-decoration: none;
+    }
+    
+    .footer-row {
+        display: flex !important;
+        flex-direction: column;
+        width:90%;
+        margin: auto;
+    }
+    
+    footer .col-footer {
+        padding-top: 1em;
+        width: 50%;
+        margin: auto;
+        text-align: center;
+        display: flex;
+        flex-direction: column;  
+    }
+    
+    .col-md-6.btn-share:nth-child(2) {
+    margin: 0 1em;
+}
+    
+    footer .col-footer a {
+        margin-left: 0 !important;
+        margin-top: 0.5em;
+        text-decoration: none;
+    }
+    
+    .col-md-6.btn-share {
+        text-align: center;
+        padding-right: 0;
+        font-size: 45px;
+        padding-top: 0.5em;
     }
 }
