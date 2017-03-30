@@ -1,15 +1,46 @@
-.menustyles {
-  width: 15em;
-  margin-left: 2em;
+
+.ficheartiste {
+  margin-top: -20px;
 }
 
-.menustyles li {
-  margin-top: 1em;
+.jumbotronficheartiste {
+	background-color: #34495E;
+	//background-color: lightpink;
+	color: white;
+	margin-top: 60px;
+	text-align: center;
 }
 
-.menustyles a {
-  text-decoration: none;
+
+.jumbotronficheartiste p {
+	font-size: 15px;
 }
-.inline {
-	display: inline;
+
+.borderbleuvert {
+	
+	border-bottom: 1px solid  #1abc9c;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	padding-top: 30px;
+	padding-bottom: 30px;
 }
+
+.video {
+	margin: 0 auto;
+	text-align: center;
+	border: 1px solid red;
+}
+
+.row {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.centre {
+	text-align: center;
+}   
+
+.marginvideo {
+	margin-right: 15px;
+	margin-left: 15px;
+} 
