@@ -47,11 +47,11 @@ class FormController extends Controller
         $cheminImagePrincipale  = $this->verifierUpload("temp", "cheminImagePrincipale");
         $descriptionArtiste     = $this->verifierSaisie("descriptionArtiste");
         $dateModification       = date("Y-m-d H:i:s");
+
+        $objetArtistesModel = new ArtistesModel;
         
         if ( ($nomArtiste != "") && ($nomGenre != "") && ($artistesLies != "") && ($cheminImagePrincipale != "") && ($descriptionArtiste != "") )
         {
-
-            $objetArtistesModel = new ArtistesModel;
 
             $objetArtistesModel->insert([   "nomArtiste"            => $nomArtiste, 
                                             "nomGenre"              => $nomGenre, 
@@ -70,19 +70,13 @@ class FormController extends Controller
             $GLOBALS["artisteCreateRetour"] = "Erreurs artisteTraitement";          
         }
 
-        $objetArtistesModel = new ArtistesModel;
-        $tabLigne           = $objetArtistesModel->findAll("dateModification", "DESC");
+        $tabLigne = $objetArtistesModel->findAll("dateModification", "DESC");
         
         if (!empty($tabLigne))
         {
             $id = $tabLigne[0]["id"];
             $this->renameFolder($id);
         }
-
-        $cheminImagePrincipale  = $this->verifierUpload("$id", "cheminImagePrincipale");
-
-        $objetArtistesModel = new ArtistesModel;
-        $objetArtistesModel->update([ "cheminImagePrincipale"  => $cheminImagePrincipale ], $id);
 
     }
 
@@ -204,6 +198,8 @@ class FormController extends Controller
                 $type       = $tabInfoFichierUploade["type"];
                 $tmpName    = $tabInfoFichierUploade["tmp_name"];
                 $size       = $tabInfoFichierUploade["size"];
+
+                chmod($tmpName, 0777);
                 
                 if ($size < 15 * 1024 * 1024) // 15 MEGAOCTETS
                 {
@@ -223,14 +219,22 @@ class FormController extends Controller
                     if (in_array($extension, $tabExtensionOK))
                     {
                         $nameOK       =  preg_replace("/[^a-zA-Z0-9-_\.]/", "", $name);
-                        if (is_dir("assets/media/img/$folder/imagePrincipale")) 
-                        {
-                        $this->deleteFolder("assets/media/img/$folder/imagePrincipale");         
-                        }
                         $cheminOK     = "assets/media/img/$folder/imagePrincipale/$nameOK";
                         $cheminOK     = strtolower($cheminOK);
                         $this->createFolders($folder);
-                        move_uploaded_file($tmpName, $cheminOK);    
+                        move_uploaded_file($tmpName, $cheminOK);
+
+                        if (is_dir("assets/media/img/$folder/imagePrincipale")) 
+                          {
+                              $dir = 'assets/media/img/$folder/imagePrincipale';
+                              $leave_files = array($nameOK);
+
+                              foreach( glob("$dir/*") as $file ) {
+                                  if( !in_array(basename($file), $leave_files) )
+                                      unlink($file);
+                              }  
+                          }
+
                     }
                     else
                     {
@@ -245,7 +249,7 @@ class FormController extends Controller
         }
     }
         
-    return $cheminOK;
+    return $nameOK;
 }
 
     public function createFolders($id)
@@ -270,6 +274,7 @@ class FormController extends Controller
            mkdir($chemin, 0777);
         }
     }
+
 
     public function renameFolder($id)
     {
