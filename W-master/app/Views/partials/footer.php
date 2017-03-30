@@ -19,8 +19,8 @@
         $( '#dl-menu' ).dlmenu();
       });
     </script>
-<!--fin script menu style musical fiche artiste-->
-
+<!--script pour audio player-->
+<script src="assets/js/audioscript.js"></script>
 
 
   </footer>
