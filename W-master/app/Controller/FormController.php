@@ -170,9 +170,8 @@ class FormController extends Controller
 
     function verifierUpload ($folder, $nameInput)
 {
+    $nameOK   =  $nameInput;
 
-    $cheminOK = "";
-    
     $idForm   = $this->verifierSaisie("idForm");
 
     if (!empty([$_FILES]))
@@ -210,8 +209,7 @@ class FormController extends Controller
                         if (is_dir("assets/media/img/$folder/imagePrincipale")) 
                           {
                               $this->deleteFolder("assets/media/img/$folder/imagePrincipale");
-                          }
-                        
+                          }                    
 
                         $nameOK       =  preg_replace("/[^a-zA-Z0-9-_\.]/", "", $name);
                         $cheminOK     = "assets/media/img/$folder/imagePrincipale/$nameOK";
