@@ -103,12 +103,9 @@ class FormController extends Controller
 
     public function artisteUpdateTraitement()
     {
-        // update
         $id             = $this->verifierSaisie("id");
         $id             = intval($id);
 
-        // A COMPLETER
-        // RECUPERER LES INFOS DU FORMULAIRE
         $nomArtiste                 = $this->verifierSaisie("nomArtiste");
         $nomGenre                   = $this->verifierSaisie("nomGenre");
         $cheminImagePrincipale      = $this->verifierUpload( $id, "cheminImagePrincipale");
@@ -116,18 +113,13 @@ class FormController extends Controller
         $artistesLies               = $this->verifierSaisie("artistesLies");
         $dateModification           = date("Y-m-d H:i:s");
         
-        // VERIFIER SI LES INFOS SONT CORRECTES
         if ( ($id > 0)
             && ($nomArtiste != "") && ($nomGenre != "") && ($cheminImagePrincipale != "") && ($descriptionArtiste != "")
             && ($artistesLies != "") )
         {
-            // SI OK
-            // ALORS ON AJOUTE UNE LIGNE DANS LA TABLE artistes
-            // AVEC LE FRAMEWORK W
-            // JE DOIS CREER UN OBJET DE LA CLASSE ArtistesModel
-            // (...car la table mysql s'appelle artistes)
+
             $objetArtistesModel = new ArtistesModel;
-            // ON PEUT UTILISER LA METHODE insert
+
             $objetArtistesModel->update([   "nomArtiste"             => $nomArtiste, 
                                             "nomGenre"               => $nomGenre, 
                                             "cheminImagePrincipale"  => $cheminImagePrincipale,
@@ -135,16 +127,13 @@ class FormController extends Controller
                                             "artistesLies"           => $artistesLies,
                                             "dateModification"       => $dateModification,
                                         ],
-                                        $id); // update
+                                        $id);
                                         
-            // MESSAGE DE RETOUR
             $GLOBALS["artisteUpdateRetour"] = "$nomArtiste modifié. Id: ($id)";
         }
         else
         {
-            // MESSAGE DE RETOUR
-            $GLOBALS["artisteUpdateRetour"] = "INFORMATION(S) MANQUANTES";
-            
+            $GLOBALS["artisteUpdateRetour"] = "INFORMATION(S) MANQUANTES";          
         }
 
     }
@@ -184,7 +173,7 @@ class FormController extends Controller
 
     $cheminOK = "";
     
-    $idForm         = $this->verifierSaisie("idForm");
+    $idForm   = $this->verifierSaisie("idForm");
 
     if (!empty([$_FILES]))
     {
@@ -218,22 +207,17 @@ class FormController extends Controller
                     
                     if (in_array($extension, $tabExtensionOK))
                     {
+                        if (is_dir("assets/media/img/$folder/imagePrincipale")) 
+                          {
+                              $this->deleteFolder("assets/media/img/$folder/imagePrincipale");
+                          }
+                        
+
                         $nameOK       =  preg_replace("/[^a-zA-Z0-9-_\.]/", "", $name);
                         $cheminOK     = "assets/media/img/$folder/imagePrincipale/$nameOK";
                         $cheminOK     = strtolower($cheminOK);
                         $this->createFolders($folder);
                         move_uploaded_file($tmpName, $cheminOK);
-
-                        if (is_dir("assets/media/img/$folder/imagePrincipale")) 
-                          {
-                              $dir = 'assets/media/img/$folder/imagePrincipale';
-                              $leave_files = array($nameOK);
-
-                              foreach( glob("$dir/*") as $file ) {
-                                  if( !in_array(basename($file), $leave_files) )
-                                      unlink($file);
-                              }  
-                          }
 
                     }
                     else
