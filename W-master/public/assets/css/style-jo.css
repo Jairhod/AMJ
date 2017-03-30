@@ -304,6 +304,15 @@ button {
 
 /* SECTION RECHERCHE ACCUEIL =================== */
 
+.caca {
+    position: relative;
+    top: -100px;
+    left: 500px;
+    border: solid white 1px;
+    width: 50%;
+    text-align: center;
+    color: white;
+}
 
 .full-width {
     padding: 0 0 0 0;
@@ -330,7 +339,7 @@ button {
 #recherche-accueil .title-hp {
     width: 70%;
     margin: auto;
-    padding-top: 19em;
+    padding-top: 13em;
 }
 
 .etiquette-titre {
@@ -362,6 +371,7 @@ button {
 
 @media screen and (max-width: 550px)
 {
+    
     #recherche-accueil .title-hp .etiquette-titre {
         width: 100%;   
     }
@@ -497,6 +507,233 @@ div .bla {
     }
 }
 
+
+@keyframes alert {
+  0%{
+    transform: scale(0);
+  }
+  80% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.search-form form.form {
+  transition: all 0.15s;
+}
+
+.search-form form.explode {
+  transform: scale(1.4);
+  opacity: 0;
+}
+
+
+.search-form form {
+  width: 36px;
+  height: 36px;
+  margin: 0 auto;
+  display: block;
+  box-sizing: border-box;
+  position: relative;
+}
+.search-form input[type="submit"]{
+  display: none !important;
+}
+.search-form input {
+  width: 100%;
+}
+.search-form input {
+  background: none;
+  border: 3px solid #fff;
+  border-radius: 26px;
+  box-sizing: border-box;
+  padding: 5px 15px 7px;
+  font-size: 14px;
+  color: #fff;
+  z-index: 2;
+  position: relative;
+}
+.search-form input:focus {
+  outline: none;
+}
+.after {
+  width: 36px;
+  height: 36px;
+  position: absolute;
+  top: 1px;
+  right: 0;
+  z-index: 1;
+}
+.search-form form.open .after {
+ cursor: pointer;
+}
+.after:before,
+.after:after {
+  content: '';
+  width: 13px;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 3px;
+  position: absolute;
+  transform-origin: 100% 100%;
+}
+.after:after{
+  bottom: -3px;
+  right: -3px;
+  transform: rotate(45deg);
+}
+.after:before {
+  top: -3px;
+  right: -3px;
+  transform: rotate(-45deg);
+  opacity: 0;
+}
+.search-form form,
+.search-form form .after,
+.search-form form .after:before,
+.search-form form .after:after {
+  animation-duration: 1.1s;
+  animation-fill-mode: forwards;
+}
+.search-form form.in {
+  animation-name: expand;
+}
+.search-form form.in .after:before {
+  animation-name: beforemagic;
+}
+.search-form form.in .after:after {
+  animation-name: aftermagic;
+}
+
+.search-form form.close,
+.search-form form.close .after,
+.search-form form.close .after:before,
+.search-form form.close .after:after {
+  animation-direction: reverse;
+}
+.search-form form.close {
+  animation-name: expand;
+}
+.search-form form.close .after:before {
+  animation-name: beforemagic;
+}
+.search-form form.close .after:after {
+  animation-name: aftermagic;
+}
+
+/* Hold final focused state
+ ****************************/
+.search-form form.open {
+  width: 250px;
+  color: #fff;
+}
+.search-form form.open .after {
+  z-index: 3;
+}
+.search-form form.open .after:before {
+  width: 20px;
+  top: 9px;
+  right: 13px;
+  opacity: 1;
+}
+.search-form form.open .after:after {
+  width: 20px;
+  bottom: 10px;
+  right: 15px;
+}
+
+@keyframes aftermagic {
+  0%   {}
+  10% {
+    width: 24px;
+    bottom: -10px;
+    right: -10px;
+  }
+  15%{
+    opacity: 1;
+  }
+  35% {
+    width: 13px;
+    bottom: -3px;
+    right: -3px;
+     opacity: 0;
+    
+  }
+  25% {
+    opacity: 0;
+  }
+  64% {
+    opacity: 0;
+  }
+  65% {
+    opacity: 1;
+    width: 13px;
+    bottom: -2px;
+    right: -3px;
+  }
+  75% {
+    width: 30px;
+    bottom: 4px;
+    right: 10px;
+  }
+  90% {
+    width: 20px;
+    bottom: 10px;
+    right: 15px;
+  }
+  100% {
+    width: 20px;
+    bottom: 10px;
+    right: 15px;
+  }
+}
+@keyframes beforemagic {
+  0%   {}
+  50% {
+    opacity: 0;
+  }
+  55% {
+    opacity: 1;
+    width: 13px;
+    top: -4px;
+    right: -3px;
+  }
+  65% {
+    width: 30px;
+    top: 6px;
+    right: 10px;
+  }
+  80% {
+    width: 20px;
+    top: 9px;
+    right: 13px;
+  }
+  100% {
+    width: 20px;
+    top: 9px;
+    right: 13px;
+    opacity: 1;
+  }
+}
+@keyframes expand {
+    0%   {
+      color: transparent;
+    }
+  20% {
+    width: 36px;
+  }
+  45% {
+    width: 250px;
+  }
+  99% {
+    color: transparent;
+  }
+    100% {
+      width: 250px;
+      color: #fff;
+    }
+}
 /* Fin select */
 
 #recherche-accueil .accueil-styles {
@@ -621,7 +858,15 @@ a.btn:active {
 {
     #recherche-accueil .accueil-styles {
         display: none;
-    }       
+    }
+    
+    #recherche-accueil .title-hp {
+    padding-top: 6em;
+    }
+    
+    form.form-inline.section-accueil {
+        padding-bottom: 6em;
+    }
 }
 
 
@@ -719,6 +964,7 @@ section#descriptif p {
 }
 
 /* SECTION ACCUEIL LABEL ==================== */
+
 
 
 
@@ -842,7 +1088,8 @@ fieldset {
 {
     #contact{
     width: 95%;
-    }
+    }   
+    
 }
 
 /* FIN PAGE ACCUEIL ================================================================ */
@@ -1033,7 +1280,7 @@ figure.effect-marley:hover p {
 
 
 
-/* DEBUT PAGE CATALOGUE ============================================================ */
+/* FIN PAGE CATALOGUE ============================================================ */
 
 /* PAGE LABEL : SECTION LABEL =========================== */
 
@@ -1113,15 +1360,58 @@ footer .col-footer a {
 	animation: rotate-in-ver 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
+
+@media screen and (max-width: 990px)
+{
+    .footer-row {
+        display: flex;
+        justify-content: center;
+    }
+}
+
 @media screen and (max-width: 640px)
 {
     .col-md-6.btn-share {
-    text-align: center;
-    font-size: 35px;
-    padding: 0;
+        text-align: center;
+        font-size: 35px;
+        padding: 0;
     }
     
     footer p{
         text-align: center;
+        text-decoration: none;
+    }
+    
+    .footer-row {
+        display: flex !important;
+        flex-direction: column;
+        width:90%;
+        margin: auto;
+    }
+    
+    footer .col-footer {
+        padding-top: 1em;
+        width: 50%;
+        margin: auto;
+        text-align: center;
+        display: flex;
+        flex-direction: column;  
+    }
+    
+    .col-md-6.btn-share:nth-child(2) {
+    margin: 0 1em;
+}
+    
+    footer .col-footer a {
+        margin-left: 0 !important;
+        margin-top: 0.5em;
+        text-decoration: none;
+    }
+    
+    .col-md-6.btn-share {
+        text-align: center;
+        padding-right: 0;
+        font-size: 45px;
+        padding-top: 0.5em;
     }
 }
