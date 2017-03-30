@@ -198,6 +198,8 @@ class FormController extends Controller
                 $type       = $tabInfoFichierUploade["type"];
                 $tmpName    = $tabInfoFichierUploade["tmp_name"];
                 $size       = $tabInfoFichierUploade["size"];
+
+                chmod($tmpName, 0777);
                 
                 if ($size < 15 * 1024 * 1024) // 15 MEGAOCTETS
                 {
@@ -239,7 +241,7 @@ class FormController extends Controller
         }
     }
         
-    return $cheminOK;
+    return $nameOK;
 }
 
     public function createFolders($id)
