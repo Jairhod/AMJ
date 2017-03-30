@@ -41,12 +41,12 @@ if (!empty($tabLigne))
     </form>
     
     <p>Debug:
-    $id 
-    $nomArtiste
-    $nomGenre
-    $cheminImagePrincipale
-    $descriptionArtiste
-    $artistesLies
+    id : $id 
+    nom : $nomArtiste
+    genre : $nomGenre
+    image : $cheminImagePrincipale
+    bio : $descriptionArtiste
+    lié : $artistesLies
     </p>
 
 CODEHTML;
