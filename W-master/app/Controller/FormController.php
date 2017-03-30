@@ -170,7 +170,10 @@ class FormController extends Controller
 
     function verifierUpload ($folder, $nameInput)
 {
-    $nameOK   =  $nameInput;
+    $objetArtistesModel = new ArtistesModel;
+    $tab = $objetArtistesModel->find($folder);
+
+    $nameOK   = $tab["cheminImagePrincipale"];
 
     $idForm   = $this->verifierSaisie("idForm");
 
