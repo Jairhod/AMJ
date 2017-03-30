@@ -13,7 +13,6 @@
             </div>
         </div>
 
-
 <!--script pour menu style musical fiche artiste-->
         <script>
       $(function() {
@@ -22,7 +21,6 @@
     </script>
 <!--script pour audio player-->
 <script src="assets/js/audioscript.js"></script>
-
 
   </footer>
 </body>
