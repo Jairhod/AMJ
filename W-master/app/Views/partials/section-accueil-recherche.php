@@ -24,6 +24,14 @@
                 </select> 
             </div>
         </form>
+        
+       <!-- <form method="get" class="search-form">
+            <input type="text" value="search-bar" id="search-bar"/>
+            <div class="after"></div>
+            <input type="submit" id="btn-search-submit"/>
+            <input type="hidden" name="idForm" value="search">
+        </form>  --> 
+         
         <div class="row accueil-styles">
             <div class="col">
                 <div class="paper">
