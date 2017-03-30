@@ -12,14 +12,17 @@
                 <a href="https://www.youtube.com/channel/UCg6TbHDPivo--VikpRLXrTQ"><i class="fa fa-youtube" aria-hidden="true"></i></a>
             </div>
         </div>
-        
+
+
 <!--script pour menu style musical fiche artiste-->
         <script>
       $(function() {
         $( '#dl-menu' ).dlmenu();
       });
     </script>
-    <!--fin script menu style musical fiche artiste-->
+<!--script pour audio player-->
+<script src="assets/js/audioscript.js"></script>
+
 
   </footer>
 </body>
