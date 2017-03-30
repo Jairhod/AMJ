@@ -55,6 +55,7 @@
         <center><img src="./assets/media/img/3/imagePrincipale/BLACKOUT-BAND-01.jpg" alt="blackout band" class="img-responsive" width="350" /></center>
       </div>  
       <div>
+      <div>&nbsp;</div>
         <p>C’est sur les scènes et clubs du sud de la France que les quatre membres du groupe BACKOUT se sont rencontrés <br />afin de rendre hommage au plus grandes voix féminines de la SOUL et du R&B.
         </p>
         <p>
