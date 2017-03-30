@@ -115,6 +115,11 @@ class FormController extends Controller
         $descriptionArtiste         = $this->verifierSaisie("descriptionArtiste");
         $artistesLies               = $this->verifierSaisie("artistesLies");
         $dateModification           = date("Y-m-d H:i:s");
+
+        // update
+        $id             = $this->verifierSaisie("id");
+        $id             = intval($id);
+
         
         // VERIFIER SI LES INFOS SONT CORRECTES
         if ( ($id > 0)
