@@ -219,10 +219,10 @@ class FormController extends Controller
                     if (in_array($extension, $tabExtensionOK))
                     {
                         $nameOK       =  preg_replace("/[^a-zA-Z0-9-_\.]/", "", $name);
-                        if (is_dir("assets/media/img/$folder/imagePrincipale")) 
+/*                        if (is_dir("assets/media/img/$folder/imagePrincipale")) 
                         {
                         $this->deleteFolder("assets/media/img/$folder/imagePrincipale");         
-                        }
+                        }*/
                         $cheminOK     = "assets/media/img/$folder/imagePrincipale/$nameOK";
                         $cheminOK     = strtolower($cheminOK);
                         $this->createFolders($folder);
