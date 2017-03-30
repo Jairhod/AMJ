@@ -3,6 +3,8 @@
         <div class="title-hp">
             <div class="caca">
                <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLMC9KNkIncKtPzgY-5rmhvj7fax8fdxoj&amp;controls=0" frameborder="0" allowfullscreen></iframe>-->
+               <h6>Derniers artistes ajoutés</h6>
+               <p><?php echo('artiste bidule a été ajouté !'); echo date('l jS \of F Y h:i:s A'); ?></p>
             </div>
             <div class="etiquette-titre">
                 <h1>AMJ Productions</h1>
@@ -25,7 +27,7 @@
         <div class="row accueil-styles">
             <div class="col">
                 <div class="paper">
-                    <a href="<?php ?>" class="hover-btn-styles"><img class="poster" src="assets/media/img/jazz-199547_640.jpg"/></a>
+                    <a href="<?php ?>" class="hover-btn-styles"><img class="poster" src="assets/media/img/jazz.jpg"/></a>
                     <h5>Style</h5>
                     <h6>Jazz World Music</h6>
                     <a class="btn ">Voir!</a>
@@ -34,7 +36,7 @@
             </div>
             <div class="col">
                 <div class="paper">
-                    <a href="<?php ?>" class="hover-btn-styles"><img class="poster" src="assets/media/img/jazz-199547_640.jpg"/></a>
+                    <a href="<?php ?>" class="hover-btn-styles"><img class="poster" src="assets/media/img/blues.jpeg"/></a>
                     <h5>Style</h5>
                     <h6>Soul Funk R&B</h6>
                     <a class="btn ">Voir!</a>
@@ -43,7 +45,7 @@
             </div>
             <div class="col">
                 <div class="paper">
-                    <a href="<?php ?>" class="hover-btn-styles"><img class="poster" src="assets/media/img/jazz-199547_640.jpg"/></a>
+                    <a href="<?php ?>" class="hover-btn-styles"><img class="poster" src="assets/media/img/rock.jpeg"/></a>
                     <h5>Style</h5>
                     <h6>Pop Rock Actuel</h6>
                     <a class="btn ">Voir!</a>
@@ -52,7 +54,7 @@
             </div>   
              <div class="col">
                 <div class="paper">
-                    <a href="<?php ?>" class="hover-btn-styles"><img class="poster" src="assets/media/img/jazz-199547_640.jpg"/></a>
+                    <a href="<?php ?>" class="hover-btn-styles"><img class="poster" src="assets/media/img/danse.jpg"/></a>
                     <h5>Style</h5>
                     <h6>Tributes Spectacles Danse</h6>
                     <a class="btn ">Voir!</a>
@@ -63,7 +65,7 @@
         <div class="row accueil-styles">
             <div class="col">
                 <div class="paper">
-                    <a href="<?php ?>" class="hover-btn-styles"><img class="poster" src="assets/media/img/jazz-199547_640.jpg"/></a>
+                    <a href="<?php ?>" class="hover-btn-styles"><img class="poster" src="assets/media/img/strolling.jpg"/></a>
                     <h5>Style</h5>
                     <h6>Strolling</h6>
                     <a class="btn ">Voir!</a>
@@ -72,7 +74,7 @@
             </div>
             <div class="col">
                 <div class="paper">
-                    <a href="<?php ?>" class="hover-btn-styles"><img class="poster" src="assets/media/img/jazz-199547_640.jpg"/></a>
+                    <a href="<?php ?>" class="hover-btn-styles"><img class="poster" src="assets/media/img/orchestre.jpg"/></a>
                     <h5>Style</h5>
                     <h6>Orchestre Clubbing</h6>
                     <a class="btn ">Voir!</a>
@@ -81,7 +83,7 @@
             </div>
             <div class="col">
                 <div class="paper">
-                    <a href="<?php ?>" class="hover-btn-styles"><img class="poster" src="assets/media/img/jazz-199547_640.jpg"/></a>
+                    <a href="<?php ?>" class="hover-btn-styles"><img class="poster" src="assets/media/img/noel.jpeg"/></a>
                     <h5>Style</h5>
                     <h6>Jeune Public (noël)</h6>
                     <a class="btn ">Voir!</a>
@@ -90,7 +92,7 @@
             </div>   
              <div class="col">
                 <div class="paper">
-                    <a href="<?php ?>" class="hover-btn-styles"><img class="poster" src="assets/media/img/jazz-199547_640.jpg"/></a>
+                    <a href="<?php ?>" class="hover-btn-styles"><img class="poster" src="assets/media/img/band-opti.jpg"/></a>
                     <h5>Style</h5>
                     <h6>Autres</h6>
                     <a class="btn ">Voir!</a>

@@ -304,6 +304,15 @@ button {
 
 /* SECTION RECHERCHE ACCUEIL =================== */
 
+.caca {
+    position: relative;
+    top: -100px;
+    left: 500px;
+    border: solid white 1px;
+    width: 50%;
+    text-align: center;
+    color: white;
+}
 
 .full-width {
     padding: 0 0 0 0;
@@ -330,7 +339,7 @@ button {
 #recherche-accueil .title-hp {
     width: 70%;
     margin: auto;
-    padding-top: 19em;
+    padding-top: 13em;
 }
 
 .etiquette-titre {
@@ -362,6 +371,7 @@ button {
 
 @media screen and (max-width: 550px)
 {
+    
     #recherche-accueil .title-hp .etiquette-titre {
         width: 100%;   
     }
@@ -621,7 +631,15 @@ a.btn:active {
 {
     #recherche-accueil .accueil-styles {
         display: none;
-    }       
+    }
+    
+    #recherche-accueil .title-hp {
+    padding-top: 6em;
+    }
+    
+    form.form-inline.section-accueil {
+        padding-bottom: 6em;
+    }
 }
 
 
