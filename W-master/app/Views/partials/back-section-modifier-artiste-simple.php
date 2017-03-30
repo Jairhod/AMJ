@@ -23,6 +23,7 @@ if (!empty($tabLigne))
     echo
 <<<CODEHTML
 
+    <h3>id : $id</h3>
     <form method="POST" enctype="multipart/form-data" action="">
         <input style="width: 400px" type="text" name="nomArtiste" required placeholder="Nom" value="$nomArtiste"><br>
         <input style="width: 400px" type="text" name="nomGenre" required placeholder="Genre" value="$nomGenre"><br>
