@@ -107,7 +107,7 @@ class FormController extends Controller
         $cheminImagePrincipale      = $this->verifierUpload("cheminImagePrincipale");
         $descriptionArtiste         = $this->verifierSaisie("descriptionArtiste");
         $artistesLies               = $this->verifierSaisie("artistesLies");
-        $dateModification           = date("Y-m-d H:i:s");
+        $dateModification           = jo;
 
         // update
         $id             = $this->verifierSaisie("id");
