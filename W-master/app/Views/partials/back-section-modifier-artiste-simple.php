@@ -21,7 +21,7 @@ if (!empty($tabLigne))
 <<<CODEHTML
     <section>
     <h3>Photo de profil</h3>
-    <img style="width: 200px" src="$srcImage" alt="direct link">
+    <img style="width: 200px" src="$srcImage" alt="$nomArtiste">
     <article>
     <h3>id : $id</h3>
     <form method="POST" enctype="multipart/form-data" action="">
@@ -39,15 +39,6 @@ if (!empty($tabLigne))
             $artisteUpdateRetour
         </div>
     </form>
-    
-    <p>Debug:
-    id : $id 
-    nom : $nomArtiste
-    genre : $nomGenre
-    image : $cheminImagePrincipale
-    bio : $descriptionArtiste
-    lié : $artistesLies
-    </p>
 
 CODEHTML;
 
