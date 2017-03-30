@@ -219,14 +219,22 @@ class FormController extends Controller
                     if (in_array($extension, $tabExtensionOK))
                     {
                         $nameOK       =  preg_replace("/[^a-zA-Z0-9-_\.]/", "", $name);
-/*                        if (is_dir("assets/media/img/$folder/imagePrincipale")) 
-                        {
-                        $this->deleteFolder("assets/media/img/$folder/imagePrincipale");         
-                        }*/
                         $cheminOK     = "assets/media/img/$folder/imagePrincipale/$nameOK";
                         $cheminOK     = strtolower($cheminOK);
                         $this->createFolders($folder);
-                        move_uploaded_file($tmpName, $cheminOK);    
+                        move_uploaded_file($tmpName, $cheminOK);
+
+                        if (is_dir("assets/media/img/$folder/imagePrincipale")) 
+                          {
+                              $dir = 'assets/media/img/$folder/imagePrincipale';
+                              $leave_files = array($nameOK);
+
+                              foreach( glob("$dir/*") as $file ) {
+                                  if( !in_array(basename($file), $leave_files) )
+                                      unlink($file);
+                              }  
+                          }
+
                     }
                     else
                     {
@@ -266,6 +274,7 @@ class FormController extends Controller
            mkdir($chemin, 0777);
         }
     }
+
 
     public function renameFolder($id)
     {
