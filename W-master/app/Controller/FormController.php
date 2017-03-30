@@ -47,11 +47,11 @@ class FormController extends Controller
         $cheminImagePrincipale  = $this->verifierUpload("temp", "cheminImagePrincipale");
         $descriptionArtiste     = $this->verifierSaisie("descriptionArtiste");
         $dateModification       = date("Y-m-d H:i:s");
+
+        $objetArtistesModel = new ArtistesModel;
         
         if ( ($nomArtiste != "") && ($nomGenre != "") && ($artistesLies != "") && ($cheminImagePrincipale != "") && ($descriptionArtiste != "") )
         {
-
-            $objetArtistesModel = new ArtistesModel;
 
             $objetArtistesModel->insert([   "nomArtiste"            => $nomArtiste, 
                                             "nomGenre"              => $nomGenre, 
@@ -70,19 +70,13 @@ class FormController extends Controller
             $GLOBALS["artisteCreateRetour"] = "Erreurs artisteTraitement";          
         }
 
-        $objetArtistesModel = new ArtistesModel;
-        $tabLigne           = $objetArtistesModel->findAll("dateModification", "DESC");
+        $tabLigne = $objetArtistesModel->findAll("dateModification", "DESC");
         
         if (!empty($tabLigne))
         {
             $id = $tabLigne[0]["id"];
             $this->renameFolder($id);
         }
-
-        $cheminImagePrincipale  = $this->verifierUpload("$id", "cheminImagePrincipale");
-
-        $objetArtistesModel = new ArtistesModel;
-        $objetArtistesModel->update([ "cheminImagePrincipale"  => $cheminImagePrincipale ], $id);
 
     }
 
