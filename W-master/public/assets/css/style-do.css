@@ -16,8 +16,6 @@
 }
 
 .borderbleuvert {
-	
-	border: 1px solid  #1abc9c;
 	margin-top: 80px;
 	margin-bottom: 30px;
 	padding-top: 30px;
@@ -45,6 +43,34 @@
 } 
 
 #photoprincipale {
-    background-image: url("../media/img/3/images/Quartet-Soul-1.jpg");
-    background-color: #cccccc;
+    
+    background-color: #000000;
+    color: red;
+    margin: auto;
+    padding-top: 20px;
+    padding-bottom: 50px;
 }
+
+.h2centre {
+	margin-top: -150px;
+	text-align: center;
+	color: #edbe00;
+}
+
+.h2centre h2 {
+	font-size: 7em;
+	opacity: 0.85;
+}
+
+.texteficheartiste {
+	background-color: #edbe00;
+	width: 45%;
+	padding: 20px;
+	color: #000000;
+	opacity: 0.70;
+}
+
+.containerblue {
+	background-color: #34495E;
+}
+

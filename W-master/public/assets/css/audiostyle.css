@@ -7,7 +7,12 @@
 /* Desktop
 ================================================== */
 
-.containeraudio { position:relative; margin:0 auto; width:700px; }
+//.containeraudio { position:relative; margin:0 auto; width:700px; }
+.containeraudio {
+	//position:relative;
+	//margin:0 auto;
+	width:513px;
+}
 .columnaudio { width:inherit; }
 
 
@@ -286,9 +291,9 @@ html[data-useragent*="Chrome"][data-useragent*="Mobile"] audio { margin-left:4px
 	font:20px/24px "Yanone Kaffeesatz", HelveticaNeue, "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-weight:300;
 	padding:5px 0;
+	padding:0px 0;
 	-webkit-tap-highlight-color:rgba(0,0,0,0);
 	-webkit-tap-highlight-color:transparent;
-
 }
 
 div,span,h1,h6,p,a,ul,li,audio {
@@ -303,4 +308,8 @@ vertical-align:baseline;
 
 ul {
 list-style:none;
+}
+
+#audio1 {
+	width:500px;
 }

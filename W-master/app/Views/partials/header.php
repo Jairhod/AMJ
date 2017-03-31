@@ -30,7 +30,7 @@
 
     <!--CAROUSEL FICHE ARTISTE-->
 
-     <link rel="stylesheet" href="assets/css/style-carousel.css">
+ <!--    <link rel="stylesheet" href="assets/css/style-carousel.css">-->
 
 <!--AUDIO PLAYER FICHE ARTISTE-->
 
