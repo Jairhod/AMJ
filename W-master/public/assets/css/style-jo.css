@@ -125,7 +125,7 @@ p, a{
 
 .buttons-coll {
   width: 90%;
-  margin: 50px auto;
+  margin-top: 3em;
 }
 
 button {
@@ -1007,7 +1007,7 @@ section#descriptif p {
 
 .container-fluid.label-accueil-wrapper p {
     color: white;
-    margin-bottom: 1em;
+    margin: 0.5em 0 1.5em 0;
 }
 
 .col-label-2 p {
@@ -1018,21 +1018,26 @@ section#descriptif p {
 .container-fluid.label-accueil-wrapper h6 {
     color: #3F4F5E;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: bold;
     width: 100%;
     margin-top: 2em;
+    margin-bottom: 1em;
+}
+
+.container-fluid.label-accueil-wrapper h6:first-child {
+    margin-top: 1em;
+    text-transform: uppercase;
 }
 
 .label-contain .buttons-coll {
     width: 100%;
-    margin: 2em 0;
-    text-align: right;
+    text-align: left;
 }
 
 .col-label-1 {
     background-color: rgba(237, 190, 0, 0.9);
     width: 60%;
-    padding: 1em 3em;
+    padding: 2em 3em;
     margin-right: 2em;
 }
 
