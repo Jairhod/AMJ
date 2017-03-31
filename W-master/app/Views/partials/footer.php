@@ -13,14 +13,15 @@
                 <a href="https://www.linkedin.com/in/christophe-moura-a968ba89/"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
             </div>
         </div>
-        
+
 <!--script pour menu style musical fiche artiste-->
         <script>
       $(function() {
         $( '#dl-menu' ).dlmenu();
       });
     </script>
-    <!--fin script menu style musical fiche artiste-->
+<!--script pour audio player-->
+<script src="assets/js/audioscript.js"></script>
 
   </footer>
 </body>
