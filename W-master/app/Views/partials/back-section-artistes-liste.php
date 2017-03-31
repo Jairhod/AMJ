@@ -1,34 +1,23 @@
 <section>
-	<h3>Liste des artistes</h3>
-	<table>
-		<thead>
-			<tr>
-				<th>id</th>
-				<th>nom</th>
-				<th>genre</th>
-				<th>chemin_image</th>
-                <th>description</th>
-                <th>artistes_liés</th>
-				<th>date_modifiée</th>
-			
-			</tr>
-		</thead>
-		<tbody>
+    <table>
+        <tbody>
 <?php
 
 $objetArtistesModel = new \Model\ArtistesModel;
 
-$tabLigne = $objetArtistesModel->findAll("id", "DESC");
+$tabLigne = $objetArtistesModel->findAll("nomArtiste", "ASC");
 
 foreach($tabLigne as $index => $tabColonne)
 {
+    $id         = $tabColonne["id"];
+
     echo "<tr>";
     foreach($tabColonne as $nomColonne => $valeurColonne)
     {
-        echo "<td>$valeurColonne</td>";
+        $srcImage   = $this->assetUrl('media/img/'.$id.'/imagePrincipale/'.$valeurColonne);
+        if($nomColonne == "nomArtiste") echo "<td>$valeurColonne</td>";
+        if($nomColonne == "cheminImagePrincipale") echo "<td><img style='width: 100px' src='$srcImage' alt=''></td>";
     }
-    
-    $id = $tabColonne["id"];
 
     // DEFINIR LES VARIABLES 
     $hrefAfficher   = $this->url("back_artiste_afficher", [ "id" => $id ]);
@@ -42,7 +31,6 @@ foreach($tabLigne as $index => $tabColonne)
     <td><a href="$hrefSupprimer">supprimer</a></td>
     </tr>
 CODEHTML;
-
 }
 
 ?>
