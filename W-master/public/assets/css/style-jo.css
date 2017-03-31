@@ -126,7 +126,6 @@ p, a{
 .buttons-coll {
   width: 90%;
   margin: 50px auto;
-  text-align: center;
 }
 
 button {
@@ -1020,12 +1019,12 @@ section#descriptif p {
     color: #3F4F5E;
     font-size: 16px;
     font-weight: 500;
-    width: 40%;
+    width: 100%;
     margin-top: 2em;
 }
 
 .label-contain .buttons-coll {
-    width: 100;
+    width: 100%;
     margin: 2em 0;
     text-align: right;
 }
@@ -1068,6 +1067,50 @@ section#descriptif p {
     color: white;
 }
 
+
+@media screen and (max-width: 990px) 
+{
+    .label-contain {
+        margin: 0 2em 2em 2em;
+    }
+    
+    .label-contain .buttons-coll {
+        text-align: center;
+    }
+    
+    .col-label-1 {
+        width: 50%;
+    }
+    
+    .col-label-2 {
+        width: 50%;
+        padding: 1em 1.5em;
+    }
+    
+    .col-label-2 iframe {
+    height: 500px;
+    }
+    
+}
+
+@media screen and (max-width: 770px)
+{
+    .label-contain {
+        flex-direction: column;
+        margin: 0 2em 2em 2em;
+    }
+    
+    .col-label-1 {
+        width: 100%;
+        margin-right: 0;
+    }
+    
+    .col-label-2 {
+        width: 100%;
+        margin-top: 2em;
+        padding: 3em;
+    }
+}
 
 /* SECTION ACCUEIL FORMULAIRE DE CONTACT ==== */
 
