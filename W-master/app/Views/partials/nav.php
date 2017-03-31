@@ -16,7 +16,7 @@
                 </ul>             
                 <ul class="nav navbar-nav navbar-right">
                     <li class="">
-                        <a href="accueil">Le Label</a>
+                        <a href="label">Le Label</a>
                     </li>
                     <li class="">
                         <a href="catalogue">Le Catalogue</a>

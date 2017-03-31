@@ -3,16 +3,6 @@ console.log('Javascript is linked & jQuery is installed :)')
 
 $(document).ready(function(){
     
-    
-/* EFFET NAV PRINCIPALE: Transparence au scroll */
-   
-    $(window).scroll(function() {
-        if ($(document).scrollTop() > 50) {
-        $('navbar').addClass('transparent');
-        } else {
-        $('navbar').removeClass('transparent');
-        }
-    });
 
     
 /* Effet au scroll scrollreveal ========== */
@@ -25,7 +15,7 @@ $(document).ready(function(){
     };
     
     sr.reveal('.anim-descr', fooReveal);
-
+    sr.reveal('.label-contain', { duration: 1000 }, 50);
     
 /* API FACEBOOK : pour fil d'actu */
 
