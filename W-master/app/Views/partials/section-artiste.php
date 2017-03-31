@@ -46,13 +46,14 @@
   </div>  
 --> 
 <!--PHOTO ET TEXTE PRESENTATION-->  
-<div class="container jumbotron jumbotronficheartiste">
-    <div class="borderbleuvert">
+<div class="container">
+    <div class="row borderbleuvert photoprincipale">
+<!--      <figure><img src="./assets/media/img/3/imagePrincipale/BLACKOUT-BAND-01.jpg" alt="blackout band" class="img-responsive" width="350" /><figure>-->
       <h2>BLACKOUT BAND</h2>
     </div>
     
       <div>
-        <center><img src="./assets/media/img/3/imagePrincipale/BLACKOUT-BAND-01.jpg" alt="blackout band" class="img-responsive" width="350" /></center>
+        
       </div>  
       <div>
       <div>&nbsp;</div>
