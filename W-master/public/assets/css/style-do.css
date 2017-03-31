@@ -74,3 +74,17 @@
 	background-color: #34495E;
 }
 
+.backgroundvideo{
+	background-color:  #000000;
+	margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+.infoficheartiste{
+	background-color: #edbe00;
+	width: 45%;
+	padding: 20px;
+	color: #000000;
+	opacity: 0.70;
+	margin: 20px;
+}
