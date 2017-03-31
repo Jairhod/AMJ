@@ -386,11 +386,18 @@ button {
     }
 }
 
-/*.search-submit-accueil {
+.search-submit-accueil {
     background-color: transparent;
     border: 0;
     padding-left: 2em;
-}*/ /* POUR LE BOUTON DERECHERCHE */
+}
+
+form.search-form {
+    display: flex;
+    justify-content: center;
+}
+
+/* POUR LE BOUTON DERECHERCHE */
 
 
 
@@ -1003,6 +1010,7 @@ section#descriptif p {
 .label-contain {
     margin: 0 6em 6em 6em;
     display: flex;
+    
 }
 
 .container-fluid.label-accueil-wrapper p {
