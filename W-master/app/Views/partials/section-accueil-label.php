@@ -14,8 +14,8 @@
                             </div>
                         </article>
                         <div class="col-label-2">
-                            <iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/124416874&amp;color=edbe00&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
                             <p>Les derniers morceaux en écoute du label</p>
+                            <iframe width="100%" height="350" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/124416874&amp;color=edbe00&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
                         </div>
                     </div>
                 </section>

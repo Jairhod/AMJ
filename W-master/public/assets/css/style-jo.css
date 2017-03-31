@@ -1007,7 +1007,7 @@ section#descriptif p {
 
 .container-fluid.label-accueil-wrapper p {
     color: white;
-    padding-top: 2em;
+    margin-bottom: 1em;
 }
 
 .col-label-2 p {
@@ -1063,11 +1063,6 @@ section#descriptif p {
     padding-right: 0;
 }
 
-.container-fluid.label-accueil-wrapper p{
-    color: white;
-}
-
-
 @media screen and (max-width: 990px) 
 {
     .label-contain {
@@ -1086,6 +1081,7 @@ section#descriptif p {
         width: 50%;
         padding: 1em 1.5em;
     }
+    
     
     .col-label-2 iframe {
     height: 500px;
@@ -1109,6 +1105,10 @@ section#descriptif p {
         width: 100%;
         margin-top: 2em;
         padding: 3em;
+    }
+    
+    .container-fluid.label-accueil-wrapper p {
+    margin-bottom: 2em;
     }
 }
 
