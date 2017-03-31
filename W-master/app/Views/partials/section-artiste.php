@@ -46,12 +46,13 @@
   </div>  
 --> 
 <!--PHOTO ET TEXTE PRESENTATION-->  
-<div class="container">
-    <div class="row borderbleuvert photoprincipale">
-<!--      <figure><img src="./assets/media/img/3/imagePrincipale/BLACKOUT-BAND-01.jpg" alt="blackout band" class="img-responsive" width="350" /><figure>-->
+<div class="container-fluid">
+<div class="row borderbleuvert">
+  <div id="photoprincipale">
+    
       <h2>BLACKOUT BAND</h2>
     </div>
-    
+  </div>  
       <div>
         
       </div>  
