@@ -1,5 +1,5 @@
 <section>
-    <ul>
+    <select>
 <?php
 
 $objetArtistesModel = new \Model\ArtistesModel;
@@ -13,22 +13,17 @@ foreach($tabLigne as $index => $tabColonne)
     
     foreach($tabColonne as $nomColonne => $valeurColonne)
     {
-        if($nomColonne == "nomArtiste") echo "<td>$valeurColonne</td>";
+        if($nomColonne == "nomArtiste") echo "<option>$valeurColonne</option>";
     }
-    
-    echo "<li>";
-    
-    // DEFINIR LES VARIABLES 
-    $hrefAfficher   = $this->url("test_jo", [ "id" => $id ]);
 
-    
+    // DEFINIR LES VARIABLES 
+    $hrefAfficherArtiste   = $this->url("test_jo", [ "id" => $id ]);
+
     echo
 <<<CODEHTML
 CODEHTML;
 }
 
 ?>
-
-
-    </ul>
+    </select>
 </section>
