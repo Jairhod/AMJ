@@ -17,8 +17,8 @@
 
 .borderbleuvert {
 	
-	border-bottom: 1px solid  #1abc9c;
-	margin-top: 30px;
+	border: 1px solid  #1abc9c;
+	margin-top: 80px;
 	margin-bottom: 30px;
 	padding-top: 30px;
 	padding-bottom: 30px;
@@ -43,3 +43,8 @@
 	margin-right: 15px;
 	margin-left: 15px;
 } 
+
+#photoprincipale {
+    background-image: url("./assets/media/img/3/Soul-Quartet-1.jpg");
+    background-color: #cccccc;
+}
