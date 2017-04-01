@@ -1251,7 +1251,84 @@ fieldset {
 
 /* FIN PAGE ACCUEIL ================================================================ */
 
+/* DEBUT PAGE LABEL : SECTION LABEL ==================================================== */
 
+
+section#label .label-wrapper {
+    margin-top: 5.7em;
+}
+
+section#label .intro-label {
+    background-image: url("../media/img/studio-4.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 8em 0;
+}
+
+section#label h1 {
+    text-align: center;
+    font-size: 40px;
+    padding: 1em;
+    background-color: #edbe00;
+    color: white;
+}
+
+section#label h2 {
+    font-size: 25px;
+}
+
+section#label .intro-label p {
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    background-color: rgba(0,0,0,0.8);
+    padding: 1em;
+    color: white;
+    font-size: 16px;
+}
+
+section#label .row-label {
+    width: 85%;
+    margin: auto;
+}
+
+
+
+.col-1-label {
+    margin: 4em 15em 4em 0;
+    background-color: #3F4F5E;
+    padding: 2em;
+    color: white;
+    box-shadow: 2px 5px 5px 0px #7F8C8D;
+}
+
+
+.col-1-label h2 {
+    border-bottom: 1px solid white;
+    padding-bottom: 0.5em;
+}
+
+.col-1-label p {
+    margin-top: 2em;
+}
+
+.col-2-label {
+    margin: 4em 0 4em 15em;
+    padding: 2em;
+    box-shadow: 2px 5px 5px 0px #7F8C8D;
+}
+
+.col-2-label h2 {
+    border-bottom: 1px solid #3F4F5E;
+    padding-bottom: 0.5em;
+}
+
+.col-2-label p {
+    margin-top: 2em;
+}
+
+/* FIN PAGE LABEL : SECTION LABEL ==================================================== */
 
 /* DEBUT PAGE CATALOGUE ============================================================ */
 
@@ -1442,24 +1519,7 @@ figure.effect-marley:hover p {
 /* FIN PAGE CATALOGUE ============================================================ */
 
 
-/* DEBUT PAGE LABEL : SECTION LABEL ==================================================== */
 
-section#label {
-    width: 90%;
-    margin: auto;
-    padding-top: 10em;
-    padding-bottom: 10em;
-}
-
-section#label .label-wrapper {
-    
-}
-
-section#label h1 {
-    text-align: center;
-    margin-bottom: 2em;
-}
-/* FIN PAGE LABEL : SECTION LABEL ==================================================== */
 
 
 
