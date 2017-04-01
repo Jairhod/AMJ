@@ -21,6 +21,7 @@ if (!empty($tabLigne))
 <<<CODEHTML
     <section>
     <img style="width: 200px" src="$srcImage" alt="$nomArtiste">
+    <p>id: $id</p>
     <article>
     <form method="POST" enctype="multipart/form-data" action="">
         <input style="width: 400px" type="text" name="nomArtiste" required placeholder="Nom" value="$nomArtiste"><br>

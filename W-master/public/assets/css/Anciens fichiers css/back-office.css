@@ -81,11 +81,8 @@ div#btn-bo .btn-col {
     width: 4em;
 }
 
-    
-
 
 /* MENU BACK OFFICE =================== */
-
 
 .nav-fostrap {
     display: block;
@@ -330,4 +327,54 @@ div#btn-bo .btn-col {
     top: 0;
     right: 0;
     left: 0;
+}
+
+
+/* style jo */
+
+#recherche-accueil .accueil-styles.btn,
+a.btn {
+    display: inline-block;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+    line-height: 20px;
+    padding: 1vh 2vh;
+    letter-spacing: .02rem;
+    background: #3f4f5e;
+    font-size: .8rem;
+    box-shadow: 0 0px 0px rgba(48, 51, 54, 0.1), 0 0px 0px transparent;
+    margin-bottom: 0.8em;
+    border-radius: 0;
+    color: white;
+    font-weight: bold;
+    border-radius: 0;
+}
+
+#recherche-accueil .accueil-styles.btn,
+a.btn:hover {
+    box-shadow: 0 7px 14px rgba(48, 51, 54, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+    transition: ease-in-out 0.3s;
+    border: #3f4f5e solid 2px;
+    border-radius: 0;
+    color: #3f4f5e;
+    font-weight: bold;
+    background: white;
+}
+
+#recherche-accueil .accueil-styles.btn,
+a.btn:active {
+    box-shadow: 0 4px 6px rgba(48, 51, 54, 0.1), 0 1px 3px rgba(0, 0, 0, 0.12);
+    transform: translateY(1px);
+}
+
+.fa {
+    color: #3F4F5E;
+}
+
+.fa:hover{
+    color: #edbe00;
+    -webkit-animation: rotate-in-ver 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    -moz-animation: rotate-in-ver 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: rotate-in-ver 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }

@@ -6,7 +6,7 @@
   <div class="card"></div>
   <div class="card">
     <h1 class="title">Connexion</h1>
-    <form method="GET">
+    <form method="POST">
         <div class="input-container">
             <input type="text" id="identifiant" name="identifiant" required="required"/>
             <label for="identifiant">Identifiant</label>
@@ -33,7 +33,7 @@
         <h1 class="title">S'inscrire
           <div class="close"></div>
         </h1>
-    <form method="GET">
+    <form method="POST">
         <div class="input-container">
         <input type="text" id="pseudo" name="pseudo" required="required"/>
         <label for="pseudo">Pseudo</label>
@@ -46,7 +46,7 @@
         </div>
         <div class="input-container">
             <input type="password" id="pamplemousse1" name="pamplemousse1" required="required"/>
-            <label for="pamplemousse1">mot de Passe</label>
+            <label for="pamplemousse1">Mot de Passe</label>
         <div class="bar"></div>
         </div>
         <div class="input-container">
