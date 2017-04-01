@@ -27,8 +27,9 @@
                             
                             foreach($tabColonne as $nomColonne => $valeurColonne)
                             {
-                                if($nomColonne == "nomGenre") echo"<option>$valeurColonne</option>";        
-                            }                                   
+                                if($nomColonne == "nomGenre") echo "<option>$valeurColonne</option>";        
+                            }   
+                                
                         }
                     ?>      
                 </select>
@@ -45,7 +46,9 @@
 
                             foreach($tabColonne as $nomColonne => $valeurColonne)
                             {
-                                if($nomColonne == "nomArtiste") echo "<option>$valeurColonne</option>";        
+                                if($nomColonne == "nomArtiste") echo "<option>$valeurColonne</option>";
+                                
+                                    
                             }
                         }
                     ?>        

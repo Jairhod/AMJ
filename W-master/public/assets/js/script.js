@@ -29,7 +29,7 @@ $(document).ready(function(){
     
 /* SELECT et OPTION STYLED =============== */
     
-    $('.form-acceuil').each(function(){
+    $('select').each(function(){
         var $this = $(this), numberOfOptions = $(this).children('option').length;
 
         $this.addClass('select-hidden'); 
