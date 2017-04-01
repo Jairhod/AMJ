@@ -8,20 +8,20 @@ $tabLigne = $objetArtistesModel->findAll("nomArtiste", "ASC");
 
 foreach($tabLigne as $index => $tabColonne)
 {
-    $id         = $tabColonne["id"];
+
+    // DEFINIR LES VARIABLES
+    $id             = $tabColonne["id"];     
+    $hrefAfficher   = $this->url("back_artiste_afficher", [ "id" => $id ]);
+    $hrefModifier   = $this->url("back_artiste_modifier", [ "id" => $id ]);
+    $hrefSupprimer  = "?idForm=artisteDelete&id=$id";
 
     echo "<div class='colonne'>";
     foreach($tabColonne as $nomColonne => $valeurColonne)
     {
         $srcImage   = $this->assetUrl('media/img/'.$id.'/imagePrincipale/'.$valeurColonne);
-        if($nomColonne == "nomArtiste") echo "<p id='nom-artiste'>$valeurColonne</p>";
-        if($nomColonne == "cheminImagePrincipale") echo "<div><img src='$srcImage' alt=''></div>";
+        if($nomColonne == "nomArtiste") echo "<h4><a href='$hrefAfficher'>$valeurColonne</a></h4>";
+        if($nomColonne == "cheminImagePrincipale") echo "<div><a href='$hrefAfficher'><img src='$srcImage' alt=''></a></div>";
     }
-
-    // DEFINIR LES VARIABLES 
-    $hrefAfficher   = $this->url("back_artiste_afficher", [ "id" => $id ]);
-    $hrefModifier   = $this->url("back_artiste_modifier", [ "id" => $id ]);
-    $hrefSupprimer  = "?idForm=artisteDelete&id=$id";
     
     echo
 <<<CODEHTML

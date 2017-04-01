@@ -33,22 +33,18 @@ header nav ul {
 header nav ul li {
     display:inline-block;
     list-style:none;
-    border:1px solid #aaaaaa;
-}
-
-header nav ul li:hover {
-    background-color: #868282;
-    border:1px solid #16192C;
 }
 
 header nav ul li a {
     padding:0.5em;
     display:inline-block;
-    background-color: #9794FF;
+    color: white;
+    background-color: #34495E;
 }
 
 header nav ul li a:hover {
-	color: white;
+
+	background-color: #1ABC9C;
 }
 
 section {
@@ -65,22 +61,39 @@ table {
     width:100%;
 }
 
-span.links a {
+.links a{
     padding:0.5em;
     margin: 0.1em;
     display:inline-block;
+    color: #272822;
     background-color: #9E9E9E;
 }
 
-span.links a:hover {
+.links a:hover {
 	color: white;
-    background-color: #575757;
+    background-color: #272822;
+}
+
+button.links{
+    padding:0.5em;
+    margin: 0.1em;
+    display:inline-block;
+    color: #272822;
+    background-color: #9E9E9E;
+}
+
+button.links:hover {
+	color: white;
+    background-color: #272822;
 }
 
 p#nom-artiste {
 	text-align:center;
 	font-size: 1.5em;
+}
 
+p#nom-artiste a:hover {
+	color: blue;
 }
 
 
@@ -94,15 +107,6 @@ p#nom-artiste {
     align-items:stretch;
 }
 
-.ligne .colonne {
-    width:50%;
-}
-
-.ligne .colonne img {
-    width:100%;
-    padding:1em;
-}
-
 h3 {
     text-align:center;
 }
@@ -112,18 +116,24 @@ h3 {
     padding:1em;
     border:1px solid #cccccc;
     margin:0.5em;
+    background-color: #fff;
 }
 
 .liste-annonce .colonne h4 {
     margin:0;
     padding:0.5em;
-    background-color:#cccccc;
     text-transform:lowercase;
     margin-bottom:0.5em;
+    text-align:center;
+    font-size: 1.5em;
 }
 
 .liste-annonce .colonne h4:first-letter {
     text-transform:capitalize;
+}
+
+.liste-annonce .colonne h4 a:hover {
+    color: #37D01E;
 }
 
 .liste-annonce .colonne strong {
@@ -135,10 +145,4 @@ h3 {
     width:100%;
     padding:0.5em;
     object-fit: cover;
-}
-
-.liste-annonce .colonne .description {
-    padding-bottom:0.5em;
-    margin-bottom:0.5em;
-    border-bottom:1px dotted #000000;
 }
