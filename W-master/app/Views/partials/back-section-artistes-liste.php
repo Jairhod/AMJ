@@ -14,7 +14,7 @@ foreach($tabLigne as $index => $tabColonne)
     foreach($tabColonne as $nomColonne => $valeurColonne)
     {
         $srcImage   = $this->assetUrl('media/img/'.$id.'/imagePrincipale/'.$valeurColonne);
-        if($nomColonne == "nomArtiste") echo "<p>$valeurColonne</p>";
+        if($nomColonne == "nomArtiste") echo "<p id='nom-artiste'>$valeurColonne</p>";
         if($nomColonne == "cheminImagePrincipale") echo "<div><img src='$srcImage' alt=''></div>";
     }
 
