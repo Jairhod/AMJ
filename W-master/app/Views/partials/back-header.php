@@ -12,4 +12,3 @@
 </head>
 
 <body>
-<h1><?php echo $this->e($titre); ?></h1>
