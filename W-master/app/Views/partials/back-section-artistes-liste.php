@@ -1,6 +1,5 @@
-<section>
-    <table>
-        <tbody>
+<section class="liste-annonce">
+    <div class="ligne">
 <?php
 
 $objetArtistesModel = new \Model\ArtistesModel;
@@ -11,12 +10,12 @@ foreach($tabLigne as $index => $tabColonne)
 {
     $id         = $tabColonne["id"];
 
-    echo "<tr>";
+    echo "<div class='colonne'>";
     foreach($tabColonne as $nomColonne => $valeurColonne)
     {
         $srcImage   = $this->assetUrl('media/img/'.$id.'/imagePrincipale/'.$valeurColonne);
-        if($nomColonne == "nomArtiste") echo "<td>$valeurColonne</td>";
-        if($nomColonne == "cheminImagePrincipale") echo "<td><img style='width: 100px' src='$srcImage' alt=''></td>";
+        if($nomColonne == "nomArtiste") echo "<p>$valeurColonne</p>";
+        if($nomColonne == "cheminImagePrincipale") echo "<div><img src='$srcImage' alt=''></div>";
     }
 
     // DEFINIR LES VARIABLES 
@@ -26,16 +25,14 @@ foreach($tabLigne as $index => $tabColonne)
     
     echo
 <<<CODEHTML
-    <td><a href="$hrefAfficher">afficher</a></td>
-    <td><a href="$hrefModifier">modifier</a></td>
-    <td><a href="$hrefSupprimer">supprimer</a></td>
-    </tr>
+    <span class="links"><a href="$hrefAfficher">afficher</a></span>
+    <span class="links"><a href="$hrefModifier">modifier</a></span>
+    <span class="links"><a href="$hrefSupprimer">supprimer</a></span>
+    </div>
 CODEHTML;
 }
 
 ?>
 
-
-        </tbody>
-    </table>
+            </div>
 </section>
