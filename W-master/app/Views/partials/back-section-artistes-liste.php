@@ -1,6 +1,5 @@
-<section>
-    <table>
-        <tbody>
+<section class="liste-annonce">
+    <div class="ligne">
 <?php
 
 $objetArtistesModel = new \Model\ArtistesModel;
@@ -9,33 +8,31 @@ $tabLigne = $objetArtistesModel->findAll("nomArtiste", "ASC");
 
 foreach($tabLigne as $index => $tabColonne)
 {
-    $id         = $tabColonne["id"];
 
-    echo "<tr>";
-    foreach($tabColonne as $nomColonne => $valeurColonne)
-    {
-        $srcImage   = $this->assetUrl('media/img/'.$id.'/imagePrincipale/'.$valeurColonne);
-        if($nomColonne == "nomArtiste") echo "<td>$valeurColonne</td>";
-        if($nomColonne == "cheminImagePrincipale") echo "<td><img style='width: 100px' src='$srcImage' alt=''></td>";
-    }
-
-    // DEFINIR LES VARIABLES 
+    // DEFINIR LES VARIABLES
+    $id             = $tabColonne["id"];     
     $hrefAfficher   = $this->url("back_artiste_afficher", [ "id" => $id ]);
     $hrefModifier   = $this->url("back_artiste_modifier", [ "id" => $id ]);
     $hrefSupprimer  = "?idForm=artisteDelete&id=$id";
+
+    echo "<div class='colonne'>";
+    foreach($tabColonne as $nomColonne => $valeurColonne)
+    {
+        $srcImage   = $this->assetUrl('media/img/'.$id.'/imagePrincipale/'.$valeurColonne);
+        if($nomColonne == "nomArtiste") echo "<h4><a href='$hrefAfficher'>$valeurColonne</a></h4>";
+        if($nomColonne == "cheminImagePrincipale") echo "<div><a href='$hrefAfficher'><img src='$srcImage' alt=''></a></div>";
+    }
     
     echo
 <<<CODEHTML
-    <td><a href="$hrefAfficher">afficher</a></td>
-    <td><a href="$hrefModifier">modifier</a></td>
-    <td><a href="$hrefSupprimer">supprimer</a></td>
-    </tr>
+    <span class="links"><a href="$hrefAfficher">afficher</a></span>
+    <span class="links"><a href="$hrefModifier">modifier</a></span>
+    <span class="links"><a href="$hrefSupprimer">supprimer</a></span>
+    </div>
 CODEHTML;
 }
 
 ?>
 
-
-        </tbody>
-    </table>
+            </div>
 </section>

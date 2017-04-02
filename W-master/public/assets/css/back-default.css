@@ -1,0 +1,148 @@
+/* STYLE GENERAL ============================ */
+* {
+    box-sizing:border-box;
+}
+
+html, body {
+    margin:0;
+    padding:0;
+}
+
+body {
+  background: #e9e9e9;
+  color: #666666;
+  font-family: 'RobotoDraft', 'Roboto', sans-serif;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+    text-decoration:none;
+    color:#123456;
+}
+
+header {
+    padding:1em;
+}
+
+header nav ul {
+    text-align:center;
+}
+
+header nav ul li {
+    display:inline-block;
+    list-style:none;
+}
+
+header nav ul li a {
+    padding:0.5em;
+    display:inline-block;
+    color: white;
+    background-color: #34495E;
+}
+
+header nav ul li a:hover {
+
+	background-color: #1ABC9C;
+}
+
+section {
+    max-width:990px;
+    margin:0 auto;
+}
+
+input, textarea, button {
+    padding:0.5em;
+    margin:0.25em;
+}
+
+table {
+    width:100%;
+}
+
+.links a{
+    padding:0.5em;
+    margin: 0.1em;
+    display:inline-block;
+    color: #272822;
+    background-color: #9E9E9E;
+}
+
+.links a:hover {
+	color: white;
+    background-color: #272822;
+}
+
+button.links{
+    padding:0.5em;
+    margin: 0.1em;
+    display:inline-block;
+    color: #272822;
+    background-color: #9E9E9E;
+}
+
+button.links:hover {
+	color: white;
+    background-color: #272822;
+}
+
+p#nom-artiste {
+	text-align:center;
+	font-size: 1.5em;
+}
+
+p#nom-artiste a:hover {
+	color: blue;
+}
+
+
+
+/* FLEXBOX */
+
+.ligne {
+    display:flex;
+    flex-wrap:wrap;
+    width:100%;
+    align-items:stretch;
+}
+
+h3 {
+    text-align:center;
+}
+
+.liste-annonce .colonne {
+    width:calc(100%/3 - 1em);
+    padding:1em;
+    border:1px solid #cccccc;
+    margin:0.5em;
+    background-color: #fff;
+}
+
+.liste-annonce .colonne h4 {
+    margin:0;
+    padding:0.5em;
+    text-transform:lowercase;
+    margin-bottom:0.5em;
+    text-align:center;
+    font-size: 1.5em;
+}
+
+.liste-annonce .colonne h4:first-letter {
+    text-transform:capitalize;
+}
+
+.liste-annonce .colonne h4 a:hover {
+    color: #37D01E;
+}
+
+.liste-annonce .colonne strong {
+    display:block;
+    text-align:right;
+}
+
+.liste-annonce .colonne img {
+    width:100%;
+    padding:0.5em;
+    object-fit: cover;
+}

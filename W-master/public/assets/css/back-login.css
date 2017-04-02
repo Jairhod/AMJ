@@ -16,7 +16,7 @@ body {
     font-weight: bold;
     color: #3F4F5E;
 }
-}
+
 .pen-title h1 {
   margin: 0 0 20px;
   font-size: 48px;
@@ -430,6 +430,14 @@ body {
 }
 .card.alt .button-container button:active:before, .card.alt .button-container button:focus:before {
   display: none;
+}
+
+.card .retour {
+  margin: 40px 0 0;
+  color: #AA1F1F;
+  font-size: 24px;
+  font-weight: 300;
+  text-align: center;
 }
 
 /* Keyframes */
