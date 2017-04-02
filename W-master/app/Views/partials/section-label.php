@@ -1,12 +1,12 @@
         <section id="label">
-            <div class="label-wrapper">
-                <h1>AMJ: Le label</h1>
+            <div class="label-wrapper">              
                 <div class="contenu-label">
                     <div class="intro-label">
+                        <h1>AMJ: Le label</h1>
                         <p>Label, agence de booking, organisateur de concerts et même d’un festival d’été, AMJ multiplie les casquettes, démontrant le dynamisme sans faille de la vrégion Provence-Alpes-Cote-D'Azur dans la sphère musicale éclectique. Son leitmotiv : une démarche résolument positive et un esprit fraternel salvateur. 
                         </p>
                     </div>
-                    <div class="row-label">
+                    <div class="row-label label-1">
                         <div class="col-1-label">
                             <h2>COMMENT EST NÉ AMJ ?</h2>
                             <p>En 2000, plusieurs groupes se croisaient régulièrement sur les petites scènes de La région. Ils ont décidé de se fédérer, selon un principe simple : l’union fait la force. A partir de là, ils ont créé un site Internet – Myspace n’existait même pas, à l’époque… Petit à petit, les activités se sont développées. Le collectif a commencé à organiser des concerts dans des petites salles avec des artistes étrangers “indie” et des premières parties assurées par des groupes du collectif. Les choses ont continué à se développer. Depuis neuf ou dix ans, on a une agence de booking et une section label et, depuis cinq ans, notre festival d’été, le Micro Festival.</p>

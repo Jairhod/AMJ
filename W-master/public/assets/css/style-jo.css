@@ -859,11 +859,10 @@ a.btn {
 a.btn:hover {
     box-shadow: 0 7px 14px rgba(48, 51, 54, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
     transition: ease-in-out 0.3s;
-    border: #3f4f5e solid 2px;
     border-radius: 0;
-    color: #3f4f5e;
+    color: white;
     font-weight: bold;
-    background: white;
+    background: #edbe00;
 }
 
 #recherche-accueil .accueil-styles.btn,
@@ -1254,25 +1253,32 @@ fieldset {
 
 /* DEBUT PAGE LABEL : SECTION LABEL ==================================================== */
 
+section#label {
+   
+}
 
 section#label .label-wrapper {
     margin-top: 5.7em;
 }
 
 section#label .intro-label {
-    background-image: url("../media/img/studio-2.jpg");
+    background-image: url("../media/img/studio-7.jpg");
+    height: 100%; 
+    background-attachment: fixed;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 8em 0;
+    background-color: rgba(0,0,0,0.8);
 }
 
 section#label h1 {
-    text-align: center;
+    text-align: right;
     font-size: 40px;
     padding: 1em;
-    background-color: #edbe00;
     color: white;
+    -webkit-animation: focus-in-contract 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    -moz-animation: focus-in-contract 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: focus-in-contract 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 section#label h2 {
@@ -1280,13 +1286,15 @@ section#label h2 {
 }
 
 section#label .intro-label p {
-    width: 50%;
-    margin: auto;
-    text-align: center;
-    background-color: rgba(0,0,0,0.8);
-    padding: 1em;
+    text-align: right;
+    margin: 1em 0em 8em 40em;
     color: white;
     font-size: 16px;
+    padding: 2em;
+    -webkit-animation: focus-in-contract 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s both;
+    -moz-animation: focus-in-contract 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s both;
+    animation: focus-in-contract 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s both;
+
 }
 
 section#label .row-label {
@@ -1294,6 +1302,9 @@ section#label .row-label {
     margin: auto;
 }
 
+section#label .label-1 {
+    margin-top: -7em;
+}
 
 
 .col-1-label {
@@ -1320,11 +1331,13 @@ section#label .row-label {
 .col-2-label {
     margin: 4em 0 4em 15em;
     padding: 2em;
-    box-shadow: 2px 5px 5px 0px #7F8C8D;
+    box-shadow: 2px 5px 5px 0px rgba(237, 190, 0, 0.4);
+    background-color: #edbe00;
+    color: white;
 }
 
 .col-2-label h2 {
-    border-bottom: 1px solid #3F4F5E;
+    border-bottom: 1px solid white;
     padding-bottom: 0.5em;
 }
 
