@@ -17,6 +17,25 @@ $(document).ready(function(){
     sr.reveal('.anim-descr', fooReveal);
     sr.reveal('.label-contain', { duration: 1000 }, 50);
     
+    var transitionGauche = {
+        origin   : 'left',
+        distance : '500px',
+        easing   : 'ease-in-out',
+        useDelay: 'once'
+    };
+    
+    sr.reveal('.col-1-label', transitionGauche);
+
+    
+     var transitionDroite= {
+        origin   : 'right',
+        distance : '500px',
+        easing   : 'ease-in-out',
+        useDelay: 'always'
+    };
+    
+    sr.reveal('.col-2-label', transitionDroite);
+    
 /* API FACEBOOK : pour fil d'actu */
 
     (function(d, s, id) {
