@@ -2,7 +2,7 @@
     <div class="contenu-bo container-fluid">
         <div class="bo-global">
             <div class="bo-col-1">
-                <a href="<?php echo $this->url('vitrine_accueil'); ?>">retour au site AMJ<i class="fa fa-sign-out" aria-hidden="true"></i></a>  
+                <a href="<?php echo $this->url('front_logout'); ?>">retour au site AMJ<i class="fa fa-sign-out" aria-hidden="true"></i></a>  
             </div>
             <div class="titre">
                <h1 id="titre-bo">AMJ Back office</h1>

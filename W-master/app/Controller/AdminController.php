@@ -36,6 +36,15 @@ class AdminController
 		$this->redirectToRoute("back_login");
 	}
 
+	public function frontLogout()
+	{
+		$objetAuthentificationModel = new \W\Security\AuthentificationModel;
+
+		$objetAuthentificationModel->logUserOut();
+
+		$this->redirectToRoute("vitrine_accueil");
+	}
+
 	public function backArtisteCreer()
 	{
 		$this->allowTo('admin');
