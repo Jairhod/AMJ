@@ -15,12 +15,43 @@
             <input type="hidden" name="idForm" value="choixAccueil">
             <div class="bla">   
                 <select name="genres" id="genres" class="form-control form-accueil">
-                    <option value="hide" selected disabled>Choisir son style...</option>         <option value="tous">Tous styles</option>      
-                    <option value="SOUL-FUNK-BLUES">SOUL - FUNK - R &amp; BLUES</option>
-                    <option value="POP-ROCK-ACTU">POP - ROCK - ACTU</option>
+                    <option value="hide" selected disabled>Choisir son style...</option>         
+                    <option value="tous">Tous styles</option>
+                    <?php
+                        $objetArtistesModel = new \Model\ArtistesModel;
+                        $tabLigne = $objetArtistesModel->findAll("nomGenre", "ASC");
+
+                        foreach($tabLigne as $index => $tabColonne)
+                        {
+                            $id         = $tabColonne["id"];
+                            
+                            foreach($tabColonne as $nomColonne => $valeurColonne)
+                            {
+                                if($nomColonne == "nomGenre") echo "<option>$valeurColonne</option>";        
+                            }   
+                                
+                        }
+                    ?>      
                 </select>
                 <select name="artistes" id="artistes" class="form-control form-accueil form-artistes-accueil">
-                    <option value="0" selected disabled>Choisir son artiste...</option>       
+                    <option value="hide" selected disabled>Choisir son artiste...</option>
+                    <option value="tousArtistes">Tous les artistes</option>
+                <?php
+                        $objetArtistesModel = new \Model\ArtistesModel;
+                        $tabLigne = $objetArtistesModel->findAll("nomArtiste", "ASC");
+
+                        foreach($tabLigne as $index => $tabColonne)
+                        {
+                            $id         = $tabColonne["id"];
+
+                            foreach($tabColonne as $nomColonne => $valeurColonne)
+                            {
+                                if($nomColonne == "nomArtiste") echo "<option>$valeurColonne</option>";
+                                
+                                    
+                            }
+                        }
+                    ?>        
                 </select> 
             </div>
         </form>

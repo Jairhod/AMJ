@@ -37,5 +37,11 @@ class VitrineController
 
 		$this->show('pages/fiche-artiste');
 	}
+    
+    public function testJo()
+	{
+
+		$this->show('pages/test-jo');
+	}
 
 }

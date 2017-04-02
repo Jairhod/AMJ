@@ -9,6 +9,8 @@
     
     	['GET',  	'/mentions-legales', 		  	  'Vitrine#mentionsLegales',    'vitrine_mentions_legales'],
     	['GET',  	'/label', 		            	  'Vitrine#label', 		        'label'],
+        ['GET',  	'/test-jo', 		              'Vitrine#testJo', 		    'test_jo'],
+        
 		
 		['GET|POST',  	'/back/accueil', 		         'Admin#backAccueil', 			'back_accueil'],
 		['GET|POST',  	'/back/login', 			         'Admin#backLogin', 			'back_login'],
