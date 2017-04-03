@@ -2,9 +2,8 @@
       <section id="recherche-accueil">
         <div class="title-hp">
             <div class="caca">
-               <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLMC9KNkIncKtPzgY-5rmhvj7fax8fdxoj&amp;controls=0" frameborder="0" allowfullscreen></iframe>-->
-               <h6>Derniers artistes ajoutés</h6>
-               <p><?php echo('artiste bidule a été ajouté !'); echo date("Y-m-d "); ?></p>
+               <marquee>Derniers artistes ajoutés : 
+              <?php echo('bidule, le '); echo date('(Y-m-d)'); ?></marquee>
             </div>
             <div class="etiquette-titre">
                 <h1>AMJ Productions</h1>
