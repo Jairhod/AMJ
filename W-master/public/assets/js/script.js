@@ -119,7 +119,7 @@ $(document).ready(function(){
         var marker = new google.maps.Marker({
             position: mesCoordoGps,
             map: map,
-            title: 'AMJ Prod'
+            title: 'AMJ Prod 10 Avenue des Planes 13800 ISTRES'
         });
     }
 
