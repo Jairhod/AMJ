@@ -8,6 +8,7 @@
             <input type="text" name="nomGenre" required placeholder="nomGenre"><br>
             <input type="text" name="artistesLies" required placeholder="artistesLies"><br>
             <input type="file" name="cheminImagePrincipale" required placeholder="cheminImagePrincipale"><br>
+            <input type="file" name="images[]" multiple="" ><br>
             <textarea type="text" name="descriptionArtiste" required placeholder="descriptionArtiste" cols="60" rows="5"></textarea><br>
 
             <button class="links" type="submit">Créer fiche</button>

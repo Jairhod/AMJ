@@ -45,6 +45,7 @@ class FormController extends Controller
         $nomGenre               = $this->verifierSaisie("nomGenre");
         $artistesLies           = $this->verifierSaisie("artistesLies");
         $cheminImagePrincipale  = $this->verifierUpload("temp", "cheminImagePrincipale");
+        //$cheminImagePrincipale  = $this->verifierMultiUpload("temp", "images");
         $descriptionArtiste     = $this->verifierSaisie("descriptionArtiste");
         $dateModification       = date("Y-m-d H:i:s");
 
@@ -170,6 +171,79 @@ class FormController extends Controller
 
     function verifierUpload ($folder, $nameInput)
 {
+    if ($folder!="temp")
+    {
+        $objetArtistesModel = new ArtistesModel;
+        $tab = $objetArtistesModel->find($folder);
+        $nameOK   = $tab["cheminImagePrincipale"];
+    }
+    else $nameOK = $_FILES[$nameInput]["name"];
+
+    $idForm   = $this->verifierSaisie("idForm");
+
+    if (!empty([$_FILES]))
+    {
+        $tabInfoFichierUploade = $_FILES[$nameInput];
+        if (!empty($tabInfoFichierUploade))
+        {
+            $error = $tabInfoFichierUploade["error"];
+            if ($error == 0)
+            {
+                $name       = $tabInfoFichierUploade["name"];
+                $type       = $tabInfoFichierUploade["type"];
+                $tmpName    = $tabInfoFichierUploade["tmp_name"];
+                $size       = $tabInfoFichierUploade["size"];
+
+                chmod($tmpName, 0777);
+                
+                if ($size < 15 * 1024 * 1024) // 15 MEGAOCTETS
+                {
+                    // ON VERIFIE L'EXTENSION
+                    $extension = pathinfo($name, PATHINFO_EXTENSION);
+                    // METTRE L'EXTENSION EN MINUSCULES
+                    $extension = strtolower($extension);
+
+                    $tabExtensionOK = 
+                    [ 
+                        "jpeg", "jpg", "gif", "png", "svg", 
+                        "pdf", "txt", "doc", "docx", "xls", "ppt", "pptx", "odt", 
+                        "html", "css", "js", 
+                        "ttf", "otf"
+                    ];
+                    
+                    if (in_array($extension, $tabExtensionOK))
+                    {
+                        if (is_dir("assets/media/img/$folder/imagePrincipale")) 
+                          {
+                              $this->deleteFolder("assets/media/img/$folder/imagePrincipale");
+                          }                    
+
+                        //$nameOK       =  preg_replace("/[^a-zA-Z0-9-_\.]/", "", $name);
+                        $nameOK       = date('YmdHis',time()).mt_rand().'.'.$extension;
+                        $cheminOK     = "assets/media/img/$folder/imagePrincipale/$nameOK";
+                        $cheminOK     = strtolower($cheminOK);
+                        $this->createFolders($folder);
+                        move_uploaded_file($tmpName, $cheminOK);
+
+                    }
+                    else
+                    {
+                        $GLOBALS[$idForm . "Retour"] = "EXTENSION NON CONFORME";
+                    }
+                }
+                else 
+                {
+                    $GLOBALS[$idForm . "Retour"] = "FICHIER TROP VOLUMINEUX";
+                }
+            }
+        }
+    }
+        
+    return $nameOK;
+}
+
+    function verifierMultiUpload ($folder, $nameInput)
+{
     $objetArtistesModel = new ArtistesModel;
     $tab = $objetArtistesModel->find($folder);
 
@@ -214,7 +288,8 @@ class FormController extends Controller
                               $this->deleteFolder("assets/media/img/$folder/imagePrincipale");
                           }                    
 
-                        $nameOK       =  preg_replace("/[^a-zA-Z0-9-_\.]/", "", $name);
+                        //$nameOK       =  preg_replace("/[^a-zA-Z0-9-_\.]/", "", $name);
+                        $nameOK       = date('YmdHis',time()).mt_rand().$extension;
                         $cheminOK     = "assets/media/img/$folder/imagePrincipale/$nameOK";
                         $cheminOK     = strtolower($cheminOK);
                         $this->createFolders($folder);
