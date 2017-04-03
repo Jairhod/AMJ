@@ -45,12 +45,11 @@ class FormController extends Controller
         $nomGenre               = $this->verifierSaisie("nomGenre");
         $artistesLies           = $this->verifierSaisie("artistesLies");
         $cheminImagePrincipale  = $this->verifierUpload("temp", "cheminImagePrincipale");
-        $cheminImagePrincipale  = $this->verifierMultiUpload();
         $descriptionArtiste     = $this->verifierSaisie("descriptionArtiste");
         $dateModification       = date("Y-m-d H:i:s");
 
         $objetArtistesModel = new ArtistesModel;
-        
+                
         if ( ($nomArtiste != "") && ($nomGenre != "") && ($artistesLies != "") && ($cheminImagePrincipale != "") && ($descriptionArtiste != "") )
         {
 
@@ -77,6 +76,7 @@ class FormController extends Controller
         {
             $id = $tabLigne[0]["id"];
             $this->renameFolder($id);
+            $this->verifierMultiUpload($id, "images");
         }
 
     }
@@ -177,7 +177,7 @@ class FormController extends Controller
         $tab = $objetArtistesModel->find($folder);
         $nameOK   = $tab["cheminImagePrincipale"];
     }
-    else $nameOK = $_FILES[$nameInput]["name"];
+    else $nameOK = "temporary";
 
     $idForm   = $this->verifierSaisie("idForm");
 
@@ -242,10 +242,10 @@ class FormController extends Controller
     return $nameOK;
 }
 
-    function verifierMultiUpload ()
+    function verifierMultiUpload ($id, $nameInput)
 {
-
-    $img   = $_FILES['images'];
+    $this->createFolders($id);
+    $img   = $_FILES["images"];
 
     if(!empty($img))
     {
@@ -253,12 +253,30 @@ class FormController extends Controller
        
         foreach($img_desc as $val)
         {
-            $newname = date('YmdHis',time()).mt_rand().'.jpg';
-            move_uploaded_file($val['tmp_name'],'./uploads/'.$newname);
+            $nameOK       = date('YmdHis',time()).mt_rand().'.'.'.jpg';
+            $cheminOK     = "assets/media/img/$id/images/$nameOK";
+            $cheminOK     = strtolower($cheminOK);
+            move_uploaded_file($val['tmp_name'], $cheminOK);
         }
     }
 
 }
+
+    public function reArrayFiles($file)
+    {
+        $file_ary = array();
+        $file_count = count($file['name']);
+        $file_key = array_keys($file);
+       
+        for($i=0;$i<$file_count;$i++)
+        {
+            foreach($file_key as $val)
+            {
+                $file_ary[$i][$val] = $file[$val][$i];
+            }
+        }
+        return $file_ary;
+    }  
 
     public function createFolders($id)
     {
@@ -318,22 +336,5 @@ class FormController extends Controller
 
         return false;
     }
-
-    public function reArrayFiles($file)
-    {
-        $file_ary = array();
-        $file_count = count($file['name']);
-        $file_key = array_keys($file);
-       
-        for($i=0;$i<$file_count;$i++)
-        {
-            foreach($file_key as $val)
-            {
-                $file_ary[$i][$val] = $file[$val][$i];
-            }
-        }
-        return $file_ary;
-    }    
-    
 
 }
