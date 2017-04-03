@@ -44,4 +44,10 @@ class VitrineController
 		$this->show('pages/test-jo');
 	}
 
+    public function testBen()
+	{
+
+		$this->show('pages/test-ben');
+	}
+
 }
