@@ -2,9 +2,10 @@
 .borderbleuvert {
 	margin-top: 80px;
 	margin-bottom: 30px;
-	padding-top: 30px;
-	padding-bottom: 30px;
+	//padding-top: 30px;
+	//padding-bottom: 30px;
 }
+
 
 .centre {
 	text-align: center;
@@ -154,8 +155,8 @@ div#myCarousel {
     margin: 0 auto; /* Align slide image horizontally center */
 }
 .bs-example{
-    //margin: 20px;
-    width: 60%;
+   
+    width: 94%;
     margin: 0 auto;
 }
 
@@ -166,31 +167,37 @@ div#myCarousel {
 //////////AUDIOPLAYER/////////////////
 
 
-/* Font Family
-================================================== */
+.audiogeneral {
+	border:0;
+	font:inherit;
+	font-size:100%;
+	margin:0;
+	padding:0;
+	vertical-align:baseline;
 
-@import url("//fonts.googleapis.com/css?family=Yanone+Kaffeesatz:200,300,400");
+	-webkit-font-smoothing:antialiased;
+	-webkit-text-size-adjust:100%;
+	background-color:#111;
+	color:#C8C7C8;
+	font-weight:300;
+	padding:5px 0;
 
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+	-webkit-tap-highlight-color:transparent;
+}
 
 /* Desktop
 ================================================== */
 
-.containeraudio {
-	position:relative;
-	margin:0 auto;
-	width:700px;
-	}
-
-.columnaudio {
-	width:inherit;
-	}
+.containeraudio { position:relative; margin:0 auto; width:700px; }
+.columnaudio { width:inherit; }
 
 
 /* Tablet (Portrait)
 ================================================== */
 
 @media only screen and (min-width: 768px) and (max-width: 959px) {
-.containeraudio { width:356px; }
+.containeraudio { width:556px; }
 }
 
 
@@ -208,6 +215,7 @@ div#myCarousel {
 @media only screen and (min-width: 480px) and (max-width: 767px) {
 .containeraudio { width:420px; }
 }
+
 
 /* Misc.
 ================================================== */
@@ -325,8 +333,7 @@ html[data-useragent*="OS 9"] .plSel:hover { background-color:#eee!important; }
 
 /* Chrome */
 html[data-useragent*="Chrome"] body { color:#5a5a5a; }
-//html[data-useragent*="Chrome"] audio { margin-left:9px; width:677px; }
-html[data-useragent*="Chrome"] audio { margin-left:9px; width:577px; }
+html[data-useragent*="Chrome"] audio { margin-left:9px; width:677px; }
 html[data-useragent*="Chrome"] #audiowrap { background-color:#fafafa; }
 html[data-useragent*="Chrome"] a[id^="btn"] { background-color:#fafafa; color:#5a5a5a; }
 html[data-useragent*="Chrome"] a[id^="btn"]:hover { background-color:#eee; }
@@ -359,8 +366,7 @@ html[data-useragent*="rv:11.0"] audio { width:551px; }
 html[data-useragent*="OS 7"] audio { width:546px; }
 html[data-useragent*="OS 8"] audio { width:550px; }
 html[data-useragent*="OS 9"] audio { width:550px; }
-//html[data-useragent*="Chrome"] audio { width:533px; }
-html[data-useragent*="Chrome"] audio { width:333px; }
+html[data-useragent*="Chrome"] audio { width:533px; }
 html[data-useragent*="Chrome"][data-useragent*="Android"] audio { margin-left:4px; width:545px; }
 }
 
@@ -391,6 +397,4 @@ html[data-useragent*="Chrome"] audio { width:277px; }
 html[data-useragent*="Chrome"][data-useragent*="Mobile"] audio { margin-left:4px; width:290px; }
 #npTitle { width:167px; }
 }
-
-
 

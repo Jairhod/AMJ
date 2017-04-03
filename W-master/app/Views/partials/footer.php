@@ -22,6 +22,8 @@
     </script>
 <!--script pour audio player-->
 <script src="assets/js/audioscript.js"></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js'></script>
+<script src='http://api.html5media.info/1.1.8/html5media.min.js'></script>
 <!--BOOTSTRAP-->
 
 <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>

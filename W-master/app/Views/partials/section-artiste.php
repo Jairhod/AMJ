@@ -10,7 +10,9 @@
         </div>
     </div>
   </div>
-      <div class="containerficheartiste">   
+      <div class="containerficheartiste">
+        <div class="row">
+          <div class="col-lg-4 col-md-12 col-sm-12">
           <div class="texteficheartiste">
             <p>C’est sur les scènes et clubs du sud de la France que les quatre membres du groupe BACKOUT se sont rencontrés <br />afin de rendre hommage au plus grandes voix féminines de la SOUL et du R&B.
             </p>
@@ -19,40 +21,41 @@
             </p>
             <p>
             D’ARETHA FRANKLIN à BEYONCE en passant par SHAKA KHAN, ERYKA BADU et bien d’autres, <br />le BLACKOUT Band vous fera partager leur énergie communicative.
-            </p>  
+            </p> 
+            </div> 
           </div>
  
         <!--/////////////////PLAYER AUDIO//////////////////////////////////////////--> 
-        
-        
-          <div>
-            <div class="containeraudio">
-              <div class="columnaudio center">
-              </div>
-              <div class="column add-bottom">
-                  <div id="mainwrap">
-                      <div id="nowPlay">
-                          <span class="left" id="npAction">Paused...</span>
-                          <span class="right" id="npTitle"></span>
-                      </div>
-                      <div id="audiowrap">
-                          <div id="audio0">
-                              <audio preload id="audio1" controls="controls">Your browser does not support HTML5 Audio!</audio>
-                          </div>
-                          <div id="tracks">
-                              <a id="btnPrev">&laquo;</a>
-                              <a id="btnNext">&raquo;</a>
-                          </div>
-                      </div>
-                      <div id="plwrap">
-                          <ul id="plList"></ul>
-                      </div>
-                  </div>
-              </div>
+        <div class="col-lg-8 col-md-12 col-sm-12">
+        <div class="audiogeneral">
+          <div class="containeraudio">
+            <div class="columnaudio center">
             </div>
-          </div>  
+            <div class="column add-bottom">
+                <div id="mainwrap">
+                    <div id="nowPlay">
+                        <span class="left" id="npAction">Paused...</span>
+                        <span class="right" id="npTitle"></span>
+                    </div>
+                    <div id="audiowrap">
+                        <div id="audio0">
+                            <audio preload id="audio1" controls="controls">Your browser does not support HTML5 Audio!</audio>
+                        </div>
+                        <div id="tracks">
+                            <a id="btnPrev">&laquo;</a>
+                            <a id="btnNext">&raquo;</a>
+                        </div>
+                    </div>
+                    <div id="plwrap">
+                        <ul id="plList"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div> 
       </div>
-        
+      <!--fin row :--> 
+    </div>    
           
 
       
@@ -122,16 +125,12 @@
           <p>HARD ROCK CAFÉ - MARSEILLE</p>
           <p>RIVIERA ST PONS - GEMENOS</p>
           <p>CHÂTEAU DE ROQUEFEUILLE - POURRIÈRES</p>
-          <p>&nbsp;</p>
-          <p>&nbsp;</p>
-          <p>&nbsp;</p>
         </div>
       </div>  
     </div>
-</div>
-</div>   
 
- 
+</div>  
+
  
 
 
