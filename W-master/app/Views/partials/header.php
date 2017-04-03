@@ -13,35 +13,11 @@
     <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style-jo.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style-do.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/carouselficheartiste.css">
+
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="assets/js/script.js"></script>
     <script type="text/javascript" src="assets/js/scrollreveal.min.js"></script>
-    
-    
-
-<!--MENU STYLE MUSICAL FICHE ARTISTE-->
-
-    <link rel="stylesheet" type="text/css" href="assets/css/component.css" />
-   
-    <script src="assets/js/modernizr.custom.js"></script>
-<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
-    <script src="assets/js/jquery.dlmenu.js"></script>
-
-    <!--CAROUSEL FICHE ARTISTE-->
-
- <!--    <link rel="stylesheet" href="assets/css/style-carousel.css">-->
-
-<!--AUDIO PLAYER FICHE ARTISTE-->
-
-     <link rel="stylesheet" type="text/css" href="assets/css/audiostyle.css">
-
-
-
-
-    
-
  
 </head>
 
