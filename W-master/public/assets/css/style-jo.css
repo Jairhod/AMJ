@@ -1345,6 +1345,11 @@ section#label .label-1 {
     margin-top: 2em;
 }
 
+#map {
+    height: 500px;
+    width: 100%;
+}
+
 @media screen and (max-width: 990px)
 {
     section#label .intro-label p {

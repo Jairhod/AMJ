@@ -95,7 +95,6 @@ $(document).ready(function(){
 
     });
 
-
     
 /* BACK OFFICE : menu ==================== */
     
@@ -105,5 +104,22 @@ $(document).ready(function(){
 		});
   
 });
+
+/* API GOOGLE MAP ======================== */
     
+    function initMap() {
+        
+        var mesCoordoGps = {lat: 43.5154283, lng: 4.968376199999966};
+        
+        var map = new google.maps.Map(document.getElementById('map'), {
+            center: mesCoordoGps,
+            zoom: 12
+        });
+        
+        var marker = new google.maps.Marker({
+            position: mesCoordoGps,
+            map: map,
+            title: 'AMJ Prod'
+        });
+    }
 

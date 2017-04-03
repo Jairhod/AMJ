@@ -40,5 +40,6 @@
                         </div>
                     </div>
                 </div>
+                <div id="map"></div>
             </div>
         </section>
