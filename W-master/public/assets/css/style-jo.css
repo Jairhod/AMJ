@@ -1308,7 +1308,7 @@ section#label .label-1 {
 
 
 .col-1-label {
-    margin: 4em 15em 4em 0;
+    margin: 2em 15em 2em 0;
     background-color: #3F4F5E;
     padding: 2em;
     color: white;
@@ -1329,7 +1329,7 @@ section#label .label-1 {
 }
 
 .col-2-label {
-    margin: 4em 0 4em 15em;
+    margin: 2em 0 2em 15em;
     padding: 2em;
     box-shadow: 2px 5px 5px 0px rgba(237, 190, 0, 0.4);
     background-color: #edbe00;
@@ -1343,6 +1343,49 @@ section#label .label-1 {
 
 .col-2-label p {
     margin-top: 2em;
+}
+
+@media screen and (max-width: 990px)
+{
+    section#label .intro-label p {
+        margin: 1em 0em 8em 20em;
+    } 
+}
+
+@media screen and (max-width: 770px)
+{
+    section#label .label-wrapper {
+    margin-top: 3.8em;
+    }
+    
+    section#label .intro-label p {
+        margin: 1em 0em 8em 10em;
+    }
+    
+    section#label .row-label {
+    width: 98%;
+    }
+    
+    .col-1-label, .col-2-label {
+        margin: 1em 0;
+    }
+    
+}
+
+@media screen and (max-width: 450px)
+{
+    section#label .intro-label p {
+        margin: 1em 0em 8em 1em;
+    }
+    
+    section#label .row-label {
+    width: 100%;
+    }
+    
+    .col-1-label, .col-2-label {
+        margin: 0;
+    }
+    
 }
 
 /* FIN PAGE LABEL : SECTION LABEL ==================================================== */

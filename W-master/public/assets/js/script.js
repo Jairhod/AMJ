@@ -19,12 +19,13 @@ $(document).ready(function(){
     
     var transitionGauche = {
         origin   : 'left',
-        distance : '500px',
+        distance : '200px',
         easing   : 'ease-in-out',
-        useDelay: 'once'
+        useDelay: 'always'
     };
     
     sr.reveal('.col-1-label', transitionGauche);
+    sr.reveal('.label-1', { duration: 1000 }, 50);
 
     
      var transitionDroite= {
