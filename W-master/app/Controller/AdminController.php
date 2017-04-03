@@ -107,4 +107,10 @@ class AdminController
 					]);
 
 	}
+
+	public function upload()
+	{
+
+		$this->show('pages/upload');
+	}
 }
