@@ -4,6 +4,7 @@ namespace Controller;
 
 use \W\Controller\Controller;
 use \Model\ArtistesModel;
+use \Model\ImagesModel;
 
 class FormController extends Controller
 {  
@@ -205,10 +206,7 @@ class FormController extends Controller
 
                     $tabExtensionOK = 
                     [ 
-                        "jpeg", "jpg", "gif", "png", "svg", 
-                        "pdf", "txt", "doc", "docx", "xls", "ppt", "pptx", "odt", 
-                        "html", "css", "js", 
-                        "ttf", "otf"
+                        "jpeg", "jpg", "gif", "png", "svg" 
                     ];
                     
                     if (in_array($extension, $tabExtensionOK))
@@ -245,7 +243,8 @@ class FormController extends Controller
     function verifierMultiUpload ($id, $nameInput)
 {
     $this->createFolders($id);
-    $img   = $_FILES["images"];
+    $img              = $_FILES[$nameInput];
+    $objetImagesModel = new ImagesModel;
 
     if(!empty($img))
     {
@@ -253,13 +252,35 @@ class FormController extends Controller
        
         foreach($img_desc as $val)
         {
-            $nameOK       = date('YmdHis',time()).mt_rand().'.'.'.jpg';
-            $cheminOK     = "assets/media/img/$id/images/$nameOK";
-            $cheminOK     = strtolower($cheminOK);
-            move_uploaded_file($val['tmp_name'], $cheminOK);
-        }
-    }
+            $error = $val["error"];
+            if ($error == 0)
+            {
+                $name       = $val["name"];
+                $type       = $val["type"];
+                $tmpName    = $val["tmp_name"];
+                $size       = $val["size"];
 
+                if ($size < 15 * 1024 * 1024)
+                {
+                    $extension = pathinfo($name, PATHINFO_EXTENSION);
+                    $extension = strtolower($extension);
+                    $tabExtensionOK = 
+                    [ 
+                        "jpeg", "jpg", "gif", "png", "svg" 
+                    ];
+
+                    if (in_array($extension, $tabExtensionOK))
+                    {
+                        $nameOK       = date('YmdHis',time()).mt_rand().'.'.$extension;
+                        $cheminOK     = "assets/media/img/$id/$nameInput/$nameOK";
+                        $cheminOK     = strtolower($cheminOK);
+                        $objetImagesModel->insert([ "idArtiste" => $id, "cheminImage" => $nameOK ]);
+                        move_uploaded_file($val['tmp_name'], $cheminOK);
+                    }
+                }
+            } 
+        }
+    }                    
 }
 
     public function reArrayFiles($file)
