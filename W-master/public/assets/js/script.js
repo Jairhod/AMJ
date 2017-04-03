@@ -19,12 +19,13 @@ $(document).ready(function(){
     
     var transitionGauche = {
         origin   : 'left',
-        distance : '500px',
+        distance : '200px',
         easing   : 'ease-in-out',
-        useDelay: 'once'
+        useDelay: 'always'
     };
     
     sr.reveal('.col-1-label', transitionGauche);
+    sr.reveal('.label-1', { duration: 1000 }, 50);
 
     
      var transitionDroite= {
@@ -94,7 +95,6 @@ $(document).ready(function(){
 
     });
 
-
     
 /* BACK OFFICE : menu ==================== */
     
@@ -104,5 +104,22 @@ $(document).ready(function(){
 		});
   
 });
+
+/* API GOOGLE MAP ======================== */
     
+    function initMap() {
+        
+        var mesCoordoGps = {lat: 43.5154283, lng: 4.968376199999966};
+        
+        var map = new google.maps.Map(document.getElementById('map'), {
+            center: mesCoordoGps,
+            zoom: 12
+        });
+        
+        var marker = new google.maps.Marker({
+            position: mesCoordoGps,
+            map: map,
+            title: 'AMJ Prod 10 Avenue des Planes 13800 ISTRES'
+        });
+    }
 
