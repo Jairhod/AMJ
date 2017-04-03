@@ -323,6 +323,11 @@ button {
 
 .bandeau p {
     margin-right: 0.5em;
+    display: inline-flex;
+}
+
+.bandeau span {
+    margin-right: 0.5em;
 }
 
 .full-width {

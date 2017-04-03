@@ -3,26 +3,25 @@
         <div class="title-hp">
             <div class="bandeau">
                 <marquee><strong>Dernier artiste ajouté</strong> : 
-                <?php echo('bidule'); echo date('(Y-m-d)'); ?></marquee> 
+                <?php // echo('bidule'); echo date('(Y-m-d)'); ?> 
                 <?php
                         $objetArtistesModel = new \Model\ArtistesModel;
                         $tabLigne = $objetArtistesModel->findAll("dateModification", "DESC" , 1);
-                        $nomArtiste = $tabLigne["nomArtiste"];
-                echo $nomArtiste;
-                        /*foreach($tabLigne as $index => $tabColonne)
+                
+                        foreach($tabLigne as $index => $tabColonne)
                             {
                                 $id         = $tabColonne["id"];
 
                                 foreach($tabColonne as $nomColonne => $valeurColonne)
                                 {
-                                    if($nomColonne == "dateModification") 
-                                        echo "<marquee>$valeurColonne</marquee>";
-                                    
+                                    if($nomColonne == "dateModification")
+                                        echo "<p>$valeurColonne</p>";                                    
                                     if($nomColonne == "nomArtiste") 
-                                        echo "<marquee>$valeurColonne</marquee>";
+                                        echo "<p>$valeurColonne<p>";
                                 }     
-                            }*/
-                ?> 
+                            }
+                ?>
+                </marquee>
             </div>
             <div class="etiquette-titre">
                 <h1>AMJ Productions</h1>
