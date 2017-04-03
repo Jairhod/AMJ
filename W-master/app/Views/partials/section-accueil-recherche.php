@@ -1,9 +1,23 @@
 <div class="container-fluid full-width">
       <section id="recherche-accueil">
         <div class="title-hp">
-            <div class="caca">
-               <marquee>Derniers artistes ajoutés : 
-              <?php echo('bidule, le '); echo date('(Y-m-d)'); ?></marquee>
+            <div class="bandeau">
+               <marquee><strong>Dernier artiste ajouté</strong> : 
+               <?php echo('bidule '); echo date('(Y-m-d)'); ?></marquee> 
+               <?php
+                        $objetArtistesModel = new \Model\ArtistesModel;
+                        $tabLigne = $objetArtistesModel->findAll("dateModification", "DESC" , 1);
+
+                        foreach($tabLigne as $index => $tabColonne)
+                        {
+                            $id         = $tabColonne["id"];
+                            
+                            foreach($tabColonne as $nomColonne => $valeurColonne)
+                            {
+                                if($nomColonne == "dateModification") echo "<marquee>$valeurColonne</marquee>";        
+                            }     
+                        }
+                ?> 
             </div>
             <div class="etiquette-titre">
                 <h1>AMJ Productions</h1>
@@ -27,8 +41,7 @@
                             foreach($tabColonne as $nomColonne => $valeurColonne)
                             {
                                 if($nomColonne == "nomGenre") echo "<option>$valeurColonne</option>";        
-                            }   
-                                
+                            }                                   
                         }
                     ?>      
                 </select>

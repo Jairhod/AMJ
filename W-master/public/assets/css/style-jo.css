@@ -307,7 +307,7 @@ button {
 
 /* SECTION RECHERCHE ACCUEIL =================== */
 
-.caca {
+.bandeau {
     position: relative;
     top: -100px;
     width: 50%;
@@ -318,15 +318,10 @@ button {
     display: flex;
     justify-content: center;
     font-family: 'Ubuntu', sans-serif !important;
-    -webkit-animation:linear 20s infinite ;
-	-moz-animation:linear 20s infinite ;
-	-o-animation:linear 20s infinite ;
-	-ms-animation:linear 20s infinite ;
-	animation:linear 20s infinite ;
+    
 }
 
-
-.caca p {
+.bandeau p {
     margin-right: 0.5em;
 }
 
