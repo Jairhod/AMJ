@@ -1,10 +1,7 @@
 <?php
 echo '<pre>';
 
-$image = $_FILES['image']['name'];
-print_r($image);
 $img   = $_FILES['img'];
-print_r($img);
 
 
 if(!empty($img))

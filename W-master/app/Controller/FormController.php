@@ -45,7 +45,7 @@ class FormController extends Controller
         $nomGenre               = $this->verifierSaisie("nomGenre");
         $artistesLies           = $this->verifierSaisie("artistesLies");
         $cheminImagePrincipale  = $this->verifierUpload("temp", "cheminImagePrincipale");
-        //$cheminImagePrincipale  = $this->verifierMultiUpload("temp", "images");
+        $cheminImagePrincipale  = $this->verifierMultiUpload();
         $descriptionArtiste     = $this->verifierSaisie("descriptionArtiste");
         $dateModification       = date("Y-m-d H:i:s");
 
@@ -242,74 +242,22 @@ class FormController extends Controller
     return $nameOK;
 }
 
-    function verifierMultiUpload ($folder, $nameInput)
+    function verifierMultiUpload ()
 {
-    $objetArtistesModel = new ArtistesModel;
-    $tab = $objetArtistesModel->find($folder);
 
-    $nameOK   = $tab["cheminImagePrincipale"];
+    $img   = $_FILES['images'];
 
-    $idForm   = $this->verifierSaisie("idForm");
-
-    if (!empty([$_FILES]))
+    if(!empty($img))
     {
-        $tabInfoFichierUploade = $_FILES[$nameInput];
-        if (!empty($tabInfoFichierUploade))
+        $img_desc = $this->reArrayFiles($img);
+       
+        foreach($img_desc as $val)
         {
-            $error = $tabInfoFichierUploade["error"];
-            if ($error == 0)
-            {
-                $name       = $tabInfoFichierUploade["name"];
-                $type       = $tabInfoFichierUploade["type"];
-                $tmpName    = $tabInfoFichierUploade["tmp_name"];
-                $size       = $tabInfoFichierUploade["size"];
-
-                chmod($tmpName, 0777);
-                
-                if ($size < 15 * 1024 * 1024) // 15 MEGAOCTETS
-                {
-                    // ON VERIFIE L'EXTENSION
-                    $extension = pathinfo($name, PATHINFO_EXTENSION);
-                    // METTRE L'EXTENSION EN MINUSCULES
-                    $extension = strtolower($extension);
-
-                    $tabExtensionOK = 
-                    [ 
-                        "jpeg", "jpg", "gif", "png", "svg", 
-                        "pdf", "txt", "doc", "docx", "xls", "ppt", "pptx", "odt", 
-                        "html", "css", "js", 
-                        "ttf", "otf"
-                    ];
-                    
-                    if (in_array($extension, $tabExtensionOK))
-                    {
-                        if (is_dir("assets/media/img/$folder/imagePrincipale")) 
-                          {
-                              $this->deleteFolder("assets/media/img/$folder/imagePrincipale");
-                          }                    
-
-                        //$nameOK       =  preg_replace("/[^a-zA-Z0-9-_\.]/", "", $name);
-                        $nameOK       = date('YmdHis',time()).mt_rand().$extension;
-                        $cheminOK     = "assets/media/img/$folder/imagePrincipale/$nameOK";
-                        $cheminOK     = strtolower($cheminOK);
-                        $this->createFolders($folder);
-                        move_uploaded_file($tmpName, $cheminOK);
-
-                    }
-                    else
-                    {
-                        $GLOBALS[$idForm . "Retour"] = "EXTENSION NON CONFORME";
-                    }
-                }
-                else 
-                {
-                    $GLOBALS[$idForm . "Retour"] = "FICHIER TROP VOLUMINEUX";
-                }
-            }
+            $newname = date('YmdHis',time()).mt_rand().'.jpg';
+            move_uploaded_file($val['tmp_name'],'./uploads/'.$newname);
         }
     }
-        
-    return $nameOK;
+
 }
 
     public function createFolders($id)
@@ -340,10 +288,12 @@ class FormController extends Controller
     {
         $old = "assets/media/img/temp";
         $new = "assets/media/img/$id";
+        chmod($old, 0777);
 
         if (is_dir($old)) 
         {
-        rename($old, $new);         
+            chmod($old, 0777);
+            rename($old, $new);         
         }
     }
 
@@ -368,6 +318,22 @@ class FormController extends Controller
 
         return false;
     }
+
+    public function reArrayFiles($file)
+    {
+        $file_ary = array();
+        $file_count = count($file['name']);
+        $file_key = array_keys($file);
+       
+        for($i=0;$i<$file_count;$i++)
+        {
+            foreach($file_key as $val)
+            {
+                $file_ary[$i][$val] = $file[$val][$i];
+            }
+        }
+        return $file_ary;
+    }    
     
 
 }
