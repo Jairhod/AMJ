@@ -4,7 +4,8 @@
         <div class="row footer-row">
             <div class="col-md-6 col-footer">
                 <p>&copy;Amj Productions - <span><?php echo date('Y');?></span> -</p>
-                <a href="mentions-legales">Mentions légales</a>   
+                <a href="mentions-legales">Mentions légales</a>
+                <a href="label#map">Infos pratiques</a>     
             </div>
             <div class="col-md-6 btn-share">
                 <a href="https://www.facebook.com/AMJ-Productions-867525126641828/"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>

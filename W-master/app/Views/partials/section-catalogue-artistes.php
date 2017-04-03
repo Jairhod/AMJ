@@ -12,7 +12,21 @@
                 <figure class="effect-marley">
                     <img src="assets/media/img/11.jpg" alt="img11"/>
                     <figcaption>
-                        <h4>Artiste</h4>
+                        <?php
+                            $objetArtistesModel = new \Model\ArtistesModel;
+                            $tabLigne = $objetArtistesModel->findAll("nomArtiste", "ASC");
+
+                            foreach($tabLigne as $index => $tabColonne)
+                            {
+                                $id         = $tabColonne["id"];
+
+                                foreach($tabColonne as $nomColonne => $valeurColonne)
+                                {
+                                    if($nomColonne == "nomArtiste") echo "<h4>$valeurColonne</h4>";        
+                                }   
+
+                            }
+                        ?>
                         <p>Marley tried to convince her but she was not intereste,Marley tried to convince her but she was not interested.</p>
                         <a href="#">View more</a>
                     </figcaption>			

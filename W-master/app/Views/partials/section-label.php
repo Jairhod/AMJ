@@ -2,9 +2,14 @@
             <div class="label-wrapper">              
                 <div class="contenu-label">
                     <div class="intro-label">
-                        <h1>AMJ: Le label</h1>
-                        <p>Label, agence de booking, organisateur de concerts et même d’un festival d’été, AMJ multiplie les casquettes, démontrant le dynamisme sans faille de la vrégion Provence-Alpes-Cote-D'Azur dans la sphère musicale éclectique. Son leitmotiv : une démarche résolument positive et un esprit fraternel salvateur. 
-                        </p>
+                        <div class="contenu-intro-label">
+                            <h1>AMJ: Le label</h1>                       
+                            <p>Label, agence de booking, organisateur de concerts et même d’un festival d’été, AMJ multiplie les casquettes, démontrant le dynamisme sans faille de la vrégion Provence-Alpes-Cote-D'Azur dans la sphère musicale éclectique. Son leitmotiv : une démarche résolument positive et un esprit fraternel salvateur. 
+                            </p>
+                        </div>
+                        <div class="contain-btn-label">
+                            <a href="#map" class="btn-label">Nous trouver<i class="fa fa-map-marker btn-map" aria-hidden="true"></i></a> 
+                        </div>
                     </div>
                     <div class="row-label label-1">
                         <div class="col-1-label">
@@ -40,5 +45,11 @@
                         </div>
                     </div>
                 </div>
+                <h6>Nous trouver :</h6>
+                <div id="map"></div>  
+                <div class="adresse">
+                    <p><strong>AMJ Prod :<br></strong>10 Avenue des Planes<br>13500 ISTRES<br><strong>Tel</strong> : <a href="tel:+33681436079">+33(0)6 81 43 60 79</a></p>
+                    <p><strong>Convention Collective</strong> : Entrepreneurs de Spectacles <br><strong>N°SIRET</strong> : 501 948 772 00014 <br><strong>Code APE</strong> : 9001ZUrssaf : 130 - 1301813681648</p>
+                </div>             
             </div>
         </section>

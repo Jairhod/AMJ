@@ -16,7 +16,12 @@
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="assets/js/script.js"></script>
-    <script type="text/javascript" src="assets/js/scrollreveal.min.js"></script>
+    <script type="text/javascript" src="assets/js/scrollreveal.min.js">
+    </script>
+    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBfUBUWs15WAhtm3nSdqcOPFOBhtN-mwD0&callback=initMap">
+    </script>
+  
     
     
 
