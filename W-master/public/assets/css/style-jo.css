@@ -1698,8 +1698,31 @@ figure.effect-marley:hover p {
 /* FIN PAGE CATALOGUE ============================================================ */
 
 
+/* DEBUT PAGE ACTUS  ============================================================= */
+
+#section-actus {
+    padding-top: 8em;  
+    padding-bottom: 6em;
+}
+
+#section-actus .fb-actu {
+    width: 80%;
+    margin: auto;
+}
+
+.row-actu {
+    display: flex;
+    justify-content: center;
+}
+
+#section-actus .fb-actu .col-actu {
+    margin: 2em;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
 
 
+
+/* FIN PAGE ACTUS  =============================================================== */
 
 
 /* DEBUT PAGE MENTIONS LEGALES SECTION MENTIONS LEGALES ================================ */

@@ -1,11 +1,32 @@
 
 <section id="artistes">
-	<h2>Les artistes</h2>
+	<h2>Les Styles</h2>
 	<div id="breadcrumbs"><a href="#!">artiste machin</a></div>
 	<div id="recherche-artiste">
-		<form action="" method="GET"></form>
-		<input type="hidden" name="idForm" value="rechercheArtiste">
-		<button type="submit" name="rechercher" value="rechercher">Rechercher un artiste</button>
+		<form action="" method="GET" class="section-accueil">
+            <span class="artistes-glob"> 
+                <select name="genres" id="genres" class="form-control form-accueil">
+                    <option value="hide" selected disabled>Choisir son style...</option>         
+                    <!--<option value="tous">Tous styles</option>-->
+                    <?php
+                        $objetArtistesModel = new \Model\ArtistesModel;
+                        $tabLigne = $objetArtistesModel->findAll("nomGenre", "ASC");
+                        $tableGenre = []; 
+                        foreach($tabLigne as $index => $tabColonne)
+                        {
+                            $id                  = $tabColonne["id"];
+                            $nomGenre            = $tabColonne["nomGenre"];
+                            $tabGenre[$nomGenre] = $nomGenre;
+                        }
+                        foreach($tabGenre as $nomColonne => $valeurColonne)
+                        {
+                            echo "<option classe='genre'>$valeurColonne</option>";        
+                        }                                   
+
+                    ?>      
+                </select>
+            </span>
+        </form>
 	</div>
         <div class="grid artistes-row">
             <div class="artiste-col">
