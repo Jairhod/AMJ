@@ -131,6 +131,23 @@ $(document).ready(function(){
 
 
     
+
+/* **********************
+ 
+        BACK OFFICE
+
+************************ */ 
+    
+    
+/* menu =================================== */
+    
+		$('.navbar-fostrap').click(function(){
+			$('.nav-fostrap').toggleClass('visible');
+			$('body').toggleClass('cover-bg');
+		});
+  
+});
+
 /* **********************
  
         PAGE LABEL
@@ -156,19 +173,3 @@ $(document).ready(function(){
             title: 'AMJ Prod 10 Avenue des Planes 13800 ISTRES'
         });
     }
-
-/* **********************
- 
-        BACK OFFICE
-
-************************ */ 
-    
-    
-/* menu =================================== */
-    
-		$('.navbar-fostrap').click(function(){
-			$('.nav-fostrap').toggleClass('visible');
-			$('body').toggleClass('cover-bg');
-		});
-  
-});
