@@ -1,5 +1,5 @@
-    <script src="js/jssor.slider-23.0.0.min.js" type="text/javascript"></script>
-    <script src="js/jssor_1_slider_init.js" type="text/javascript"></script>
+    <script src="<?php echo $this->assetUrl('js/jssor.slider-23.0.0.min.js'); ?>" type="text/javascript"></script>
+    <script src="<?php echo $this->assetUrl('js/jssor_1_slider_init.js'); ?>" type="text/javascript"></script>
 
 <section>
     <article>
