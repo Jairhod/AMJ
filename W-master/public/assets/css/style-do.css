@@ -2,8 +2,6 @@
 .borderbleuvert {
 	margin-top: 80px;
 	margin-bottom: 30px;
-	//padding-top: 30px;
-	//padding-bottom: 30px;
 }
 
 
@@ -175,22 +173,33 @@ div#myCarousel {
 	padding:0;
 	vertical-align:baseline;
 
+
 	-webkit-font-smoothing:antialiased;
 	-webkit-text-size-adjust:100%;
+
+
 	background-color:#111;
+	background-color: redc;
 	color:#C8C7C8;
 	font-weight:300;
 	padding:5px 0;
 
 	-webkit-tap-highlight-color:rgba(0,0,0,0);
 	-webkit-tap-highlight-color:transparent;
+
 }
 
 /* Desktop
 ================================================== */
 
-.containeraudio { position:relative; margin:0 auto; width:700px; }
-.columnaudio { width:inherit; }
+.containeraudio {
+	position:relative;
+	margin:0 auto;
+	width:700px;
+	}
+.columnaudio {
+	width:inherit;
+	}
 
 
 /* Tablet (Portrait)
@@ -239,6 +248,7 @@ div#myCarousel {
 /* Default / Desktop / Firefox */
 audio { margin:0 15px 0 14px; width:670px; }
 #mainwrap { box-shadow:0 0 6px 1px rgba(0,0,0,.25); }
+#audiowrap { background-color:#231F20; margin:0 auto; }
 #audiowrap { background-color:#231F20; margin:0 auto; }
 #plwrap { margin:0 auto; }
 #tracks { position:relative; text-align:center; }
@@ -397,4 +407,6 @@ html[data-useragent*="Chrome"] audio { width:277px; }
 html[data-useragent*="Chrome"][data-useragent*="Mobile"] audio { margin-left:4px; width:290px; }
 #npTitle { width:167px; }
 }
+
+///////////ARTISTES LIES////////////////
 
