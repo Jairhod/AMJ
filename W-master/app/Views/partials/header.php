@@ -24,31 +24,6 @@
     <script async defer
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBfUBUWs15WAhtm3nSdqcOPFOBhtN-mwD0&callback=initMap">
     </script>
-  
-    
-    
-
-<!--MENU STYLE MUSICAL FICHE ARTISTE-->
-
-    <link rel="stylesheet" type="text/css" href="assets/css/component.css" />
-   
-    <script src="assets/js/modernizr.custom.js"></script>
-<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
-    <script src="assets/js/jquery.dlmenu.js"></script>
-
-    <!--CAROUSEL FICHE ARTISTE-->
-
-     <link rel="stylesheet" href="assets/css/style-carousel.css">
-
-<!--AUDIO PLAYER FICHE ARTISTE-->
-
-     <link rel="stylesheet" type="text/css" href="assets/css/audiostyle.css">
-
-
-
-
-    
-
  
 </head>
 
