@@ -1,10 +1,26 @@
 <div class="container-fluid full-width">
       <section id="recherche-accueil">
         <div class="title-hp">
-            <div class="caca">
-               <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLMC9KNkIncKtPzgY-5rmhvj7fax8fdxoj&amp;controls=0" frameborder="0" allowfullscreen></iframe>-->
-               <h6>Derniers artistes ajoutés</h6>
-               <p><?php echo('artiste bidule a été ajouté !'); echo date("Y-m-d "); ?></p>
+            <div class="bandeau">
+                <marquee><strong>Dernier artiste ajouté</strong> : 
+                <?php
+                        $objetArtistesModel = new \Model\ArtistesModel;
+                        $tabLigne = $objetArtistesModel->findAll("dateModification", "DESC" , 1);
+                
+                        foreach($tabLigne as $index => $tabColonne)
+                            {
+                                $id         = $tabColonne["id"];
+
+                                foreach($tabColonne as $nomColonne => $valeurColonne)
+                                {
+                                    if($nomColonne == "dateModification")
+                                        echo "<p>$valeurColonne</p>";                                    
+                                    if($nomColonne == "nomArtiste") 
+                                        echo "<p>$valeurColonne<p>";
+                                }     
+                            }
+                ?>
+                </marquee>
             </div>
             <div class="etiquette-titre">
                 <h1>AMJ Productions</h1>
@@ -13,29 +29,33 @@
         </div>
         <form action="" method="GET" class="form-inline section-accueil">
             <input type="hidden" name="idForm" value="choixAccueil">
-            <div class="bla">   
+            <div class="bla">
+               <span class="genres-glob">   
                 <select name="genres" id="genres" class="form-control form-accueil">
                     <option value="hide" selected disabled>Choisir son style...</option>         
-                    <option value="tous">Tous styles</option>
+                    <!--<option value="tous">Tous styles</option>-->
                     <?php
                         $objetArtistesModel = new \Model\ArtistesModel;
                         $tabLigne = $objetArtistesModel->findAll("nomGenre", "ASC");
-
+                        $tableGenre = []; 
                         foreach($tabLigne as $index => $tabColonne)
                         {
-                            $id         = $tabColonne["id"];
-                            
-                            foreach($tabColonne as $nomColonne => $valeurColonne)
-                            {
-                                if($nomColonne == "nomGenre") echo "<option>$valeurColonne</option>";        
-                            }   
-                                
+                            $id                  = $tabColonne["id"];
+                            $nomGenre            = $tabColonne["nomGenre"];
+                            $tabGenre[$nomGenre] = $nomGenre;
                         }
+                        foreach($tabGenre as $nomColonne => $valeurColonne)
+                        {
+                            echo "<option classe='genre'>$valeurColonne</option>";        
+                        }                                   
+
                     ?>      
                 </select>
+                </span>
+                <span class="artistes-glob">
                 <select name="artistes" id="artistes" class="form-control form-accueil form-artistes-accueil">
                     <option value="hide" selected disabled>Choisir son artiste...</option>
-                    <option value="tousArtistes">Tous les artistes</option>
+                    <!--<option value="tousArtistes">Tous les artistes</option>-->
                 <?php
                         $objetArtistesModel = new \Model\ArtistesModel;
                         $tabLigne = $objetArtistesModel->findAll("nomArtiste", "ASC");
@@ -53,6 +73,7 @@
                         }
                     ?>        
                 </select> 
+                </span>
             </div>
         </form>
          
