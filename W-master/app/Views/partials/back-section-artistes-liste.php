@@ -20,7 +20,7 @@ foreach($tabLigne as $index => $tabColonne)
     {
         $srcImage   = $this->assetUrl('media/img/'.$id.'/imagePrincipale/'.$valeurColonne);
         if($nomColonne == "nomArtiste") echo "<h4><a href='$hrefAfficher'>$valeurColonne</a></h4>";
-        if($nomColonne == "cheminImagePrincipale") echo "<div><a href='$hrefAfficher'><img src='$srcImage' alt=''></a></div>";
+        if($nomColonne == "imagePrincipale") echo "<div><a href='$hrefAfficher'><img src='$srcImage' alt=''></a></div>";
     }
     
     echo

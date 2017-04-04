@@ -10,10 +10,10 @@ if (!empty($tabLigne))
     $id                     = $tabLigne["id"];
     $nomArtiste             = $tabLigne["nomArtiste"];
     $nomGenre               = $tabLigne["nomGenre"];
-    $cheminImagePrincipale  = $tabLigne["cheminImagePrincipale"];
+    $imagePrincipale        = $tabLigne["imagePrincipale"];
     $descriptionArtiste     = $tabLigne["descriptionArtiste"];
     $artistesLies           = $tabLigne["artistesLies"];
-    $srcImage               = $this->assetUrl('media/img/'.$id.'/imagePrincipale/'.$cheminImagePrincipale);
+    $srcImage               = $this->assetUrl('media/img/'.$id.'/imagePrincipale/'.$imagePrincipale);
         
     // AFFICHER LE CODE HTML
 
@@ -30,7 +30,7 @@ if (!empty($tabLigne))
         <input style="width: 400px" type="text" name="artistesLies" required placeholder="Artistes liés" value="$artistesLies"><br>
         <textarea name="descriptionArtiste" required placeholder="descriptionArtiste" cols="60" rows="10">$descriptionArtiste</textarea><br>
         <span>Modifier image de profil : </span>
-        <input type="file" name="cheminImagePrincipale" value="$cheminImagePrincipale" placeholder="Image de profil"><br>
+        <input type="file" name="imagePrincipale" value="$imagePrincipale" placeholder="Image de profil"><br>
         <button class="links" type="submit">Modifier</button>
         <input type="hidden" name="idForm" value="artisteUpdate">
         <input type="hidden" name="id" value="$id">

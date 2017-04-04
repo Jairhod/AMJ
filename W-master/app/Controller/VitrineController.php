@@ -85,4 +85,10 @@ class VitrineController
 	}
 
 
+    public function testBen()
+	{
+
+		$this->show('pages/test-ben');
+	}
+
 }

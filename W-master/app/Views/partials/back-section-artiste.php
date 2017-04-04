@@ -9,11 +9,11 @@ if (!empty($tabLigne))
     $id            		   = $tabLigne["id"];
     $nomArtiste            = $tabLigne["nomArtiste"];
     $nomGenre       	   = $tabLigne["nomGenre"];
-    $cheminImagePrincipale = $tabLigne["cheminImagePrincipale"];
+    $imagePrincipale       = $tabLigne["imagePrincipale"];
     $descriptionArtiste    = $tabLigne["descriptionArtiste"];
     $artistesLies          = $tabLigne["artistesLies"];
     $dateModification      = $tabLigne["dateModification"];
-    $srcImage              = $this->assetUrl('media/img/'.$id.'/imagePrincipale/'.$cheminImagePrincipale);
+    $srcImage              = $this->assetUrl('media/img/'.$id.'/imagePrincipale/'.$imagePrincipale);
     $hrefModifier          = $this->url("back_artiste_modifier", [ "id" => $id ]);
     $hrefSupprimer         = "?idForm=artisteDelete&id=$id";
     
