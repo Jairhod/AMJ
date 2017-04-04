@@ -33,20 +33,20 @@
                <span class="genres-glob">   
                 <select name="genres" id="genres" class="form-control form-accueil">
                     <option value="hide" selected disabled>Choisir son style...</option>         
-                    <option value="tous">Tous styles</option>
+                    <!--<option value="tous">Tous styles</option>-->
                     <?php
                         $objetArtistesModel = new \Model\ArtistesModel;
                         $tabLigne = $objetArtistesModel->findAll("nomGenre", "ASC");
                         $tableGenre = []; 
                         foreach($tabLigne as $index => $tabColonne)
                         {
-                            $id         = $tabColonne["id"];
-                            $nomGenre   =$tabColonne["nomGenre"];
+                            $id                  = $tabColonne["id"];
+                            $nomGenre            = $tabColonne["nomGenre"];
                             $tabGenre[$nomGenre] = $nomGenre;
                         }
                         foreach($tabGenre as $nomColonne => $valeurColonne)
                         {
-                                echo "<option classe='genre'>$valeurColonne</option>";        
+                            echo "<option classe='genre'>$valeurColonne</option>";        
                         }                                   
 
                     ?>      
@@ -55,7 +55,7 @@
                 <span class="artistes-glob">
                 <select name="artistes" id="artistes" class="form-control form-accueil form-artistes-accueil">
                     <option value="hide" selected disabled>Choisir son artiste...</option>
-                    <option value="tousArtistes">Tous les artistes</option>
+                    <!--<option value="tousArtistes">Tous les artistes</option>-->
                 <?php
                         $objetArtistesModel = new \Model\ArtistesModel;
                         $tabLigne = $objetArtistesModel->findAll("nomArtiste", "ASC");

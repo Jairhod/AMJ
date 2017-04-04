@@ -37,15 +37,11 @@ $(document).ready(function(){
     
     sr.reveal('.col-2-label', transitionDroite);
     
-/* API FACEBOOK : pour fil d'actu */
+/* **********************
+ 
+    PAGE ACCUEIL 
 
-    (function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = "//connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v2.8&appId=1417053915025497";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
+************************ */ 
     
 /* SELECT et OPTION STYLED =============== */
     
@@ -95,33 +91,53 @@ $(document).ready(function(){
 
     });
     
-/* SELECT AUTO LISTES DEROULANTES */
+/* AJAX SELECT AUTO LISTES DEROULANTES */
+    
        $('.select-options li').click(function(){
             var contenuLi = $(this).html();
             var contenuData = {
                 'idForm': 'recupInfoGenre',
                 'afficheGenre': contenuLi
             };
-            console.log(contenuLi);
+            /*console.log(contenuLi);*/
             $.ajax({
                 type: "POST",
                 url: urlRouteAjax,
                 data: contenuData,
                 dataType: 'json'
             }).done(function(reponseJson){
-                console.log(reponseJson);
+                /*console.log(reponseJson);*/
                 $('.artistes-glob ul').html(reponseJson.retour);
             });      
         })
     
-/* BACK OFFICE : menu ==================== */
+
+/* **********************
+ 
+      PAGE ACTUS 
+
+************************ */ 
+
+
+/* API FACEBOOK : pour fil d'actu */
+
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v2.8&appId=1417053915025497";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+
     
-		$('.navbar-fostrap').click(function(){
-			$('.nav-fostrap').toggleClass('visible');
-			$('body').toggleClass('cover-bg');
-		});
-  
-});
+/* **********************
+ 
+        PAGE LABEL
+
+************************ */ 
+    
+
 
 /* API GOOGLE MAP ======================== */
     
@@ -141,3 +157,18 @@ $(document).ready(function(){
         });
     }
 
+/* **********************
+ 
+        BACK OFFICE
+
+************************ */ 
+    
+    
+/* menu =================================== */
+    
+		$('.navbar-fostrap').click(function(){
+			$('.nav-fostrap').toggleClass('visible');
+			$('body').toggleClass('cover-bg');
+		});
+  
+});
