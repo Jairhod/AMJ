@@ -3,13 +3,13 @@
 <div class="row">
   <section id="artisteslies">
     <div class="artiste1 col-md-4">
-      <a href=""><img src="./assets/media/img/4/imagePrincipale/Iguana-Van.jpg" alt="iguana van" class="img-responsive img-thumbnail" width="304" height="236"></a>
+      <a href=""><img src="./assets/media/img/4/imagePrincipale/Iguana-Van.jpg" alt="iguana van" class="img-responsive img-thumbnail"></a>
     </div>
      <div class="artiste1 col-md-4">
-      <a href=""><img src="./assets/media/img/5/imagePrincipale/balti-social-club.png" alt="quartier nord" class="img-responsive img-thumbnail" width="304" height="236"></a>
+      <a href=""><img src="./assets/media/img/5/imagePrincipale/balti-social-club.png" alt="quartier nord" class="img-responsive img-thumbnail"></a>
     </div>
      <div class="artiste1 col-md-4">
-      <a href=""><img src="./assets/media/img/6/imagePrincipale/John-Massa-TRIPBAND.jpg" alt="john massa" class="img-responsive img-thumbnail" width="304" height="236"></a>
+      <a href=""><img src="./assets/media/img/6/imagePrincipale/John-Massa-TRIPBAND.jpg" alt="john massa" class="img-responsive img-thumbnail"></a>
     </div>
     
   </section>
