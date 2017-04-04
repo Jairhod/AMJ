@@ -6,10 +6,31 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="upload" method="post" multipart="" enctype="multipart/form-data">
-        <input type="file" name="image">
-        <input type="file" name="img[]" multiple>
-        <input type="submit">
-    </form>
+
+<?php
+
+    $objetImagesModel = new \Model\ImagesModel;
+
+	$tabLigne = $objetImagesModel->findAll("id", "ASC");
+
+	foreach ($tabLigne as $key => $value) {
+
+		$idArtiste = $tabLigne[$key]["idArtiste"];
+		$id 	   = $tabLigne[$key]["id"];
+
+	}
+
+	echo ("cool dude");
+
+
+
+
+
+
+
+
+
+?>
+
 </body>
 </html>

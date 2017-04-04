@@ -45,23 +45,31 @@ class FormController extends Controller
         $nomArtiste             = $this->verifierSaisie("nomArtiste");
         $nomGenre               = $this->verifierSaisie("nomGenre");
         $artistesLies           = $this->verifierSaisie("artistesLies");
-        $cheminImagePrincipale  = $this->verifierUpload("temp", "cheminImagePrincipale");
         $descriptionArtiste     = $this->verifierSaisie("descriptionArtiste");
+        $tabInfoFichierUploade  = $_FILES["imagePrincipale"];
         $dateModification       = date("Y-m-d H:i:s");
 
         $objetArtistesModel = new ArtistesModel;
                 
-        if ( ($nomArtiste != "") && ($nomGenre != "") && ($artistesLies != "") && ($cheminImagePrincipale != "") && ($descriptionArtiste != "") )
+        if ( ($nomArtiste != "") && ($nomGenre != "") && ($artistesLies != "") && (!empty($tabInfoFichierUploade)) && ($descriptionArtiste != "") )
         {
 
             $objetArtistesModel->insert([   "nomArtiste"            => $nomArtiste, 
                                             "nomGenre"              => $nomGenre, 
                                             "artistesLies"          => $artistesLies, 
-                                            "cheminImagePrincipale" => $cheminImagePrincipale,
                                             "descriptionArtiste"    => $descriptionArtiste,
                                             "dateModification"      => $dateModification,
                                         ]);
-       
+
+
+            $tabLigne = $objetArtistesModel->findAll("dateModification", "DESC");
+            
+            if (!empty($tabLigne))
+            {
+                $id = $tabLigne[0]["id"];
+                $this->verifierUpload($id, "imagePrincipale");
+                $this->verifierMultiUpload($id, "images");
+            }       
                                 
             $GLOBALS["artisteCreateRetour"] = "($nomArtiste) ajouté";
 
@@ -69,15 +77,6 @@ class FormController extends Controller
         else
         {
             $GLOBALS["artisteCreateRetour"] = "Erreurs artisteTraitement";          
-        }
-
-        $tabLigne = $objetArtistesModel->findAll("dateModification", "DESC");
-        
-        if (!empty($tabLigne))
-        {
-            $id = $tabLigne[0]["id"];
-            $this->renameFolder($id);
-            $this->verifierMultiUpload($id, "images");
         }
 
     }
@@ -90,12 +89,28 @@ class FormController extends Controller
        if ($id>0)
        {
         $objetArtistesModel = new ArtistesModel;
+        $objetImagesModel   = new ImagesModel;
+        $tabLigne           = $objetImagesModel->findAll("id", "ASC");
+
+        foreach ($tabLigne as $key => $value) {
+
+            $id_images = $tabLigne[$key]["id"];
+            $idArtiste = $tabLigne[$key]["idArtiste"];
+            if ($idArtiste == $id)
+            {
+              $objetImagesModel->delete($id_images);
+            } 
+        }
+
         $objetArtistesModel->delete($id);
+
         if (is_dir("assets/media/img/$id")) 
             {
             $this->deleteFolder("assets/media/img/$id");       
             }
+
         $GLOBALS["artisteDeleteRetour"] = "Artiste ($id) supprimé";
+
        }
        else
        {
@@ -110,13 +125,13 @@ class FormController extends Controller
 
         $nomArtiste                 = $this->verifierSaisie("nomArtiste");
         $nomGenre                   = $this->verifierSaisie("nomGenre");
-        $cheminImagePrincipale      = $this->verifierUpload( $id, "cheminImagePrincipale");
         $descriptionArtiste         = $this->verifierSaisie("descriptionArtiste");
         $artistesLies               = $this->verifierSaisie("artistesLies");
+        $tabInfoFichierUploade      = $_FILES["imagePrincipale"];
         $dateModification           = date("Y-m-d H:i:s");
         
         if ( ($id > 0)
-            && ($nomArtiste != "") && ($nomGenre != "") && ($cheminImagePrincipale != "") && ($descriptionArtiste != "")
+            && ($nomArtiste != "") && ($nomGenre != "") && (!empty($tabInfoFichierUploade)) && ($descriptionArtiste != "")
             && ($artistesLies != "") )
         {
 
@@ -124,12 +139,13 @@ class FormController extends Controller
 
             $objetArtistesModel->update([   "nomArtiste"             => $nomArtiste, 
                                             "nomGenre"               => $nomGenre, 
-                                            "cheminImagePrincipale"  => $cheminImagePrincipale,
                                             "descriptionArtiste"     => $descriptionArtiste,
                                             "artistesLies"           => $artistesLies,
                                             "dateModification"       => $dateModification,
                                         ],
                                         $id);
+           
+            $this->verifierUpload($id, "imagePrincipale");              
                                         
             $GLOBALS["artisteUpdateRetour"] = "$nomArtiste modifié. Id: ($id)";
         }
@@ -170,17 +186,10 @@ class FormController extends Controller
         }
     }
 
-    function verifierUpload ($folder, $nameInput)
+    function verifierUpload ($id, $nameInput)
 {
-    if ($folder!="temp")
-    {
-        $objetArtistesModel = new ArtistesModel;
-        $tab = $objetArtistesModel->find($folder);
-        $nameOK   = $tab["cheminImagePrincipale"];
-    }
-    else $nameOK = "temporary";
-
-    $idForm   = $this->verifierSaisie("idForm");
+    $objetArtistesModel = new ArtistesModel;
+    $idForm             = $this->verifierSaisie("idForm");
 
     if (!empty([$_FILES]))
     {
@@ -195,32 +204,27 @@ class FormController extends Controller
                 $tmpName    = $tabInfoFichierUploade["tmp_name"];
                 $size       = $tabInfoFichierUploade["size"];
 
-                chmod($tmpName, 0777);
+                //  chmod($tmpName, 0777);
                 
-                if ($size < 15 * 1024 * 1024) // 15 MEGAOCTETS
+                if ($size < 15 * 1024 * 1024)
                 {
-                    // ON VERIFIE L'EXTENSION
                     $extension = pathinfo($name, PATHINFO_EXTENSION);
-                    // METTRE L'EXTENSION EN MINUSCULES
                     $extension = strtolower($extension);
-
-                    $tabExtensionOK = 
-                    [ 
-                        "jpeg", "jpg", "gif", "png", "svg" 
-                    ];
+                    $tabExtensionOK = [ "jpeg", "jpg", "gif", "png", "svg" ];
                     
                     if (in_array($extension, $tabExtensionOK))
                     {
-                        if (is_dir("assets/media/img/$folder/imagePrincipale")) 
+                        if (is_dir("assets/media/img/$id/$nameInput")) 
                           {
-                              $this->deleteFolder("assets/media/img/$folder/imagePrincipale");
+                              $this->deleteFolder("assets/media/img/$id/$nameInput");
                           }                    
 
                         //$nameOK       =  preg_replace("/[^a-zA-Z0-9-_\.]/", "", $name);
                         $nameOK       = date('YmdHis',time()).mt_rand().'.'.$extension;
-                        $cheminOK     = "assets/media/img/$folder/imagePrincipale/$nameOK";
+                        $cheminOK     = "assets/media/img/$id/$nameInput/$nameOK";
                         $cheminOK     = strtolower($cheminOK);
-                        $this->createFolders($folder);
+                        $this->createFolders($id);
+                        $objetArtistesModel->update([ "imagePrincipale" => $nameOK ], $id);
                         move_uploaded_file($tmpName, $cheminOK);
 
                     }
@@ -237,7 +241,6 @@ class FormController extends Controller
         }
     }
         
-    return $nameOK;
 }
 
     function verifierMultiUpload ($id, $nameInput)
