@@ -46,8 +46,7 @@
 <<<CODEHTML
 <figure class="effect-marley">
 <img>$srcImage</img>;
-<figcaption></figcaption>
-</figure>
+<figcaption>
 CODEHTML;
                                     if($nomColonne == "nomArtiste") echo "<h4>$valeurColonne</h4>";
                                     if($nomColonne == "descriptionArtiste") echo "<p>$valeurColonne</p>"; 
@@ -56,6 +55,8 @@ CODEHTML;
                             }
                         ?>
                         <a href="#">View more</a>
+                    </figcaption>
+                </figure>
             </div>
             <div class="artiste-col">
                 <figure class="effect-marley">
