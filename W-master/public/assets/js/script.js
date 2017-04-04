@@ -94,7 +94,25 @@ $(document).ready(function(){
         });
 
     });
-
+    
+/* SELECT AUTO LISTES DEROULANTES */
+       $('.select-options li').click(function(){
+            var contenuLi = $(this).html();
+            var contenuData = {
+                'idForm': 'recupInfoGenre',
+                'afficheGenre': contenuLi
+            };
+            console.log(contenuLi);
+            $.ajax({
+                type: "POST",
+                url: urlRouteAjax,
+                data: contenuData,
+                dataType: 'json'
+            }).done(function(reponseJson){
+                console.log(reponseJson);
+                $('.artistes-glob ul').html(reponseJson.retour);
+            });      
+        })
     
 /* BACK OFFICE : menu ==================== */
     

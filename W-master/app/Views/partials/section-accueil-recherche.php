@@ -3,7 +3,6 @@
         <div class="title-hp">
             <div class="bandeau">
                 <marquee><strong>Dernier artiste ajouté</strong> : 
-                <?php // echo('bidule'); echo date('(Y-m-d)'); ?> 
                 <?php
                         $objetArtistesModel = new \Model\ArtistesModel;
                         $tabLigne = $objetArtistesModel->findAll("dateModification", "DESC" , 1);
@@ -30,25 +29,30 @@
         </div>
         <form action="" method="GET" class="form-inline section-accueil">
             <input type="hidden" name="idForm" value="choixAccueil">
-            <div class="bla">   
+            <div class="bla">
+               <span class="genres-glob">   
                 <select name="genres" id="genres" class="form-control form-accueil">
                     <option value="hide" selected disabled>Choisir son style...</option>         
                     <option value="tous">Tous styles</option>
                     <?php
                         $objetArtistesModel = new \Model\ArtistesModel;
                         $tabLigne = $objetArtistesModel->findAll("nomGenre", "ASC");
-
+                        $tableGenre = []; 
                         foreach($tabLigne as $index => $tabColonne)
                         {
                             $id         = $tabColonne["id"];
-                            
-                            foreach($tabColonne as $nomColonne => $valeurColonne)
-                            {
-                                if($nomColonne == "nomGenre") echo "<option>$valeurColonne</option>";        
-                            }                                   
+                            $nomGenre   =$tabColonne["nomGenre"];
+                            $tabGenre[$nomGenre] = $nomGenre;
                         }
+                        foreach($tabGenre as $nomColonne => $valeurColonne)
+                        {
+                                echo "<option classe='genre'>$valeurColonne</option>";        
+                        }                                   
+
                     ?>      
                 </select>
+                </span>
+                <span class="artistes-glob">
                 <select name="artistes" id="artistes" class="form-control form-accueil form-artistes-accueil">
                     <option value="hide" selected disabled>Choisir son artiste...</option>
                     <option value="tousArtistes">Tous les artistes</option>
@@ -69,6 +73,7 @@
                         }
                     ?>        
                 </select> 
+                </span>
             </div>
         </form>
          

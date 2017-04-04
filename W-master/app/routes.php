@@ -11,7 +11,8 @@
     	['GET',  	'/label', 		            	  'Vitrine#label', 		        'label'],
         ['GET',  	'/test-jo', 		              'Vitrine#testJo', 		    'test_jo'],
         
-		
+	   ['GET|POST',  	'/ajax', 		                 'Vitrine#ajax', 			    'vitrine_ajax'],
+        
 		['GET|POST',  	'/back/accueil', 		         'Admin#backAccueil', 			'back_accueil'],
 		['GET|POST',  	'/back/login', 			         'Admin#backLogin', 			'back_login'],
 		['GET|POST',  	'/back/logout', 		         'Admin#backLogout', 			'back_logout'],
