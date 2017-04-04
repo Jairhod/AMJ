@@ -30,12 +30,10 @@
 	</div>
         <div class="grid artistes-row">
             <div class="artiste-col">
-                <figure class="effect-marley">
-                    <img src="assets/media/img/11.jpg" alt="img11"/>
-                    <figcaption>
+
                         <?php
                             $objetArtistesModel = new \Model\ArtistesModel;
-                            $tabLigne = $objetArtistesModel->findAll("nomArtiste", "ASC");
+                            $tabLigne = $objetArtistesModel->findAll("nomArtiste", "ASC", 1);
 
                             foreach($tabLigne as $index => $tabColonne)
                             {
@@ -43,15 +41,21 @@
 
                                 foreach($tabColonne as $nomColonne => $valeurColonne)
                                 {
-                                    if($nomColonne == "nomArtiste") echo "<h4>$valeurColonne</h4>";        
+                                    $srcImage   = $this->assetUrl('media/img/'.$id.'/imagePrincipale/'.$valeurColonne);
+                                    if($nomColonne == "imagePrincipale") echo 
+<<<CODEHTML
+<figure class="effect-marley">
+<img>$srcImage</img>;
+<figcaption></figcaption>
+</figure>
+CODEHTML;
+                                    if($nomColonne == "nomArtiste") echo "<h4>$valeurColonne</h4>";
+                                    if($nomColonne == "descriptionArtiste") echo "<p>$valeurColonne</p>"; 
                                 }   
 
                             }
                         ?>
-                        <p>Marley tried to convince her but she was not intereste,Marley tried to convince her but she was not interested.</p>
                         <a href="#">View more</a>
-                    </figcaption>			
-                </figure>
             </div>
             <div class="artiste-col">
                 <figure class="effect-marley">
