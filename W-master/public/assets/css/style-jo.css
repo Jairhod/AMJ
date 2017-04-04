@@ -1738,42 +1738,27 @@ figure.effect-marley:hover p {
 
  
 #section-actus .fb-actu {
-    width: 100%;
+    width: 80%;
     margin: auto;
-
 }
 
 .row-actu {
     display: flex;
     justify-content: center;
-    min-height: 500px;
-    width: 80%;
-    margin: auto;
 }
 
 #section-actus .fb-actu .col-actu {
-    position: relative;
     margin: 2em;
     box-shadow: 0 3px 6px rgba(63,79,94,0.16);
-    width: 100%;
 }
 
-#section-actus iframe {
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-}
-
-#section-actus p {
+#section-actus .fb-actu p {
     text-align: center;
     padding: 2em 0;
     background-color: #3F4F5E;
     color: white;
     margin: 0;
     box-shadow: 0 3px 6px rgba(63,79,94,0.16);
-    position: relative;
 }
 
 
