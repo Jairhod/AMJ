@@ -1,18 +1,18 @@
 
-<hr>
+<br>
 <section>
 
     <script src="<?php echo $this->assetUrl('js/jssor.slider-23.0.0.min.js'); ?>" type="text/javascript"></script>
     <script src="<?php echo $this->assetUrl('js/jssor_1_slider_init.js'); ?>" type="text/javascript"></script>
     <link rel="stylesheet" type="text/css" href="<?php echo $this->assetUrl('css/jssor.css'); ?>">
 
-<div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:809px;height:150px;overflow:hidden;visibility:hidden;">
+<div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:809px;height:170px;overflow:hidden;visibility:hidden;">
         <!-- Loading Screen -->
         <div data-u="loading" style="position:absolute;top:0px;left:0px;background-color:rgba(0,0,0,0.7);">
             <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
             <div style="position:absolute;display:block;background:url(<?php echo $this->assetUrl('media/img/loading.gif'); ?>) no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
         </div>
-        <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:809px;height:150px;overflow:hidden;">
+        <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:809px;height:170px;overflow:hidden;">
 
 
 <?php
@@ -24,19 +24,16 @@ foreach($tableauPhoto as $key => $value)
 {
     $trimmed = ltrim($value, "assets/");
     $src = $this->assetUrl($trimmed);
-    $imageHtml = "<img data-u='image' src=$src >";
-
 echo
 <<<IMAGES
 <div>
-    $imageHtml
+    <img data-u='image' src=$src >
 </div>
 IMAGES;
 
 }
 
-?>
-       
+?>      
 
         </div>
         <!-- Bullet Navigator -->
@@ -54,5 +51,3 @@ IMAGES;
     <!-- #endregion Jssor Slider End -->
 
 </section>
-
-<hr>
