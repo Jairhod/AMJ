@@ -14,6 +14,7 @@
         </div>
         <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:809px;height:150px;overflow:hidden;">
 
+
 <?php
 
 $chemin = "*/media/img/".$id."/images/*";
@@ -23,20 +24,20 @@ foreach($tableauPhoto as $key => $value)
 {
     $trimmed = ltrim($value, "assets/");
     $src = $this->assetUrl($trimmed);
-    $imageHtml = "<img data-u='image' src=" .$src. ">";
+    $imageHtml = "<img data-u='image' src=$src >";
 
 echo
 <<<IMAGES
 <div>
-    $imageHtml;    
+    $imageHtml
 </div>
 IMAGES;
 
 }
 
 ?>
+       
 
-            
         </div>
         <!-- Bullet Navigator -->
         <div data-u="navigator" class="jssorb03" style="bottom:10px;right:10px;">
