@@ -1,6 +1,6 @@
 
-
 <!--PHOTO ET TEXTE PRESENTATION-->  
+
 <div class="container containerblue">
   <div class="borderbleuvert">
     <div id="photoprincipale">
@@ -24,8 +24,9 @@
             </p> 
             </div> 
           </div>
- 
+
         <!--/////////////////PLAYER AUDIO//////////////////////////////////////////--> 
+        
         <div class="col-lg-8 col-md-12 col-sm-12">
         <div class="audiogeneral">
           <div class="containeraudio">
@@ -128,7 +129,6 @@
         </div>
       </div>  
     </div>
-
 </div>  
 
  
