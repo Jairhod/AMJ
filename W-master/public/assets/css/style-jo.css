@@ -1509,6 +1509,9 @@ section#label h6 {
 
 /* FIN PAGE LABEL : SECTION LABEL ==================================================== */
 
+
+
+
 /* DEBUT PAGE CATALOGUE ============================================================ */
 
 /* SECTION CATALOGUE ARTISTES =========================== */
@@ -1701,23 +1704,76 @@ figure.effect-marley:hover p {
 /* DEBUT PAGE ACTUS  ============================================================= */
 
 #section-actus {
-    padding-top: 8em;  
-    padding-bottom: 6em;
+    padding-top: 5em;
+    padding-bottom: 3em;
+    text-align: center;
+    
 }
 
+#section-actus .titres-actus {
+    background-color: #edbe00;
+}
+
+#section-actus .titres-actus h1, h2 {
+    margin: 0;
+    color: white;
+}
+
+#section-actus .titres-actus h1 {
+    padding-top: 1em;
+    font-size: 40px;
+    -webkit-animation: focus-in-contract 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    -moz-animation: focus-in-contract 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: focus-in-contract 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+#section-actus .titres-actus h2 {
+    padding-top: 0.5em;
+    padding-bottom: 1em;
+    -webkit-animation: focus-in-contract 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    -moz-animation: focus-in-contract 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: focus-in-contract 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+
+ 
 #section-actus .fb-actu {
-    width: 80%;
+    width: 100%;
     margin: auto;
+
 }
 
 .row-actu {
     display: flex;
     justify-content: center;
+    min-height: 500px;
+    width: 80%;
+    margin: auto;
 }
 
 #section-actus .fb-actu .col-actu {
+    position: relative;
     margin: 2em;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    box-shadow: 0 3px 6px rgba(63,79,94,0.16);
+    width: 100%;
+}
+
+#section-actus iframe {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+#section-actus p {
+    text-align: center;
+    padding: 2em 0;
+    background-color: #3F4F5E;
+    color: white;
+    margin: 0;
+    box-shadow: 0 3px 6px rgba(63,79,94,0.16);
+    position: relative;
 }
 
 
