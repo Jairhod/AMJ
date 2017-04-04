@@ -13,27 +13,29 @@
             <div style="position:absolute;display:block;background:url(<?php echo $this->assetUrl('media/img/loading.gif'); ?>) no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
         </div>
         <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:809px;height:150px;overflow:hidden;">
-            <div>
-                <img data-u="image" src="<?php echo $this->assetUrl('media/img/jssor/005.jpg'); ?>" />
-            </div>
-            <div>
-                <img data-u="image" src="<?php echo $this->assetUrl('media/img/jssor/006.jpg'); ?>" />
-            </div>
-            <div>
-                <img data-u="image" src="<?php echo $this->assetUrl('media/img/jssor/011.jpg'); ?>" />
-            </div>
-            <div>
-                <img data-u="image" src="<?php echo $this->assetUrl('media/img/jssor/013.jpg'); ?>" />
-            </div>
-            <div>
-                <img data-u="image" src="<?php echo $this->assetUrl('media/img/jssor/014.jpg'); ?>" />
-            </div>
-            <div>
-                <img data-u="image" src="<?php echo $this->assetUrl('media/img/jssor/019.jpg'); ?>" />
-            </div>
-            <div>
-                <img data-u="image" src="<?php echo $this->assetUrl('media/img/jssor/020.jpg'); ?>" />
-            </div>
+
+<?php
+
+$chemin = "*/media/img/".$id."/images/*";
+$tableauPhoto = glob($chemin);
+
+foreach($tableauPhoto as $key => $value)
+{
+    $trimmed = ltrim($value, "assets/");
+    $src = $this->assetUrl($trimmed);
+    $imageHtml = "<img data-u='image' src=" .$src. ">";
+
+echo
+<<<IMAGES
+<div>
+    $imageHtml;    
+</div>
+IMAGES;
+
+}
+
+?>
+
             
         </div>
         <!-- Bullet Navigator -->
@@ -53,30 +55,3 @@
 </section>
 
 <hr>
-<p>begin</p>
-
-<?php
-$chemin = "*/media/img/".$id."/images/*";
-//$chemin = $_SERVER["DOCUMENT_ROOT"]."/".$this->assetUrl($chemin);
-//$chemin = $_SERVER["DOCUMENT_ROOT"]."/".$this->assetUrl($chemin);
-//chdir ( $_SERVER["DOCUMENT_ROOT"] );
-$tableauPhoto = glob($chemin);
-echo "chemin: ".$chemin;
-echo "<br>";
-var_dump($tableauPhoto);
-$i = 0;
-
-// http://php.net/manual/en/function.str-replace.php
-
-foreach($tableauPhoto as $key => $value)
-{
-    echo "<br>";
-    echo $key;
-    echo "<br>";
-    echo $value;
-}
-?>
-
-
-<hr>
-<p>end</p>
