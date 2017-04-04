@@ -50,5 +50,33 @@
     <script type="text/javascript">jssor_1_slider_init();</script>
     <!-- #endregion Jssor Slider End -->
 
-</section>    
+</section>
+
 <hr>
+<p>begin</p>
+
+<?php
+$chemin = "*/media/img/".$id."/images/*";
+//$chemin = $_SERVER["DOCUMENT_ROOT"]."/".$this->assetUrl($chemin);
+//$chemin = $_SERVER["DOCUMENT_ROOT"]."/".$this->assetUrl($chemin);
+//chdir ( $_SERVER["DOCUMENT_ROOT"] );
+$tableauPhoto = glob($chemin);
+echo "chemin: ".$chemin;
+echo "<br>";
+var_dump($tableauPhoto);
+$i = 0;
+
+// http://php.net/manual/en/function.str-replace.php
+
+foreach($tableauPhoto as $key => $value)
+{
+    echo "<br>";
+    echo $key;
+    echo "<br>";
+    echo $value;
+}
+?>
+
+
+<hr>
+<p>end</p>
