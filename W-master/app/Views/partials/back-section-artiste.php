@@ -1,6 +1,3 @@
-    <script src="<?php echo $this->assetUrl('js/jssor.slider-23.0.0.min.js'); ?>" type="text/javascript"></script>
-    <script src="<?php echo $this->assetUrl('js/jssor_1_slider_init.js'); ?>" type="text/javascript"></script>
-    <link rel="stylesheet" type="text/css" href="<?php echo $this->assetUrl('css/jssor.css'); ?>">
 
 <section>
     <article>
@@ -40,6 +37,12 @@ CODEHTML;
 ?>
     </article>
 </section>
+<hr>
+<section>
+
+    <script src="<?php echo $this->assetUrl('js/jssor.slider-23.0.0.min.js'); ?>" type="text/javascript"></script>
+    <script src="<?php echo $this->assetUrl('js/jssor_1_slider_init.js'); ?>" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="<?php echo $this->assetUrl('css/jssor.css'); ?>">
 
 <div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:809px;height:150px;overflow:hidden;visibility:hidden;">
         <!-- Loading Screen -->
@@ -84,3 +87,6 @@ CODEHTML;
     </div>
     <script type="text/javascript">jssor_1_slider_init();</script>
     <!-- #endregion Jssor Slider End -->
+
+</section>    
+<hr>
