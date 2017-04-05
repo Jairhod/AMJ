@@ -33,7 +33,7 @@
                <span class="genres-glob">   
                 <select name="genres" id="genres" class="form-control form-accueil">
                     <option value="hide" selected disabled>Choisir son style...</option>         
-                    <!--<option value="tous">Tous styles</option>-->
+                    <!--<option value="tous" classe="tous-styles">TOUS LES STYLES</option>-->
                     <?php
                         $objetArtistesModel = new \Model\ArtistesModel;
                         $tabLigne = $objetArtistesModel->findAll("nomGenre", "ASC");
@@ -66,12 +66,10 @@
 
                             foreach($tabColonne as $nomColonne => $valeurColonne)
                             {
-                                if($nomColonne == "nomArtiste") echo "<option>$valeurColonne</option>";
-                                
-                                    
+                                if($nomColonne == "nomArtiste") echo "<a><option>$valeurColonne</option>";       
                             }
                         }
-                    ?>        
+                    ?>       
                 </select> 
                 </span>
             </div>

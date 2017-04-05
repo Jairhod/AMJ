@@ -270,9 +270,9 @@ class FormController extends Controller
                     
                     if (in_array($extension, $tabExtensionOK))
                     {
-                        if (is_dir("assets/media/img/$id/imagePrincipale")) 
+                        if (is_dir("assets/media/img/$id/$nameInput")) 
                           {
-                              $this->deleteFolder("assets/media/img/$id/imagePrincipale");
+                              $this->deleteFolder("assets/media/img/$id/$nameInput");
                           }                    
 
                         //$nameOK       =  preg_replace("/[^a-zA-Z0-9-_\.]/", "", $name);
@@ -416,21 +416,24 @@ class FormController extends Controller
 
         return false;
     }
-    
+
     public function deleteFile($path)
     {
         if ( file_exists($path) ) {
             unlink($path);
         }
     }
-    
 
     public function thumbnailTraitement()    
     {
-        $ImagePrincipale = ('media/img/'.$id.'/imagePrincipale/');
+        
+        $tabImagePrincipale = glob('media/img/'.$id.'/imagePrincipale/*');
+        $imagePrincipale = $tabImagePrincipale[0];
+        $ImageSecondaires = glob('media/img/'.$id.'/images/*');
+        
         $ImageResize = ('assets/media/img/'.$id.'/thumbs/');
         
-        $image = new ImageResize("$cheminImagePrincipale");
+        $image = new ImageResize("$ImagePrincipale");
             if(!empty($cheminImageResize))
             {
                 $image->resizeToBestFit(480, 360);
@@ -438,6 +441,5 @@ class FormController extends Controller
             }    
    
     }
-
 
 }

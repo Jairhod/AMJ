@@ -16,19 +16,19 @@
                 </ul>             
                 <ul class="nav navbar-nav navbar-right">
                     <li class="">
-                        <a href="label">Le Label</a>
+                        <a href="label" class="active-nav">Le Label</a>
                     </li>
                     <li class="">
-                        <a href="catalogue">Le Catalogue</a>
+                        <a href="catalogue" class="active-nav">Le Catalogue</a>
                     </li>
                     <li>
-                        <a href="actus">Actus</a>
+                        <a href="actus" class="active-nav">Actus</a>
                     </li>
                     <li>
-                        <a href="#devis">Devis</a>
+                        <a href="#devis" class="active-nav">Devis</a>
                     </li>
                     <li>
-                        <a href="#contact">Contact</a>
+                        <a href="accueil#contact" class="active-nav">Contact</a>
                     </li>
                 </ul>
             </div>
