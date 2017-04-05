@@ -7,7 +7,6 @@ $tabLigne = $objetArtistesModel->find($id);
 
 if (!empty($tabLigne))
 {
-    $id            		   = $tabLigne["id"];
     $nomArtiste            = $tabLigne["nomArtiste"];
     $nomGenre       	   = $tabLigne["nomGenre"];
     $imagePrincipale       = $tabLigne["imagePrincipale"];
@@ -24,8 +23,11 @@ if (!empty($tabLigne))
 <section>
     <h3>$nomArtiste</h3>
     <img style="width: 200px" src="$srcImage" alt="$nomArtiste">
+    <p>id: $id</p>
     <h4>Dernière modification : $dateModification</h4>
-    <h4>$nomGenre</h4>
+    <h4>Style musical : $nomGenre</h4>
+    <h4>Famille musical : $artistesLies</h4>
+    <h3>Biographie</h3>
     <p>$descriptionArtiste</p>
     <div class="ligne">
     <span class="links"><a href="$hrefModifier">modifier</a></span>
