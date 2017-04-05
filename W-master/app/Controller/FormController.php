@@ -365,12 +365,16 @@ class FormController extends Controller
     
     public function thumbnailTraitement()    
     {
-        $image = new ImageResize("assets/media/img/$id/imagePrincipale");
-        $image->resizeToBestFit(480, 360);
-        $chemin = "assets/media/img/$id/thumbs";
-        $image->save("$chemin");
-        if(!is_dir($chemin)){
-           mkdir($chemin, 0777);       
+        $ImagePrincipale = ('media/img/'.$id.'/imagePrincipale/');
+        $ImageResize = ('assets/media/img/'.$id.'/thumbs/');
+        
+        $image = new ImageResize("$cheminImagePrincipale");
+            if(!empty($cheminImageResize))
+            {
+                $image->resizeToBestFit(480, 360);
+                $image->save("$cheminImageResize");
+            }    
+   
     }
 
 }
