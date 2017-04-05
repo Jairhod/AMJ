@@ -1271,8 +1271,48 @@ section#label h6 {
 
 
 
-
 /* DEBUT PAGE CATALOGUE ============================================================ */
+
+section#artistes {
+    margin-top: 1.5em;
+}
+
+#artistes .contenu-intro-catalogue {
+    background-image: url("../media/img/catalogue-2.jpg");
+    height: 100%; 
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#artistes .contenu-intro-catalogue {
+    padding: 6em 0 0 0;
+    text-align: center;
+    color: white;
+}
+
+#artistes .contenu-intro-catalogue h1 {
+    -webkit-animation: focus-in-contract 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    -moz-animation: focus-in-contract 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: focus-in-contract 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+#artistes .contenu-intro-catalogue p {
+    font-size: 18px;
+    -webkit-animation: focus-in-contract 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s both ;
+    -moz-animation: focus-in-contract 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s both ;
+    animation: focus-in-contract 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s both ;
+}
+
+#artistes {
+    box-shadow: 0 3px 6px rgba(63,79,94,0.16);   
+}
+
+
+/* FIN PAGE CATALOGUE ============================================================ */
+
+
 
 /* SECTION CATALOGUE ARTISTES =========================== */
 
@@ -1288,7 +1328,6 @@ section#label h6 {
 }
 
 .grid {
-
     position: relative;
     margin: auto;
     padding: 1em 0 4em;
@@ -1296,7 +1335,6 @@ section#label h6 {
     list-style: none;
     text-align: center;
     display: flex;
-    justify-content: initial;
     width: 80%;
     flex-wrap: wrap;
 }
@@ -1379,6 +1417,13 @@ section#label h6 {
 	letter-spacing: 1px;
 	font-size: 68.5%;
 }
+
+
+@media screen and (max-width: 1260px)
+{
+
+}
+
 
 /* Individual effects */
 
