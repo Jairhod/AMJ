@@ -28,7 +28,7 @@ if (!empty($tabLigne))
         <input style="width: 400px" type="text" name="nomArtiste" required placeholder="Nom" value="$nomArtiste"><br>
         <input style="width: 400px" type="text" name="nomGenre" required placeholder="Genre" value="$nomGenre"><br>
         <input style="width: 400px" type="text" name="artistesLies" required placeholder="Artistes liés" value="$artistesLies"><br>
-        <textarea name="descriptionArtiste" required placeholder="descriptionArtiste" cols="60" rows="10">$descriptionArtiste</textarea><br>
+        <textarea name="descriptionArtiste" required placeholder="descriptionArtiste" cols="60" rows="5">$descriptionArtiste</textarea><br>
         <span>Modifier image de profil : </span>
         <input type="file" name="imagePrincipale" value="$imagePrincipale" placeholder="Image de profil"><br>
         <div class="ligne">

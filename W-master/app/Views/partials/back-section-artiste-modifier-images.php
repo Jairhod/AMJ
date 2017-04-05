@@ -19,21 +19,23 @@
            $folderImage = 'media/img/'.$id.'/images';
            $folder      = $this->assetUrl($folderImage);
            $results     = scandir('assets/'.$folderImage);
-           foreach ($results as $result) {
+           foreach ($results as $result) 
+           {
             if ($result === '.' or $result === '..') continue;
-            if (is_file($_SERVER['DOCUMENT_ROOT'].$folder . '/' . $result)) {
-                $srcImage = $folder . '/' . $result;
-                $hrefRemove = $this->url("back_artiste_remove_image", [ "id" => $id, "name" => $result ]);
-                echo '
-                  <div class="col-md-3">
-                    <div class="thumbnail">
-                      <img src="'.$srcImage.'" alt="...">
-                      <div class="caption">
-                      <p><a href="'.$hrefRemove.'" class="btn btn-danger btn-xs" role="button">Remove</a></p>
+              if (is_file($_SERVER['DOCUMENT_ROOT'].$folder . '/' . $result)) 
+              {
+                  $srcImage = $folder . '/' . $result;
+                  $hrefRemove = $this->url("back_artiste_remove_image", [ "id" => $id, "name" => $result ]);
+                  echo '
+                    <div class="col col-lg-3 col-md-4 col-sm-6" >
+                      <div class="thumbnail">
+                        <img src="'.$srcImage.'" alt="...">
+                        <div class="caption">
+                        <p><a href="'.$hrefRemove.'" class="btn btn-danger btn-xs" role="button">Remove</a></p>
+                        </div>
                       </div>
-                    </div>
-                  </div>';
-            }
-           }
-           ?>
+                    </div>';
+              }
+           } ?>
+
         </div>

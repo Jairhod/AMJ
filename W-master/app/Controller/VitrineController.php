@@ -84,11 +84,4 @@ class VitrineController
 		$this->showJson($tabReponseJson);		
 	}
 
-
-    public function testBen()
-	{
-
-		$this->show('pages/test-ben');
-	}
-
 }

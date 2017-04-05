@@ -120,7 +120,16 @@ class AdminController
 	public function backArtisteAfficher($id)
 	{
 		$this->allowTo('admin');
-		$this->show('pages/back-artiste-afficher', ["id" => $id ]);
+		$GLOBALS["artisteDeleteRetour"] = "";
+
+		$idForm = $this->verifierSaisie("idForm");
+		if ($idForm == "artisteDelete")
+	    {
+	        $this->artisteDeleteTraitement();
+	        $this->redirectToRoute('back_artiste_liste');
+	    }
+
+		$this->show('pages/back-artiste-afficher', ["artisteDeleteRetour" => $GLOBALS["artisteDeleteRetour"], "id" => $id ]);
 	}
 
 	public function backArtisteListe()
