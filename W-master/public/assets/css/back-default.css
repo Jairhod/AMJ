@@ -37,6 +37,7 @@ header nav ul li {
 
 header nav ul li a {
     padding:0.5em;
+    margin: 0.1em;
     display:inline-block;
     color: white;
     background-color: #34495E;
@@ -145,4 +146,10 @@ h3 {
     width:100%;
     padding:0.5em;
     object-fit: cover;
+}
+
+
+.thumbnail img {
+  height: 15em;
+  width: 100%;
 }
