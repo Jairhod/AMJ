@@ -1,6 +1,8 @@
 <section id="section-actus">
-	<h1>Actus</h1>
-	<h2>Restez informés des nouveaux évènements, clips du label AMJ !</h2>
+    <div class="titres-actus">
+        <h1>Actus</h1>
+        <h2>Restez informés des nouveaux évènements, clips du label AMJ !</h2>
+	</div>
 	<div class="fb-actu">
        <div class="row-actu">
             <div class="col-actu act-1">
@@ -11,6 +13,6 @@
                 <p>Toutes les vidéos et les clips de notre artistes sur notre chaine youtube, suivez-nous !</p>
                 <iframe width="700" height="500" src="https://www.youtube.com/embed/DV0XRlJY040?list=UUg6TbHDPivo--VikpRLXrTQ&amp;controls=0" frameborder="0" allowfullscreen></iframe>
 	        </div>
-	   </div>
-	</div>
+	   </div><!-- fin div row-actu-->
+	</div> <!--fin div fb-actu-->
 </section>
