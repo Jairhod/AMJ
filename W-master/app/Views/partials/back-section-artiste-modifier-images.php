@@ -13,7 +13,8 @@ if (!empty($tabLigne))
     $imagePrincipale        = $tabLigne["imagePrincipale"];
     $descriptionArtiste     = $tabLigne["descriptionArtiste"];
     $artistesLies           = $tabLigne["artistesLies"];
-    $srcImage               = $this->assetUrl('media/img/'.$id.'/imagePrincipale/'.$imagePrincipale);
+    $folderImage            = 'media/img/'.$id.'/images';
+
     $hrefModifierImages     = $this->url("back_artiste_modifier_images", [ "id" => $id ]);
     $hrefUploadImages       = $this->url("back_artiste_upload_images", [ "id" => $id ]);
         
@@ -21,28 +22,19 @@ if (!empty($tabLigne))
 
 }
 ?>
-
-    <!-- Static navbar -->
-    <div class="navbar navbar-default navbar-static-top">
-      <div class="container">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="index.php">PHP File Uploader</a>
-        </div>
-      </div>
-    </div>
- 
  
     <div class="container">
 
         <div class="row">
            <?php
             //scan "uploads" folder and display them accordingly
-           $folder = "uploads";
-           $results = scandir('uploads');
+           $folder = $this->assetUrl($folderImage);
+           
+           $results = scandir('assets/'.$folderImage);
+           //print_r($results);
            foreach ($results as $result) {
             if ($result === '.' or $result === '..') continue;
-            
-            if (is_file($folder . '/' . $result)) {
+            if (is_file($_SERVER['DOCUMENT_ROOT'].$folder . '/' . $result)) {
                 echo '
                 <div class="col-md-3">
                     <div class="thumbnail">
@@ -56,17 +48,3 @@ if (!empty($tabLigne))
            }
            ?>
         </div>
- 
-          <div class="row">
-            <div class="col-lg-12">
-               <form class="well" action="<?php echo $hrefUploadImages ?>" method="post" enctype="multipart/form-data">
-                  <div class="form-group">
-                    <label for="file">Select a file to upload</label>
-                    <input type="file" name="images">
-                    <p class="help-block">Only jpg,jpeg,png and gif file with maximum size of 1 MB is allowed.</p>
-                  </div>
-                  <input type="submit" class="btn btn-lg btn-primary" value="Upload">
-                </form>
-            </div>
-          </div>
-    </div> <!-- /container -->
