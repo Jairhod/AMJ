@@ -17,13 +17,27 @@ if (!empty($tabLigne))
 
     $hrefModifierImages     = $this->url("back_artiste_modifier_images", [ "id" => $id ]);
     $hrefUploadImages       = $this->url("back_artiste_upload_images", [ "id" => $id ]);
+    
         
     // AFFICHER LE CODE HTML
 
 }
 ?>
- 
+
     <div class="container">
+
+        <div class="row">
+        <form action="" method="POST" enctype="multipart/form-data">
+            <span>Ajouter d'autres images</span>
+            <input class="links" type="file" name="images[]" multiple="" >
+            <button class="links" type="submit">Enregistrer</button>           
+            <input type="hidden" name="id" value="<?php echo $id; ?>">
+            <input type="hidden" name="idForm" value="imagesUpdate">
+        </form>
+        </div>
+
+        <hr>
+
 
         <div class="row">
            <?php
@@ -35,15 +49,17 @@ if (!empty($tabLigne))
            foreach ($results as $result) {
             if ($result === '.' or $result === '..') continue;
             if (is_file($_SERVER['DOCUMENT_ROOT'].$folder . '/' . $result)) {
+                $srcImage = $folder . '/' . $result;
+                $hrefRemove = $this->url("back_artiste_remove_image", [ "id" => $id, "name" => $result ]);
                 echo '
-                <div class="col-md-3">
+                  <div class="col-md-3">
                     <div class="thumbnail">
-                        <img src="'.$folder . '/' . $result.'" alt="...">
-                            <div class="caption">
-                            <p><a href="remove.php?name='.$result.'" class="btn btn-danger btn-xs" role="button">Remove</a></p>
-                        </div>
+                      <img src="'.$srcImage.'" alt="...">
+                      <div class="caption">
+                      <p><a href="'.$hrefRemove.'" class="btn btn-danger btn-xs" role="button">Remove</a></p>
+                      </div>
                     </div>
-                </div>';
+                  </div>';
             }
            }
            ?>
