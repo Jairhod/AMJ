@@ -3,7 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
+
+-- Generation Time: Apr 05, 2017 at 01:53 PM
+
 -- Generation Time: Apr 05, 2017 at 05:34 PM
+
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -316,6 +320,7 @@ ALTER TABLE `videos`
 --
 ALTER TABLE `artistes`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
+
 --
 -- AUTO_INCREMENT for table `audios`
 --
@@ -331,6 +336,7 @@ ALTER TABLE `contacts`
 --
 ALTER TABLE `images`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=177;
+
 --
 -- AUTO_INCREMENT for table `users`
 --
