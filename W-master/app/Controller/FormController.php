@@ -155,6 +155,8 @@ class FormController extends Controller
         }
 
     }
+    
+  
 
     public function loginTraitement()
     {
@@ -359,6 +361,16 @@ class FormController extends Controller
         }
 
         return false;
+    }
+    
+    public function thumbnailTraitement()    
+    {
+        $image = new ImageResize("assets/media/img/$id/imagePrincipale");
+        $image->resizeToBestFit(480, 360);
+        $chemin = "assets/media/img/$id/thumbs";
+        $image->save("$chemin");
+        if(!is_dir($chemin)){
+           mkdir($chemin, 0777);       
     }
 
 }

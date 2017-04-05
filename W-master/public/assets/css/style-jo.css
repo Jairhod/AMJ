@@ -1528,14 +1528,17 @@ section#label h6 {
 }
 
 .grid {
-	position: relative;
-	margin: auto;
-	padding: 1em 0 4em;
-	max-width: 1000px;
-	list-style: none;
-	text-align: center;
-    display:flex;
-    justify-content: center;
+
+    position: relative;
+    margin: auto;
+    padding: 1em 0 4em;
+    max-width: 1000px;
+    list-style: none;
+    text-align: center;
+    display: flex;
+    justify-content: initial;
+    width: 80%;
+    flex-wrap: wrap;
 }
 
 .artiste-col {
@@ -1625,6 +1628,7 @@ section#label h6 {
 
 figure.effect-marley figcaption {
 	text-align: right;
+    background-color: rgba(0,0,0,0.4)
 }
 
 figure.effect-marley h4,

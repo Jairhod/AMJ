@@ -29,82 +29,37 @@
         </form>
 	</div>
         <div class="grid artistes-row">
-            <div class="artiste-col">
+            
 
                         <?php
                             $objetArtistesModel = new \Model\ArtistesModel;
-                            $tabLigne = $objetArtistesModel->findAll("nomArtiste", "ASC", 1);
+                            $tabLigne = $objetArtistesModel->findAll("nomArtiste", "ASC");
 
                             foreach($tabLigne as $index => $tabColonne)
                             {
                                 $id         = $tabColonne["id"];
-
-                                foreach($tabColonne as $nomColonne => $valeurColonne)
-                                {
-                                    $srcImage   = $this->assetUrl('media/img/'.$id.'/imagePrincipale/'.$valeurColonne);
-                                    if($nomColonne == "imagePrincipale") echo 
+                                $hrefAfficher   = $this->url("vitrine_fiche_artiste", [ "id" => $id ]);
+                                $nomArtiste = $tabColonne  ["nomArtiste"];
+                                $imagePrincipale = $tabColonne["imagePrincipale"];
+                                $descriptionArtiste = $tabColonne["descriptionArtiste"];
+                                $descriptionArtiste = strip_tags($descriptionArtiste);
+                                $descriptionArtiste = substr("$descriptionArtiste", 0, 80);
+                                $srcImage   = $this->assetUrl('media/img/'.$id.'/imagePrincipale/'.$imagePrincipale);
+                                
+                                echo
 <<<CODEHTML
+<div class="artiste-col">
 <figure class="effect-marley">
-<img>$srcImage</img>;
-<figcaption>
+<img src="$srcImage" alt="photo du groupe class=""img-responsive>
+<figcaption class="">
+<h4>$nomArtiste</h4>
+<p>$descriptionArtiste</p>
+</div>
 CODEHTML;
-                                    if($nomColonne == "nomArtiste") echo "<h4>$valeurColonne</h4>";
-                                    if($nomColonne == "descriptionArtiste") echo "<p>$valeurColonne</p>"; 
-                                }   
-
-                            }
-                        ?>
-                        <a href="#">View more</a>
-                    </figcaption>
-                </figure>
-            </div>
-            <div class="artiste-col">
-                <figure class="effect-marley">
-                    <img src="assets/media/img/12.jpg" alt="img12"/>
-                    <figcaption>
-                        <h4>Artiste <!--<span>Artiste 2</span>--></h4>
-                        <p>Marley tried to convince her but she was not interested.</p>
-                        <a href="#">View more</a>
-                    </figcaption>			
-                </figure>
-            </div>
-            <div class="artiste-col">
-                <figure class="effect-marley">
-                    <img src="assets/media/img/11.jpg" alt="img12"/>
-                    <figcaption>
-                        <h4>Artiste</h4>
-                        <p>Marley tried to convince her but she was not interested.</p>
-                        <a href="#">View more</a>
-                    </figcaption>			
-                </figure>
-            </div>
+                            }                        
+?>
         </div><!-- FIN DIV grid artistes-row-->
-	<div id="listeArtistes" class="container">
-		<div class="row">
-			<div class="col-md-4">
-				<h4>nom artiste</h4>
-				<a href="#!"><img src="" alt=""></a>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, hic?</p>
-			</div>
-			<div class="col-md-4">
-				<h4>nom artiste</h4>
-				<a href="#!"><img src="" alt=""></a>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, excepturi.</p>
-			</div>
-			<div class="col-md-4">
-				<h4>nom artiste</h4>
-				<a href="#!"><img src="" alt=""></a>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, accusantium!</p>
-			</div>
-		</div>
-	</div> 
-	<div id="pagination">
-		<span><a href="#!"><img src="" alt=""><<</a></span>
-		<span><a href="#!"><img src="" alt=""><</a></span>
-		<span><a href="#!"></a>numero de page</span>
-		<span><a href="#!"><img src="" alt="">></a></span>
-		<span><a href="#!"><img src="" alt="">>></a></span>
-	</div>
+
 	<div class="devis-btn">
 		<a href="#!">Simuler un devis</a>
 	</div>
