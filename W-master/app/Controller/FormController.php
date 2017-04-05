@@ -259,9 +259,7 @@ class FormController extends Controller
                 $type       = $tabInfoFichierUploade["type"];
                 $tmpName    = $tabInfoFichierUploade["tmp_name"];
                 $size       = $tabInfoFichierUploade["size"];
-
-                //  chmod($tmpName, 0777);
-                
+               
                 if ($size < 15 * 1024 * 1024)
                 {
                     $extension = pathinfo($name, PATHINFO_EXTENSION);
@@ -270,12 +268,11 @@ class FormController extends Controller
                     
                     if (in_array($extension, $tabExtensionOK))
                     {
-                        if (is_dir("assets/media/img/$id/$nameInput")) 
+                        if (is_dir("assets/media/img/$id/imagePrincipale")) 
                           {
-                              $this->deleteFolder("assets/media/img/$id/$nameInput");
+                              $this->deleteFolder("assets/media/img/$id/imagePrincipale");
                           }                    
 
-                        //$nameOK       =  preg_replace("/[^a-zA-Z0-9-_\.]/", "", $name);
                         $nameOK       = date('YmdHis',time()).mt_rand().'.'.$extension;
                         $cheminOK     = "assets/media/img/$id/$nameInput/$nameOK";
                         $cheminOK     = strtolower($cheminOK);
