@@ -86,14 +86,13 @@ class AdminController
 	public function backArtisteModifierImages($id)
 	{
 		$this->allowTo('admin');
-		
+		$idForm = $this->verifierSaisie("idForm");
 		$GLOBALS["imagesUpdateRetour"] = "";
 
 		// Controller
-		$idForm = $this->verifierSaisie("idForm");
 	    if ($idForm == "imagesUpdate")
 	    {
-	        $this->imagesUpdateTraitement();
+	        $this->imagesUpdateTraitement($id);
 	    }
 
 		// View
@@ -107,6 +106,13 @@ class AdminController
 	public function backArtisteUploadImages($id)
 	{
 		$this->verifierUpload ($id, "images");
+		$this->redirectToRoute('back_artiste_modifier_images', ['id' => $id]);
+	}
+
+
+	public function backArtisteRemoveImage($id, $name)
+	{
+		$this->removeImageTraitement ($id, $name);
 		$this->redirectToRoute('back_artiste_modifier_images', ['id' => $id]);
 	}
 

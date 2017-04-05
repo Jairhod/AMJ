@@ -81,6 +81,17 @@ class FormController extends Controller
 
     }
 
+    public function imagesUpdateTraitement ($id)
+    {
+
+       $id = $this->verifierSaisie("id");
+       $id = intval($id);
+       if ($id>0)
+            {
+                $this->verifierMultiUpload($id, "images");
+            }       
+    }
+
     public function artisteDeleteTraitement ()
     {
        
@@ -115,6 +126,49 @@ class FormController extends Controller
        else
        {
         $GLOBALS["artisteDeleteRetour"] = "Erreur sur ($id)";
+       }
+    }
+
+    public function removeImageTraitement ($id, $name)
+    {
+      
+       $id = intval($id);
+       if ($id>0)
+       {
+
+        $objetImagesModel   = new ImagesModel;
+        $tabLigne           = $objetImagesModel->findAll("id", "ASC");
+        foreach ($tabLigne as $key => $value) {
+
+            $id_images      = $tabLigne[$key]["id"];
+            $cheminImage    = $tabLigne[$key]["cheminImage"];
+            if ($cheminImage == $name)
+            {
+              $objetImagesModel->delete($id_images);
+              echo $cheminImage." is DELETED!!";
+              echo "<br>";    
+
+            } 
+        }
+
+        echo "id :";
+        echo $id;
+        echo "<br>";
+
+        echo "name :";
+        echo $name;
+        echo "<br>";
+
+        if (is_file("assets/media/img/$id/images/$name")) 
+            {
+            $this->deleteFile("assets/media/img/$id/images/$name");
+            echo $name." is DELETED!!";      
+            }
+
+       }
+       else
+       {
+        echo "In the else";
        }
     }
 
@@ -361,6 +415,13 @@ class FormController extends Controller
         }
 
         return false;
+    }
+    
+    public function deleteFile($path)
+    {
+        if ( file_exists($path) ) {
+            unlink($path);
+        }
     }
     
 
