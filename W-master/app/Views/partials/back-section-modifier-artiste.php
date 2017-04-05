@@ -7,7 +7,6 @@ $tabLigne = $objetArtistesModel->find($id);
 if (!empty($tabLigne))
 {
     // RECUPERER LES COLONNES
-    $id                     = $tabLigne["id"];
     $nomArtiste             = $tabLigne["nomArtiste"];
     $nomGenre               = $tabLigne["nomGenre"];
     $imagePrincipale        = $tabLigne["imagePrincipale"];
