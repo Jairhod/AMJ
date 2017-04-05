@@ -26,4 +26,6 @@
 		['GET|POST',  	'/back/artiste/afficher/[i:id]', 'Admin#backArtisteAfficher', 	'back_artiste_afficher'],
 		['GET|POST',  	'/back/artiste/modifier/[i:id]', 'Admin#backArtisteModifier', 	'back_artiste_modifier'],
 
+		['GET|POST',  	'/back/artiste/modifier/images[i:id]', 'Admin#backArtisteModifierImages', 	'back_artiste_modifier_images'],
+
 	);

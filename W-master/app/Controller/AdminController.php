@@ -83,6 +83,27 @@ class AdminController
 			]);
 	}
 
+	public function backArtisteModifierImages($id)
+	{
+		$this->allowTo('admin');
+		
+		$GLOBALS["imagesUpdateRetour"] = "";
+
+		// Controller
+		$idForm = $this->verifierSaisie("idForm");
+	    if ($idForm == "imagesUpdate")
+	    {
+	        $this->imagesUpdateTraitement();
+	    }
+
+		// View
+		$this->show("pages/back-artiste-modifier-images", 
+			[
+			"id" => $id,
+			"imagesUpdateRetour" => $GLOBALS["imagesUpdateRetour"],
+			]);
+	}
+
 
 	public function backArtisteAfficher($id)
 	{

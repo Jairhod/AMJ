@@ -14,6 +14,7 @@ if (!empty($tabLigne))
     $descriptionArtiste     = $tabLigne["descriptionArtiste"];
     $artistesLies           = $tabLigne["artistesLies"];
     $srcImage               = $this->assetUrl('media/img/'.$id.'/imagePrincipale/'.$imagePrincipale);
+    $hrefModifierImages     = $this->url("back_artiste_modifier_images", [ "id" => $id ]);
         
     // AFFICHER LE CODE HTML
 
@@ -31,7 +32,10 @@ if (!empty($tabLigne))
         <textarea name="descriptionArtiste" required placeholder="descriptionArtiste" cols="60" rows="10">$descriptionArtiste</textarea><br>
         <span>Modifier image de profil : </span>
         <input type="file" name="imagePrincipale" value="$imagePrincipale" placeholder="Image de profil"><br>
-        <button class="links" type="submit">Modifier</button>
+        <div class="ligne">
+        <span class="links"><a href="$hrefModifierImages">Ajout ou suppression d'autres images</a></span>
+        <button class="links" type="submit">Enregistrer</button>
+        </div>
         <input type="hidden" name="idForm" value="artisteUpdate">
         <input type="hidden" name="id" value="$id">
 
