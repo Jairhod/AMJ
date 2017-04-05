@@ -83,6 +83,33 @@ class AdminController
 			]);
 	}
 
+	public function backArtisteModifierImages($id)
+	{
+		$this->allowTo('admin');
+		
+		$GLOBALS["imagesUpdateRetour"] = "";
+
+		// Controller
+		$idForm = $this->verifierSaisie("idForm");
+	    if ($idForm == "imagesUpdate")
+	    {
+	        $this->imagesUpdateTraitement();
+	    }
+
+		// View
+		$this->show("pages/back-artiste-modifier-images", 
+			[
+			"id" => $id,
+			"imagesUpdateRetour" => $GLOBALS["imagesUpdateRetour"],
+			]);
+	}
+
+	public function backArtisteUploadImages($id)
+	{
+		$this->verifierUpload ($id, "images");
+		$this->redirectToRoute('back_artiste_modifier_images', ['id' => $id]);
+	}
+
 
 	public function backArtisteAfficher($id)
 	{
