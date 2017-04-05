@@ -1,12 +1,34 @@
 
 <!--PHOTO ET TEXTE PRESENTATION-->  
 
+<?php
+$objetArtistesModel = new \Model\ArtistesModel;
+$tabLigne = $objetArtistesModel->find($id);
+
+if (!empty($tabLigne))
+{
+    $id                  = $tabLigne["id"];
+    $nomArtiste            = $tabLigne["nomArtiste"];
+    $nomGenre            = $tabLigne["nomGenre"];
+    $imagePrincipale       = $tabLigne["imagePrincipale"];
+    $descriptionArtiste    = $tabLigne["descriptionArtiste"];
+    $artistesLies          = $tabLigne["artistesLies"];
+    $dateModification      = $tabLigne["dateModification"];
+    $srcImage              = $this->assetUrl('media/img/'.$id.'/imagePrincipale/'.$imagePrincipale);
+    $hrefModifier          = $this->url("back_artiste_modifier", [ "id" => $id ]);
+    $hrefSupprimer         = "?idForm=artisteDelete&id=$id";
+    
+    // AFFICHER LE CODE HTML
+    echo
+<<<CODEHTML
+
+
 <div class="container containerblue">
   <div class="borderbleuvert">
-    <div id="photoprincipale">
-        <center><img src="./assets/media/img/40/imagePrincipale/20170404020506981036355.jpg" width="70%" alt="blackout band" class="img-responsive"></center>
+    <div id="$id" class="photoprincipale">
+        <center><img src="$imagePrincipale" width="70%" alt="$nomArtiste" class="img-responsive"></center>
         <div class="h2centre">
-        <h2>BLACKOUT BAND</h2>
+        <h2>$nomArtiste</h2>
         </div>
     </div>
   </div>
@@ -14,17 +36,13 @@
         <div class="row">
           <div class="col-lg-4 col-md-12 col-sm-12">
           <div class="texteficheartiste">
-            <p>C’est sur les scènes et clubs du sud de la France que les quatre membres du groupe BACKOUT se sont rencontrés <br />afin de rendre hommage au plus grandes voix féminines de la SOUL et du R&B.
-            </p>
-            <p>
-            Emile MÉLENCHON (guitare et arrangements), Arnaud PACINI (basse) et Marc BELLION (batterie), Andréa CAPARROS (Piano et choeurs)<br /> venant tout juste d’intégrer la formation, accompagnent Nicole LISE (chant), incarnant à elle seule <br />toutes les qualités nécessaires à l’interprétation de ce répertoire pour nous faire voyager dans le temps.
-            </p>
-            <p>
-            D’ARETHA FRANKLIN à BEYONCE en passant par SHAKA KHAN, ERYKA BADU et bien d’autres, <br />le BLACKOUT Band vous fera partager leur énergie communicative.
-            </p> 
+            <p>$descriptionArtiste</p> 
             </div> 
           </div>
+CODEHTML;
 
+}
+?>          
         <!--/////////////////PLAYER AUDIO//////////////////////////////////////////--> 
         
         <div class="col-lg-8 col-md-12 col-sm-12">
@@ -102,15 +120,15 @@
    
       <div class="col-md-12 backgroundvideo">
         <div class="centre">
-            <iframe width="334" height="229" src="https://www.youtube.com/embed/Fz3DDoNq5Wk" frameborder="0" allowfullscreen class="marginvideo"></iframe>
-            <iframe width="335" height="229" src="https://www.youtube.com/embed/Ffo4ZxWfEGs" frameborder="0" allowfullscreen class="marginvideo"></iframe>
-            <iframe width="334" height="229" src="https://www.youtube.com/embed/PPgKnxSXGms" frameborder="0" allowfullscreen class="marginvideo"></iframe>
+            <iframe width="365" height="229" src="https://www.youtube.com/embed/Fz3DDoNq5Wk" frameborder="0" allowfullscreen class="marginvideo"></iframe>
+            <iframe width="365" height="229" src="https://www.youtube.com/embed/Ffo4ZxWfEGs" frameborder="0" allowfullscreen class="marginvideo"></iframe>
+            <iframe width="365" height="229" src="https://www.youtube.com/embed/PPgKnxSXGms" frameborder="0" allowfullscreen class="marginvideo"></iframe>
         </div>      
       </div>  
     </div>
   </div>  
-    <div class="row centreinfoficheartiste">
-        <div class="col-md-6 col-sm-12 infoficheartiste">
+    <div class="row row-eq-height">
+        <div class="col-md-6 col-sm-12 fase3">
           <p><strong>QUATRE ARTISTES MUSICIENS</strong></p>
           <p>CHANTEUSE</p>
           <p>GUITARE</p>
@@ -120,7 +138,7 @@
           <p>PIANISTE, CHORISTE</p>
           <p>SECTION DE CUIVRES</p>
         </div>  
-        <div class="col-md-6 col-sm-12 infoficheartiste">
+       <div class="col-md-6 col-sm-12 fase3">
           <p><strong>RÉFÉRENCES</strong></p>
           <p>LA CABRO D'OR - BAUX DE PROVENCE</p>
           <p>HARD ROCK CAFÉ - MARSEILLE</p>

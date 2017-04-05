@@ -32,10 +32,10 @@ class VitrineController
 		$this->show('pages/catalogue');
 	}
 
-	public function ficheArtiste()
+	public function ficheArtiste($id)
 	{
 
-		$this->show('pages/fiche-artiste');
+		$this->show('pages/fiche-artiste',["id"=>$id]);
 	}
     
     public function testJo()

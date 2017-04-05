@@ -19,12 +19,13 @@
         var urlRouteAjax = '<?php echo $this->url('vitrine_ajax')?>';
     </script>
     <script type="text/javascript" src="assets/js/script.js"></script>
+    <script type="text/javascript" src="assets/js/do.js"></script>
     <script type="text/javascript" src="assets/js/scrollreveal.min.js">
     </script>
     <script async defer
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBfUBUWs15WAhtm3nSdqcOPFOBhtN-mwD0&callback=initMap">
     </script>
- 
+
 </head>
 
 <body>

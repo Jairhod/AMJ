@@ -22,7 +22,7 @@ if (!empty($tabLigne))
 <<<CODEHTML
     <section>
     <h3>$nomArtiste</h3>
-    <img style="width: 200px" src="$srcImage" alt="$nomArtiste">
+    <img style="width: 200px" src="assets/media/img/$id/imagePrincipale/$srcImage" alt="$nomArtiste">
     <h4>Dernière modification : $dateModification</h4>
     <h4>$nomGenre</h4>
     <p>$descriptionArtiste</p>
