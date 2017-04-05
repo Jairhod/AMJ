@@ -20,11 +20,11 @@ if (!empty($tabLigne))
 
     echo
 <<<CODEHTML
-    <section>
+
+<section>
     <h3>$nomArtiste</h3>
     <img style="width: 200px" src="$srcImage" alt="$nomArtiste">
     <p>id: $id</p>
-    <article>
     <form method="POST" enctype="multipart/form-data" action="">
         <input style="width: 400px" type="text" name="nomArtiste" required placeholder="Nom" value="$nomArtiste"><br>
         <input style="width: 400px" type="text" name="nomGenre" required placeholder="Genre" value="$nomGenre"><br>
@@ -43,10 +43,9 @@ if (!empty($tabLigne))
             $artisteUpdateRetour
         </div>
     </form>
-
+</section>
 CODEHTML;
 
 }
 ?>
-    </article>
-</section>
+

@@ -104,6 +104,12 @@ class AdminController
 			]);
 	}
 
+	public function backArtisteUploadImages($id)
+	{
+		$this->verifierUpload ($id, "images");
+		$this->redirectToRoute('back_artiste_modifier_images', ['id' => $id]);
+	}
+
 
 	public function backArtisteAfficher($id)
 	{
