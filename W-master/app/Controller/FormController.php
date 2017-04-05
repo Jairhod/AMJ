@@ -214,9 +214,9 @@ class FormController extends Controller
                     
                     if (in_array($extension, $tabExtensionOK))
                     {
-                        if (is_dir("assets/media/img/$id/$nameInput")) 
+                        if (is_dir("assets/media/img/$id/imagePrincipale")) 
                           {
-                              $this->deleteFolder("assets/media/img/$id/$nameInput");
+                              $this->deleteFolder("assets/media/img/$id/imagePrincipale");
                           }                    
 
                         //$nameOK       =  preg_replace("/[^a-zA-Z0-9-_\.]/", "", $name);
@@ -360,5 +360,6 @@ class FormController extends Controller
 
         return false;
     }
+    
 
 }

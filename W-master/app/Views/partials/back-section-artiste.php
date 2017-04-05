@@ -1,3 +1,4 @@
+
 <section>
     <article>
 <?php
@@ -20,7 +21,7 @@ if (!empty($tabLigne))
     // AFFICHER LE CODE HTML
     echo
 <<<CODEHTML
-    <section>
+<section>
     <h3>$nomArtiste</h3>
     <img style="width: 200px" src="$srcImage" alt="$nomArtiste">
     <h4>Dernière modification : $dateModification</h4>
@@ -30,9 +31,9 @@ if (!empty($tabLigne))
     <span class="links"><a href="$hrefModifier">modifier</a></span>
     <span class="links"><a href="$hrefSupprimer">supprimer</a></span>
     </div>
+</section> 
 CODEHTML;
 
 }
 ?>
-    </article>
-</section>
+
