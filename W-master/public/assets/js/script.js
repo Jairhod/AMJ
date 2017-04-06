@@ -113,11 +113,22 @@ $(document).ready(function(){
 /* ENVOI SELECT ARTISTES VERS PAGES ARTISTES*/
     
     $('.artistes-glob .select-options li').on('click', function(){
-        window.location = "fiche-artiste";    
+        window.location = "catalogue";    
     });
+    
+/* LIEN ETIQUETTES GENRES VERS PAGE ACCEUIL TRIE GENRE */
 
-
- 
+    $('.paper .btn').on('click',function(){
+        var contenuLiAcceuil = $('.paper .h6').html;
+        console.log(contenuLiAcceuil);
+       /var contenuLiCatalogue = $('#recherche-artiste li').html;
+        console.log(contenuLiCatalogue);
+            if(contenuLiAcceuil == contenuLiCatalogue) {
+                window.location="catalogue";
+                $('.artiste-col').hide();
+                $('.artiste-col').filter('[data-genres=' + contenuLi + ']').show();
+            } else
+    })
 
 /* **********************
  
