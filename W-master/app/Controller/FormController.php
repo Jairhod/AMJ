@@ -81,6 +81,17 @@ class FormController extends Controller
 
     }
 
+    public function imagesUpdateTraitement ($id)
+    {
+
+       $id = $this->verifierSaisie("id");
+       $id = intval($id);
+       if ($id>0)
+            {
+                $this->verifierMultiUpload($id, "images");
+            }       
+    }
+
     public function artisteDeleteTraitement ()
     {
        
@@ -115,6 +126,49 @@ class FormController extends Controller
        else
        {
         $GLOBALS["artisteDeleteRetour"] = "Erreur sur ($id)";
+       }
+    }
+
+    public function removeImageTraitement ($id, $name)
+    {
+      
+       $id = intval($id);
+       if ($id>0)
+       {
+
+        $objetImagesModel   = new ImagesModel;
+        $tabLigne           = $objetImagesModel->findAll("id", "ASC");
+        foreach ($tabLigne as $key => $value) {
+
+            $id_images      = $tabLigne[$key]["id"];
+            $cheminImage    = $tabLigne[$key]["cheminImage"];
+            if ($cheminImage == $name)
+            {
+              $objetImagesModel->delete($id_images);
+              echo $cheminImage." is DELETED!!";
+              echo "<br>";    
+
+            } 
+        }
+
+        echo "id :";
+        echo $id;
+        echo "<br>";
+
+        echo "name :";
+        echo $name;
+        echo "<br>";
+
+        if (is_file("assets/media/img/$id/images/$name")) 
+            {
+            $this->deleteFile("assets/media/img/$id/images/$name");
+            echo $name." is DELETED!!";      
+            }
+
+       }
+       else
+       {
+        echo "In the else";
        }
     }
 
@@ -216,9 +270,9 @@ class FormController extends Controller
                     
                     if (in_array($extension, $tabExtensionOK))
                     {
-                        if (is_dir("assets/media/img/$id/imagePrincipale")) 
+                        if (is_dir("assets/media/img/$id/$nameInput")) 
                           {
-                              $this->deleteFolder("assets/media/img/$id/imagePrincipale");
+                              $this->deleteFolder("assets/media/img/$id/$nameInput");
                           }                    
 
                         //$nameOK       =  preg_replace("/[^a-zA-Z0-9-_\.]/", "", $name);
@@ -362,14 +416,24 @@ class FormController extends Controller
 
         return false;
     }
-    
+
+    public function deleteFile($path)
+    {
+        if ( file_exists($path) ) {
+            unlink($path);
+        }
+    }
 
     public function thumbnailTraitement()    
     {
-        $ImagePrincipale = ('media/img/'.$id.'/imagePrincipale/');
+        
+        $tabImagePrincipale = glob('media/img/'.$id.'/imagePrincipale/*');
+        $imagePrincipale = $tabImagePrincipale[0];
+        $ImageSecondaires = glob('media/img/'.$id.'/images/*');
+        
         $ImageResize = ('assets/media/img/'.$id.'/thumbs/');
         
-        $image = new ImageResize("$cheminImagePrincipale");
+        $image = new ImageResize("$ImagePrincipale");
             if(!empty($cheminImageResize))
             {
                 $image->resizeToBestFit(480, 360);
@@ -377,6 +441,5 @@ class FormController extends Controller
             }    
    
     }
-
 
 }

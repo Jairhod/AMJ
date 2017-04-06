@@ -91,27 +91,67 @@ $(document).ready(function(){
 
     });
     
-/* AJAX SELECT AUTO LISTES DEROULANTES */
+/* AJAX SELECT AUTO LISTES DEROULANTES ACCEUIL */
     
-       $('.select-options li').click(function(){
-            var contenuLi = $(this).html();
-            var contenuData = {
-                'idForm': 'recupInfoGenre',
-                'afficheGenre': contenuLi
-            };
-            /*console.log(contenuLi);*/
-            $.ajax({
-                type: "POST",
-                url: urlRouteAjax,
-                data: contenuData,
-                dataType: 'json'
-            }).done(function(reponseJson){
-                /*console.log(reponseJson);*/
-                $('.artistes-glob ul').html(reponseJson.retour);
-            });      
-        })
+    $('#recherche-accueil .select-options li').click(function(){
+        var contenuLi = $(this).html();
+        var contenuData = {
+            'idForm': 'recupInfoGenre',
+            'afficheGenre': contenuLi
+        };
+        $.ajax({
+            type: "POST",
+            url: urlRouteAjax,
+            data: contenuData,
+            dataType: 'json'
+        }).done(function(reponseJson){
+            /*console.log(reponseJson);*/
+            $('.artistes-glob ul').html(reponseJson.retour);
+        });      
+    })
     
+/* ENVOI SELECT ARTISTES VERS PAGES ARTISTES*/
+    
+    $('.artistes-glob .select-options li').on('click', function(){
+        window.location = "fiche-artiste";    
+    });
 
+
+ 
+
+/* **********************
+ 
+      PAGE CATALOGUE
+
+************************ */ 
+    
+/* TRI AFFICHAGE LISTE ARTISTES */
+    
+    $('#recherche-artiste li').click(function(){
+        var contenuLi = $(this).html();
+        /*console.log(contenuLi);*/
+        if(contenuLi == "TOUS LES STYLES"){
+            $('.artiste-col').show();
+        } else {
+            $('.artiste-col').hide();
+            $('.artiste-col').filter('[data-genres=' + contenuLi + ']').show();
+        }
+    })
+ 
+
+/* **********************
+ 
+        BACK OFFICE
+
+************************ */ 
+    
+    
+/* menu =================================== */
+    
+		$('.navbar-fostrap').click(function(){
+			$('.nav-fostrap').toggleClass('visible');
+			$('body').toggleClass('cover-bg');
+		});
 /* **********************
  
       PAGE ACTUS 
@@ -128,23 +168,8 @@ $(document).ready(function(){
       js.src = "//connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v2.8&appId=1417053915025497";
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
-
-
-    
-
-/* **********************
- 
-        BACK OFFICE
-
-************************ */ 
-    
-    
-/* menu =================================== */
-    
-		$('.navbar-fostrap').click(function(){
-			$('.nav-fostrap').toggleClass('visible');
-			$('body').toggleClass('cover-bg');
-		});
+   
+   
   
 });
 

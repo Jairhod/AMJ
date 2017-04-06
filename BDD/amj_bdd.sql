@@ -1,11 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.6.5.2
+-- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 04, 2017 at 02:25 AM
--- Server version: 10.1.19-MariaDB
--- PHP Version: 5.6.28
+
+-- Generation Time: Apr 05, 2017 at 01:53 PM
+
+-- Generation Time: Apr 05, 2017 at 05:34 PM
+
+-- Server version: 10.1.21-MariaDB
+-- PHP Version: 7.1.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -44,11 +48,15 @@ CREATE TABLE `artistes` (
 --
 
 INSERT INTO `artistes` (`id`, `nomArtiste`, `nomGenre`, `imagePrincipale`, `descriptionArtiste`, `artistesLies`, `dateModification`) VALUES
-(40, 'BLACKOUT BAND', 'SOUL-FUNK-BLUES', '20170404020506981036355.jpg', 'C’est sur les scènes et clubs du sud de la France que les quatre membres du groupe BACKOUT se sont rencontrés afin de rendre hommage au plus grandes voix féminines de la SOUL et du R&B. Emile MÉLENCHON (guitare et arrangements), Arnaud PACINI (basse) et Marc BELLION (batterie), Andréa CAPARROS (Piano et choeurs) venant tout juste d’intégrer la formation, accompagnent Nicole LISE (chant), incarnant à elle seule toutes les qualités nécessaires à l’interprétation de ce répertoire pour nous faire voyager dans le temps. D’ARETHA FRANKLIN à BEYONCE en passant par SHAKA KHAN, ERYKA BADU et bien d’autres, le BLACKOUT Band vous fera partager leur énergie communicative.', 'Soul', '2017-04-04 02:05:06'),
-(41, 'IGUANA VAN', 'POP-ROCK-ACTU', '20170404020926675914289.jpg', 'Iguana Van est un groupe marseillais fondé en 2009 par John, Max et Mathieu, amis d’enfance. Apres deux EP auto-produits, le groupe remporte l’edition 2012 du tremplin Massilia Rock qui lui permet d’être programmé sur la scène du Immecke Rock Festival en Allemagne. Iguana Van distille une musique pop mélodieuse enveloppée de groove, qui prend toute sa dimension en live grâce à un jeu de scène énergique. En 2013, la formation remporte le tremplin Sounds of Marseille et joue en première partie d’Electric Guest. 2014 voit l’arrivée de Dorian au poste de batteur. Iguana Van reprend le chemin des studios et enregistre un nouvel E.P, Heroes, Shadows, sous le label Two Records, accompagné de Christophe Moura à la trompette et John Massa au saxophone.', 'Pop', '2017-04-04 02:09:26'),
+(40, 'BLACKOUT BAND', 'SOUL-FUNK-BLUES', '201704051110581560212479.jpg', 'C’est sur les scènes et clubs du sud de la France que les quatre membres du groupe BACKOUT se sont rencontrés afin de rendre hommage au plus grandes voix féminines de la SOUL et du R&B. Emile MÉLENCHON (guitare et arrangements), Arnaud PACINI (basse) et Marc BELLION (batterie), Andréa CAPARROS (Piano et choeurs) venant tout juste d’intégrer la formation, accompagnent Nicole LISE (chant), incarnant à elle seule toutes les qualités nécessaires à l’interprétation de ce répertoire pour nous faire voyager dans le temps. D’ARETHA FRANKLIN à BEYONCE en passant par SHAKA KHAN, ERYKA BADU et bien d’autres, le BLACKOUT Band vous fera partager leur énergie communicative.', 'Soul', '2017-04-05 11:10:58'),
+(41, 'IGUANA VAN', 'POP-ROCK-ACTU', '201704051112031884424895.jpg', 'Iguana Van est un groupe marseillais fondé en 2009 par John, Max et Mathieu, amis d’enfance. Apres deux EP auto-produits, le groupe remporte l’edition 2012 du tremplin Massilia Rock qui lui permet d’être programmé sur la scène du Immecke Rock Festival en Allemagne. Iguana Van distille une musique pop mélodieuse enveloppée de groove, qui prend toute sa dimension en live grâce à un jeu de scène énergique. En 2013, la formation remporte le tremplin Sounds of Marseille et joue en première partie d’Electric Guest. 2014 voit l’arrivée de Dorian au poste de batteur. Iguana Van reprend le chemin des studios et enregistre un nouvel E.P, Heroes, Shadows, sous le label Two Records, accompagné de Christophe Moura à la trompette et John Massa au saxophone.', 'Pop', '2017-04-05 11:12:03'),
 (42, 'John Massa Tripband', 'SOUL-FUNK-BLUES', '20170404021346190797701.png', 'Le groupe du saxophoniste John MASSA est basé à Marseille, ville native de ses membres, qui représente un véritable laboratoire de rencontre musicales. Les compositions du saxophoniste, explorantes courants du jazz, du groove et de la World Music sont servies par des musiciens de très fortes personnalités qui viennent d’univers musicaux riches et variés.', 'Soul', '2017-04-04 02:13:46'),
 (43, 'QUARTIERS NORD', 'POP-ROCK-ACTU', '201704040217582144820669.jpg', 'Fort de ses 16 albums bigarrés, de sa fabuleuse tétralogie d’opérettes-rock-­marseillaises, de ses revues loufoques et autres comédies musicales et sociales, QUARTIERS NORD, groupe ô combien atypique qui fêtera bientôt ses 40 ans d’existence, fait désormais ­partie du patrimoine massaliote. Faisant plus que jamais le lien entre ego-histoire et le contexte qui l’a vu naître, il ­poursuit son œuvre musicale inclassable en nous conviant au BALÈTI SOCIAL CLUB, un concept novateur à la fois festif et déjanté, à la fibre sociale ­revendiquée et aux influences « ­world protéiformes ». Ce joyeux maelström ­musical se ­conjuguera à l’envi dans un esprit convivial et interactif, avec des invités-­surprise issus de tous horizons qui apporteront à chaque prestation une touche unique.', 'Pop', '2017-04-04 02:17:57'),
-(44, 'THE GODFATHERS', 'SOUL-FUNK-BLUES', '20170404022022588144992.jpg', 'Emmené par Jean GOMEZ, leader charismatique et chanteur dont la voix évoque celle des grands artistes de la SOUL MUSIC et du RHTHM''N''BLUES, Les Godfathers, restituent avec brio, fidélité et authenticité un grand nombre de standards puisé dans le répertoire des monstres sacrés de la musique afro-américaine des années 60 et 70.', 'Soul', '2017-04-04 02:20:22');
+(44, 'THE GODFATHERS', 'SOUL-FUNK-BLUES', '20170404022022588144992.jpg', 'Emmené par Jean GOMEZ, leader charismatique et chanteur dont la voix évoque celle des grands artistes de la SOUL MUSIC et du RHTHM\'N\'BLUES, Les Godfathers, restituent avec brio, fidélité et authenticité un grand nombre de standards puisé dans le répertoire des monstres sacrés de la musique afro-américaine des années 60 et 70.', 'Soul', '2017-04-04 02:20:22'),
+(49, 'Test14:00', 'cool', '20170405140133743758018.jpeg', 'bla bla bla', 'soul', '2017-04-05 14:01:33'),
+(50, 'Test1614', 'sweet', '201704051615221612025310.jpeg', 'Bla bla', 'soul', '2017-04-05 16:15:22'),
+(51, 'Test 16:18', 'Plutot cool', '20170405161914642504297.jpg', 'de la musique', 'jazz', '2017-04-05 16:19:14'),
+(52, 'Test 16:46', 'cool', '20170405164721372252413.jpeg', 'des trucs', 'Pop', '2017-04-05 16:47:21');
 
 -- --------------------------------------------------------
 
@@ -166,7 +174,26 @@ INSERT INTO `images` (`id`, `idArtiste`, `cheminImage`) VALUES
 (130, 44, '20170404022023856977945.jpg'),
 (131, 44, '20170404022023266681402.jpg'),
 (132, 44, '2017040402202364416553.jpg'),
-(133, 44, '20170404022023415146993.jpg');
+(133, 44, '20170404022023415146993.jpg'),
+(150, 49, '20170405140133491924519.jpg'),
+(152, 49, '20170405140133665370455.jpg'),
+(153, 49, '20170405140133447777504.jpeg'),
+(156, 50, '20170405161522545540280.jpg'),
+(159, 51, '201704051619141955787674.jpg'),
+(160, 51, '20170405161914183126791.jpeg'),
+(161, 51, '201704051619141557838087.jpg'),
+(162, 51, '201704051619141817172873.jpg'),
+(163, 51, '201704051619142119589477.jpg'),
+(167, 51, '201704051619141729132129.jpeg'),
+(168, 51, '20170405161914270521310.jpg'),
+(169, 52, '20170405164721985908432.jpeg'),
+(170, 52, '20170405164721380209979.jpg'),
+(171, 52, '20170405164721731836409.jpg'),
+(172, 52, '20170405173011551385508.jpg'),
+(173, 52, '20170405173011193186036.jpg'),
+(174, 52, '20170405173032452660697.jpeg'),
+(175, 52, '20170405173032171170346.jpg'),
+(176, 52, '20170405173032915021684.jpeg');
 
 -- --------------------------------------------------------
 
@@ -292,7 +319,8 @@ ALTER TABLE `videos`
 -- AUTO_INCREMENT for table `artistes`
 --
 ALTER TABLE `artistes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
+
 --
 -- AUTO_INCREMENT for table `audios`
 --
@@ -307,7 +335,8 @@ ALTER TABLE `contacts`
 -- AUTO_INCREMENT for table `images`
 --
 ALTER TABLE `images`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=134;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=177;
+
 --
 -- AUTO_INCREMENT for table `users`
 --
