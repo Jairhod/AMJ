@@ -11,11 +11,11 @@
     	['GET',  	'/label', 		            	  'Vitrine#label', 		        'label'],
       	['GET',  	'/test-jo', 		              'Vitrine#testJo', 		    'test_jo'],
     
-	   ['GET|POST',  	'/ajax', 		                 'Vitrine#ajax', 			    'vitrine_ajax'],
+	   	['GET|POST',  	'/ajax', 		                'Vitrine#ajax', 			'vitrine_ajax'],
         
 
-     ['GET|POST',  	'/ben', 		              	'Vitrine#testBen', 		    'test_ben'],
-     ['GET|POST',  	'/upload', 		                'Admin#upload', 		    'upload'],
+     	['GET|POST',  	'/ben', 		              	'Vitrine#testBen', 		    'test_ben'],
+     	['GET|POST',  	'/upload', 		                'Admin#upload', 		    'upload'],
         		
 		['GET|POST',  	'/back/accueil', 		         'Admin#backAccueil', 			'back_accueil'],
 		['GET|POST',  	'/back/login', 			         'Admin#backLogin', 			'back_login'],
@@ -25,5 +25,8 @@
 		['GET|POST',  	'/back/artiste/liste',           'Admin#backArtisteListe',    	'back_artiste_liste'],
 		['GET|POST',  	'/back/artiste/afficher/[i:id]', 'Admin#backArtisteAfficher', 	'back_artiste_afficher'],
 		['GET|POST',  	'/back/artiste/modifier/[i:id]', 'Admin#backArtisteModifier', 	'back_artiste_modifier'],
+
+		['GET|POST',  	'/back/artiste/modifier/images/[i:id]', 	'Admin#backArtisteModifierImages', 	'back_artiste_modifier_images'],
+		['GET|POST',  	'/back/artiste/upload/images/[i:id]', 		'Admin#backArtisteUploadImages', 	'back_artiste_upload_images'],
 
 	);
