@@ -5,7 +5,7 @@
 		['GET',  	'/accueil', 			         'Vitrine#accueil', 			'vitrine_accueil'],
 		['GET',  	'/actus', 				         'Vitrine#actus', 				'vitrine_actus'],
 		['GET',  	'/catalogue', 		             'Vitrine#catalogue', 			'vitrine_catalogue'],
-		['GET',  	'/fiche-artiste/[i:id]', 		  'Vitrine#ficheArtiste', 		'vitrine_fiche_artiste'],
+		['GET',  	'/fiche-artiste', 		  'Vitrine#ficheArtiste', 		'vitrine_fiche_artiste'],
     
     	['GET',  	'/mentions-legales', 		  	  'Vitrine#mentionsLegales',    'vitrine_mentions_legales'],
     	['GET',  	'/label', 		            	  'Vitrine#label', 		        'label'],
