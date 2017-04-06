@@ -134,16 +134,15 @@ IMAGES;
 
   <!--VIDEO--> 
   <div class="row">
-    <div class="backgroundvideo">
-   
-      <div class="col-md-12 backgroundvideo">
-        <div class="centre">
+          <div class="col-lg-4 col-md-4 col-sm-12">
             <iframe width="334" height="229" src="https://www.youtube.com/embed/Fz3DDoNq5Wk" frameborder="0" allowfullscreen class="marginvideo"></iframe>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-12">
             <iframe width="335" height="229" src="https://www.youtube.com/embed/Ffo4ZxWfEGs" frameborder="0" allowfullscreen class="marginvideo"></iframe>
+          </div> 
+          <div class="col-lg-4 col-md-4 col-sm-12"> 
             <iframe width="334" height="229" src="https://www.youtube.com/embed/PPgKnxSXGms" frameborder="0" allowfullscreen class="marginvideo"></iframe>
-        </div>      
-      </div>  
-    </div>
+          </div>
   </div>  
     <div class="row row-eq-height">
         <div class="col-md-6 col-sm-12 fase3">
