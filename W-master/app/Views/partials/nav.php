@@ -28,7 +28,7 @@
                         <a href="#devis" class="active-nav">Devis</a>
                     </li>
                     <li>
-                        <a href="http://localhost/myphp/GitHub/AMJ/W-master/public/accueil#contact" class="active-nav">Contact</a>
+                        <a href="<?php echo ($this->url('vitrine_accueil')).'#contact'; ?>" class="active-nav">Contact</a>
                     </li>
                 </ul>
             </div>
