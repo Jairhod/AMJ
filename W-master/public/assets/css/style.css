@@ -940,7 +940,7 @@ section#label {
 }
 
 section#label .label-wrapper {
-    margin-top: 5.7em;
+    margin-top: 4.3em;
 }
 
 section#label .contenu-intro-label {
@@ -1182,7 +1182,7 @@ section#label h6 {
 /* DEBUT PAGE CATALOGUE ============================================================ */
 
 section#artistes {
-    margin-top: 1.5em;
+    margin-top: -0.8em;
 }
 
 #artistes .contenu-intro-catalogue {
@@ -1421,7 +1421,7 @@ figure.effect-marley:hover p {
 /* DEBUT PAGE ACTUS  ============================================================= */
 
 #section-actus {
-    padding-top: 5em;
+    padding-top: 3em;
     padding-bottom: 3em;
     text-align: center;
     
