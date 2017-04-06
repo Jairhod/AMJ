@@ -31,7 +31,6 @@
         </div>  
     </div>   
         <div class="grid artistes-row">            
-
                         <?php
                             $objetArtistesModel = new \Model\ArtistesModel;
                             $tabLigne = $objetArtistesModel->findAll("nomArtiste", "ASC");
@@ -46,7 +45,7 @@
                                 $descriptionArtiste = $tabColonne["descriptionArtiste"];
                                 $descriptionArtiste = strip_tags($descriptionArtiste);
                                 $descriptionArtiste = substr("$descriptionArtiste", 0, 80);
-                                $srcImage           = $this->assetUrl('media/img/'.$id.'/imagePrincipale/'.$imagePrincipale);
+                                $srcImage           = $this->assetUrl('media/img/'.$id.'/imagePrincipale/'.$imagePrincipale);   
                                 
                                 echo
 <<<CODEHTML

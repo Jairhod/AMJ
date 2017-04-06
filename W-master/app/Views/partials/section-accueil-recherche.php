@@ -79,7 +79,7 @@
         <div class="row accueil-styles">
             <div class="col">
                 <div class="paper">
-                    <a href="<?php ?>" class="hover-btn-styles"><img class="poster" src="assets/media/img/jazz.jpg"/></a>
+                    <a href="<?php ?>" class="hover-btn-styles" onClick="window.location.href='catalogue'"><img class="poster" src="assets/media/img/jazz.jpg"/></a>
                     <h5>Style</h5>
                     <h6>Jazz World Music</h6>
                     <a class="btn ">Voir!</a>
@@ -91,7 +91,7 @@
                     <a href="<?php ?>" class="hover-btn-styles"><img class="poster" src="assets/media/img/blues.jpeg"/></a>
                     <h5>Style</h5>
                     <h6>Soul Funk R&B</h6>
-                    <a class="btn ">Voir!</a>
+                    <a class="btn">Voir!</a>
                     <div class="space"></div>
                 </div>
             </div>
@@ -99,8 +99,8 @@
                 <div class="paper">
                     <a href="<?php ?>" class="hover-btn-styles"><img class="poster" src="assets/media/img/rock.jpeg"/></a>
                     <h5>Style</h5>
-                    <h6>Pop Rock Actuel</h6>
-                    <a class="btn ">Voir!</a>
+                    <h6>POP-ROCK-ACTUEL</h6>
+                    <a class="btn">Voir!</a>
                     <div class="space"></div>
                 </div>
             </div>   
@@ -109,7 +109,7 @@
                     <a href="<?php ?>" class="hover-btn-styles"><img class="poster" src="assets/media/img/danse.jpg"/></a>
                     <h5>Style</h5>
                     <h6>Tributes Spectacles Danse</h6>
-                    <a class="btn ">Voir!</a>
+                    <a class="btn">Voir!</a>
                     <div class="space"></div>
                 </div>
             </div>          
@@ -120,7 +120,7 @@
                     <a href="<?php ?>" class="hover-btn-styles"><img class="poster" src="assets/media/img/strolling.jpg"/></a>
                     <h5>Style</h5>
                     <h6>Strolling</h6>
-                    <a class="btn ">Voir!</a>
+                    <a class="btn">Voir!</a>
                     <div class="space"></div>
                 </div>
             </div>
@@ -129,7 +129,7 @@
                     <a href="<?php ?>" class="hover-btn-styles"><img class="poster" src="assets/media/img/orchestre.jpg"/></a>
                     <h5>Style</h5>
                     <h6>Orchestre Clubbing</h6>
-                    <a class="btn ">Voir!</a>
+                    <a class="btn">Voir!</a>
                     <div class="space"></div>
                 </div>
             </div>
@@ -138,7 +138,7 @@
                     <a href="<?php ?>" class="hover-btn-styles"><img class="poster" src="assets/media/img/noel.jpeg"/></a>
                     <h5>Style</h5>
                     <h6>Jeune Public (noël)</h6>
-                    <a class="btn ">Voir!</a>
+                    <a class="btn">Voir!</a>
                     <div class="space"></div>
                 </div>
             </div>   
@@ -147,7 +147,7 @@
                     <a href="<?php ?>" class="hover-btn-styles"><img class="poster" src="assets/media/img/band-opti.jpg"/></a>
                     <h5>Style</h5>
                     <h6>Autres</h6>
-                    <a class="btn ">Voir!</a>
+                    <a class="btn">Voir!</a>
                     <div class="space"></div>
                 </div>
             </div>          
