@@ -118,7 +118,7 @@ $(document).ready(function(){
     
 /* LIEN ETIQUETTES GENRES VERS PAGE ACCEUIL TRIE GENRE */
 
-    $('.paper .btn').on('click',function(){
+    /*$('.paper .btn').on('click',function(){
         var contenuLiAcceuil = $('.paper .h6').html;
         console.log(contenuLiAcceuil);
        /var contenuLiCatalogue = $('#recherche-artiste li').html;
@@ -128,7 +128,7 @@ $(document).ready(function(){
                 $('.artiste-col').hide();
                 $('.artiste-col').filter('[data-genres=' + contenuLi + ']').show();
             } else
-    })
+    })*/
 
 /* **********************
  
