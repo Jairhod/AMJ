@@ -935,12 +935,9 @@ fieldset {
 
 /* DEBUT PAGE LABEL : SECTION LABEL ==================================================== */
 
-section#label {
-   
-}
 
 section#label .label-wrapper {
-    margin-top: 5.7em;
+    margin-top: 4.2em;
 }
 
 section#label .contenu-intro-label {
@@ -1421,7 +1418,7 @@ figure.effect-marley:hover p {
 /* DEBUT PAGE ACTUS  ============================================================= */
 
 #section-actus {
-    padding-top: 5em;
+    padding-top: 4em;
     padding-bottom: 3em;
     text-align: center;
     
