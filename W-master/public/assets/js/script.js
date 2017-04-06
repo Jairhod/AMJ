@@ -163,6 +163,8 @@ $(document).ready(function(){
 			$('.nav-fostrap').toggleClass('visible');
 			$('body').toggleClass('cover-bg');
 		});
+    
+    
 /* **********************
  
       PAGE ACTUS 
