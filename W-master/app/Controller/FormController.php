@@ -28,18 +28,6 @@ class FormController extends Controller
 
     }
 
-    public function verifierEmail ($email)
-    {
-        $resultat = false;
-
-        if ( ($email != "") && (filter_var($email, FILTER_VALIDATE_EMAIL) !== false) )
-        {
-            $resultat = true;
-        }
-        
-        return $resultat;
-    }
-
     public function artisteCreateTraitement ()
     {
         $nomArtiste             = $this->verifierSaisie("nomArtiste");
@@ -145,30 +133,18 @@ class FormController extends Controller
             if ($cheminImage == $name)
             {
               $objetImagesModel->delete($id_images);
-              echo $cheminImage." is DELETED!!";
-              echo "<br>";    
-
             } 
         }
-
-        echo "id :";
-        echo $id;
-        echo "<br>";
-
-        echo "name :";
-        echo $name;
-        echo "<br>";
 
         if (is_file("assets/media/img/$id/images/$name")) 
             {
             $this->deleteFile("assets/media/img/$id/images/$name");
-            echo $name." is DELETED!!";      
             }
 
        }
        else
        {
-        echo "In the else";
+        // message image non effacer
        }
     }
 
@@ -242,105 +218,102 @@ class FormController extends Controller
         }
     }
 
-    function verifierUpload ($id, $nameInput)
-{
-    $objetArtistesModel = new ArtistesModel;
-    $idForm             = $this->verifierSaisie("idForm");
-
-    if (!empty([$_FILES]))
+    public function verifierUpload ($id, $nameInput)
     {
-        $tabInfoFichierUploade = $_FILES[$nameInput];
-        if (!empty($tabInfoFichierUploade))
+        $objetArtistesModel = new ArtistesModel;
+        $idForm             = $this->verifierSaisie("idForm");
+
+        if (!empty([$_FILES]))
         {
-            $error = $tabInfoFichierUploade["error"];
-            if ($error == 0)
+            $tabInfoFichierUploade = $_FILES[$nameInput];
+            if (!empty($tabInfoFichierUploade))
             {
-                $name       = $tabInfoFichierUploade["name"];
-                $type       = $tabInfoFichierUploade["type"];
-                $tmpName    = $tabInfoFichierUploade["tmp_name"];
-                $size       = $tabInfoFichierUploade["size"];
-
-                //  chmod($tmpName, 0777);
-                
-                if ($size < 15 * 1024 * 1024)
+                $error = $tabInfoFichierUploade["error"];
+                if ($error == 0)
                 {
-                    $extension = pathinfo($name, PATHINFO_EXTENSION);
-                    $extension = strtolower($extension);
-                    $tabExtensionOK = [ "jpeg", "jpg", "gif", "png", "svg" ];
-                    
-                    if (in_array($extension, $tabExtensionOK))
+                    $name       = $tabInfoFichierUploade["name"];
+                    $type       = $tabInfoFichierUploade["type"];
+                    $tmpName    = $tabInfoFichierUploade["tmp_name"];
+                    $size       = $tabInfoFichierUploade["size"];
+                   
+                    if ($size < 15 * 1024 * 1024)
                     {
-                        if (is_dir("assets/media/img/$id/$nameInput")) 
-                          {
-                              $this->deleteFolder("assets/media/img/$id/$nameInput");
-                          }                    
+                        $extension = pathinfo($name, PATHINFO_EXTENSION);
+                        $extension = strtolower($extension);
+                        $tabExtensionOK = [ "jpeg", "jpg", "gif", "png", "svg" ];
+                        
+                        if (in_array($extension, $tabExtensionOK))
+                        {
+                            if (is_dir("assets/media/img/$id/imagePrincipale")) 
+                              {
+                                  $this->deleteFolder("assets/media/img/$id/imagePrincipale");
+                              }                    
 
-                        //$nameOK       =  preg_replace("/[^a-zA-Z0-9-_\.]/", "", $name);
-                        $nameOK       = date('YmdHis',time()).mt_rand().'.'.$extension;
-                        $cheminOK     = "assets/media/img/$id/$nameInput/$nameOK";
-                        $cheminOK     = strtolower($cheminOK);
-                        $this->createFolders($id);
-                        $objetArtistesModel->update([ "imagePrincipale" => $nameOK ], $id);
-                        move_uploaded_file($tmpName, $cheminOK);
+                            $nameOK       = date('YmdHis',time()).mt_rand().'.'.$extension;
+                            $cheminOK     = "assets/media/img/$id/$nameInput/$nameOK";
+                            $cheminOK     = strtolower($cheminOK);
+                            $this->createFolders($id);
+                            $objetArtistesModel->update([ "imagePrincipale" => $nameOK ], $id);
+                            move_uploaded_file($tmpName, $cheminOK);
 
+                        }
+                        else
+                        {
+                            $GLOBALS[$idForm . "Retour"] = "EXTENSION NON CONFORME";
+                        }
                     }
-                    else
+                    else 
                     {
-                        $GLOBALS[$idForm . "Retour"] = "EXTENSION NON CONFORME";
+                        $GLOBALS[$idForm . "Retour"] = "FICHIER TROP VOLUMINEUX";
                     }
-                }
-                else 
-                {
-                    $GLOBALS[$idForm . "Retour"] = "FICHIER TROP VOLUMINEUX";
                 }
             }
         }
+            
     }
-        
-}
 
-    function verifierMultiUpload ($id, $nameInput)
-{
-    $this->createFolders($id);
-    $img              = $_FILES[$nameInput];
-    $objetImagesModel = new ImagesModel;
-
-    if(!empty($img))
+    public function verifierMultiUpload ($id, $nameInput)
     {
-        $img_desc = $this->reArrayFiles($img);
-       
-        foreach($img_desc as $val)
+        $this->createFolders($id);
+        $img              = $_FILES[$nameInput];
+        $objetImagesModel = new ImagesModel;
+
+        if(!empty($img))
         {
-            $error = $val["error"];
-            if ($error == 0)
+            $img_desc = $this->reArrayFiles($img);
+           
+            foreach($img_desc as $val)
             {
-                $name       = $val["name"];
-                $type       = $val["type"];
-                $tmpName    = $val["tmp_name"];
-                $size       = $val["size"];
-
-                if ($size < 15 * 1024 * 1024)
+                $error = $val["error"];
+                if ($error == 0)
                 {
-                    $extension = pathinfo($name, PATHINFO_EXTENSION);
-                    $extension = strtolower($extension);
-                    $tabExtensionOK = 
-                    [ 
-                        "jpeg", "jpg", "gif", "png", "svg" 
-                    ];
+                    $name       = $val["name"];
+                    $type       = $val["type"];
+                    $tmpName    = $val["tmp_name"];
+                    $size       = $val["size"];
 
-                    if (in_array($extension, $tabExtensionOK))
+                    if ($size < 15 * 1024 * 1024)
                     {
-                        $nameOK       = date('YmdHis',time()).mt_rand().'.'.$extension;
-                        $cheminOK     = "assets/media/img/$id/$nameInput/$nameOK";
-                        $cheminOK     = strtolower($cheminOK);
-                        $objetImagesModel->insert([ "idArtiste" => $id, "cheminImage" => $nameOK ]);
-                        move_uploaded_file($val['tmp_name'], $cheminOK);
+                        $extension = pathinfo($name, PATHINFO_EXTENSION);
+                        $extension = strtolower($extension);
+                        $tabExtensionOK = 
+                        [ 
+                            "jpeg", "jpg", "gif", "png", "svg" 
+                        ];
+
+                        if (in_array($extension, $tabExtensionOK))
+                        {
+                            $nameOK       = date('YmdHis',time()).mt_rand().'.'.$extension;
+                            $cheminOK     = "assets/media/img/$id/$nameInput/$nameOK";
+                            $cheminOK     = strtolower($cheminOK);
+                            $objetImagesModel->insert([ "idArtiste" => $id, "cheminImage" => $nameOK ]);
+                            move_uploaded_file($val['tmp_name'], $cheminOK);
+                        }
                     }
-                }
-            } 
-        }
-    }                    
-}
+                } 
+            }
+        }                    
+    }
 
     public function reArrayFiles($file)
     {

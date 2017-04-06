@@ -37,6 +37,11 @@ class VitrineController
 
 		$this->show('pages/fiche-artiste');
 	}
+
+	public function fiche($id)
+	{
+		$this->show('pages/fiche', [ "id" => $id ]);
+	}
     
     public function testJo()
 	{
@@ -82,13 +87,6 @@ class VitrineController
 		// (JSON => JS Object Notation)
 		// LA METHODE EFFECTUE json_encode
 		$this->showJson($tabReponseJson);		
-	}
-
-
-    public function testBen()
-	{
-
-		$this->show('pages/test-ben');
 	}
 
 }

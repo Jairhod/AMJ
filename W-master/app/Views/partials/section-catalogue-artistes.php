@@ -38,6 +38,7 @@
                             foreach($tabLigne as $index => $tabColonne)
                             {
                                 $id                 = $tabColonne["id"];
+                                $hrefAfficher       = $this->url("vitrine_fiche", [ "id" => $id ]);
                                 $nomArtiste         = $tabColonne["nomArtiste"];
                                 $nomGenre           = $tabColonne["nomGenre"];
                                 $imagePrincipale    = $tabColonne["imagePrincipale"];
@@ -50,8 +51,8 @@
 <<<CODEHTML
 <div class="artiste-col" data-genres="$nomGenre">
     <figure class="effect-marley">
-    <a href="fiche-artiste">
-    <img src="$srcImage" alt="photo du groupe class=""img-responsive>
+    <a href="$hrefAfficher">
+    <img src="$srcImage" alt="$nomArtiste" class="img-responsive">
         <figcaption>
             <h4>$nomArtiste</h4>
             <p>$descriptionArtiste ...</p>
