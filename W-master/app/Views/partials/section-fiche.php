@@ -13,25 +13,9 @@ if (!empty($tabLigne))
     $artistesLies          = $tabLigne["artistesLies"];
     $dateModification      = $tabLigne["dateModification"];
     $srcImage              = $this->assetUrl('media/img/'.$id.'/imagePrincipale/'.$imagePrincipale);
-/*    
-    // AFFICHER LE CODE HTML
-    echo
-<<<CODEHTML
-<section>
-    <h3>$nomArtiste</h3>
-    <img style="width: 200px" src="$srcImage" alt="$nomArtiste">
-    <p>id: $id</p>
-    <h4>Dernière modification : $dateModification</h4>
-    <h4>Style musical : $nomGenre</h4>
-    <h4>Famille musical : $artistesLies</h4>
-    <h3>Biographie</h3>
-    <p>$descriptionArtiste</p>
-</section> 
-CODEHTML;
-*/
+
 }
 ?>
-
 
 <!--PHOTO ET TEXTE PRESENTATION-->  
 
@@ -83,10 +67,8 @@ CODEHTML;
       </div> 
       </div>
       <!--fin row :--> 
-    </div>    
-          
-
-      
+    </div>      
+     
    <!--CAROUSEL -->
    <div>
     <div class="centre">
@@ -183,7 +165,4 @@ IMAGES;
         </div>
       </div>  
     </div>
-</div>  
-
- 
-
+</div>
