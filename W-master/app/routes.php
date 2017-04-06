@@ -2,14 +2,15 @@
 	
 	$w_routes = array(
 
-		['GET',  	'/accueil', 			         'Vitrine#accueil', 			'vitrine_accueil'],
-		['GET',  	'/actus', 				         'Vitrine#actus', 				'vitrine_actus'],
-		['GET',  	'/catalogue', 		             'Vitrine#catalogue', 			'vitrine_catalogue'],
-		['GET',  	'/fiche-artiste', 		         'Vitrine#ficheArtiste', 		'vitrine_fiche_artiste'],
-    	['GET',  	'/mentions-legales', 		  	  'Vitrine#mentionsLegales',    'vitrine_mentions_legales'],
-    	['GET',  	'/label', 		            	  'Vitrine#label', 		        'label'],
-      	['GET',  	'/test-jo', 		              'Vitrine#testJo', 		    'test_jo'],
-	   	['GET|POST',  	'/ajax', 		                'Vitrine#ajax', 			'vitrine_ajax'],     
+		['GET',  	'/accueil', 			         	'Vitrine#accueil', 				'vitrine_accueil'],
+		['GET',  	'/actus', 				         	'Vitrine#actus', 				'vitrine_actus'],
+		['GET',  	'/catalogue', 		             	'Vitrine#catalogue', 			'vitrine_catalogue'],
+		['GET',  	'/fiche-artiste', 		         	'Vitrine#ficheArtiste', 		'vitrine_fiche_artiste'],
+		['GET',  	'/fiche/[i:id]', 		         	'Vitrine#fiche', 				'vitrine_fiche'],
+    	['GET',  	'/mentions-legales', 		  		'Vitrine#mentionsLegales',    	'vitrine_mentions_legales'],
+    	['GET',  	'/label', 		            	  	'Vitrine#label', 		        'label'],
+      	['GET',  	'/test-jo', 		              	'Vitrine#testJo', 		   		'test_jo'],
+	   	['GET|POST',  	'/ajax', 		                'Vitrine#ajax', 				'vitrine_ajax'],     
        		
 		['GET|POST',  	'/back/accueil', 		         'Admin#backAccueil', 			'back_accueil'],
 		['GET|POST',  	'/back/login', 			         'Admin#backLogin', 			'back_login'],
