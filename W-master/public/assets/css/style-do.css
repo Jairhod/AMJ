@@ -1,4 +1,24 @@
 
+
+.fase3{
+    margin-top: 0;
+    color: #000000;
+    background-color: rgba(237, 190, 0, 0.9);
+    //font-size: 1.3em;
+    //font-weight: normal;
+    text-align: center;
+    padding-top: 4%;
+    padding-bottom: 4%;
+    margin: 4%;
+}
+
+.row-eq-height {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .borderbleuvert {
 	margin-top: 80px;
 	margin-bottom: 30px;
@@ -24,18 +44,20 @@
     margin: auto;
     padding-top: 20px;
     padding-bottom: 50px;
-    width: 90%;
+    //width: 90%;
+    width: 50%;
 }
 
 .h2centre {
-	margin-top: -150px;
+	margin-top: -120px;
 	text-align: center;
-	color: #edbe00;
+  
 }
 
 .h2centre h2 {
-	font-size: 7em;
+	font-size: 5em;
 	opacity: 0.85;
+  color: #edbe00;
 }
 
 .containerficheartiste{
@@ -55,7 +77,7 @@ ul#plList {
 	padding: 10px;
 	text-align: center;
 	width: 100%;
-	font-weight: bold;
+	//font-weight: bold;
 	font-size: 1.1em;
 }
 
@@ -68,7 +90,7 @@ ul#plList {
 .backgroundvideo{
 	background-color: #34495E;
 	margin-bottom: 50px;
-    margin-top: 50px;
+  margin-top: 50px;
 }
 
 .infoficheartiste{
@@ -89,9 +111,13 @@ ul#plList {
 	.containerblue {
 	width: 70%;
 	}
+  .backgroundvideo{
+    width: 90%;
+  }
+
 }
 
-@media screen and (max-width: 990px)
+@media screen and (max-width: 1090px)
 {
 
 	.infoficheartiste{
@@ -100,20 +126,22 @@ ul#plList {
     }
     img.img-responsive {
     margin-bottom: 50px;
+    padding-bottom: 80px;
 	}
 	
 }  
 
-@media screen and (max-width: 770px)
+@media screen and (max-width: 1270px)
 {
     .h2centre
     {
       //display: none;  
       font-size: 0.5em;
+      margin-top: -120px;
     }
     #photoprincipale {
-
-    }
+    margin-bottom: 50px;
+  }
 
 }   
 
@@ -121,7 +149,7 @@ ul#plList {
 {
     .h2centre
     { 
-      font-size: 0.4em;
+      font-size: 0.3em;
     }
 }   
 
@@ -136,7 +164,9 @@ ul#plList {
 
 
 //////////CAROUSEL////////////////
-
+.carousel-indicators{
+  margin-top: -150px
+}
 
 div#myCarousel {
     width: 70%;
@@ -148,18 +178,27 @@ div#myCarousel {
 .carousel{
     background: #2f4357;
     margin-top: 20px;
+    //min-height: 500px
 }
 .carousel .item img{
     margin: 0 auto; /* Align slide image horizontally center */
+    max-height: 500px
 }
 .bs-example{
-   
-    width: 94%;
+    width: 70%;
     margin: 0 auto;
 }
 
 .backgroundcarousel{
 	background-color: #000000;
+}
+
+.carousel-control{
+  top: -220px;
+}
+.carousel-indicators{
+  display: none;
+
 }
 
 //////////AUDIOPLAYER/////////////////
