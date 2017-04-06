@@ -9,7 +9,7 @@
     
     	['GET',  	'/mentions-legales', 		  	  'Vitrine#mentionsLegales',    'vitrine_mentions_legales'],
     	['GET',  	'/label', 		            	  'Vitrine#label', 		        'label'],
-      	['GET',  	'/test-jo', 		              	'Vitrine#testJo', 		    'test_jo'],
+      	['GET',  	'/test-jo', 		              'Vitrine#testJo', 		    'test_jo'],
     
 	   ['GET|POST',  	'/ajax', 		                 'Vitrine#ajax', 			    'vitrine_ajax'],
         
