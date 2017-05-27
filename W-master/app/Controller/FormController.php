@@ -209,7 +209,7 @@ class FormController extends Controller
                 $username = $tabUser['username'];
 
                 $GLOBALS["loginRetour"] = "BIENVENUE ($username)";
-                header("Location: accueil");
+                header("Location: artiste/liste");
             }
             else
             {
